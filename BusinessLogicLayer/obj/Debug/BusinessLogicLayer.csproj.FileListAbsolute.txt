@@ -1,0 +1,9 @@
+E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessEntities.dll
+E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessEntities.pdb
+E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

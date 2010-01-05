@@ -1,0 +1,5 @@
+E:\HK VII\OOD\qlchvlxd\BusinessEntities\bin\Debug\BusinessEntities.dll
+E:\HK VII\OOD\qlchvlxd\BusinessEntities\bin\Debug\BusinessEntities.pdb
+E:\HK VII\OOD\qlchvlxd\BusinessEntities\obj\Debug\ResolveAssemblyReference.cache
+E:\HK VII\OOD\qlchvlxd\BusinessEntities\obj\Debug\BusinessEntities.dll
+E:\HK VII\OOD\qlchvlxd\BusinessEntities\obj\Debug\BusinessEntities.pdb

@@ -1,0 +1,7 @@
+E:\HK VII\OOD\qlchvlxd\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\HK VII\OOD\qlchvlxd\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\HK VII\OOD\qlchvlxd\DataAccessLayer\bin\Debug\BusinessEntities.dll
+E:\HK VII\OOD\qlchvlxd\DataAccessLayer\bin\Debug\BusinessEntities.pdb
+E:\HK VII\OOD\qlchvlxd\DataAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\HK VII\OOD\qlchvlxd\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+E:\HK VII\OOD\qlchvlxd\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
