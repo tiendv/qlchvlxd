@@ -29,40 +29,39 @@
         private void InitializeComponent()
         {
             this.labelTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STTcolumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSPColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoGiaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thanhTienColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox_SanPham = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.numericUpDown_SoLuong = new System.Windows.Forms.NumericUpDown();
+            this.button_Them = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox_TenSP = new System.Windows.Forms.ComboBox();
+            this.label_TenSP = new System.Windows.Forms.Label();
+            this.comboBox_LoaiSP = new System.Windows.Forms.ComboBox();
+            this.label_LoaiSP = new System.Windows.Forms.Label();
             this.groupBoxTTKH = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox_GiaoHang = new System.Windows.Forms.CheckBox();
+            this.maKHTT = new System.Windows.Forms.TextBox();
+            this.checkBox_TraGop = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox_DienThoai = new System.Windows.Forms.TextBox();
+            this.textBox_DiaChi = new System.Windows.Forms.TextBox();
+            this.checkBox_KHTT = new System.Windows.Forms.CheckBox();
+            this.textBox_TenKH = new System.Windows.Forms.TextBox();
             this.label_GiaoHang = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelTenKH = new System.Windows.Forms.Label();
-            this.checkBox_TraGop = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.maKHTT = new System.Windows.Forms.TextBox();
-            this.checkBox_GiaoHang = new System.Windows.Forms.CheckBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label_TenKH = new System.Windows.Forms.Label();
+            this.listView_HoaDon = new System.Windows.Forms.ListView();
+            this.column_STT = new System.Windows.Forms.ColumnHeader();
+            this.column_TenSP = new System.Windows.Forms.ColumnHeader();
+            this.column_SoLuong = new System.Windows.Forms.ColumnHeader();
+            this.column_DonGia = new System.Windows.Forms.ColumnHeader();
+            this.column_ThanhTien = new System.Windows.Forms.ColumnHeader();
             this.groupBox_SanPham.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SoLuong)).BeginInit();
             this.groupBoxTTKH.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -74,51 +73,9 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "LẬP HÓA ĐƠN BÁN HÀNG";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STTcolumn,
-            this.TenSPColumn,
-            this.SoLuongColumn,
-            this.DoGiaColumn,
-            this.thanhTienColumn});
-            this.dataGridView1.Location = new System.Drawing.Point(33, 258);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(555, 150);
-            this.dataGridView1.TabIndex = 11;
-            // 
-            // STTcolumn
-            // 
-            this.STTcolumn.HeaderText = "STT";
-            this.STTcolumn.Name = "STTcolumn";
-            this.STTcolumn.Width = 50;
-            // 
-            // TenSPColumn
-            // 
-            this.TenSPColumn.HeaderText = "Ten san pham";
-            this.TenSPColumn.Name = "TenSPColumn";
-            this.TenSPColumn.Width = 150;
-            // 
-            // SoLuongColumn
-            // 
-            this.SoLuongColumn.HeaderText = "So luong";
-            this.SoLuongColumn.Name = "SoLuongColumn";
-            // 
-            // DoGiaColumn
-            // 
-            this.DoGiaColumn.HeaderText = "Don gia";
-            this.DoGiaColumn.Name = "DoGiaColumn";
-            this.DoGiaColumn.Width = 110;
-            // 
-            // thanhTienColumn
-            // 
-            this.thanhTienColumn.HeaderText = "Thanh tien";
-            this.thanhTienColumn.Name = "thanhTienColumn";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(386, 430);
+            this.button1.Location = new System.Drawing.Point(382, 429);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 12;
@@ -128,7 +85,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(513, 430);
+            this.button3.Location = new System.Drawing.Point(514, 429);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 14;
@@ -137,28 +94,40 @@
             // 
             // groupBox_SanPham
             // 
-            this.groupBox_SanPham.Controls.Add(this.numericUpDown1);
-            this.groupBox_SanPham.Controls.Add(this.button4);
+            this.groupBox_SanPham.Controls.Add(this.numericUpDown_SoLuong);
+            this.groupBox_SanPham.Controls.Add(this.button_Them);
             this.groupBox_SanPham.Controls.Add(this.label7);
-            this.groupBox_SanPham.Controls.Add(this.comboBox3);
-            this.groupBox_SanPham.Controls.Add(this.label6);
-            this.groupBox_SanPham.Controls.Add(this.comboBox2);
-            this.groupBox_SanPham.Controls.Add(this.label5);
-            this.groupBox_SanPham.Location = new System.Drawing.Point(12, 163);
+            this.groupBox_SanPham.Controls.Add(this.comboBox_TenSP);
+            this.groupBox_SanPham.Controls.Add(this.label_TenSP);
+            this.groupBox_SanPham.Controls.Add(this.comboBox_LoaiSP);
+            this.groupBox_SanPham.Controls.Add(this.label_LoaiSP);
+            this.groupBox_SanPham.Location = new System.Drawing.Point(13, 163);
             this.groupBox_SanPham.Name = "groupBox_SanPham";
-            this.groupBox_SanPham.Size = new System.Drawing.Size(588, 89);
+            this.groupBox_SanPham.Size = new System.Drawing.Size(587, 89);
             this.groupBox_SanPham.TabIndex = 16;
             this.groupBox_SanPham.TabStop = false;
             this.groupBox_SanPham.Text = "Sản phẩm";
             // 
-            // button4
+            // numericUpDown_SoLuong
             // 
-            this.button4.Location = new System.Drawing.Point(473, 48);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 23);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.numericUpDown_SoLuong.Location = new System.Drawing.Point(114, 47);
+            this.numericUpDown_SoLuong.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown_SoLuong.Name = "numericUpDown_SoLuong";
+            this.numericUpDown_SoLuong.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown_SoLuong.TabIndex = 30;
+            // 
+            // button_Them
+            // 
+            this.button_Them.Location = new System.Drawing.Point(473, 48);
+            this.button_Them.Name = "button_Them";
+            this.button_Them.Size = new System.Drawing.Size(50, 23);
+            this.button_Them.TabIndex = 29;
+            this.button_Them.Text = "Thêm";
+            this.button_Them.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -169,39 +138,39 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "Số lượng:";
             // 
-            // comboBox3
+            // comboBox_TenSP
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(417, 21);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(159, 21);
-            this.comboBox3.TabIndex = 26;
+            this.comboBox_TenSP.FormattingEnabled = true;
+            this.comboBox_TenSP.Location = new System.Drawing.Point(417, 21);
+            this.comboBox_TenSP.Name = "comboBox_TenSP";
+            this.comboBox_TenSP.Size = new System.Drawing.Size(159, 21);
+            this.comboBox_TenSP.TabIndex = 26;
             // 
-            // label6
+            // label_TenSP
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(298, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 13);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Tên sản phẩm:";
+            this.label_TenSP.AutoSize = true;
+            this.label_TenSP.Location = new System.Drawing.Point(298, 29);
+            this.label_TenSP.Name = "label_TenSP";
+            this.label_TenSP.Size = new System.Drawing.Size(78, 13);
+            this.label_TenSP.TabIndex = 25;
+            this.label_TenSP.Text = "Tên sản phẩm:";
             // 
-            // comboBox2
+            // comboBox_LoaiSP
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(114, 21);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(159, 21);
-            this.comboBox2.TabIndex = 24;
+            this.comboBox_LoaiSP.FormattingEnabled = true;
+            this.comboBox_LoaiSP.Location = new System.Drawing.Point(114, 21);
+            this.comboBox_LoaiSP.Name = "comboBox_LoaiSP";
+            this.comboBox_LoaiSP.Size = new System.Drawing.Size(159, 21);
+            this.comboBox_LoaiSP.TabIndex = 24;
             // 
-            // label5
+            // label_LoaiSP
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Loại sản phẩm:";
+            this.label_LoaiSP.AutoSize = true;
+            this.label_LoaiSP.Location = new System.Drawing.Point(18, 28);
+            this.label_LoaiSP.Name = "label_LoaiSP";
+            this.label_LoaiSP.Size = new System.Drawing.Size(79, 13);
+            this.label_LoaiSP.TabIndex = 23;
+            this.label_LoaiSP.Text = "Loại sản phẩm:";
             // 
             // groupBoxTTKH
             // 
@@ -209,15 +178,15 @@
             this.groupBoxTTKH.Controls.Add(this.maKHTT);
             this.groupBoxTTKH.Controls.Add(this.checkBox_TraGop);
             this.groupBoxTTKH.Controls.Add(this.label8);
-            this.groupBoxTTKH.Controls.Add(this.textBox3);
-            this.groupBoxTTKH.Controls.Add(this.textBox2);
-            this.groupBoxTTKH.Controls.Add(this.checkBox1);
-            this.groupBoxTTKH.Controls.Add(this.textBox1);
+            this.groupBoxTTKH.Controls.Add(this.textBox_DienThoai);
+            this.groupBoxTTKH.Controls.Add(this.textBox_DiaChi);
+            this.groupBoxTTKH.Controls.Add(this.checkBox_KHTT);
+            this.groupBoxTTKH.Controls.Add(this.textBox_TenKH);
             this.groupBoxTTKH.Controls.Add(this.label_GiaoHang);
             this.groupBoxTTKH.Controls.Add(this.label3);
             this.groupBoxTTKH.Controls.Add(this.label2);
             this.groupBoxTTKH.Controls.Add(this.label1);
-            this.groupBoxTTKH.Controls.Add(this.labelTenKH);
+            this.groupBoxTTKH.Controls.Add(this.label_TenKH);
             this.groupBoxTTKH.Location = new System.Drawing.Point(13, 47);
             this.groupBoxTTKH.Name = "groupBoxTTKH";
             this.groupBoxTTKH.Size = new System.Drawing.Size(587, 100);
@@ -225,36 +194,72 @@
             this.groupBoxTTKH.TabStop = false;
             this.groupBoxTTKH.Text = "Thông tin khách hàng";
             // 
-            // textBox3
+            // checkBox_GiaoHang
             // 
-            this.textBox3.Location = new System.Drawing.Point(422, 44);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 20);
-            this.textBox3.TabIndex = 24;
+            this.checkBox_GiaoHang.AutoSize = true;
+            this.checkBox_GiaoHang.Location = new System.Drawing.Point(115, 73);
+            this.checkBox_GiaoHang.Name = "checkBox_GiaoHang";
+            this.checkBox_GiaoHang.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_GiaoHang.TabIndex = 29;
+            this.checkBox_GiaoHang.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // maKHTT
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 20);
-            this.textBox2.TabIndex = 23;
+            this.maKHTT.Enabled = false;
+            this.maKHTT.Location = new System.Drawing.Point(439, 14);
+            this.maKHTT.Name = "maKHTT";
+            this.maKHTT.Size = new System.Drawing.Size(138, 20);
+            this.maKHTT.TabIndex = 28;
             // 
-            // checkBox1
+            // checkBox_TraGop
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(422, 17);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 22;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox_TraGop.AutoSize = true;
+            this.checkBox_TraGop.Location = new System.Drawing.Point(422, 73);
+            this.checkBox_TraGop.Name = "checkBox_TraGop";
+            this.checkBox_TraGop.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_TraGop.TabIndex = 27;
+            this.checkBox_TraGop.UseVisualStyleBackColor = true;
+            this.checkBox_TraGop.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // textBox1
+            // label8
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 21;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(290, 74);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Trả góp:";
+            // 
+            // textBox_DienThoai
+            // 
+            this.textBox_DienThoai.Location = new System.Drawing.Point(422, 44);
+            this.textBox_DienThoai.Name = "textBox_DienThoai";
+            this.textBox_DienThoai.Size = new System.Drawing.Size(159, 20);
+            this.textBox_DienThoai.TabIndex = 24;
+            // 
+            // textBox_DiaChi
+            // 
+            this.textBox_DiaChi.Location = new System.Drawing.Point(115, 44);
+            this.textBox_DiaChi.Name = "textBox_DiaChi";
+            this.textBox_DiaChi.Size = new System.Drawing.Size(159, 20);
+            this.textBox_DiaChi.TabIndex = 23;
+            // 
+            // checkBox_KHTT
+            // 
+            this.checkBox_KHTT.AutoSize = true;
+            this.checkBox_KHTT.Location = new System.Drawing.Point(422, 17);
+            this.checkBox_KHTT.Name = "checkBox_KHTT";
+            this.checkBox_KHTT.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_KHTT.TabIndex = 22;
+            this.checkBox_KHTT.UseVisualStyleBackColor = true;
+            this.checkBox_KHTT.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // textBox_TenKH
+            // 
+            this.textBox_TenKH.Location = new System.Drawing.Point(115, 19);
+            this.textBox_TenKH.Name = "textBox_TenKH";
+            this.textBox_TenKH.Size = new System.Drawing.Size(159, 20);
+            this.textBox_TenKH.TabIndex = 21;
             // 
             // label_GiaoHang
             // 
@@ -292,82 +297,71 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Khách hàng thân thiết:";
             // 
-            // labelTenKH
+            // label_TenKH
             // 
-            this.labelTenKH.AutoSize = true;
-            this.labelTenKH.Location = new System.Drawing.Point(19, 22);
-            this.labelTenKH.Name = "labelTenKH";
-            this.labelTenKH.Size = new System.Drawing.Size(89, 13);
-            this.labelTenKH.TabIndex = 16;
-            this.labelTenKH.Text = "Tên khách hàng:";
+            this.label_TenKH.AutoSize = true;
+            this.label_TenKH.Location = new System.Drawing.Point(19, 22);
+            this.label_TenKH.Name = "label_TenKH";
+            this.label_TenKH.Size = new System.Drawing.Size(89, 13);
+            this.label_TenKH.TabIndex = 16;
+            this.label_TenKH.Text = "Tên khách hàng:";
             // 
-            // checkBox_TraGop
+            // listView_HoaDon
             // 
-            this.checkBox_TraGop.AutoSize = true;
-            this.checkBox_TraGop.Location = new System.Drawing.Point(422, 73);
-            this.checkBox_TraGop.Name = "checkBox_TraGop";
-            this.checkBox_TraGop.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_TraGop.TabIndex = 27;
-            this.checkBox_TraGop.UseVisualStyleBackColor = true;
-            this.checkBox_TraGop.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.listView_HoaDon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.column_STT,
+            this.column_TenSP,
+            this.column_SoLuong,
+            this.column_DonGia,
+            this.column_ThanhTien});
+            this.listView_HoaDon.Location = new System.Drawing.Point(13, 259);
+            this.listView_HoaDon.Name = "listView_HoaDon";
+            this.listView_HoaDon.Size = new System.Drawing.Size(587, 150);
+            this.listView_HoaDon.TabIndex = 18;
+            this.listView_HoaDon.UseCompatibleStateImageBehavior = false;
+            this.listView_HoaDon.View = System.Windows.Forms.View.Details;
             // 
-            // label8
+            // column_STT
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(290, 74);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Trả góp:";
+            this.column_STT.Text = "STT";
+            this.column_STT.Width = 10;
             // 
-            // maKHTT
+            // column_TenSP
             // 
-            this.maKHTT.Enabled = false;
-            this.maKHTT.Location = new System.Drawing.Point(439, 14);
-            this.maKHTT.Name = "maKHTT";
-            this.maKHTT.Size = new System.Drawing.Size(138, 20);
-            this.maKHTT.TabIndex = 28;
+            this.column_TenSP.Text = "Tên sản phẩm";
             // 
-            // checkBox_GiaoHang
+            // column_SoLuong
             // 
-            this.checkBox_GiaoHang.AutoSize = true;
-            this.checkBox_GiaoHang.Location = new System.Drawing.Point(115, 73);
-            this.checkBox_GiaoHang.Name = "checkBox_GiaoHang";
-            this.checkBox_GiaoHang.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_GiaoHang.TabIndex = 29;
-            this.checkBox_GiaoHang.UseVisualStyleBackColor = true;
+            this.column_SoLuong.Text = "Số lượng";
             // 
-            // numericUpDown1
+            // column_DonGia
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(114, 47);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 30;
+            this.column_DonGia.Text = "Đơn giá";
+            this.column_DonGia.Width = 40;
+            // 
+            // column_ThanhTien
+            // 
+            this.column_ThanhTien.Text = "Thành tiền";
+            this.column_ThanhTien.Width = 40;
             // 
             // LapHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 483);
+            this.ClientSize = new System.Drawing.Size(618, 463);
+            this.Controls.Add(this.listView_HoaDon);
             this.Controls.Add(this.groupBoxTTKH);
             this.Controls.Add(this.groupBox_SanPham);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelTitle);
             this.Name = "LapHoaDon";
-            this.Text = "frmLapHoaDon";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Lập hóa đơn";
             this.groupBox_SanPham.ResumeLayout(false);
             this.groupBox_SanPham.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SoLuong)).EndInit();
             this.groupBoxTTKH.ResumeLayout(false);
             this.groupBoxTTKH.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,35 +370,35 @@
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STTcolumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSPColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DoGiaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thanhTienColumn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox_SanPham;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button_Them;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox_TenSP;
+        private System.Windows.Forms.Label label_TenSP;
+        private System.Windows.Forms.ComboBox comboBox_LoaiSP;
+        private System.Windows.Forms.Label label_LoaiSP;
         private System.Windows.Forms.GroupBox groupBoxTTKH;
         private System.Windows.Forms.CheckBox checkBox_TraGop;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_DienThoai;
+        private System.Windows.Forms.TextBox textBox_DiaChi;
+        private System.Windows.Forms.CheckBox checkBox_KHTT;
+        private System.Windows.Forms.TextBox textBox_TenKH;
         private System.Windows.Forms.Label label_GiaoHang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelTenKH;
+        private System.Windows.Forms.Label label_TenKH;
         private System.Windows.Forms.TextBox maKHTT;
         private System.Windows.Forms.CheckBox checkBox_GiaoHang;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown_SoLuong;
+        private System.Windows.Forms.ListView listView_HoaDon;
+        private System.Windows.Forms.ColumnHeader column_STT;
+        private System.Windows.Forms.ColumnHeader column_TenSP;
+        private System.Windows.Forms.ColumnHeader column_SoLuong;
+        private System.Windows.Forms.ColumnHeader column_DonGia;
+        private System.Windows.Forms.ColumnHeader column_ThanhTien;
     }
 }
