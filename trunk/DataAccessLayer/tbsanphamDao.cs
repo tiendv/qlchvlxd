@@ -13,7 +13,39 @@ namespace DataAccessLayer
 {
     public class tbsanphamDao:BaseDao
     {
-                public SqlDataAdapter daMT;
+         public List<BusinessEntities.tbsanpham> getSanPham()
+        {
+            DataTable dt = BaseDao.ExecuteDataTable("sanpham", CommandType.TableDirect);
+            List<BusinessEntities.tbsanpham> danhsachSANPHAM = new List<BusinessEntities.tbsanpham>();
+
+            try
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    BusinessEntities.tbsanpham sanpham = new BusinessEntities.tbsanpham();
+
+                    sanpham.masp= (int)row["masp"];
+                    sanpham.tensp = row["tensp"].ToString();
+                    sanpham.gianhap=(float)row["gianhap"];
+                    sanpham.giaban=(float)row["giaban"];
+                    sanpham.soluong = (int)row["soluong"];
+                    sanpham.soluongtoithieu = (int)row["soluongtoithieu"];
+                    sanpham.mancc = row["mancc"].ToString();
+                    sanpham.thongtin = row["dongia"].ToString();
+                    sanpham.donvitinh=row["donvitinh"].ToString();
+                    sanpham.maloaisp= (int)row["maloaisp"];
+
+
+                    danhsachSANPHAM.Add(sanpham);                    
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            return danhsachSANPHAM;
+
+          /*      public SqlDataAdapter daMT;
         //constructor///////////////////////////////////
         
         public tbsanphamDao(): base()
@@ -27,12 +59,12 @@ namespace DataAccessLayer
         {
            
                 DataSet ds = new DataSet();
-                daMT = new SqlDataAdapter("select * from user", conn);
+                daMT = new SqlDataAdapter("select * from user", sqlCon);
                 daMT.Fill(ds, "demo");
 
                 return ds;
           
-        }        
+        }   */     
 
     }
 }
