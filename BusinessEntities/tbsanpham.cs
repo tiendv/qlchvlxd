@@ -9,34 +9,41 @@ namespace BusinessEntities
 {
     public class tbsanpham
     {
-        public string masp;
+        public int masp;
         public string tensp;
-        public string gianhap;
-        public string giaban;
-        public string mucnhapvao;
-        public string nhacungcap;
-        public string ghichu;
+        public float gianhap;
+        public float giaban;
+        public int soluong;
+        public int soluongtoithieu;
+        public string mancc="";
+        public string thongtin;
+        public string donvitinh;
+        public int maloaisp ;
 
-        // constructor
-        public tbsanpham(string masp, string tensp, string gianhap, string giaban, string mucnhapvao, string nhacungcap, string ghichu)
+        /* / constructor
+        public tbsanpham(int masp, string tensp, float gianhap, float giaban,int soluong,int soluongtoithieu, string mancc, string thongtin,string donvitinh, int maloaisp)
         {
             this.masp = masp;
             this.tensp = tensp;
             this.gianhap = gianhap;
             this.giaban = giaban;
-            this.mucnhapvao = mucnhapvao;
-            this.nhacungcap = nhacungcap;
-            this.ghichu = ghichu;
+            this.soluong = soluong;
+            this.soluongtoithieu = soluongtoithieu;
+            this.mancc = mancc;
+            this.thongtin = thongtin;
+            this.donvitinh = donvitinh;
+            this.maloaisp = maloaisp;
        
         }
-        public string MASP
+       */
+        public int MASP
         {
             get { return this.masp; }
             set
             {
-                // Sản phẩm có mã đánh tự động cái này từ từ làm kaka
-                if (value == "")
-                    throw new Exception("Sản phẩm có mã đánh tự động cái này từ từ làm kaka");
+                
+                if (value == 0)
+                    throw new Exception("Mã sản phẩm rỗng !");
                 this.masp = value;
             }
         }
@@ -47,64 +54,102 @@ namespace BusinessEntities
             {
                 
                 if (value == "")
-                    throw new Exception("Tên sản phẩm không được bỏ trống");
+                    throw new Exception("Tên sản phẩm rỗng !");
                 this.tensp = value;
             }
         }
-        public string GIANHAP
+        public floa GIANHAP
         {
             get { return this.gianhap; }
             set
             {
                 
-                if (value == "")
-                    throw new Exception("Giá Nhập vào không được bỏ trống");
+                if (value ==0 )
+                    throw new Exception("Giá nhập rỗng !");
                 this.gianhap= value;
             }
         }
-        public string GIABAN
+        public float GIABAN
         {
             get { return this.giaban; }
             set
             {
                 
-                if (value == "")
-                    throw new Exception("Giá Bán vào không được bỏ trống");
+                if (value == 0)
+                    throw new Exception("Giá Bán rỗng !");
                 this.giaban = value;
             }
         }
-        public string MUCNHAPVAO
+        public int SOLUONG
         {
-            get { return this.mucnhapvao; }
+            get { return this.soluong; }
+            set
+            {
+
+                if (value == 0)
+                    throw new Exception("Số lượng rỗng !");
+                this.soluong = value;
+            }
+        }
+
+        public int SOLUONGTOITHIEU
+        {
+            get { return this.soluongtoithieu; }
             set
             {
                
-                if (value == "")
+                if (value == 0)
                     throw new Exception("Mức nhập vào không được bỏ trống");
-                this.mucnhapvao = value;
+                this.soluongtoithieu = value;
             }
         }
         // Nhà cung cấp liên quan đến sản phẩm bằng mã nhà cung cấp
-        public string NHACUNGCAP
+        public string MANCC
         {
-            get { return this.nhacungcap; }
+            get { return this.mancc; }
             set
             {
                 
                 if (value == "")
-                    throw new Exception("Nhà Cung cấp không được bỏ trống");
-                this.nhacungcap = value;
+                    throw new Exception("Nhà Cung cấp rỗng");
+                this.mancc = value;
             }
         }
-        public string GHICHU
+
+        public string THONGTIN
         {
-            get { return this.ghichu; }
+            get { return this.thongtin; }
             set
             {
-                          
-                this.ghichu = value;
+                if (value == "")
+                    throw new Exception("Thông tin rỗng");
+                this.thongtin = value;
             }
         }
+        public string DONVITINH
+        {
+            get { return this.donvitinh; }
+            set
+            {
+                if (value == "")
+                    throw new Exception("Đơn vị tính rỗng");
+                this.donvitinh = value;
+            }
+        }
+
+        public int MALOAISP
+        {
+            get { return this.maloaisp; }
+            set
+            {
+                if (value == 0)
+                    throw new Exception("Mã loại sản phẩm rỗng");
+                this.maloaisp = value;
+            }
+        }
+
+
+        /*
 
         public override string ToString()
         {
@@ -120,6 +165,7 @@ namespace BusinessEntities
         {
             return this.MASP.GetHashCode();
         }
+         */
 
 
 
