@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.labelTitle = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_XemHD = new System.Windows.Forms.Button();
+            this.button_Thoat = new System.Windows.Forms.Button();
             this.groupBox_SanPham = new System.Windows.Forms.GroupBox();
             this.numericUpDown_SoLuong = new System.Windows.Forms.NumericUpDown();
             this.button_Them = new System.Windows.Forms.Button();
@@ -73,24 +73,25 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "LẬP HÓA ĐƠN BÁN HÀNG";
             // 
-            // button1
+            // button_XemHD
             // 
-            this.button1.Location = new System.Drawing.Point(382, 429);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Xem hóa đơn";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_XemHD.Location = new System.Drawing.Point(382, 429);
+            this.button_XemHD.Name = "button_XemHD";
+            this.button_XemHD.Size = new System.Drawing.Size(89, 23);
+            this.button_XemHD.TabIndex = 12;
+            this.button_XemHD.Text = "Xem hóa đơn";
+            this.button_XemHD.UseVisualStyleBackColor = true;
+            this.button_XemHD.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // button_Thoat
             // 
-            this.button3.Location = new System.Drawing.Point(514, 429);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Hủy";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_Thoat.Location = new System.Drawing.Point(514, 429);
+            this.button_Thoat.Name = "button_Thoat";
+            this.button_Thoat.Size = new System.Drawing.Size(75, 23);
+            this.button_Thoat.TabIndex = 14;
+            this.button_Thoat.Text = "Thoát";
+            this.button_Thoat.UseVisualStyleBackColor = true;
+            this.button_Thoat.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox_SanPham
             // 
@@ -324,25 +325,27 @@
             // column_STT
             // 
             this.column_STT.Text = "STT";
-            this.column_STT.Width = 10;
+            this.column_STT.Width = 48;
             // 
             // column_TenSP
             // 
             this.column_TenSP.Text = "Tên sản phẩm";
+            this.column_TenSP.Width = 198;
             // 
             // column_SoLuong
             // 
             this.column_SoLuong.Text = "Số lượng";
+            this.column_SoLuong.Width = 69;
             // 
             // column_DonGia
             // 
             this.column_DonGia.Text = "Đơn giá";
-            this.column_DonGia.Width = 40;
+            this.column_DonGia.Width = 135;
             // 
             // column_ThanhTien
             // 
             this.column_ThanhTien.Text = "Thành tiền";
-            this.column_ThanhTien.Width = 40;
+            this.column_ThanhTien.Width = 131;
             // 
             // LapHoaDon
             // 
@@ -352,11 +355,12 @@
             this.Controls.Add(this.listView_HoaDon);
             this.Controls.Add(this.groupBoxTTKH);
             this.Controls.Add(this.groupBox_SanPham);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_Thoat);
+            this.Controls.Add(this.button_XemHD);
             this.Controls.Add(this.labelTitle);
             this.Name = "LapHoaDon";
             this.Text = "Lập hóa đơn";
+            this.Load += new System.EventHandler(this.LapHoaDon_Load);
             this.groupBox_SanPham.ResumeLayout(false);
             this.groupBox_SanPham.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SoLuong)).EndInit();
@@ -370,8 +374,8 @@
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_XemHD;
+        private System.Windows.Forms.Button button_Thoat;
         private System.Windows.Forms.GroupBox groupBox_SanPham;
         private System.Windows.Forms.Button button_Them;
         private System.Windows.Forms.Label label7;
