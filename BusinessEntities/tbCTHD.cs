@@ -12,7 +12,7 @@ namespace BusinessEntities
         public int maLoaiSP;
         public int maSP ;
         public int soLuong;
-        public float donGia;
+        public float donGia; 
 
         //public tbCTHD(String maCTHD, String maLoaiSP, String maSP, int soLuong, float donGia)
         //{
