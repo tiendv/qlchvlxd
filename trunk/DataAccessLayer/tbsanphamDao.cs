@@ -11,9 +11,9 @@ using BusinessEntities;
 
 namespace DataAccessLayer
 {
-    public class tbsanphamDao:BaseDao
+    public class tbsanphamDao : BaseDao
     {
-         public List<BusinessEntities.tbsanpham> getSanPham()
+        public List<BusinessEntities.tbsanpham> getSanPham()
         {
             DataTable dt = BaseDao.ExecuteDataTable("sanpham", CommandType.TableDirect);
             List<BusinessEntities.tbsanpham> danhsachSANPHAM = new List<BusinessEntities.tbsanpham>();
@@ -24,19 +24,19 @@ namespace DataAccessLayer
                 {
                     BusinessEntities.tbsanpham sanpham = new BusinessEntities.tbsanpham();
 
-                    sanpham.masp= (int)row["masp"];
+                    sanpham.masp = (int)row["masp"];
                     sanpham.tensp = row["tensp"].ToString();
-                    sanpham.gianhap=(float)row["gianhap"];
-                    sanpham.giaban=(float)row["giaban"];
+                    sanpham.gianhap = (float)row["gianhap"];
+                    sanpham.giaban = (float)row["giaban"];
                     sanpham.soluong = (int)row["soluong"];
                     sanpham.soluongtoithieu = (int)row["soluongtoithieu"];
                     sanpham.mancc = row["mancc"].ToString();
                     sanpham.thongtin = row["dongia"].ToString();
-                    sanpham.donvitinh=row["donvitinh"].ToString();
-                    sanpham.maloaisp= (int)row["maloaisp"];
+                    sanpham.donvitinh = row["donvitinh"].ToString();
+                    sanpham.maloaisp = (int)row["maloaisp"];
 
 
-                    danhsachSANPHAM.Add(sanpham);                    
+                    danhsachSANPHAM.Add(sanpham);
                 }
             }
             catch (Exception e)
@@ -44,6 +44,9 @@ namespace DataAccessLayer
                 return null;
             }
             return danhsachSANPHAM;
+        }
+    }
+}
 
           /*      public SqlDataAdapter daMT;
         //constructor///////////////////////////////////
@@ -66,5 +69,3 @@ namespace DataAccessLayer
           
         }   */     
 
-    }
-}
