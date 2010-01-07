@@ -11,12 +11,13 @@ namespace BusinessEntities
     {
         public int maloaisp;
         public string tenloaisanpham;
-
+/*
         public tbLOAISANPHAM(int maloaisp, string tenloaisanpham)
         {
             this.maloaisp = maloaisp;
             this.tenloaisanpham = tenloaisanpham;
         }
+ */
 
         public int MALOAISP
         {
