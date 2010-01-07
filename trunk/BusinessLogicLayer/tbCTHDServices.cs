@@ -16,7 +16,7 @@ namespace BusinessLogicLayer
             DataAccessLayer.tbCTHDDao access = new tbCTHDDao();
 
             list = access.getCTHoaDon();
-
+              
             if (list == null)
                 return null;
 
