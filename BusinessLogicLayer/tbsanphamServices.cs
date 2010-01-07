@@ -11,6 +11,27 @@ namespace BusinessLogicLayer
 {
     public class tbsanphamServices
     {
+
+
+
+        public static List<BusinessEntities.tbsanpham> getDanhSachSanPham()
+        {
+            List<BusinessEntities.tbsanpham> list = new List<BusinessEntities.tbsanpham>();
+            DataAccessLayer.tbsanphamDao access = new tbsanphamDao();
+
+            list = access.getSanPham();
+
+            if (list == null)
+                return null;
+
+            return list;
+        }     
+ 
+
+
+
+
+        /*
         private tbsanphamDao dao;
         public tbsanphamServices()
         {
@@ -23,6 +44,7 @@ namespace BusinessLogicLayer
                 throw new Exception("Cannot get DB");
             return dao.getAllSanPham();
         }
+         */
 
     }
 }
