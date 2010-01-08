@@ -5,24 +5,24 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-//using System.Data.OleDb;
+using System.Data.OleDb;
 using BusinessEntities;
 
 
 namespace DataAccessLayer
 {
-    public class tbsanphamDao : BaseDao
+    public class SanPhamDAL 
     {
-        public List<BusinessEntities.tbsanpham> getSanPham()
+        public List<BusinessEntities.SanPhamBE> getSanPham()
         {
-            DataTable dt = BaseDao.ExecuteDataTable("sanpham", CommandType.TableDirect);
-            List<BusinessEntities.tbsanpham> danhsachSANPHAM = new List<BusinessEntities.tbsanpham>();
+            DataTable dt = SQLHelp.executeQuery("select * from sanpham");
+            List<BusinessEntities.SanPhamBE> danhsachSANPHAM = new List<BusinessEntities.SanPhamBE>();
 
             try
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    BusinessEntities.tbsanpham sanpham = new BusinessEntities.tbsanpham();
+                    BusinessEntities.SanPhamBE sanpham = new BusinessEntities.SanPhamBE();
 
                     sanpham.masp = (int)row["masp"];
                     sanpham.tensp = row["tensp"].ToString();
@@ -62,8 +62,13 @@ namespace DataAccessLayer
         {
            
                 DataSet ds = new DataSet();
+<<<<<<< .mine
+                //daMT = new OleDbDataAdapter("select * from user", sqlCon);
+                //daMT.Fill(ds, "demo");
+=======
                 daMT = new SqlDataAdapter("select * from user", sqlCon);
                 daMT.Fill(ds, "demo");
+>>>>>>> .r32
 
                 return ds;
           
