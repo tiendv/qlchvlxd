@@ -75,21 +75,25 @@ namespace DataAccessLayer
             BaseDao.OpenConnection();
 
             SqlCommand com = new SqlCommand(sql, BaseDao.sqlCon);
-            com.CommandType = commandType;
+            //com.CommandType = commandType;
 
-            for (int i = 0; i < pars.Length; i += 2)
-            {
-                SqlParameter par = new SqlParameter(pars[i].ToString(), pars[i + 1]);
-                com.Parameters.Add(par);
-            }
+            //for (int i = 0; i < pars.Length; i += 2)
+            //{
+            //    SqlParameter par = new SqlParameter(pars[i].ToString(), pars[i + 1]);
+            //    com.Parameters.Add(par);
+            //}
 
+            
+
+            
+            
             SqlDataAdapter dad = new SqlDataAdapter(com);
 
             DataTable dataTable = new DataTable();
             dad.Fill(dataTable);
 
             BaseDao.CloseConnection();
-
+            
             return dataTable;
         }
 
