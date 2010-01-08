@@ -13,30 +13,34 @@ namespace DataAccessLayer
     {
         public List<BusinessEntities.tbCTHD> getCTHoaDon()
         {
-            DataTable dt = BaseDao.ExecuteDataTable("cthoadon", CommandType.TableDirect);
-            List<BusinessEntities.tbCTHD> danhsachCTHD = new List<BusinessEntities.tbCTHD>();
-
-            try
-            {
-                foreach (DataRow row in dt.Rows)
-                {
-                    BusinessEntities.tbCTHD cthd = new BusinessEntities.tbCTHD();
-
-                    cthd.maCTHD = row["macthd"].ToString();
-                    cthd.maHD = row["mahd"].ToString();
-                    cthd.maLoaiSP = (int)row["maloaisp"];
-                    cthd.maSP = (int)row["masp"];
-                    cthd.soLuong =  (int)row["soluong"];
-                    cthd.donGia = (float)row["dongia"];
-
-                    danhsachCTHD.Add(cthd);                    
-                }
-            }
-            catch (Exception e)
+            List<BusinessEntities.tbCTHD> danhSachCTHD = new List<BusinessEntities.tbCTHD>();
+            //DataTable dataTable = BaseDao.ExecuteDataTable("PRO_CTHoaDon", CommandType.StoredProcedure);
+            DataTable dataTable = BaseDao.ExecuteDataTable("SELECT * from cthoadon", CommandType.StoredProcedure);
+            
+            BusinessEntities.tbCTHD cthd = new BusinessEntities.tbCTHD();
+            
+            if (dataTable.Rows.Count == 0)
             {
                 return null;
             }
-            return danhsachCTHD;
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                cthd = new BusinessEntities.tbCTHD();
+                cthd.maCTHD = dataTable.Rows[i]["macthd"].ToString();
+                cthd.maHD = dataTable.Rows[i]["mahd"].ToString();
+                
+                cthd.maSP = (int)dataTable.Rows[i]["masp"];
+                cthd.soLuong = (int)dataTable.Rows[i]["soluong"];
+               
+
+
+                danhSachCTHD.Add(cthd);
+            }
+
+            return danhSachCTHD;
         }
+
+        
     }
 }
