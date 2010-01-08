@@ -34,7 +34,7 @@ namespace BusinessLogicLayer
 
             StringBuilder myQuery = new StringBuilder("SELECT * FROM NHANVIEN");
 
-            dt = SQLHelp.excuseQuery(myQuery.ToString());
+            dt = SQLHelp.executeQuery(myQuery.ToString());
 
             foreach (DataRow row in dt.Rows)
             {
@@ -44,10 +44,10 @@ namespace BusinessLogicLayer
                 nv.MatKhau = row["MATKHAU"].ToString();
                 nv.GioiTinh = row["GIOITINH"].ToString();
                 nv.NgaySinh = row["NGAYSINH"].ToString();
-                nv.SDT = row["SDT"].ToString();
+                nv.SDT = row["SODIENTHOAI"].ToString();
                 nv.NgayDiLam = row["NGAYBATDAU"].ToString();
                 nv.QueQuan = row["QUEQUAN"].ToString();
-                nv.LoaiNV = row["LOAINV"].ToString();
+                nv.LoaiNV = row["MALOAINV"].ToString();
 
                 listNhanVien.Add(nv);
             }
@@ -66,7 +66,7 @@ namespace BusinessLogicLayer
             string query = "SELECT DISTINCT QUEQUAN FROM NHANVIEN";
             DataTable dt = new DataTable();
 
-            dt = SQLHelp.excuseQuery(query);
+            dt = SQLHelp.executeQuery(query);
 
             foreach (DataRow row in dt.Rows)
             {
@@ -88,7 +88,7 @@ namespace BusinessLogicLayer
             DataTable dt = new DataTable();
             string myQuery = "SELECT * FROM NHANVIEN WHERE LOAINV = N'" + kindOfEmployee + "'";
 
-            dt = SQLHelp.excuseQuery(myQuery);
+            dt = SQLHelp.executeQuery(myQuery);
             //System.Console.Out.WriteLine(myQuery);
             foreach (DataRow row in dt.Rows)
             {
@@ -120,7 +120,7 @@ namespace BusinessLogicLayer
             DataTable dt = new DataTable();
             string myQuery = "SELECT * FROM NHANVIEN WHERE HOTEN = N'" + nameOfEmployee + "'";
 
-            dt = SQLHelp.excuseQuery(myQuery);
+            dt = SQLHelp.executeQuery(myQuery);
             //System.Console.Out.WriteLine(myQuery);
             foreach (DataRow row in dt.Rows)
             {
@@ -149,7 +149,7 @@ namespace BusinessLogicLayer
         public void insertAEmployee(NhanVienBE nhanvien)
         { 
             string query = "INSERT INTO NHANVIEN VALUES ('"+ nhanvien.MaNV +"', N'"+ nhanvien.HoTenNV +"','"+ nhanvien.MatKhau +"',N'"+ nhanvien.GioiTinh+"', '"+ nhanvien.NgaySinh +"', '"+ nhanvien.SDT +"','"+ nhanvien.NgayDiLam +"', N'"+ nhanvien.QueQuan +"', N'"+ nhanvien.LoaiNV +"') ";
-            SQLHelp.execuseNonQuery(query);
+            SQLHelp.executeNonQuery(query);
         }
         /*
          * Xoa nhan vien
@@ -160,7 +160,7 @@ namespace BusinessLogicLayer
         public void deleteAEmployee(string manv)
         {
             string query = "DELETE FROM NHANVIEN WHERE MANV = '"+ manv +"'";
-            SQLHelp.execuseNonQuery(query);
+            SQLHelp.executeNonQuery(query);
         }
         /*
          * Sửa thông tin nhân viên.
@@ -180,7 +180,7 @@ namespace BusinessLogicLayer
                                         "SDT = '" + nhanvien.SDT + "'	" +
                                 "WHERE MANV = '"+ nhanvien.MaNV +"'";
             System.Console.Out.WriteLine(query);
-            SQLHelp.execuseNonQuery(query);
+            SQLHelp.executeNonQuery(query);
         }
     }
 }
