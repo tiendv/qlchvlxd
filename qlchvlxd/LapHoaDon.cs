@@ -11,7 +11,7 @@ namespace qlchvlxd
 {
     public partial class LapHoaDon : Form
     {
-        tbCTHDServices mtbCTHD;
+        
         public LapHoaDon()
         {
             InitializeComponent();            
@@ -25,6 +25,7 @@ namespace qlchvlxd
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            MessageBox.Show("Nhập mã khách hàng thân thiết vào ô kế bên!");
             if (maKHTT.Enabled == false)
                 maKHTT.Enabled = true;
             else
@@ -52,7 +53,8 @@ namespace qlchvlxd
             list = BusinessLogicLayer.tbCTHDServices.getDanhSachCTHD();
 
             ListViewItem lvi;
-
+            if(list == null)
+                MessageBox.Show("nulll");
             for (int i = 0; i < list.Count; i++)
             {
                 lvi = new ListViewItem(list[i].maCTHD.ToString());
@@ -69,7 +71,7 @@ namespace qlchvlxd
             danhsachCTHD = BusinessLogicLayer.tbCTHDServices.getDanhSachCTHD();
             for (int i = 0; i < danhsachCTHD.Count; i++)
             {
-                comboBox_LoaiSP.Items.Add(danhsachCTHD[i].maCTHD);
+                comboBox_LoaiSP.Items.Add(danhsachCTHD[i].maSP);
             }
         }
 
