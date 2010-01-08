@@ -50,6 +50,7 @@
     <Compile Include="CTHoaDonBLL.cs" />
     <Compile Include="SanPhamBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThongSoTinhLuongBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">

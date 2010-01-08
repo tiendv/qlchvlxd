@@ -12,7 +12,7 @@ namespace DataAccessLayer
     public class DataResources
     {
         //Data Source=Cuong-PC;Initial Catalog=QLCHVLXD;Integrated Security=True
-        public const string NAME_SERVER = "Cuong-PC";
+        public const string NAME_SERVER = "(local)";
         public const string NAME_DATEBASE = "QLCHVLXD";         
     }
 }
