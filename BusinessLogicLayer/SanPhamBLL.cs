@@ -17,7 +17,7 @@ namespace BusinessLogicLayer
         public static List<BusinessEntities.SanPhamBE> getDanhSachSanPham()
         {
             List<BusinessEntities.SanPhamBE> list = new List<BusinessEntities.SanPhamBE>();
-            DataAccessLayer.tbsanphamDao access = new tbsanphamDao();
+            DataAccessLayer.SanPhamDAL access = new SanPhamDAL();
 
             //list = access.getSanPham();
 
