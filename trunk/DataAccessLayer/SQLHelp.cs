@@ -33,7 +33,7 @@ namespace DataAccessLayer
 
             SqlConnection connection = new SqlConnection(connectionString);
 
-            MessageBox.Show(connectionString);
+            //MessageBox.Show(connectionString);
             connection.Open();
 
             SqlCommand command = new SqlCommand(query, connection);
