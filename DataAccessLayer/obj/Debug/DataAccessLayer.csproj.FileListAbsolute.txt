@@ -5,3 +5,17 @@ E:\HK VII\OOD\qlchvlxd\DataAccessLayer\bin\Debug\BusinessEntities.pdb
 E:\HK VII\OOD\qlchvlxd\DataAccessLayer\obj\Debug\ResolveAssemblyReference.cache
 E:\HK VII\OOD\qlchvlxd\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 E:\HK VII\OOD\qlchvlxd\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\DataAccessLayer\bin\Debug\BusinessEntities.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\DataAccessLayer\bin\Debug\BusinessEntities.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\DataAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\DataAccessLayer\bin\Debug\BusinessEntities.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\DataAccessLayer\bin\Debug\BusinessEntities.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\DataAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

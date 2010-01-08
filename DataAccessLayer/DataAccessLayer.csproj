@@ -47,8 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDao.cs" />
+    <Compile Include="DataResources.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLHelp.cs" />
+    <Compile Include="CTHoaDonDAL.cs" />
+    <Compile Include="LoaiSPDAL.cs" />
     <Compile Include="tbsanphamDao.cs" />
   </ItemGroup>
   <ItemGroup>

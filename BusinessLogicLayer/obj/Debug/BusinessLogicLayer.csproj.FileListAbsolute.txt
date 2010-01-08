@@ -7,3 +7,21 @@ E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessEntities.pdb
 E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\obj\Debug\ResolveAssemblyReference.cache
 E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
 E:\HK VII\OOD\qlchvlxd\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessEntities.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessEntities.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\BusinessLogicLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\BusinessLogicLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessEntities.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\BusinessLogicLayer\bin\Debug\BusinessEntities.pdb

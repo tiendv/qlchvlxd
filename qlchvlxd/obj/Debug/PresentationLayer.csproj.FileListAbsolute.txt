@@ -36,3 +36,79 @@ E:\HK VII\OOD\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.xemdoanhthungay.resources
 E:\HK VII\OOD\qlchvlxd\qlchvlxd\obj\Debug\PresentationLayer.csproj.GenerateResource.Cache
 E:\HK VII\OOD\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.exe
 E:\HK VII\OOD\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.exe
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\bin\Debug\qlchvlxd.exe
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\bin\Debug\qlchvlxd.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\bin\Debug\BusinessEntities.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\bin\Debug\BusinessLogicLayer.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\bin\Debug\DataAccessLayer.dll
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\bin\Debug\BusinessEntities.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\bin\Debug\DataAccessLayer.pdb
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.BangLuongNV.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.baocaodinhki.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.baocaokhachhang.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.baocaokho.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.ChamCongNV.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.Form3.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.BangGiaGH.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.GiaoHang.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.LapHoaDon.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.TraGop.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.manhinhchinh.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.nhapkho.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.QuanlyNV.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.suakhachhang.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.SuaNCC.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\Presentation.SuaNV.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.TamUng.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.themkhachhang.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.themnhacungcap.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.themsanpham.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.Properties.Resources.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.sanpham.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.timkhachhang.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.timkiemNCC.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.Timkiemsanpham.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.xemdoanhthungay.resources
+C:\Users\Cuong\Documents\Visual Studio 2008\Projects\qlchvlxd\qlchvlxd\obj\Debug\PresentationLayer.csproj.GenerateResource.Cache
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.exe
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\bin\Debug\qlchvlxd.exe
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\bin\Debug\qlchvlxd.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\bin\Debug\BusinessEntities.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\bin\Debug\BusinessLogicLayer.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\bin\Debug\DataAccessLayer.dll
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\bin\Debug\BusinessLogicLayer.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\bin\Debug\BusinessEntities.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\bin\Debug\DataAccessLayer.pdb
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\ResolveAssemblyReference.cache
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.BangGiaChietKhau.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.BangLuongNV.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.baocaodinhki.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.baocaokhachhang.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.baocaokho.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.ChamCongNV.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.BangGiaGH.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.GiaoHang.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.LapHoaDon.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.TraGop.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.manhinhchinh.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.nhapkho.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.QuanlyNV.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.suakhachhang.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.SuaNCC.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\Presentation.SuaNV.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.TamUng.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.themkhachhang.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.themnhacungcap.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.themsanpham.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.Properties.Resources.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.sanpham.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.timkhachhang.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.timkiemNCC.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.Timkiemsanpham.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\qlchvlxd.xemdoanhthungay.resources
+D:\HOC TAP\HOC KI 7\OOD\Projects\qlchvlxd\qlchvlxd\obj\Debug\PresentationLayer.csproj.GenerateResource.Cache

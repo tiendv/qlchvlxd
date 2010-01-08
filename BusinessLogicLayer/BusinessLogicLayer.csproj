@@ -45,7 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="tbsanphamServices.cs" />
+    <Compile Include="BangLuongNhanVienBLL.cs" />
+    <Compile Include="NhanVienBLL.cs" />
+    <Compile Include="CTHoaDonBLL.cs" />
+    <Compile Include="SanPhamBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

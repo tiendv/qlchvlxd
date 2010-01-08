@@ -15,7 +15,7 @@ namespace qlchvlxd
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new manhinhchinh());
+            Application.Run(new ManHinhChinhPL());
         }
     }
 }
