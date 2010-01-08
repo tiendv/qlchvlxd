@@ -48,198 +48,207 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BangLuongNV.cs">
+    <Compile Include="BangGiaChietKhauPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BangLuongNV.designer.cs">
-      <DependentUpon>BangLuongNV.cs</DependentUpon>
+    <Compile Include="BangGiaChietKhauPL.Designer.cs">
+      <DependentUpon>BangGiaChietKhauPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="baocaodinhki.cs">
+    <Compile Include="BangLuongNVPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="baocaodinhki.Designer.cs">
-      <DependentUpon>baocaodinhki.cs</DependentUpon>
+    <Compile Include="BangLuongNVPL.designer.cs">
+      <DependentUpon>BangLuongNVPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="baocaokhachhang.cs">
+    <Compile Include="BaoCaoDinhKyPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="baocaokhachhang.Designer.cs">
-      <DependentUpon>baocaokhachhang.cs</DependentUpon>
+    <Compile Include="BaoCaoDinhKyPL.Designer.cs">
+      <DependentUpon>BaoCaoDinhKyPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="baocaokho.cs">
+    <Compile Include="BaoCaoKhachHangPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="baocaokho.Designer.cs">
-      <DependentUpon>baocaokho.cs</DependentUpon>
+    <Compile Include="BaoCaoKhachHangPL.Designer.cs">
+      <DependentUpon>BaoCaoKhachHangPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChamCongNV.cs">
+    <Compile Include="BaoCaoKhoPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChamCongNV.designer.cs">
-      <DependentUpon>ChamCongNV.cs</DependentUpon>
+    <Compile Include="BaoCaoKhoPL.Designer.cs">
+      <DependentUpon>BaoCaoKhoPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="BangGiaGH.cs">
+    <Compile Include="ChamCongNVPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BangGiaGH.Designer.cs">
-      <DependentUpon>BangGiaGH.cs</DependentUpon>
+    <Compile Include="ChamCongNVPL.designer.cs">
+      <DependentUpon>ChamCongNVPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoHang.cs">
+    <Compile Include="BangGiaGHPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoHang.Designer.cs">
-      <DependentUpon>GiaoHang.cs</DependentUpon>
+    <Compile Include="BangGiaGHPL.Designer.cs">
+      <DependentUpon>BangGiaGHPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="LapHoaDon.cs">
+    <Compile Include="GiaoHangPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LapHoaDon.Designer.cs">
-      <DependentUpon>LapHoaDon.cs</DependentUpon>
+    <Compile Include="GiaoHangPL.Designer.cs">
+      <DependentUpon>GiaoHangPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="TraGop.cs">
+    <Compile Include="LapHoaDonPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TraGop.Designer.cs">
-      <DependentUpon>TraGop.cs</DependentUpon>
+    <Compile Include="LapHoaDonPL.Designer.cs">
+      <DependentUpon>LapHoaDonPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="manhinhchinh.cs">
+    <Compile Include="TraGopPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manhinhchinh.Designer.cs">
-      <DependentUpon>manhinhchinh.cs</DependentUpon>
+    <Compile Include="TraGopPL.Designer.cs">
+      <DependentUpon>TraGopPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="nhapkho.cs">
+    <Compile Include="ManHinhChinhPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nhapkho.Designer.cs">
-      <DependentUpon>nhapkho.cs</DependentUpon>
+    <Compile Include="ManHinhChinhPL.Designer.cs">
+      <DependentUpon>ManHinhChinhPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanlyNV.cs">
+    <Compile Include="NhapKhoPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanlyNV.designer.cs">
-      <DependentUpon>QuanlyNV.cs</DependentUpon>
+    <Compile Include="NhapKhoPL.Designer.cs">
+      <DependentUpon>NhapKhoPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="suakhachhang.cs">
+    <Compile Include="QuanlyNVPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="suakhachhang.Designer.cs">
-      <DependentUpon>suakhachhang.cs</DependentUpon>
+    <Compile Include="QuanlyNVPL.designer.cs">
+      <DependentUpon>QuanlyNVPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="SuaNCC.cs">
+    <Compile Include="SuaKhachHangPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SuaNCC.Designer.cs">
-      <DependentUpon>SuaNCC.cs</DependentUpon>
+    <Compile Include="SuaKhachHangPL.Designer.cs">
+      <DependentUpon>SuaKhachHangPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="SuaNV.cs">
+    <Compile Include="SuaNCCPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SuaNV.designer.cs">
-      <DependentUpon>SuaNV.cs</DependentUpon>
+    <Compile Include="SuaNCCPL.Designer.cs">
+      <DependentUpon>SuaNCCPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="TamUng.cs">
+    <Compile Include="SuaNVPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TamUng.designer.cs">
-      <DependentUpon>TamUng.cs</DependentUpon>
+    <Compile Include="SuaNVPL.designer.cs">
+      <DependentUpon>SuaNVPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="themkhachhang.cs">
+    <Compile Include="TamUngPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="themkhachhang.Designer.cs">
-      <DependentUpon>themkhachhang.cs</DependentUpon>
+    <Compile Include="TamUngPL.designer.cs">
+      <DependentUpon>TamUngPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="themnhacungcap.cs">
+    <Compile Include="ThemKhachHangPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="themnhacungcap.Designer.cs">
-      <DependentUpon>themnhacungcap.cs</DependentUpon>
+    <Compile Include="ThemKhachHangPL.Designer.cs">
+      <DependentUpon>ThemKhachHangPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="themsanpham.cs">
+    <Compile Include="ThemNhaCungCapPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="themsanpham.Designer.cs">
-      <DependentUpon>themsanpham.cs</DependentUpon>
+    <Compile Include="ThemNhaCungCapPL.Designer.cs">
+      <DependentUpon>ThemNhaCungCapPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemSanPhamPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemSanPhamPL.Designer.cs">
+      <DependentUpon>ThemSanPhamPL.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BangLuongNV.resx">
-      <DependentUpon>BangLuongNV.cs</DependentUpon>
+    <EmbeddedResource Include="BangGiaChietKhauPL.resx">
+      <DependentUpon>BangGiaChietKhauPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="baocaodinhki.resx">
-      <DependentUpon>baocaodinhki.cs</DependentUpon>
+    <EmbeddedResource Include="BangLuongNVPL.resx">
+      <DependentUpon>BangLuongNVPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="baocaokhachhang.resx">
-      <DependentUpon>baocaokhachhang.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCaoDinhKyPL.resx">
+      <DependentUpon>BaoCaoDinhKyPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="baocaokho.resx">
-      <DependentUpon>baocaokho.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCaoKhachHangPL.resx">
+      <DependentUpon>BaoCaoKhachHangPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChamCongNV.resx">
-      <DependentUpon>ChamCongNV.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCaoKhoPL.resx">
+      <DependentUpon>BaoCaoKhoPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BangGiaGH.resx">
-      <DependentUpon>BangGiaGH.cs</DependentUpon>
+    <EmbeddedResource Include="ChamCongNVPL.resx">
+      <DependentUpon>ChamCongNVPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoHang.resx">
-      <DependentUpon>GiaoHang.cs</DependentUpon>
+    <EmbeddedResource Include="BangGiaGHPL.resx">
+      <DependentUpon>BangGiaGHPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LapHoaDon.resx">
-      <DependentUpon>LapHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="GiaoHangPL.resx">
+      <DependentUpon>GiaoHangPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TraGop.resx">
-      <DependentUpon>TraGop.cs</DependentUpon>
+    <EmbeddedResource Include="LapHoaDonPL.resx">
+      <DependentUpon>LapHoaDonPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manhinhchinh.resx">
-      <DependentUpon>manhinhchinh.cs</DependentUpon>
+    <EmbeddedResource Include="TraGopPL.resx">
+      <DependentUpon>TraGopPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nhapkho.resx">
-      <DependentUpon>nhapkho.cs</DependentUpon>
+    <EmbeddedResource Include="ManHinhChinhPL.resx">
+      <DependentUpon>ManHinhChinhPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanlyNV.resx">
-      <DependentUpon>QuanlyNV.cs</DependentUpon>
+    <EmbeddedResource Include="NhapKhoPL.resx">
+      <DependentUpon>NhapKhoPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="suakhachhang.resx">
-      <DependentUpon>suakhachhang.cs</DependentUpon>
+    <EmbeddedResource Include="QuanlyNVPL.resx">
+      <DependentUpon>QuanlyNVPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SuaNCC.resx">
-      <DependentUpon>SuaNCC.cs</DependentUpon>
+    <EmbeddedResource Include="SuaKhachHangPL.resx">
+      <DependentUpon>SuaKhachHangPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SuaNV.resx">
-      <DependentUpon>SuaNV.cs</DependentUpon>
+    <EmbeddedResource Include="SuaNCCPL.resx">
+      <DependentUpon>SuaNCCPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TamUng.resx">
-      <DependentUpon>TamUng.cs</DependentUpon>
+    <EmbeddedResource Include="SuaNVPL.resx">
+      <DependentUpon>SuaNVPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="themkhachhang.resx">
-      <DependentUpon>themkhachhang.cs</DependentUpon>
+    <EmbeddedResource Include="TamUngPL.resx">
+      <DependentUpon>TamUngPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="themnhacungcap.resx">
-      <DependentUpon>themnhacungcap.cs</DependentUpon>
+    <EmbeddedResource Include="ThemKhachHangPL.resx">
+      <DependentUpon>ThemKhachHangPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="themsanpham.resx">
-      <DependentUpon>themsanpham.cs</DependentUpon>
+    <EmbeddedResource Include="ThemNhaCungCapPL.resx">
+      <DependentUpon>ThemNhaCungCapPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemSanPhamPL.resx">
+      <DependentUpon>ThemSanPhamPL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="sanpham.resx">
-      <DependentUpon>sanpham.cs</DependentUpon>
+    <EmbeddedResource Include="SanPhamPL.resx">
+      <DependentUpon>SanPhamPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="timkhachhang.resx">
-      <DependentUpon>timkhachhang.cs</DependentUpon>
+    <EmbeddedResource Include="TimKhachHangPL.resx">
+      <DependentUpon>TimKhachHangPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="timkiemNCC.resx">
-      <DependentUpon>timkiemNCC.cs</DependentUpon>
+    <EmbeddedResource Include="TimKiemNCCPL.resx">
+      <DependentUpon>TimKiemNCCPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Timkiemsanpham.resx">
-      <DependentUpon>Timkiemsanpham.cs</DependentUpon>
+    <EmbeddedResource Include="TimKiemSanPhamPL.resx">
+      <DependentUpon>TimKiemSanPhamPL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="xemdoanhthungay.resx">
-      <DependentUpon>xemdoanhthungay.cs</DependentUpon>
+    <EmbeddedResource Include="XemDoanhThuNgayPL.resx">
+      <DependentUpon>XemDoanhThuNgayPL.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -255,35 +264,35 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="sanpham.cs">
+    <Compile Include="SanPhamPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sanpham.designer.cs">
-      <DependentUpon>sanpham.cs</DependentUpon>
+    <Compile Include="SanPhamPL.designer.cs">
+      <DependentUpon>SanPhamPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="timkhachhang.cs">
+    <Compile Include="TimKhachHangPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="timkhachhang.Designer.cs">
-      <DependentUpon>timkhachhang.cs</DependentUpon>
+    <Compile Include="TimKhachHangPL.Designer.cs">
+      <DependentUpon>TimKhachHangPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="timkiemNCC.cs">
+    <Compile Include="TimKiemNCCPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="timkiemNCC.Designer.cs">
-      <DependentUpon>timkiemNCC.cs</DependentUpon>
+    <Compile Include="TimKiemNCCPL.Designer.cs">
+      <DependentUpon>TimKiemNCCPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Timkiemsanpham.cs">
+    <Compile Include="TimKiemSanPhamPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Timkiemsanpham.designer.cs">
-      <DependentUpon>Timkiemsanpham.cs</DependentUpon>
+    <Compile Include="TimKiemSanPhamPL.designer.cs">
+      <DependentUpon>TimKiemSanPhamPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="xemdoanhthungay.cs">
+    <Compile Include="XemDoanhThuNgayPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="xemdoanhthungay.Designer.cs">
-      <DependentUpon>xemdoanhthungay.cs</DependentUpon>
+    <Compile Include="XemDoanhThuNgayPL.Designer.cs">
+      <DependentUpon>XemDoanhThuNgayPL.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
