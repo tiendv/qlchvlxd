@@ -17,7 +17,7 @@ namespace BusinessEntities
         public int soluongtoithieu;
         public string mancc="";
         public string thongtin;
-        public string donvitinh;
+        public int donvitinh;
         public int maloaisp ;
 
         /* / constructor
@@ -126,12 +126,12 @@ namespace BusinessEntities
                 this.thongtin = value;
             }
         }
-        public string DONVITINH
+        public int DONVITINH
         {
             get { return this.donvitinh; }
             set
             {
-                if (value == "")
+                if (value ==0)
                     throw new Exception("Đơn vị tính rỗng");
                 this.donvitinh = value;
             }
