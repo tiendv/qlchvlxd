@@ -52,7 +52,7 @@
     <Compile Include="SQLHelp.cs" />
     <Compile Include="CTHoaDonDAL.cs" />
     <Compile Include="LoaiSPDAL.cs" />
-    <Compile Include="tbsanphamDao.cs" />
+    <Compile Include="SanPhamDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
