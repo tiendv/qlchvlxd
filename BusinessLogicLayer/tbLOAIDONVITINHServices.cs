@@ -10,14 +10,14 @@ using System.Data.OleDb;
 
 namespace BusinessLogicLayer
 {
-    public class tbLOAISANPHAMServices
+    public class tbLOAIDONVITINHServices
     {
-        public static List<BusinessEntities.tbLOAISANPHAM> getDanhSachLoaiSanPham()
+        public static List<BusinessEntities.tbLOAIDONVITINH> getDanhSachLoaiDonViTinh()
         {
-            List<BusinessEntities.tbLOAISANPHAM> list = new List<BusinessEntities.tbLOAISANPHAM>();
-            DataAccessLayer.tbLOAISANPHAMDAO access = new tbLOAISANPHAMDAO();
+            List<BusinessEntities.tbLOAIDONVITINH> list = new List<BusinessEntities.tbLOAIDONVITINH>();
+            DataAccessLayer.tbLOAIDONVITINHDAO access = new tbLOAIDONVITINHDAO();
 
-           list = access.getLoaiSanPham();
+            list = access.getLoaiDonViTinh();
             if (list == null)
                 return null;
 
