@@ -126,8 +126,8 @@ namespace qlchvlxd
 
         private void themToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QuanlyNVPL f2 = new QuanlyNVPL();
-            f2.Show();
+            QuanlyNV form2 = new QuanlyNV();
+            form2.Show();
         }
 
         private void tamungToolStripMenuItem_Click(object sender, EventArgs e)
