@@ -85,7 +85,7 @@ namespace DataAccessLayer
 
         public void insertLoaiSP(LoaiSPBE lsp)
         {
-            string query = "INSERT INTO LOAISANPHAM VALUES ('" +lsp.maloaisp + "', N'" + lsp.tenloaisp+ "') ";
+            string query = "INSERT INTO LOAISANPHAM VALUES ('" +lsp.MALOAISP + "', N'" + lsp.TENLOAISP+ "') ";
             SQLHelp.executeNonQuery(query);
         }
        
@@ -106,8 +106,8 @@ namespace DataAccessLayer
         public void updateLoaiSP(LoaiSPBE loaisp)
         {
             string query = "UPDATE LOAISANPHAM " +
-                                "SET MALOAISP =" + loaisp.maloaisp + "'," +
-                                        "TENLOAIAP = N'" + loaisp.tenloaisp + "'," +
+                                "SET MALOAISP =" + loaisp.MALOAISP + "'," +
+                                        "TENLOAIAP = N'" + loaisp.TENLOAISP + "'," +
                                 "WHERE MALOAISP = '" + loaisp.MALOAISP + "'";
             System.Console.Out.WriteLine(query);
             SQLHelp.executeNonQuery(query);
