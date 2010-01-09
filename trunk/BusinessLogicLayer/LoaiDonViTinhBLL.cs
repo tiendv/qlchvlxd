@@ -58,5 +58,20 @@ namespace BusinessLogicLayer
 
             access.insertLoaiDonViTinh(mydvt);
         }
+        public void xoadonvitinhtheoten(BusinessEntities.LoaiDonViTinhBE mydvt)
+        {
+            DataAccessLayer.LoaiDonViTinhDAL access = new DataAccessLayer.LoaiDonViTinhDAL();
+
+            access.deleteLoaiDonViTinh(mydvt);
+ 
+        }
+        public void suadonvitinh(BusinessEntities.LoaiDonViTinhBE mydvt)
+        {
+            DataAccessLayer.LoaiDonViTinhDAL access = new DataAccessLayer.LoaiDonViTinhDAL();
+
+            access.updateLoaiDonViTinh(mydvt);
+
+        }
+
     }
 }
