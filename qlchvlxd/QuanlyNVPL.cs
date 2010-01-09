@@ -121,7 +121,7 @@ namespace qlchvlxd
         {
 
         }
-
+        
         private void listView1_Click(object sender, EventArgs e)
         {
             textBox2.Text = listView1.SelectedItems[0].SubItems[1].Text;
@@ -134,7 +134,7 @@ namespace qlchvlxd
             textBox11.Text = listView1.SelectedItems[0].SubItems[8].Text;
             comboBox3.Text = listView1.SelectedItems[0].SubItems[9].Text;
         }
-
+         
         private void button4_Click_1(object sender, EventArgs e)
         {
             textBox2.Text = "0" + (maNV + 1).ToString();
@@ -308,6 +308,8 @@ namespace qlchvlxd
             maskedTextBox2.Clear();
             textBox11.Clear();
         }
+
+       
 
        
     }

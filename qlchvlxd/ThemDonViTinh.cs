@@ -93,6 +93,41 @@ namespace qlchvlxd
             }
         }
 
+        private void listView1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            textBox2.Text = listView1.SelectedItems[0].SubItems[2].Text;
+        }
+
+
+        // Xóa một đơn vị tính 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị tính " + textBox2.Text + " hay không ?", "Thông Báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                LoaiDonViTinhBE ldvt = new LoaiDonViTinhBE();
+                ldvt.MALOAIDONVITINH = int.Parse(textBox1.Text);
+                loaidonvitinhBLL.xoadonvitinhtheoten(ldvt);
+                MessageBox.Show("Đơn Vị Tính Đã Được Xóa");
+                hienthi();
+               textBox1.Clear();
+                textBox2.Clear();
+   
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoaiDonViTinhBE ldvt = new LoaiDonViTinhBE();
+            ldvt.MALOAIDONVITINH = int.Parse(textBox1.Text);
+            loaidonvitinhBLL.suadonvitinh(ldvt);
+            MessageBox.Show("Đơn Vị Tính Đã Được cập nhật !");
+            hienthi();
+            textBox1.Clear();
+            textBox2.Clear();
+
+        }
+
        
 
       
