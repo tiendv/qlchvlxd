@@ -8,13 +8,26 @@ using System.Text;
 using System.Windows.Forms;
 using BusinessEntities;
 using BusinessLogicLayer;
+/**-----------------------------------------------------------
+* Program : QLCHVLXD
+* Written by : tiendv
+* Email : tiendv.vn@gmail.com
+•	Created date: 07/01/2010 
+* Modified by:
+•	Modified date:
+•	Version: 1.0	
+•	Description: 
+----------------------------------------------------------*/
 
 namespace qlchvlxd
 {
     public partial class ThemDonViTinh : Form
     {
+        // thêm một đơn vị tính vào databse 
+
         private BusinessLogicLayer.LoaiDonViTinhBLL loaidonvitinhBLL = new BusinessLogicLayer.LoaiDonViTinhBLL();
   
+        // lấy danh sách đơn vị tính trong bảng 
         List<BusinessEntities.LoaiDonViTinhBE> listLoaiDonViTinh = new List<BusinessEntities.LoaiDonViTinhBE>();
         public BusinessLogicLayer.LoaiDonViTinhBLL loaidonvitinh = new BusinessLogicLayer.LoaiDonViTinhBLL();
       
