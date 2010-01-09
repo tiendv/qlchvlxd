@@ -68,6 +68,12 @@ namespace qlchvlxd
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ThemDonViTinh fm = new ThemDonViTinh();
+            fm.Show();
+        }
+
        
 
       
