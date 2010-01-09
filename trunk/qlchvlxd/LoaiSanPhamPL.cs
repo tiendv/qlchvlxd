@@ -90,6 +90,28 @@ namespace qlchvlxd
                 
             }
         }
+
+        // Hien thi chi tiet ve Loai San Pham Khi bam vao list views .
+        private void listView1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            textBox2.Text = listView1.SelectedItems[0].SubItems[2].Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa loại sản phẩm " + textBox2.Text + " hay không?", "Thông Báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                LoaiSPBE lsp = new LoaiSPBE();
+                lsp.MALOAISP = int.Parse(textBox1.Text);
+                loaispBLL.xoaloaisptheomaloai(lsp);
+                MessageBox.Show("Loại Sản Phẩm Được Xóa");
+                hienthi();
+                textBox1.Clear();
+                textBox2.Clear();
+
+            }
+        }
         
     }
 
