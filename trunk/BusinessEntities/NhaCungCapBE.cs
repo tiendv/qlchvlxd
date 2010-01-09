@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BusinessEntities
 {
-    class NhaCungCapBE
+    public class NhaCungCapBE
     {
         public string mancc;
         public string tenncc;
