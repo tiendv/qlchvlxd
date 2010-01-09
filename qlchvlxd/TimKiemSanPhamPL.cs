@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BusinessEntities;
 using BusinessLogicLayer;
-using DataAccessLayer;
+
 
 
 namespace qlchvlxd
