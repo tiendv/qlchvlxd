@@ -91,8 +91,7 @@ namespace qlchvlxd
 
         private void capnhatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BangGiaGHPL f2 = new BangGiaGHPL();
-            f2.Show();
+           
         }
 
         private void giaohangToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,6 +132,18 @@ namespace qlchvlxd
         private void tamungToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TamUngPL f2 = new TamUngPL();
+            f2.Show();
+        }
+
+        private void bảngChiếtKhấuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BangGiaChietKhauPL f2 = new BangGiaChietKhauPL();
+            f2.Show();
+        }
+
+        private void bảngGiáGiaoHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BangGiaGHPL f2 = new BangGiaGHPL();
             f2.Show();
         }
     }
