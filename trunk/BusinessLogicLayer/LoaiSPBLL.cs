@@ -25,6 +25,29 @@ namespace BusinessLogicLayer
 
             return list;
         }
+        // Thêm một loại sản phẩm vào hệ thống
+
+        public void themdloaisanpham(BusinessEntities.LoaiSPBE lsp)
+        {
+            DataAccessLayer.LoaiSPDAL access = new DataAccessLayer.LoaiSPDAL();
+
+            access.insertLoaiSP(lsp);
+        }
+        // Lấy danh sách các tên loại sản phẩm từ bảng sản phẩm
+
+        public static List<BusinessEntities.LoaiSPBE> getListTenLoaiSanPham()
+        {
+            List<BusinessEntities.LoaiSPBE> listTenLoaiSanPham = new List<BusinessEntities.LoaiSPBE>();
+            DataAccessLayer.LoaiSPDAL accessTenLoaiSanPham = new DataAccessLayer.LoaiSPDAL();
+
+            listTenLoaiSanPham = accessTenLoaiSanPham.getTenLoaiSanPham();
+
+            if (listTenLoaiSanPham == null)
+                return null;
+
+            return listTenLoaiSanPham;
+        }
+
        
 
 

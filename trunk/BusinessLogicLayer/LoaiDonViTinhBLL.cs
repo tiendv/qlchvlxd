@@ -37,6 +37,8 @@ namespace BusinessLogicLayer
             return list;
         }
 
+        // Lấy danh sách tên các loại đơn vị tính
+
         public static List<BusinessEntities.LoaiDonViTinhBE> getListTenLoaiDonViTinh()
         {
             List<BusinessEntities.LoaiDonViTinhBE> listTenLoaiDonViTinh = new List<BusinessEntities.LoaiDonViTinhBE>();
