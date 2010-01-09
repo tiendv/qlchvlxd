@@ -8,11 +8,16 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using BusinessEntities;
 
-/*
-   * Quan ly tat ca nhung thao tac lien quan den SanPham voi DB.
-   * Author : tiendv
-   * Create : Jan 8 2010 * 
-   */
+/**-----------------------------------------------------------
+* Program : QLCHVLXD
+* Written by : tiendv
+* Email : tiendv.vn@gmail.com
+•	Created date: 07/01/2010 
+* Modified by:
+•	Modified date:
+•	Version: 1.0	
+•	Description: 
+----------------------------------------------------------*/
 
 namespace DataAccessLayer
 {
