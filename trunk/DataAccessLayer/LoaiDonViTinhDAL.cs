@@ -6,13 +6,16 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using BusinessEntities;
-
-/*
-   * Quan ly tat ca nhung thao tac lien quan den loai don vi tinh  voi DB.
-   * Author : tiendv
-   * Create : Jan 8 2010 * 
-   */
-
+/**-----------------------------------------------------------
+* Program : QLCHVLXD
+* Written by : tiendv
+* Email : tiendv.vn@gmail.com
+•	Created date: 07/01/2010 
+* Modified by:
+•	Modified date:
+•	Version: 1.0	
+•	Description: 
+----------------------------------------------------------*/
 namespace DataAccessLayer
 {
     public class LoaiDonViTinhDAL
@@ -80,7 +83,7 @@ namespace DataAccessLayer
         }
 
         // Thêm một loại đơn vị tính
-        BusinessEntities.LoaiDonViTinhBE ldvt = new BusinessEntities.LoaiDonViTinhBE();
+       BusinessEntities.LoaiDonViTinhBE ldvt = new BusinessEntities.LoaiDonViTinhBE();
 
         public void insertLoaiDonViTinh( BusinessEntities.LoaiDonViTinhBE ldvt )
         {

@@ -6,13 +6,16 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using BusinessEntities;
-/*
-  * LoaiSPDAL
-  * 
-  * Author : tiendv
-  * Date : Jan 08 2010
-  */
-
+/**-----------------------------------------------------------
+* Program : QLCHVLXD
+* Written by : tiendv
+* Email : tiendv.vn@gmail.com
+•	Created date: 07/01/2010 
+* Modified by:
+•	Modified date:
+•	Version: 1.0	
+•	Description: 
+----------------------------------------------------------*/
 namespace DataAccessLayer
 {
     public class LoaiSPDAL
