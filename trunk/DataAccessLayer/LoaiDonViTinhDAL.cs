@@ -92,11 +92,11 @@ namespace DataAccessLayer
 
         }
 
-        // Xóa một loại đơn vị tính 
+        // Xóa một loại đơn vị tính tho mã lọa đơn vị tính 
 
-        public void deleteLoaiDonViTinh(int maloaidonvitinh)
+        public void deleteLoaiDonViTinh(BusinessEntities.LoaiDonViTinhBE ldvt)
         {
-            string query = "DELETE FROM LOAIDONVITINH WHERE MALOAIDONVITINH = '" + maloaidonvitinh + "'";
+            string query = "DELETE FROM LOAIDONVITINH WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
             SQLHelp.executeNonQuery(query);
         }
         /*
@@ -106,11 +106,11 @@ namespace DataAccessLayer
          */
         public void updateLoaiDonViTinh(BusinessEntities.LoaiDonViTinhBE ldvt)
         {
-            string query = "UPDATE LOAIDONVITINH " +
-                                "SET MALOAIDONVITINH =" + ldvt.MALOAIDONVITINH + "'," +
-                                        "TENDONVITINH = N'" + ldvt.TENDONVITINH + "'," +
-                                "WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
-            System.Console.Out.WriteLine(query);
+            string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] SET [tendonvitinh] = N'" + ldvt.TENDONVITINH + "' WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
+            //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] " +
+            //                    "SET TENDONVITINH = N'" + ldvt.TENDONVITINH + "'," +
+            //                    "WHERE [MALOAIDONVITINH] = '" + ldvt.MALOAIDONVITINH + "'";
+            //System.Console.Out.WriteLine(query);
             SQLHelp.executeNonQuery(query);
         }
 
