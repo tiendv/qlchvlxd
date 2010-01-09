@@ -35,6 +35,7 @@ namespace BusinessEntities
                 this.tenloaisp = value;
             }
         }
+       
 
     }
 }
