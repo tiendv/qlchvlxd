@@ -32,7 +32,8 @@ namespace qlchvlxd
         BusinessEntities.SanPhamBE sanPham = new BusinessEntities.SanPhamBE();
 
         //lay danh sach ten cac loai san pham tu bang loai san pham
-        List<BusinessEntities.LoaiSanPhamBE> listTenLoaiSanPham = new List<BusinessEntities.LoaiSanPhamBE>();
+      
+        List<BusinessEntities.LoaiSPBE> listTenLoaiSanPham = new List<BusinessEntities.LoaiSPBE>();
 
         //lay danh sach khach hang trong co so du lieu
         List<BusinessEntities.KhachHangBE> listKhachHang = new List<BusinessEntities.KhachHangBE>();
@@ -47,7 +48,7 @@ namespace qlchvlxd
             InitializeComponent();
 
             hienThiChiTietHoaDon();
-            listTenLoaiSanPham = BusinessLogicLayer.LoaiSanPhamBLL.getListTenLoaiSanPham();
+            listTenLoaiSanPham = BusinessLogicLayer.LoaiSPBLL.getDanhSachLoaiSP();
             button_Tim.Enabled = false;
 
         }
@@ -86,7 +87,7 @@ namespace qlchvlxd
             
 
             BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
-            if (listCTHD == null)
+            if (listKhachHang == null)
                 khachHang.maKhachHang = "KH001";
             else
                 khachHang.maKhachHang = TaoKhoaChinh.getIdLonNhat(listKhachHang[listKhachHang.Count - 1].maKhachHang.ToString(), 1);

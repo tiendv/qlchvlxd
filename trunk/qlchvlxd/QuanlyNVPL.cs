@@ -308,5 +308,7 @@ namespace qlchvlxd
             maskedTextBox2.Clear();
             textBox11.Clear();
         }
+
+       
     }
 }

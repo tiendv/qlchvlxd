@@ -15,6 +15,7 @@ namespace qlchvlxd
 {
     public partial class TimKiemSanPhamPL : Form
     {
+        List<BusinessEntities.SanPhamBE> listSanPham = new List<BusinessEntities.SanPhamBE>();
 
         public TimKiemSanPhamPL()
         {
@@ -28,8 +29,8 @@ namespace qlchvlxd
         public void hienthi()
         {
             //  BusinessLogicLayer.SanPhamBLL sanphamBLL = new BusinessLogicLayer.SanPhamBLL();
-            List<SanPhamBE> listSanPham = new List<SanPhamBE>();
-            listSanPham = sanphamBLL.getDanhSachSanPham();
+            
+            listSanPham = BusinessLogicLayer.SanPhamBLL.getDanhSachSanPham();
             if (listSanPham == null)
                 MessageBox.Show("Chi tiết sản phẩm rỗng ");
             else
@@ -87,7 +88,7 @@ namespace qlchvlxd
                 // tim kiem theo ten san pham 
                 if (radioButton1.Checked)
                 {
-                    List<SanPhamBE> listSanPham = sanphamBLL.getListTenSanPham(textBox1.Text);
+                    List<SanPhamBE> listSanPham = BusinessLogicLayer.SanPhamBLL.getListTenSanPham(textBox1.Text);
                     int stt = 1;
                     listView1.Items.Clear();
                     foreach (SanPhamBE sp in listSanPham)
