@@ -298,6 +298,10 @@ namespace qlchvlxd
 
         private void button_Tim_Click(object sender, EventArgs e)
         {
+            textBox_TenKH.Text = "";
+            textBox_DiaChi.Text = "";
+            textBox_DienThoai.Text = "";
+
             BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
 
             khachHang = BusinessLogicLayer.KhacHangBLL.getKhachHang(maKHTT.Text);
