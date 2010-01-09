@@ -25,6 +25,8 @@ namespace DataAccessLayer
     {
         public List<BusinessEntities.SanPhamBE> getSanPham()
         {
+           
+
             DataTable dt = SQLHelp.executeQuery("select * from  [QLCHVLXD].[dbo].[sanpham]");
             List<BusinessEntities.SanPhamBE> danhsachSANPHAM = new List<BusinessEntities.SanPhamBE>();
 

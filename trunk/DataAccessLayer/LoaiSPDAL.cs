@@ -22,7 +22,7 @@ namespace DataAccessLayer
     {
         public List<BusinessEntities.LoaiSPBE> getLoaiSanPham()
         {
-            DataTable dt = SQLHelp.executeQuery("select * from loaisanpham");
+            DataTable dt = SQLHelp.executeQuery("SELECT * FROM [QLCHVLXD].[dbo].[loaisanpham]");
             List<BusinessEntities.LoaiSPBE> danhsachLoaiSanPham = new List<BusinessEntities.LoaiSPBE>();
 
             try
@@ -47,23 +47,28 @@ namespace DataAccessLayer
       * Lấy tên những tên sản phẩm từ bảng loại sản phẩm
  
       */
-        public List<string> getAllTenLoaiSanPham()
+        public List<BusinessEntities.LoaiSPBE> getTenLoaiSanPham()
         {
-            List<string> tenloaisp = new List<string>();
-            string query = "SELECT  DISTINCT TENLOAISP FROM LOAISANPHAM";
-            DataTable dt = new DataTable();
+            List<BusinessEntities.LoaiSPBE> listTenLoaiDonViTinh = new List<BusinessEntities.LoaiSPBE>();
 
-            dt = SQLHelp.executeQuery(query);
+            DataTable dt = SQLHelp.executeQuery("SELECT [tenloaisp] FROM [QLCHVLXD].[dbo].[loaisanpham]");
+
+            BusinessEntities.LoaiSPBE loaisanpham;
 
             foreach (DataRow row in dt.Rows)
             {
-                string str = row["TENLOAISP"].ToString();
-                tenloaisp.Add(str);
+                loaisanpham = new BusinessEntities.LoaiSPBE();
+                //MessageBox.Show("okkkk");
+
+                //loaiSanPham.maloaisp = (int)row["maloaisp"];                    
+                loaisanpham.tenloaisp = row["tenloaisp"].ToString();
+
+                listTenLoaiDonViTinh.Add(loaisanpham);
             }
 
-            return tenloaisp;
-        }
 
+            return listTenLoaiDonViTinh;
+        }
 
 
         //Lấy mã những tên sản phẩm từ bảng loại sản phẩm
