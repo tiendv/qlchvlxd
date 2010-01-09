@@ -47,6 +47,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -164,6 +164,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Thêm Đơn Vị TÍnh";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox2
             // 
@@ -239,6 +240,14 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(518, 63);
             this.textBox7.TabIndex = 1;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(83, 28);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(118, 20);
+            this.textBox9.TabIndex = 1;
+            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // textBox5
             // 
@@ -399,14 +408,6 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Số Lượng";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(83, 28);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(118, 20);
-            this.textBox9.TabIndex = 1;
-            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // ThemSanPhamPL
             // 
