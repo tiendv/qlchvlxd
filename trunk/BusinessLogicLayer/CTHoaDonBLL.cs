@@ -51,6 +51,26 @@ namespace BusinessLogicLayer
 
             access.xoaListCTHoaDon();
         }
+
+        public static void themHoaDon(BusinessEntities.CTHoaDonBE hoaDon)
+        {
+            DataAccessLayer.CTHoaDonDAL access = new DataAccessLayer.CTHoaDonDAL();
+
+            access.themHoaDon(hoaDon);
+        }
+
+        public static List<BusinessEntities.CTHoaDonBE> getListHoaDon()
+        {
+            List<BusinessEntities.CTHoaDonBE> list = new List<BusinessEntities.CTHoaDonBE>();
+            DataAccessLayer.CTHoaDonDAL access = new DataAccessLayer.CTHoaDonDAL();
+
+            list = access.getListHoaDon();
+
+            if (list == null)
+                return null;
+
+            return list;
+        }
               
     }
 }
