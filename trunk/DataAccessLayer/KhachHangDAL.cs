@@ -58,7 +58,7 @@ namespace DataAccessLayer
 
         public BusinessEntities.KhachHangBE getKhachHang(String maKhachHang)
         {
-            DataTable dt = SQLHelp.executeQuery("SELECT * FROM KHACHHANG WHERE MAKH = '" + maKhachHang + "'");
+            DataTable dt = SQLHelp.executeQuery("SELECT * FROM KHACHHANG WHERE MAKH = '" + maKhachHang + "' and LOAIKHACHHANG = 1");
 
             BusinessEntities.KhachHangBE khachHang = null;
 
