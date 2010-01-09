@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+/**-----------------------------------------------------------
+* Program : QLCHVLXD
+* Written by : Nguyen Phuoc Cuong 
+* Email : cuongnp.uit.se@gmail.com
+•	Created date: 07/01/2010 
+* Modified by: Nguyen Van B
+•	Modified date:
+•	Version: 1.0	
+•	Description: 
+----------------------------------------------------------*/ 
+
+
 namespace BusinessEntities
 {
     public class CTHoaDonBE
