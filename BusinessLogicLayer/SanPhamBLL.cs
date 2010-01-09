@@ -6,6 +6,16 @@ using DataAccessLayer;
 using BusinessEntities;
 using System.Data;
 using System.Data.OleDb;
+/**-----------------------------------------------------------
+* Program : QLCHVLXD
+* Written by : tiendv
+* Email : tiendv.vn@gmail.com
+•	Created date: 07/01/2010 
+* Modified by:
+•	Modified date:
+•	Version: 1.0	
+•	Description: 
+----------------------------------------------------------*/ 
 
 namespace BusinessLogicLayer
 {
