@@ -22,7 +22,9 @@ namespace BusinessEntities
         public String tenKhachHang = ""; 
         public String diaChi = "";
         public String soDienThoai = "";
-
+        public String CMND = "";
+        public String gioiTinh = "";
+        public int loaiKhachHang = 0;
 
         public String MaKhachHang
         {
@@ -47,5 +49,23 @@ namespace BusinessEntities
             get { return this.soDienThoai; }
             set { this.soDienThoai = value; }
         }
+        public String SCMND
+        {
+            get { return this.CMND; }
+            set { this.CMND = value; }
+        }
+
+        public String GioiTinh
+        {
+            get { return this.gioiTinh; }
+            set { this.gioiTinh = value; }
+        }
+
+        public int LoaiKhachHang
+        {
+            get { return this.loaiKhachHang; }
+            set { this.loaiKhachHang = value; }
+        }
+
     }
 }
