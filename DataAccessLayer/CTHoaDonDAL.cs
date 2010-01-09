@@ -75,6 +75,48 @@ namespace DataAccessLayer
             SQLHelp.executeNonQuery(myAddQuery);
         }
 
-        
+        public List<BusinessEntities.CTHoaDonBE> getListHoaDon()
+        {
+            List<BusinessEntities.CTHoaDonBE> listHoaDon = new List<BusinessEntities.CTHoaDonBE>();
+
+            DataTable dataTable = SQLHelp.executeQuery("SELECT * FROM HOADON");
+
+            BusinessEntities.CTHoaDonBE hoaDon;
+
+            if (dataTable.Rows.Count == 0)
+            {
+                return null;
+
+            }
+
+            //for (int i = 0; i < dataTable.Rows.Count; i++)                
+            foreach (DataRow row in dataTable.Rows)
+            {
+                hoaDon = new BusinessEntities.CTHoaDonBE();
+
+                hoaDon.maHD = row["mahd"].ToString();
+                hoaDon.maNhanVien = (int)row["manv"];
+                hoaDon.maKhachHang = row["makh"].ToString();
+                hoaDon.tongTien = float.Parse(row["tongtien"].ToString());
+                hoaDon.chietKhau = float.Parse(row["chietkhau"].ToString());
+                //hoaDon.tienTra = float.Parse(row["tientra"].ToString());
+                hoaDon.tienNo = float.Parse(row["tienno"].ToString());
+                hoaDon.ngayLapHoaDon = row["ngaylaphd"].ToString();
+                hoaDon.giaoHang = (int)row["giaohang"];
+
+                listHoaDon.Add(hoaDon);
+            }
+
+            return listHoaDon;
+        }
+
+        public void themHoaDon(BusinessEntities.CTHoaDonBE hoaDon)
+        {
+            String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[hoadon]([mahd],[manv],[makh],[tongtien],[chietkhau],[tientra],[tienno] ,[ngaylaphd],[giaohang])"
+                                + " VALUES('" + hoaDon.maHD + "'," + hoaDon.maNhanVien + ",'" + hoaDon.maKhachHang + "'," + hoaDon.tongTien + "," + hoaDon.chietKhau 
+                                + "," + hoaDon.tienTra + "," + hoaDon.tienNo + ",'" + hoaDon.ngayLapHoaDon + "'," + hoaDon.giaoHang + ")";
+
+            SQLHelp.executeNonQuery(myAddQuery);
+        }
     }
 }
