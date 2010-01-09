@@ -33,7 +33,7 @@ namespace BusinessLogicLayer
 
             access.insertLoaiSP(lsp);
         }
-        // Lấy danh sách các tên loại sản phẩm từ bảng sản phẩm
+        // Lấy danh sách các tên loại sản phẩm từ bảng loại sản phẩm
 
         public static List<BusinessEntities.LoaiSPBE> getListTenLoaiSanPham()
         {
@@ -46,6 +46,15 @@ namespace BusinessLogicLayer
                 return null;
 
             return listTenLoaiSanPham;
+        }
+
+        // Xóa một loại sản phẩm 
+        public void xoaloaisptheomaloai(BusinessEntities.LoaiSPBE lsp)
+        {
+            DataAccessLayer.LoaiSPDAL access = new DataAccessLayer.LoaiSPDAL();
+
+            access.deleteLoaiSanPham(lsp);
+
         }
 
        
