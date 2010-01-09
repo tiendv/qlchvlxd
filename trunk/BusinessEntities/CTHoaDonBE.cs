@@ -34,16 +34,6 @@ namespace BusinessEntities
         public String ngayLapHoaDon = "";
         public int giaoHang;
 
-
-        //public tbCTHD(String maCTHD, String maLoaiSP, String maSP, int soLuong, float donGia)
-        //{
-        //    this.maCTHD = maCTHD;
-        //    this.maLoaiSP = maLoaiSP;
-        //    this.maSP = maSP;
-        //    this.soLuong = soLuong;
-        //    this.donGia = donGia;
-        //}
-
         public String MaCTHD
         {
             get { return this.maCTHD; }
