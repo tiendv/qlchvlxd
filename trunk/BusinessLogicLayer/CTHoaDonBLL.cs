@@ -1,9 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Data;
 
+/**-----------------------------------------------------------
+* Program : QLCHVLXD
+* Written by : Nguyen Phuoc Cuong 
+* Email : cuongnp.uit.se@gmail.com
+•	Created date: 07/01/2010 
+* Modified by:
+•	Modified date:
+•	Version: 1.0	
+•	Description: 
+----------------------------------------------------------*/ 
 
 namespace BusinessLogicLayer
 {
@@ -20,7 +29,28 @@ namespace BusinessLogicLayer
                 return null;
 
             return list;
-        }      
+        }
+
+        public static void themChiTietHoaDon(BusinessEntities.CTHoaDonBE myCTHoaDon)
+        {
+            DataAccessLayer.CTHoaDonDAL access = new DataAccessLayer.CTHoaDonDAL();
+
+            access.themCTHoaDon(myCTHoaDon);
+        }
+
+        public static void xoaChiTietHoaDon(String maCTHD)
+        {
+            DataAccessLayer.CTHoaDonDAL access = new DataAccessLayer.CTHoaDonDAL();
+
+            access.xoaCTHoaDon(maCTHD);
+        }
+
+        public static void xoaListHoaDon()
+        {
+            DataAccessLayer.CTHoaDonDAL access = new DataAccessLayer.CTHoaDonDAL();
+
+            access.xoaListCTHoaDon();
+        }
               
     }
 }
