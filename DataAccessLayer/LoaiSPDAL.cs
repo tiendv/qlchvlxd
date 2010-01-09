@@ -98,12 +98,14 @@ namespace DataAccessLayer
         }
        
         // Xóa Loại Sản Phẩm
-        
-        
-      
-        public void deleteLoaiSP(int maloaisp)
+
+
+
+        // Xóa một loại sản phẩm tính theo mã lọai sản phẩm 
+
+        public void deleteLoaiSanPham(BusinessEntities.LoaiSPBE lsp)
         {
-            string query = "DELETE FROM LOAISANPHAM WHERE MALOAISP = '" + maloaisp + "'";
+            string query = "DELETE FROM LOAISANPHAM WHERE MALOAISP = '" + lsp.MALOAISP + "'";
             SQLHelp.executeNonQuery(query);
         }
         /*
@@ -117,7 +119,7 @@ namespace DataAccessLayer
                                 "SET MALOAISP =" + loaisp.MALOAISP + "'," +
                                         "TENLOAIAP = N'" + loaisp.TENLOAISP + "'," +
                                 "WHERE MALOAISP = '" + loaisp.MALOAISP + "'";
-            System.Console.Out.WriteLine(query);
+            
             SQLHelp.executeNonQuery(query);
         }
 
