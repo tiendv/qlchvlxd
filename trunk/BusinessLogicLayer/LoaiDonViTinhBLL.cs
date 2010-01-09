@@ -7,11 +7,23 @@ using BusinessEntities;
 using System.Data;
 using System.Data.OleDb;
 
+/**-----------------------------------------------------------
+* Program : QLCHVLXD
+* Written by : tiendv
+* Email : tiendv.vn@gmail.com
+•	Created date: 07/01/2010 
+* Modified by:
+•	Modified date:
+•	Version: 1.0	
+•	Description: 
+----------------------------------------------------------*/
+
+
 namespace BusinessLogicLayer
 {
     public class LoaiDonViTinhBLL
     {
-        public  List<BusinessEntities.LoaiDonViTinhBE> getDanhSachLoaiDonViTinh()
+        public static  List<BusinessEntities.LoaiDonViTinhBE> getDanhSachLoaiDonViTinh()
         {
             List<BusinessEntities.LoaiDonViTinhBE> list = new List<BusinessEntities.LoaiDonViTinhBE>();
             DataAccessLayer.LoaiDonViTinhDAL access = new DataAccessLayer.LoaiDonViTinhDAL();
@@ -37,6 +49,12 @@ namespace BusinessLogicLayer
 
             return listTenLoaiDonViTinh;
         }
-    
+
+        public  void themdonvitinh(BusinessEntities.LoaiDonViTinhBE mydvt)
+        {
+            DataAccessLayer.LoaiDonViTinhDAL access = new DataAccessLayer.LoaiDonViTinhDAL();
+
+            access.insertLoaiDonViTinh(mydvt);
+        }
     }
 }
