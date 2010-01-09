@@ -167,6 +167,23 @@ namespace DataAccessLayer
 
             return listSanPham;
         }
+        //  Lấy giá sản phẩm From Cường
+        public BusinessEntities.SanPhamBE getGiaSanPham(String tenSanPham)
+        {
+            DataTable dt = SQLHelp.executeQuery("SELECT GIABAN, SANPHAM.MSP, SANPHAM.MALOAISP FROM SANPHAM WHERE TENSP = '" + tenSanPham + "'");
+
+            BusinessEntities.SanPhamBE sanPham = null;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                sanPham = new BusinessEntities.SanPhamBE();
+                sanPham.masp = (int)row["MSP"];
+                sanPham.giaban = float.Parse(row["GIABAN"].ToString());
+                sanPham.maloaisp = (int)row["MALOAISP"];
+            }
+
+            return sanPham;
+        }
 
         // Thêm một sản phẩm
 
@@ -201,6 +218,44 @@ namespace DataAccessLayer
             System.Console.Out.WriteLine(query);
             SQLHelp.executeNonQuery(query);
         }
+        // Lay ten san pham theo Ma san Pham from Cường
+        public BusinessEntities.SanPhamBE getTenSanPham(int maSanPham)
+        {
+            DataTable dt = SQLHelp.executeQuery("SELECT TENSP FROM SANPHAM WHERE MSP = " + maSanPham);
+
+            BusinessEntities.SanPhamBE sanPham = null;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                sanPham = new BusinessEntities.SanPhamBE();
+
+                sanPham.tensp = row["TENSP"].ToString();
+            }
+
+            return sanPham;
+        }
+
+        public List<BusinessEntities.SanPhamBE> getListTenSanPham(String tenLoaiSanPham)
+        {
+            List<BusinessEntities.SanPhamBE> listsSanPham = new List<BusinessEntities.SanPhamBE>();
+
+            DataTable dt = SQLHelp.executeQuery("SELECT TENSP, SANPHAM.MALOAISP FROM SANPHAM, LOAISANPHAM WHERE SANPHAM.MALOAISP = LOAISANPHAM.MALOAISP and LOAISANPHAM.TENLOAISP = '" + tenLoaiSanPham + "'");
+
+            BusinessEntities.SanPhamBE sanPham;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                sanPham = new BusinessEntities.SanPhamBE();
+
+                sanPham.tensp = row["tensp"].ToString();
+                sanPham.maloaisp = (int)row["maloaisp"];
+
+                listsSanPham.Add(sanPham);
+            }
+
+            return listsSanPham;
+        }
+        
 
     }
 }
