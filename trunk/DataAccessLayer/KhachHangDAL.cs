@@ -86,7 +86,7 @@ namespace DataAccessLayer
         {
             List<BusinessEntities.KhachHangBE> listKhachHang = new List<BusinessEntities.KhachHangBE>();
 
-            DataTable dataTable = SQLHelp.executeQuery("SELECT * FROM KHACHHANG");
+            DataTable dataTable = SQLHelp.executeQuery("SELECT * FROM KHACHHANG where LOAIKHACHHANG = 1");
 
             BusinessEntities.KhachHangBE khachHang;
 
