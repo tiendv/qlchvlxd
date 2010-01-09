@@ -20,34 +20,30 @@ namespace DataAccessLayer
     {
         public List<BusinessEntities.SanPhamBE> getSanPham()
         {
-            DataTable dt = SQLHelp.executeQuery("select * from sanpham");
+            DataTable dt = SQLHelp.executeQuery("select * from  [QLCHVLXD].[dbo].[sanpham]");
             List<BusinessEntities.SanPhamBE> danhsachSANPHAM = new List<BusinessEntities.SanPhamBE>();
 
-            try
-            {
+           
                 foreach (DataRow row in dt.Rows)
                 {
                     BusinessEntities.SanPhamBE sanpham = new BusinessEntities.SanPhamBE();
 
-                    sanpham.masp = (int)row["masp"];
+                   // MessageBox.Show("no chua chay vao day");
+                    sanpham.masp = (int)row["msp"];
                     sanpham.tensp = row["tensp"].ToString();
-                    sanpham.gianhap = (float)row["gianhap"];
-                    sanpham.giaban = (float)row["giaban"];
+                    sanpham.gianhap = float.Parse(row["gianhap"].ToString());
+                    sanpham.giaban = float.Parse(row["giaban"].ToString());
                     sanpham.soluong = (int)row["soluong"];
                     sanpham.soluongtoithieu = (int)row["soluongtoithieu"];
                     sanpham.mancc = row["mancc"].ToString();
-                    sanpham.thongtin = row["dongia"].ToString();
+                    sanpham.thongtin = row["thongtin"].ToString();
                     sanpham.donvitinh = (int)row["donvitinh"];
                     sanpham.maloaisp = (int)row["maloaisp"];
 
-
                     danhsachSANPHAM.Add(sanpham);
-                }
+               
             }
-            catch (Exception e)
-            {
-                return null;
-            }
+          
             return danhsachSANPHAM;
         }
 
@@ -98,14 +94,14 @@ namespace DataAccessLayer
             foreach (DataRow row in dt.Rows)
             {
                 SanPhamBE sanpham = new SanPhamBE();
-                sanpham.masp = (int)row["masp"];
+                sanpham.masp = (int)row["msp"];
                 sanpham.tensp = row["tensp"].ToString();
-                sanpham.gianhap = (float)row["gianhap"];
-                sanpham.giaban = (float)row["giaban"];
+                sanpham.gianhap = float.Parse(row["gianhap"].ToString());
+                sanpham.giaban = float.Parse(row["giaban"].ToString());
                 sanpham.soluong = (int)row["soluong"];
                 sanpham.soluongtoithieu = (int)row["soluongtoithieu"];
                 sanpham.mancc = row["mancc"].ToString();
-                sanpham.thongtin = row["dongia"].ToString();
+                sanpham.thongtin = row["thongtin"].ToString();
                 sanpham.donvitinh = (int)row["donvitinh"];
                 sanpham.maloaisp = (int)row["maloaisp"];
 
@@ -126,14 +122,14 @@ namespace DataAccessLayer
             foreach (DataRow row in dt.Rows)
             {
                 SanPhamBE sanpham = new SanPhamBE();
-                sanpham.masp = (int)row["masp"];
+                sanpham.masp = (int)row["msp"];
                 sanpham.tensp = row["tensp"].ToString();
-                sanpham.gianhap = (float)row["gianhap"];
-                sanpham.giaban = (float)row["giaban"];
+                sanpham.gianhap = float.Parse(row["gianhap"].ToString());
+                sanpham.giaban = float.Parse(row["giaban"].ToString());
                 sanpham.soluong = (int)row["soluong"];
                 sanpham.soluongtoithieu = (int)row["soluongtoithieu"];
                 sanpham.mancc = row["mancc"].ToString();
-                sanpham.thongtin = row["dongia"].ToString();
+                sanpham.thongtin = row["thongtin"].ToString();
                 sanpham.donvitinh = (int)row["donvitinh"];
                 sanpham.maloaisp = (int)row["maloaisp"];
 
@@ -155,14 +151,14 @@ namespace DataAccessLayer
             foreach (DataRow row in dt.Rows)
             {
                 SanPhamBE sanpham = new SanPhamBE();
-                sanpham.masp = (int)row["masp"];
+                sanpham.masp = (int)row["msp"];
                 sanpham.tensp = row["tensp"].ToString();
-                sanpham.gianhap = (float)row["gianhap"];
-                sanpham.giaban = (float)row["giaban"];
+                sanpham.gianhap = float.Parse(row["gianhap"].ToString());
+                sanpham.giaban = float.Parse(row["giaban"].ToString());
                 sanpham.soluong = (int)row["soluong"];
                 sanpham.soluongtoithieu = (int)row["soluongtoithieu"];
                 sanpham.mancc = row["mancc"].ToString();
-                sanpham.thongtin = row["dongia"].ToString();
+                sanpham.thongtin = row["thongtin"].ToString();
                 sanpham.donvitinh = (int)row["donvitinh"];
                 sanpham.maloaisp = (int)row["maloaisp"];
 
