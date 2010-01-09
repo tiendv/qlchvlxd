@@ -14,46 +14,23 @@ namespace BusinessEntities
         public string MANCC
         {
             get { return this.mancc; }
-            set
-            {
-
-                if (value == "")
-                    throw new Exception("Mã nhà cung cấp rỗng !");
-                this.mancc = value;
-            }
+            set { this.mancc = value; }
         }
         public string TENNCC
         {
             get { return this.mancc; }
-            set
-            {
-
-                if (value == "")
-                    throw new Exception("Tên nhà cung cấp rỗng !");
-                this.mancc = value;
-            }
+            set { this.tenncc = value; }
+           
         }
         public string DIACHI
         {
             get { return this.mancc; }
-            set
-            {
-
-                if (value == "")
-                    throw new Exception("Địa chỉ nhà cung cấp rỗng !");
-                this.mancc = value;
-            }
+            set { this.diachi = value; }
         }
         public string DIENTHOAI
         {
             get { return this.mancc; }
-            set
-            {
-
-                if (value == "")
-                    throw new Exception("Số điện thoại nhà cung cấp rỗng !");
-                this.mancc = value;
-            }
+            set { this.dienthoai = value; }
         }
     }
 }
