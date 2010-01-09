@@ -34,26 +34,28 @@
             this.groupBox_SanPham = new System.Windows.Forms.GroupBox();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.textBox_DonGia = new System.Windows.Forms.TextBox();
+            this.checkBox_GiaoHang = new System.Windows.Forms.CheckBox();
             this.label_DonGia = new System.Windows.Forms.Label();
             this.textBox_MaCTHD = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown_SoLuong = new System.Windows.Forms.NumericUpDown();
             this.button_Them = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.label_GiaoHang = new System.Windows.Forms.Label();
             this.comboBox_TenSP = new System.Windows.Forms.ComboBox();
             this.label_TenSP = new System.Windows.Forms.Label();
             this.comboBox_LoaiSP = new System.Windows.Forms.ComboBox();
             this.label_LoaiSP = new System.Windows.Forms.Label();
             this.groupBoxTTKH = new System.Windows.Forms.GroupBox();
+            this.label_MaKHTT = new System.Windows.Forms.Label();
+            this.button_Tim = new System.Windows.Forms.Button();
             this.textBox_MaHD = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox_GiaoHang = new System.Windows.Forms.CheckBox();
             this.maKHTT = new System.Windows.Forms.TextBox();
             this.textBox_DienThoai = new System.Windows.Forms.TextBox();
             this.textBox_DiaChi = new System.Windows.Forms.TextBox();
             this.checkBox_KHTT = new System.Windows.Forms.CheckBox();
             this.textBox_TenKH = new System.Windows.Forms.TextBox();
-            this.label_GiaoHang = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,8 +72,6 @@
             this.textBox_SoTienTra = new System.Windows.Forms.TextBox();
             this.label_GTTongTien = new System.Windows.Forms.Label();
             this.label_GTTienNo = new System.Windows.Forms.Label();
-            this.button_Tim = new System.Windows.Forms.Button();
-            this.label_MaKHTT = new System.Windows.Forms.Label();
             this.groupBox_SanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SoLuong)).BeginInit();
             this.groupBoxTTKH.SuspendLayout();
@@ -146,6 +146,16 @@
             this.textBox_DonGia.Name = "textBox_DonGia";
             this.textBox_DonGia.Size = new System.Drawing.Size(159, 20);
             this.textBox_DonGia.TabIndex = 34;
+            this.textBox_DonGia.TextChanged += new System.EventHandler(this.textBox_DonGia_TextChanged);
+            // 
+            // checkBox_GiaoHang
+            // 
+            this.checkBox_GiaoHang.AutoSize = true;
+            this.checkBox_GiaoHang.Location = new System.Drawing.Point(255, 75);
+            this.checkBox_GiaoHang.Name = "checkBox_GiaoHang";
+            this.checkBox_GiaoHang.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_GiaoHang.TabIndex = 29;
+            this.checkBox_GiaoHang.UseVisualStyleBackColor = true;
             // 
             // label_DonGia
             // 
@@ -215,6 +225,15 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "Số lượng:";
             // 
+            // label_GiaoHang
+            // 
+            this.label_GiaoHang.AutoSize = true;
+            this.label_GiaoHang.Location = new System.Drawing.Point(170, 76);
+            this.label_GiaoHang.Name = "label_GiaoHang";
+            this.label_GiaoHang.Size = new System.Drawing.Size(59, 13);
+            this.label_GiaoHang.TabIndex = 20;
+            this.label_GiaoHang.Text = "Giao hàng:";
+            // 
             // comboBox_TenSP
             // 
             this.comboBox_TenSP.FormattingEnabled = true;
@@ -273,6 +292,25 @@
             this.groupBoxTTKH.TabStop = false;
             this.groupBoxTTKH.Text = "Thông tin khách hàng";
             // 
+            // label_MaKHTT
+            // 
+            this.label_MaKHTT.AutoSize = true;
+            this.label_MaKHTT.Location = new System.Drawing.Point(286, 52);
+            this.label_MaKHTT.Name = "label_MaKHTT";
+            this.label_MaKHTT.Size = new System.Drawing.Size(133, 13);
+            this.label_MaKHTT.TabIndex = 37;
+            this.label_MaKHTT.Text = "Mã Khách hàng thân thiết:";
+            // 
+            // button_Tim
+            // 
+            this.button_Tim.Location = new System.Drawing.Point(510, 45);
+            this.button_Tim.Name = "button_Tim";
+            this.button_Tim.Size = new System.Drawing.Size(62, 23);
+            this.button_Tim.TabIndex = 36;
+            this.button_Tim.Text = "Tìm";
+            this.button_Tim.UseVisualStyleBackColor = true;
+            this.button_Tim.Click += new System.EventHandler(this.button_Tim_Click);
+            // 
             // textBox_MaHD
             // 
             this.textBox_MaHD.Enabled = false;
@@ -290,22 +328,13 @@
             this.label4.TabIndex = 30;
             this.label4.Text = "Mã hóa đơn:";
             // 
-            // checkBox_GiaoHang
-            // 
-            this.checkBox_GiaoHang.AutoSize = true;
-            this.checkBox_GiaoHang.Location = new System.Drawing.Point(221, 75);
-            this.checkBox_GiaoHang.Name = "checkBox_GiaoHang";
-            this.checkBox_GiaoHang.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_GiaoHang.TabIndex = 29;
-            this.checkBox_GiaoHang.UseVisualStyleBackColor = true;
-            // 
             // maKHTT
             // 
             this.maKHTT.Enabled = false;
             this.maKHTT.Location = new System.Drawing.Point(418, 49);
             this.maKHTT.Name = "maKHTT";
             this.maKHTT.Size = new System.Drawing.Size(86, 20);
-            this.maKHTT.TabIndex = 28;  
+            this.maKHTT.TabIndex = 28;
             // 
             // textBox_DienThoai
             // 
@@ -337,15 +366,6 @@
             this.textBox_TenKH.Name = "textBox_TenKH";
             this.textBox_TenKH.Size = new System.Drawing.Size(159, 20);
             this.textBox_TenKH.TabIndex = 21;
-            // 
-            // label_GiaoHang
-            // 
-            this.label_GiaoHang.AutoSize = true;
-            this.label_GiaoHang.Location = new System.Drawing.Point(156, 75);
-            this.label_GiaoHang.Name = "label_GiaoHang";
-            this.label_GiaoHang.Size = new System.Drawing.Size(59, 13);
-            this.label_GiaoHang.TabIndex = 20;
-            this.label_GiaoHang.Text = "Giao hàng:";
             // 
             // label3
             // 
@@ -480,25 +500,6 @@
             this.label_GTTienNo.Name = "label_GTTienNo";
             this.label_GTTienNo.Size = new System.Drawing.Size(0, 13);
             this.label_GTTienNo.TabIndex = 36;
-            // 
-            // button_Tim
-            // 
-            this.button_Tim.Location = new System.Drawing.Point(510, 45);
-            this.button_Tim.Name = "button_Tim";
-            this.button_Tim.Size = new System.Drawing.Size(62, 23);
-            this.button_Tim.TabIndex = 36;
-            this.button_Tim.Text = "Tìm";
-            this.button_Tim.UseVisualStyleBackColor = true;
-            this.button_Tim.Click += new System.EventHandler(this.button_Tim_Click);
-            // 
-            // label_MaKHTT
-            // 
-            this.label_MaKHTT.AutoSize = true;
-            this.label_MaKHTT.Location = new System.Drawing.Point(286, 52);
-            this.label_MaKHTT.Name = "label_MaKHTT";
-            this.label_MaKHTT.Size = new System.Drawing.Size(133, 13);
-            this.label_MaKHTT.TabIndex = 37;
-            this.label_MaKHTT.Text = "Mã Khách hàng thân thiết:";
             // 
             // LapHoaDonPL
             // 
