@@ -24,7 +24,16 @@ namespace BusinessEntities
         public int maLoaiSP;
         public int maSP ;
         public int soLuong;
-        public float donGia; 
+        public float donGia;
+        public int maNhanVien;
+        public String maKhachHang = "";
+        public float tongTien;
+        public float chietKhau;
+        public float tienTra;
+        public float tienNo;
+        public String ngayLapHoaDon = "";
+        public int giaoHang;
+
 
         //public tbCTHD(String maCTHD, String maLoaiSP, String maSP, int soLuong, float donGia)
         //{
@@ -99,6 +108,54 @@ namespace BusinessEntities
                     throw new Exception("Số lượng rỗng");
                 this.donGia = value;
             }
+        }
+
+        public int MaNhanVien
+        {
+            get { return this.maNhanVien; }
+            set { this.maNhanVien = value;}
+        }
+
+        public String MaKhachHang
+        {
+            get { return this.maKhachHang; }
+            set { this.maKhachHang = value; }
+        }
+
+        public float TongTien
+        {
+            get { return this.tongTien; }
+            set {this.tongTien = value;}
+        }
+
+        public float ChietKhau
+        {
+            get { return this.chietKhau; }
+            set { this.chietKhau = value; }
+        }
+
+        public float TienTra
+        {
+            get { return this.tienTra; }
+            set { this.tienTra = value; }
+        }
+
+        public float TienNo
+        {
+            get { return this.tienNo; }
+            set { this.tienNo = value; }
+        }
+
+        public String NgayLapHoaDon
+        {
+            get { return this.ngayLapHoaDon; }
+            set { this.ngayLapHoaDon = value; }
+        }
+
+        public int GiaoHang
+        {
+            get { return this.giaoHang; }
+            set { this.giaoHang = value; }
         }
     }
 }
