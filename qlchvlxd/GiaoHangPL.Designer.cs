@@ -48,14 +48,6 @@
             this.labelTenKH = new System.Windows.Forms.Label();
             this.textBox_MaHD = new System.Windows.Forms.TextBox();
             this.label_MaHD = new System.Windows.Forms.Label();
-            this.groupBox_SanPham = new System.Windows.Forms.GroupBox();
-            this.numericUpDown_SoLuong = new System.Windows.Forms.NumericUpDown();
-            this.button_Them = new System.Windows.Forms.Button();
-            this.label_SoLuong = new System.Windows.Forms.Label();
-            this.comboBox_TenSP = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox_LoaiSP = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.listView_GiaoHang = new System.Windows.Forms.ListView();
             this.column_STT = new System.Windows.Forms.ColumnHeader();
             this.column_TenSP = new System.Windows.Forms.ColumnHeader();
@@ -63,6 +55,19 @@
             this.column_SLGiao = new System.Windows.Forms.ColumnHeader();
             this.column_DonGia = new System.Windows.Forms.ColumnHeader();
             this.column_ThanhTien = new System.Windows.Forms.ColumnHeader();
+            this.groupBox_SanPham = new System.Windows.Forms.GroupBox();
+            this.button_Xoa = new System.Windows.Forms.Button();
+            this.textBox_DonGia = new System.Windows.Forms.TextBox();
+            this.label_DonGia = new System.Windows.Forms.Label();
+            this.textBox_MaCTHD = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.numericUpDown_SoLuong = new System.Windows.Forms.NumericUpDown();
+            this.button_Them = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox_TenSP = new System.Windows.Forms.ComboBox();
+            this.label_TenSP = new System.Windows.Forms.Label();
+            this.comboBox_LoaiSP = new System.Windows.Forms.ComboBox();
+            this.label_LoaiSP = new System.Windows.Forms.Label();
             this.groupBox_ThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox_SanPham.SuspendLayout();
@@ -255,86 +260,6 @@
             this.label_MaHD.TabIndex = 30;
             this.label_MaHD.Text = "Mã hóa đơn:";
             // 
-            // groupBox_SanPham
-            // 
-            this.groupBox_SanPham.Controls.Add(this.numericUpDown_SoLuong);
-            this.groupBox_SanPham.Controls.Add(this.button_Them);
-            this.groupBox_SanPham.Controls.Add(this.label_SoLuong);
-            this.groupBox_SanPham.Controls.Add(this.comboBox_TenSP);
-            this.groupBox_SanPham.Controls.Add(this.label6);
-            this.groupBox_SanPham.Controls.Add(this.comboBox_LoaiSP);
-            this.groupBox_SanPham.Controls.Add(this.label5);
-            this.groupBox_SanPham.Location = new System.Drawing.Point(30, 217);
-            this.groupBox_SanPham.Name = "groupBox_SanPham";
-            this.groupBox_SanPham.Size = new System.Drawing.Size(564, 89);
-            this.groupBox_SanPham.TabIndex = 30;
-            this.groupBox_SanPham.TabStop = false;
-            this.groupBox_SanPham.Text = "Sản phẩm";
-            // 
-            // numericUpDown_SoLuong
-            // 
-            this.numericUpDown_SoLuong.Location = new System.Drawing.Point(114, 47);
-            this.numericUpDown_SoLuong.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown_SoLuong.Name = "numericUpDown_SoLuong";
-            this.numericUpDown_SoLuong.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown_SoLuong.TabIndex = 30;
-            // 
-            // button_Them
-            // 
-            this.button_Them.Location = new System.Drawing.Point(459, 47);
-            this.button_Them.Name = "button_Them";
-            this.button_Them.Size = new System.Drawing.Size(50, 23);
-            this.button_Them.TabIndex = 29;
-            this.button_Them.Text = "Thêm";
-            this.button_Them.UseVisualStyleBackColor = true;
-            // 
-            // label_SoLuong
-            // 
-            this.label_SoLuong.AutoSize = true;
-            this.label_SoLuong.Location = new System.Drawing.Point(18, 55);
-            this.label_SoLuong.Name = "label_SoLuong";
-            this.label_SoLuong.Size = new System.Drawing.Size(52, 13);
-            this.label_SoLuong.TabIndex = 27;
-            this.label_SoLuong.Text = "Số lượng:";
-            // 
-            // comboBox_TenSP
-            // 
-            this.comboBox_TenSP.FormattingEnabled = true;
-            this.comboBox_TenSP.Location = new System.Drawing.Point(403, 19);
-            this.comboBox_TenSP.Name = "comboBox_TenSP";
-            this.comboBox_TenSP.Size = new System.Drawing.Size(159, 21);
-            this.comboBox_TenSP.TabIndex = 26;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(298, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 13);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Tên sản phẩm:";
-            // 
-            // comboBox_LoaiSP
-            // 
-            this.comboBox_LoaiSP.FormattingEnabled = true;
-            this.comboBox_LoaiSP.Location = new System.Drawing.Point(114, 21);
-            this.comboBox_LoaiSP.Name = "comboBox_LoaiSP";
-            this.comboBox_LoaiSP.Size = new System.Drawing.Size(159, 21);
-            this.comboBox_LoaiSP.TabIndex = 24;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Loại sản phẩm:";
-            // 
             // listView_GiaoHang
             // 
             this.listView_GiaoHang.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -344,6 +269,8 @@
             this.column_SLGiao,
             this.column_DonGia,
             this.column_ThanhTien});
+            this.listView_GiaoHang.FullRowSelect = true;
+            this.listView_GiaoHang.GridLines = true;
             this.listView_GiaoHang.Location = new System.Drawing.Point(28, 313);
             this.listView_GiaoHang.Name = "listView_GiaoHang";
             this.listView_GiaoHang.Size = new System.Drawing.Size(564, 160);
@@ -354,41 +281,180 @@
             // column_STT
             // 
             this.column_STT.Text = "STT";
+            this.column_STT.Width = 36;
             // 
             // column_TenSP
             // 
             this.column_TenSP.Text = "Tên sản phẩm";
+            this.column_TenSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_TenSP.Width = 148;
             // 
             // column_TongSL
             // 
             this.column_TongSL.Text = "Tổng số lượng";
+            this.column_TongSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_TongSL.Width = 81;
             // 
             // column_SLGiao
             // 
             this.column_SLGiao.Text = "Số lượng giao";
+            this.column_SLGiao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_SLGiao.Width = 79;
             // 
             // column_DonGia
             // 
             this.column_DonGia.Text = "Đơn giá";
+            this.column_DonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_DonGia.Width = 102;
             // 
             // column_ThanhTien
             // 
             this.column_ThanhTien.Text = "Thành tiền";
+            this.column_ThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_ThanhTien.Width = 112;
             // 
-            // GiaoHang
+            // groupBox_SanPham
+            // 
+            this.groupBox_SanPham.Controls.Add(this.button_Xoa);
+            this.groupBox_SanPham.Controls.Add(this.textBox_DonGia);
+            this.groupBox_SanPham.Controls.Add(this.label_DonGia);
+            this.groupBox_SanPham.Controls.Add(this.textBox_MaCTHD);
+            this.groupBox_SanPham.Controls.Add(this.label5);
+            this.groupBox_SanPham.Controls.Add(this.numericUpDown_SoLuong);
+            this.groupBox_SanPham.Controls.Add(this.button_Them);
+            this.groupBox_SanPham.Controls.Add(this.label7);
+            this.groupBox_SanPham.Controls.Add(this.comboBox_TenSP);
+            this.groupBox_SanPham.Controls.Add(this.label_TenSP);
+            this.groupBox_SanPham.Controls.Add(this.comboBox_LoaiSP);
+            this.groupBox_SanPham.Controls.Add(this.label_LoaiSP);
+            this.groupBox_SanPham.Location = new System.Drawing.Point(30, 206);
+            this.groupBox_SanPham.Name = "groupBox_SanPham";
+            this.groupBox_SanPham.Size = new System.Drawing.Size(564, 101);
+            this.groupBox_SanPham.TabIndex = 32;
+            this.groupBox_SanPham.TabStop = false;
+            this.groupBox_SanPham.Text = "Sản phẩm";
+            // 
+            // button_Xoa
+            // 
+            this.button_Xoa.Location = new System.Drawing.Point(423, 10);
+            this.button_Xoa.Name = "button_Xoa";
+            this.button_Xoa.Size = new System.Drawing.Size(100, 23);
+            this.button_Xoa.TabIndex = 35;
+            this.button_Xoa.Text = "Xóa";
+            this.button_Xoa.UseVisualStyleBackColor = true;
+            // 
+            // textBox_DonGia
+            // 
+            this.textBox_DonGia.Enabled = false;
+            this.textBox_DonGia.Location = new System.Drawing.Point(402, 64);
+            this.textBox_DonGia.Name = "textBox_DonGia";
+            this.textBox_DonGia.Size = new System.Drawing.Size(159, 20);
+            this.textBox_DonGia.TabIndex = 34;
+            // 
+            // label_DonGia
+            // 
+            this.label_DonGia.AutoSize = true;
+            this.label_DonGia.Location = new System.Drawing.Point(283, 67);
+            this.label_DonGia.Name = "label_DonGia";
+            this.label_DonGia.Size = new System.Drawing.Size(47, 13);
+            this.label_DonGia.TabIndex = 33;
+            this.label_DonGia.Text = "Đơn giá:";
+            // 
+            // textBox_MaCTHD
+            // 
+            this.textBox_MaCTHD.Enabled = false;
+            this.textBox_MaCTHD.Location = new System.Drawing.Point(99, 13);
+            this.textBox_MaCTHD.Name = "textBox_MaCTHD";
+            this.textBox_MaCTHD.Size = new System.Drawing.Size(159, 20);
+            this.textBox_MaCTHD.TabIndex = 32;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 13);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Mã chi tiết hóa đơn";
+            // 
+            // numericUpDown_SoLuong
+            // 
+            this.numericUpDown_SoLuong.Location = new System.Drawing.Point(99, 64);
+            this.numericUpDown_SoLuong.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown_SoLuong.Name = "numericUpDown_SoLuong";
+            this.numericUpDown_SoLuong.Size = new System.Drawing.Size(39, 20);
+            this.numericUpDown_SoLuong.TabIndex = 30;
+            // 
+            // button_Them
+            // 
+            this.button_Them.Location = new System.Drawing.Point(286, 11);
+            this.button_Them.Name = "button_Them";
+            this.button_Them.Size = new System.Drawing.Size(93, 23);
+            this.button_Them.TabIndex = 29;
+            this.button_Them.Text = "Thêm";
+            this.button_Them.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Số lượng:";
+            // 
+            // comboBox_TenSP
+            // 
+            this.comboBox_TenSP.FormattingEnabled = true;
+            this.comboBox_TenSP.Location = new System.Drawing.Point(402, 38);
+            this.comboBox_TenSP.Name = "comboBox_TenSP";
+            this.comboBox_TenSP.Size = new System.Drawing.Size(159, 21);
+            this.comboBox_TenSP.TabIndex = 26;
+            // 
+            // label_TenSP
+            // 
+            this.label_TenSP.AutoSize = true;
+            this.label_TenSP.Location = new System.Drawing.Point(283, 46);
+            this.label_TenSP.Name = "label_TenSP";
+            this.label_TenSP.Size = new System.Drawing.Size(78, 13);
+            this.label_TenSP.TabIndex = 25;
+            this.label_TenSP.Text = "Tên sản phẩm:";
+            // 
+            // comboBox_LoaiSP
+            // 
+            this.comboBox_LoaiSP.FormattingEnabled = true;
+            this.comboBox_LoaiSP.Location = new System.Drawing.Point(99, 37);
+            this.comboBox_LoaiSP.Name = "comboBox_LoaiSP";
+            this.comboBox_LoaiSP.Size = new System.Drawing.Size(159, 21);
+            this.comboBox_LoaiSP.TabIndex = 24;
+            // 
+            // label_LoaiSP
+            // 
+            this.label_LoaiSP.AutoSize = true;
+            this.label_LoaiSP.Location = new System.Drawing.Point(3, 45);
+            this.label_LoaiSP.Name = "label_LoaiSP";
+            this.label_LoaiSP.Size = new System.Drawing.Size(79, 13);
+            this.label_LoaiSP.TabIndex = 23;
+            this.label_LoaiSP.Text = "Loại sản phẩm:";
+            // 
+            // GiaoHangPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 532);
-            this.Controls.Add(this.listView_GiaoHang);
             this.Controls.Add(this.groupBox_SanPham);
+            this.Controls.Add(this.listView_GiaoHang);
             this.Controls.Add(this.groupBox_ThongTin);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "GiaoHang";
+            this.Name = "GiaoHangPL";
             this.Text = "Giao hàng";
             this.groupBox_ThongTin.ResumeLayout(false);
             this.groupBox_ThongTin.PerformLayout();
@@ -423,14 +489,6 @@
         private System.Windows.Forms.Label labelTenKH;
         private System.Windows.Forms.TextBox textBox_MaHD;
         private System.Windows.Forms.Label label_MaHD;
-        private System.Windows.Forms.GroupBox groupBox_SanPham;
-        private System.Windows.Forms.NumericUpDown numericUpDown_SoLuong;
-        private System.Windows.Forms.Button button_Them;
-        private System.Windows.Forms.Label label_SoLuong;
-        private System.Windows.Forms.ComboBox comboBox_TenSP;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox_LoaiSP;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView listView_GiaoHang;
         private System.Windows.Forms.ColumnHeader column_STT;
         private System.Windows.Forms.ColumnHeader column_TenSP;
@@ -438,5 +496,18 @@
         private System.Windows.Forms.ColumnHeader column_SLGiao;
         private System.Windows.Forms.ColumnHeader column_DonGia;
         private System.Windows.Forms.ColumnHeader column_ThanhTien;
+        private System.Windows.Forms.GroupBox groupBox_SanPham;
+        private System.Windows.Forms.Button button_Xoa;
+        private System.Windows.Forms.TextBox textBox_DonGia;
+        private System.Windows.Forms.Label label_DonGia;
+        private System.Windows.Forms.TextBox textBox_MaCTHD;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numericUpDown_SoLuong;
+        private System.Windows.Forms.Button button_Them;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox_TenSP;
+        private System.Windows.Forms.Label label_TenSP;
+        private System.Windows.Forms.ComboBox comboBox_LoaiSP;
+        private System.Windows.Forms.Label label_LoaiSP;
     }
 }
