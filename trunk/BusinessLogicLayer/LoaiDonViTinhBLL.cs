@@ -14,7 +14,7 @@ namespace BusinessLogicLayer
         public  List<BusinessEntities.LoaiDonViTinhBE> getDanhSachLoaiDonViTinh()
         {
             List<BusinessEntities.LoaiDonViTinhBE> list = new List<BusinessEntities.LoaiDonViTinhBE>();
-            DataAccessLayer.LoaiDonViTinhBE access = new DataAccessLayer.LoaiDonViTinhBE();
+            DataAccessLayer.LoaiDonViTinhDAL access = new DataAccessLayer.LoaiDonViTinhDAL();
 
 
             list = access.getLoaiDonViTinh();
@@ -23,6 +23,20 @@ namespace BusinessLogicLayer
                 return null;
 
             return list;
-        }  
+        }
+
+        public static List<BusinessEntities.LoaiDonViTinhBE> getListTenLoaiDonViTinh()
+        {
+            List<BusinessEntities.LoaiDonViTinhBE> listTenLoaiDonViTinh = new List<BusinessEntities.LoaiDonViTinhBE>();
+            DataAccessLayer.LoaiDonViTinhDAL accessTenLoaiDonViTinh = new DataAccessLayer.LoaiDonViTinhDAL();
+
+            listTenLoaiDonViTinh = accessTenLoaiDonViTinh.getTenLoaiDonViTinh();
+
+            if (listTenLoaiDonViTinh == null)
+                return null;
+
+            return listTenLoaiDonViTinh;
+        }
+    
     }
 }
