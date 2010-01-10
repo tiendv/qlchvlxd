@@ -49,7 +49,27 @@ namespace qlchvlxd
 
         private void button_Xoa_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bạn có chắc là muốn xóa nhà cung cấp này không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            try
+            {
+                bool chk = listView_NCC.SelectedItems[0].Checked;
+                DialogResult dlr = MessageBox.Show("Bạn có chắc là muốn xóa nhà cung cấp này không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlr == DialogResult.Yes)
+                {
+                    BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
+                    getTTNhaCungCap();
+                    int kq = nhacungcapBLL.XoaTTNCC(nhacungcap);
+                    if (kq > 0)
+                    {
+                        MessageBox.Show("Đã xóa thành công.");
+                    }
+                    else
+                        MessageBox.Show("Xóa không thành công.");
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Vui lòng chọn nhà cung cấp muốn xóa.");
+            }
         }
 
         private void button_Tim_Click(object sender, EventArgs e)
