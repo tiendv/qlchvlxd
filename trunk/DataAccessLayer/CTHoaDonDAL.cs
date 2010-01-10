@@ -22,11 +22,11 @@ namespace DataAccessLayer
 {
     public class CTHoaDonDAL
     {
-        public List<BusinessEntities.CTHoaDonBE> getCTHoaDon()
+        public List<BusinessEntities.CTHoaDonBE> getCTHoaDon(String maHoaDon)
         {
             List<BusinessEntities.CTHoaDonBE> danhSachCTHD = new List<BusinessEntities.CTHoaDonBE>();
             
-            DataTable dataTable = SQLHelp.executeQuery("SELECT * FROM CTHOADON");
+            DataTable dataTable = SQLHelp.executeQuery("SELECT * FROM CTHOADON WHERE MAHD ='" + maHoaDon + "'");
             
             BusinessEntities.CTHoaDonBE cthd;
             
@@ -53,10 +53,41 @@ namespace DataAccessLayer
             return danhSachCTHD;
         }
 
+        public List<BusinessEntities.CTHoaDonBE> getCTHoaDon()
+        {
+            List<BusinessEntities.CTHoaDonBE> danhSachCTHD = new List<BusinessEntities.CTHoaDonBE>();
+
+            DataTable dataTable = SQLHelp.executeQuery("SELECT * FROM CTHOADON");
+
+            BusinessEntities.CTHoaDonBE cthd;
+
+            if (dataTable.Rows.Count == 0)
+            {
+                return null;
+
+            }
+
+            //for (int i = 0; i < dataTable.Rows.Count; i++)                
+            foreach (DataRow row in dataTable.Rows)
+            {
+                cthd = new BusinessEntities.CTHoaDonBE();
+
+                cthd.maCTHD = row["macthd"].ToString();
+                cthd.maHD = row["mahd"].ToString();
+                cthd.maSP = (int)row["masp"];
+                cthd.soLuong = (int)row["soluong"];
+                cthd.donGia = float.Parse(row["dongia"].ToString());
+
+                danhSachCTHD.Add(cthd);
+            }
+
+            return danhSachCTHD;
+        }
+
         public void themCTHoaDon(BusinessEntities.CTHoaDonBE myCTHD)
         {
-            String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[cthoadon]([macthd],[masp],[soluong],[dongia],[mahd],[maloaisp])"
-            + " VALUES ( '" + myCTHD.maCTHD + "', '" + myCTHD.maSP + "', " + myCTHD.soLuong + "," + myCTHD.donGia + ",'" + myCTHD.maHD + "'," + myCTHD.maLoaiSP + ")";
+            String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[cthoadon]([macthd],[mahd],[masp],[soluong],[dongia],[maloaisp])"
+            + " VALUES ( '" + myCTHD.maCTHD + "','" + myCTHD.maHD + "', '" + myCTHD.maSP + "', " + myCTHD.soLuong + "," + myCTHD.donGia + "," + myCTHD.maLoaiSP + ")";
 
             SQLHelp.executeNonQuery(myAddQuery);
         }
@@ -116,6 +147,15 @@ namespace DataAccessLayer
                                 + " VALUES('" + hoaDon.maHD + "'," + hoaDon.maNhanVien + ",'" + hoaDon.maKhachHang + "'," + hoaDon.tongTien + "," + hoaDon.chietKhau 
                                 + "," + hoaDon.tienTra + "," + hoaDon.tienNo + ",'" + hoaDon.ngayLapHoaDon + "'," + hoaDon.giaoHang + ")";
 
+            SQLHelp.executeNonQuery(myAddQuery);
+        }
+
+        public void suaHoaDon(BusinessEntities.CTHoaDonBE hoaDon, String maHoaDon)
+        {
+            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[hoadon]"
+                                + " SET [mahd] = '" + hoaDon.maHD + "',[manv] = " + hoaDon.maNhanVien + ",[makh] = '" + hoaDon.maKhachHang + "',[tongtien] = " + hoaDon.tongTien
+                                + ",[chietkhau] = " + hoaDon.chietKhau + ",[tientra] = " + hoaDon.tienTra + ",[tienno] = " + hoaDon.tienNo + ",[ngaylaphd] = '" + hoaDon.ngayLapHoaDon + "',[giaohang] = " + hoaDon.giaoHang
+                                + " WHERE [mahd] = '" + maHoaDon + "'";
             SQLHelp.executeNonQuery(myAddQuery);
         }
     }
