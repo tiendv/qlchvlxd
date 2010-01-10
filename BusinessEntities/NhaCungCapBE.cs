@@ -7,10 +7,10 @@ namespace BusinessEntities
 {
     public class NhaCungCapBE
     {
-        public string mancc;
-        public string tenncc;
-        public string diachi;
-        public string dienthoai;
+        private string mancc;
+        private string tenncc;
+        private string diachi;
+        private string dienthoai;
         public string MANCC
         {
             get { return this.mancc; }
