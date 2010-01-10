@@ -33,6 +33,11 @@ namespace BusinessEntities
         public float tienNo;
         public String ngayLapHoaDon = "";
         public int giaoHang;
+        public String tenKhachHang = "";
+        public String diaChi = "";
+        public String soDienThoai = "";
+        public int loaiKhachHang ;
+
 
         public String MaCTHD
         {
@@ -147,5 +152,30 @@ namespace BusinessEntities
             get { return this.giaoHang; }
             set { this.giaoHang = value; }
         }
+
+        public String TenKhachHang
+        {
+            get { return this.tenKhachHang; }
+            set { this.tenKhachHang = value; }
+        }
+
+        public String DiaChi
+        {
+            get { return this.diaChi; }
+            set { this.diaChi = value; }
+        }
+
+        public String SoDienThoai
+        {
+            get { return this.soDienThoai; }
+            set { this.soDienThoai = value; }
+        }
+
+        public int LoaiKhachHang
+        {
+            get { return this.loaiKhachHang; }
+            set { this.loaiKhachHang = value; }
+        }
+
     }
 }
