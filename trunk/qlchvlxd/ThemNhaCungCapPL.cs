@@ -23,20 +23,30 @@ namespace qlchvlxd
 
         private void button_Them_Click(object sender, EventArgs e)
         {
-            BusinessEntities.NhaCungCapBE nhacungcapBE = new BusinessEntities.NhaCungCapBE();
-            nhacungcapBE.TENNCC = textBox_Ten.Text;
-            nhacungcapBE.DIACHI = textBox_DiaChi.Text;
-            nhacungcapBE.DIENTHOAI = textBox_DienThoai.Text;
-            
-            BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
-            nhacungcapBE.MANCC=TaoKhoaChinh.getIdLonNhat(nhacungcapBLL.getMaNCCMax(),1);
-            int kq = nhacungcapBLL.themTTNCC(nhacungcapBE);
-            if (kq > 0)
+            String ten=textBox_Ten.Text;
+            String diaChi=textBox_DiaChi.Text;
+            String dienThoai=textBox_DienThoai.Text;
+            if (ten == "" || diaChi == "" || dienThoai == "")
             {
-                MessageBox.Show("Đã cập nhật thành công.");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
             }
             else
-                MessageBox.Show("Chưa cập nhật thành công.");
+            {
+                BusinessEntities.NhaCungCapBE nhacungcapBE = new BusinessEntities.NhaCungCapBE();
+                nhacungcapBE.TENNCC = ten;
+                nhacungcapBE.DIACHI = diaChi;
+                nhacungcapBE.DIENTHOAI = dienThoai;
+
+                BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
+                nhacungcapBE.MANCC = TaoKhoaChinh.getIdLonNhat(nhacungcapBLL.getMaNCCMax(), 1);
+                int kq = nhacungcapBLL.themTTNCC(nhacungcapBE);
+                if (kq > 0)
+                {
+                    MessageBox.Show("Đã thêm thành công.");
+                }
+                else
+                    MessageBox.Show("Có lỗi! Thông tin chưa được thêm vào.");
+            }
         }
 
       
