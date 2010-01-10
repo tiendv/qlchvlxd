@@ -121,7 +121,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SuaNCCPL";
             this.Text = "Sửa thông tin nhà cung cấp";
-          
+            this.Load += new System.EventHandler(this.SuaNCCPL_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

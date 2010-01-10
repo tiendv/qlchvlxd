@@ -11,10 +11,10 @@ namespace qlchvlxd
 {
     public partial class SuaNCCPL : Form
     {
-        public string maNCC;
+        public BusinessEntities.NhaCungCapBE nhacungcapBE;
         public SuaNCCPL()
         {
-            maNCC = "";
+            nhacungcapBE = new BusinessEntities.NhaCungCapBE();
             InitializeComponent();
         }
 
@@ -25,14 +25,19 @@ namespace qlchvlxd
 
         private void button_DongY_Click(object sender, EventArgs e)
         {
-            BusinessEntities.NhaCungCapBE nhacungcapBE = new BusinessEntities.NhaCungCapBE();
-            nhacungcapBE.MANCC = this.maNCC;
             nhacungcapBE.TENNCC=textBoxTen.Text;
             nhacungcapBE.DIACHI = textBox_DiaChi.Text;
             nhacungcapBE.DIENTHOAI = textBox_DienThoai.Text;
-            //MessageBox.Show(this.maNCC);
+            
             BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
             nhacungcapBLL.suaTTNCC(nhacungcapBE);
+        }
+
+        private void SuaNCCPL_Load(object sender, EventArgs e)
+        {
+            textBoxTen.Text = nhacungcapBE.TENNCC;
+            textBox_DiaChi.Text= nhacungcapBE.DIACHI;
+            textBox_DienThoai.Text=nhacungcapBE.DIENTHOAI;
         }
 
        
