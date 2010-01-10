@@ -123,5 +123,24 @@ namespace DataAccessLayer
             SQLHelp.executeNonQuery(query);
         }
 
+        // Lấy mã loại sản phẩm  theo tên loại sản phẩm
+
+
+        public BusinessEntities.LoaiSPBE getMaLoaiSanPhamTuTen(string tenlsp)
+        {
+            DataTable dt = SQLHelp.executeQuery("SELECT [maloaisp]FROM [QLCHVLXD].[dbo].[loaisanpham] WHERE [tenloaisp]  = N'" + tenlsp + "'");
+
+            BusinessEntities.LoaiSPBE lsp = null;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                lsp = new BusinessEntities.LoaiSPBE();
+
+                lsp.MALOAISP = int.Parse(row["MALOAISP"].ToString());
+            }
+
+            return lsp;
+        }
+
     }
 }
