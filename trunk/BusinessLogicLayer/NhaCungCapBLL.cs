@@ -16,6 +16,13 @@ namespace BusinessLogicLayer
             int kq=access.SuaTTNhaCungCap(nhacungcap);
             return kq;
         }
+        // Xóa thông tin nhà cung cấp
+        public int XoaTTNCC(BusinessEntities.NhaCungCapBE nhacungcap)
+        {
+            DataAccessLayer.NhaCungCapDAL access = new DataAccessLayer.NhaCungCapDAL();
+            int kq = access.XoaTTNhaCungCap(nhacungcap);
+            return kq;
+        }
          // Tìm thông tin nhà cung cấp theo tên
         public List<BusinessEntities.NhaCungCapBE> getListNCCtheoTen(String tenNCC)
         {
