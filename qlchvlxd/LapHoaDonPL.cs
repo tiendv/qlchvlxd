@@ -111,9 +111,9 @@ namespace qlchvlxd
             
             if (textBox_TenKH.Text != "" && textBox_DiaChi.Text != "" && textBox_DienThoai.Text != "")
             {
+                BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
                 if (maKHTT.Text == "")
-                {
-                    BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
+                {                    
                     if (listKhachHang == null)
                         khachHang.maKhachHang = "KH001";
                     else
@@ -129,7 +129,8 @@ namespace qlchvlxd
                 }
                 else
                 {
-                    ///
+                    khachHang = BusinessLogicLayer.KhacHangBLL.getKhachHang(maKHTT.Text);
+
                 }
                 /*********************************************************
                  * 
@@ -141,7 +142,7 @@ namespace qlchvlxd
                  * *******************************************************/
                 hoaDon.maHD = textBox_MaHD.Text;
                 hoaDon.maNhanVien = 1;
-                hoaDon.maKhachHang = maKHTT.Text;
+                hoaDon.maKhachHang = khachHang.maKhachHang;
                 hoaDon.tongTien = tongTien;
                 hoaDon.tienTra = tienTra;
                 hoaDon.tienNo = tienNo;
@@ -224,7 +225,8 @@ namespace qlchvlxd
 
         private void button_Them_Click(object sender, EventArgs e)
         {
-            
+            button_Them.Enabled = false;
+
             if (listMaCTHD == null)
                 textBox_MaCTHD.Text = "CT001";
             else
@@ -268,6 +270,7 @@ namespace qlchvlxd
 
         private void comboBox_TenSP_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button_Them.Enabled = true;
             textBox_DonGia.Clear();
             sanPham = BusinessLogicLayer.SanPhamBLL.getGiaSanPham(comboBox_TenSP.SelectedItem.ToString());
 
