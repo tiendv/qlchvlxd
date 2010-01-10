@@ -73,5 +73,25 @@ namespace BusinessLogicLayer
 
         }
 
+
+        /// 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Lấy Mã đơn vị tính từ tên đơn vị tính  "></param>
+        /// <returns></returns>
+        public  BusinessEntities.LoaiDonViTinhBE getMadonvitinhtuten(string tendonvitinh)
+        {
+            BusinessEntities.LoaiDonViTinhBE dvt = new BusinessEntities.LoaiDonViTinhBE();
+            DataAccessLayer.LoaiDonViTinhDAL accessDVT = new DataAccessLayer.LoaiDonViTinhDAL();
+
+            dvt = accessDVT.getMaDonViTinhTuTen(tendonvitinh);
+
+            if (dvt == null)
+                return null;
+
+            return dvt;
+        }
+
     }
 }
