@@ -25,6 +25,9 @@ namespace qlchvlxd
         //lay danh sach cac chi tiet hoa don tu bang chi tiet hoa don
         List<BusinessEntities.CTHoaDonBE> listCTHD = new List<BusinessEntities.CTHoaDonBE>();
 
+
+        List<BusinessEntities.CTHoaDonBE> listMaCTHD = new List<BusinessEntities.CTHoaDonBE>();
+
         //lay danh sach ten cac san pham tu bang san pham
         List<BusinessEntities.SanPhamBE> listSanPham = new List<BusinessEntities.SanPhamBE>();
 
@@ -38,7 +41,7 @@ namespace qlchvlxd
         BusinessEntities.CTHoaDonBE hoaDon = new BusinessEntities.CTHoaDonBE();
 
 
-
+        private String maGiaoHang = "";
         private float tongTien = 0;
         private float tienTra = 0;
         private float tienNo = 0;
@@ -57,23 +60,24 @@ namespace qlchvlxd
         {
             listCTHD = BusinessLogicLayer.CTHoaDonBLL.getDanhSachCTHD();
 
+            listMaCTHD = BusinessLogicLayer.CTHoaDonBLL.getDanhSachCTHD(textBox_MaHD.Text);
             //listView_HoaDon.MultiSelect = false;
 
             ListViewItem lvi;
-            if (listCTHD == null)
+            if (listMaCTHD == null)
                 return;
             //   MessageBox.Show("Danh sách rỗng!");
             else
             {
-                for (int i = 0; i < listCTHD.Count; i++)
+                for (int i = 0; i < listMaCTHD.Count; i++)
                 {
                     lvi = new ListViewItem((i + 1).ToString());
-                    sanPham = BusinessLogicLayer.SanPhamBLL.getTenSanPham(listCTHD[i].maSP);
+                    sanPham = BusinessLogicLayer.SanPhamBLL.getTenSanPham(listMaCTHD[i].maSP);
                     lvi.SubItems.Add(sanPham.tensp);
-                    lvi.SubItems.Add(listCTHD[i].soLuong.ToString());
-                    lvi.SubItems.Add(listCTHD[i].donGia.ToString());
-                    lvi.SubItems.Add((listCTHD[i].soLuong * listCTHD[i].donGia).ToString());
-                    lvi.SubItems.Add(listCTHD[i].maCTHD);
+                    lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
+                    lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
+                    lvi.SubItems.Add((listMaCTHD[i].soLuong * listMaCTHD[i].donGia).ToString());
+                    lvi.SubItems.Add(listMaCTHD[i].maCTHD);
                     listView_GiaoHang.Items.Add(lvi);
                 }
             }
@@ -145,6 +149,8 @@ namespace qlchvlxd
 
         private void GiaoHangPL_Load(object sender, EventArgs e)
         {
+            
+
             if (listTenLoaiSanPham == null)
                 MessageBox.Show("Danh sách rỗng!");
             else
@@ -167,10 +173,19 @@ namespace qlchvlxd
         {
             hoaDon = BusinessLogicLayer.GiaoHangBLL.getHoaDon(textBox_MaHD.Text);
             if (hoaDon == null)
+            {
                 MessageBox.Show("Không tìm thấy hóa đơn này ");
+
+                textBox_TenKH.Text = "";
+                textBox_MaKHTT.Text = "";
+                textBox_DiaChi.Text = "";
+                textBox_DienThoai.Text = "";
+
+            }
             else
             {
                 textBox_TenKH.Text = hoaDon.tenKhachHang;
+                MessageBox.Show(hoaDon.loaiKhachHang.ToString());
                 if (hoaDon.loaiKhachHang == 1)
                 {
                     label_KHTT.Text = "KHÁCH HÀNG THÂN THIẾT";
@@ -184,6 +199,19 @@ namespace qlchvlxd
 
 
             }
+
+            listView_GiaoHang.Items.Clear();
+            hienThi();
+        }
+
+        private void listView_GiaoHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox_LoaiSP.Text = "";
+            if (listView_GiaoHang.SelectedItems.Count == 0)
+                return;
+            textBox_MaCTHD.Text = listView_GiaoHang.SelectedItems[0].SubItems[5].Text;
+
+            comboBox_LoaiSP.SelectedText = listView_GiaoHang.SelectedItems[0].SubItems[3].Text;
         }
     }
 }

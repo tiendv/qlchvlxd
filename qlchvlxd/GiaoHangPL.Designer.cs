@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_Huy = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox_ThongTin = new System.Windows.Forms.GroupBox();
+            this.textBox_MaKHTT = new System.Windows.Forms.TextBox();
+            this.button_TimHoaDon = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_SoKm = new System.Windows.Forms.TextBox();
@@ -67,8 +69,8 @@
             this.label_TenSP = new System.Windows.Forms.Label();
             this.comboBox_LoaiSP = new System.Windows.Forms.ComboBox();
             this.label_LoaiSP = new System.Windows.Forms.Label();
-            this.button_TimHoaDon = new System.Windows.Forms.Button();
-            this.textBox_MaKHTT = new System.Windows.Forms.TextBox();
+            this.textBox_DiaChiGiaoHang = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox_ThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox_SanPham.SuspendLayout();
@@ -78,20 +80,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(239, 32);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(224, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 13);
+            this.label1.Size = new System.Drawing.Size(155, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "HÓA ĐƠN GIAO HÀNG";
             // 
-            // button3
+            // button_Huy
             // 
-            this.button3.Location = new System.Drawing.Point(518, 489);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Hủy";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_Huy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button_Huy.Location = new System.Drawing.Point(518, 489);
+            this.button_Huy.Name = "button_Huy";
+            this.button_Huy.Size = new System.Drawing.Size(75, 23);
+            this.button_Huy.TabIndex = 27;
+            this.button_Huy.Text = "Hủy";
+            this.button_Huy.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -122,6 +126,8 @@
             // 
             // groupBox_ThongTin
             // 
+            this.groupBox_ThongTin.Controls.Add(this.textBox_DiaChiGiaoHang);
+            this.groupBox_ThongTin.Controls.Add(this.label2);
             this.groupBox_ThongTin.Controls.Add(this.textBox_MaKHTT);
             this.groupBox_ThongTin.Controls.Add(this.button_TimHoaDon);
             this.groupBox_ThongTin.Controls.Add(this.numericUpDown1);
@@ -139,10 +145,28 @@
             this.groupBox_ThongTin.Controls.Add(this.label_MaHD);
             this.groupBox_ThongTin.Location = new System.Drawing.Point(30, 61);
             this.groupBox_ThongTin.Name = "groupBox_ThongTin";
-            this.groupBox_ThongTin.Size = new System.Drawing.Size(564, 139);
+            this.groupBox_ThongTin.Size = new System.Drawing.Size(564, 171);
             this.groupBox_ThongTin.TabIndex = 29;
             this.groupBox_ThongTin.TabStop = false;
             this.groupBox_ThongTin.Text = "Thông tin";
+            // 
+            // textBox_MaKHTT
+            // 
+            this.textBox_MaKHTT.Enabled = false;
+            this.textBox_MaKHTT.Location = new System.Drawing.Point(452, 46);
+            this.textBox_MaKHTT.Name = "textBox_MaKHTT";
+            this.textBox_MaKHTT.Size = new System.Drawing.Size(109, 20);
+            this.textBox_MaKHTT.TabIndex = 44;
+            // 
+            // button_TimHoaDon
+            // 
+            this.button_TimHoaDon.Location = new System.Drawing.Point(277, 17);
+            this.button_TimHoaDon.Name = "button_TimHoaDon";
+            this.button_TimHoaDon.Size = new System.Drawing.Size(100, 23);
+            this.button_TimHoaDon.TabIndex = 36;
+            this.button_TimHoaDon.Text = "Tìm hóa đơn";
+            this.button_TimHoaDon.UseVisualStyleBackColor = true;
+            this.button_TimHoaDon.Click += new System.EventHandler(this.button_TimHoaDon_Click);
             // 
             // numericUpDown1
             // 
@@ -262,12 +286,13 @@
             this.column_ThanhTien});
             this.listView_GiaoHang.FullRowSelect = true;
             this.listView_GiaoHang.GridLines = true;
-            this.listView_GiaoHang.Location = new System.Drawing.Point(28, 313);
+            this.listView_GiaoHang.Location = new System.Drawing.Point(28, 357);
             this.listView_GiaoHang.Name = "listView_GiaoHang";
-            this.listView_GiaoHang.Size = new System.Drawing.Size(564, 160);
+            this.listView_GiaoHang.Size = new System.Drawing.Size(564, 116);
             this.listView_GiaoHang.TabIndex = 31;
             this.listView_GiaoHang.UseCompatibleStateImageBehavior = false;
             this.listView_GiaoHang.View = System.Windows.Forms.View.Details;
+            this.listView_GiaoHang.SelectedIndexChanged += new System.EventHandler(this.listView_GiaoHang_SelectedIndexChanged);
             // 
             // column_STT
             // 
@@ -318,7 +343,7 @@
             this.groupBox_SanPham.Controls.Add(this.label_TenSP);
             this.groupBox_SanPham.Controls.Add(this.comboBox_LoaiSP);
             this.groupBox_SanPham.Controls.Add(this.label_LoaiSP);
-            this.groupBox_SanPham.Location = new System.Drawing.Point(30, 206);
+            this.groupBox_SanPham.Location = new System.Drawing.Point(30, 238);
             this.groupBox_SanPham.Name = "groupBox_SanPham";
             this.groupBox_SanPham.Size = new System.Drawing.Size(564, 101);
             this.groupBox_SanPham.TabIndex = 32;
@@ -447,34 +472,35 @@
             this.label_LoaiSP.TabIndex = 23;
             this.label_LoaiSP.Text = "Loại sản phẩm:";
             // 
-            // button_TimHoaDon
+            // textBox_DiaChiGiaoHang
             // 
-            this.button_TimHoaDon.Location = new System.Drawing.Point(277, 17);
-            this.button_TimHoaDon.Name = "button_TimHoaDon";
-            this.button_TimHoaDon.Size = new System.Drawing.Size(100, 23);
-            this.button_TimHoaDon.TabIndex = 36;
-            this.button_TimHoaDon.Text = "Tìm hóa đơn";
-            this.button_TimHoaDon.UseVisualStyleBackColor = true;
-            this.button_TimHoaDon.Click += new System.EventHandler(this.button_TimHoaDon_Click);
+            this.textBox_DiaChiGiaoHang.Enabled = false;
+            this.textBox_DiaChiGiaoHang.Location = new System.Drawing.Point(99, 127);
+            this.textBox_DiaChiGiaoHang.Name = "textBox_DiaChiGiaoHang";
+            this.textBox_DiaChiGiaoHang.Size = new System.Drawing.Size(462, 20);
+            this.textBox_DiaChiGiaoHang.TabIndex = 46;
             // 
-            // textBox_MaKHTT
+            // label2
             // 
-            this.textBox_MaKHTT.Enabled = false;
-            this.textBox_MaKHTT.Location = new System.Drawing.Point(452, 46);
-            this.textBox_MaKHTT.Name = "textBox_MaKHTT";
-            this.textBox_MaKHTT.Size = new System.Drawing.Size(109, 20);
-            this.textBox_MaKHTT.TabIndex = 44;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Địa chỉ giao hàng:";
             // 
             // GiaoHangPL
             // 
+            this.AcceptButton = this.button_TimHoaDon;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button_Huy;
             this.ClientSize = new System.Drawing.Size(610, 532);
             this.Controls.Add(this.groupBox_SanPham);
             this.Controls.Add(this.listView_GiaoHang);
             this.Controls.Add(this.groupBox_ThongTin);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button_Huy);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -495,7 +521,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_Huy;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
@@ -535,5 +561,7 @@
         private System.Windows.Forms.Label label_LoaiSP;
         private System.Windows.Forms.Button button_TimHoaDon;
         private System.Windows.Forms.TextBox textBox_MaKHTT;
+        private System.Windows.Forms.TextBox textBox_DiaChiGiaoHang;
+        private System.Windows.Forms.Label label2;
     }
 }
