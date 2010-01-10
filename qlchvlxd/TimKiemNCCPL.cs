@@ -28,11 +28,18 @@ namespace qlchvlxd
        
         private void button_SuaNCC_Click(object sender, EventArgs e)
         {
-            SuaNCCPL f2 = new SuaNCCPL();
-            getTTNhaCungCap();
-            f2.maNCC = nhacungcap.MANCC;
-            f2.MdiParent = this.MdiParent;
-            f2.Show();
+            if (listView_NCC.SelectedItems[0]==null)
+            {
+                MessageBox.Show("Vui lòng chọn nhà cung cấp muốn sửa thông tin.");
+            }
+            else
+            {
+                SuaNCCPL f2 = new SuaNCCPL();
+                getTTNhaCungCap();
+                f2.maNCC = nhacungcap.MANCC;
+                f2.MdiParent = this.MdiParent;
+                f2.Show();
+            }
         }
 
         private void button_Xoa_Click(object sender, EventArgs e)
@@ -42,14 +49,28 @@ namespace qlchvlxd
 
         private void button_Tim_Click(object sender, EventArgs e)
         {
+            listView_NCC.Items.Clear();
+            
             BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
-            if (rb_TimTen.Checked)
+            List<BusinessEntities.NhaCungCapBE> listNhaCungCap= nhacungcapBLL.getListNCCtheoTen(textBox_Tim.Text);
+            for (int i = 0; i < listNhaCungCap.Count; i++)
             {
-                nhacungcapBLL.getListNCCtheoTen(textBox_Tim.Text);
+   
+                            string[] col = new string[5];
+                            
+                            col[0] = i+1+"";
+                            col[1] = listNhaCungCap[i].MANCC;
+                            col[2] = listNhaCungCap[i].TENNCC;
+                            col[3] = listNhaCungCap[i].DIACHI;
+                            col[4] = listNhaCungCap[i].DIENTHOAI;
+                            ListViewItem lvItem = new ListViewItem(col);
+                            listView_NCC.Items.Add(lvItem);
+            }
+            textBox_Tim.Text = "";
             }
         }
 
         
        
     }
-}
+
