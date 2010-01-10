@@ -18,18 +18,18 @@ namespace BusinessEntities
         }
         public string TENNCC
         {
-            get { return this.mancc; }
+            get { return this.tenncc; }
             set { this.tenncc = value; }
            
         }
         public string DIACHI
         {
-            get { return this.mancc; }
+            get { return this.diachi; }
             set { this.diachi = value; }
         }
         public string DIENTHOAI
         {
-            get { return this.mancc; }
+            get { return this.dienthoai; }
             set { this.dienthoai = value; }
         }
     }
