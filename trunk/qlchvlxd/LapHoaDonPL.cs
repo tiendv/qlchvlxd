@@ -127,6 +127,10 @@ namespace qlchvlxd
                     //them 1 khach hang vao table KHACHHANG
                     BusinessLogicLayer.KhacHangBLL.themKhachHang(khachHang);
                 }
+                else
+                {
+                    ///
+                }
                 /*********************************************************
                  * 
                  * 
