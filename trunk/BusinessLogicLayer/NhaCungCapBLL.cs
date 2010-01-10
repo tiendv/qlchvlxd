@@ -60,5 +60,23 @@ namespace BusinessLogicLayer
 
             return listTenNhaCungCap;
         }
+
+         /// <summary>
+         /// 
+         /// </summary>
+         /// <param name="Lấy Mã Nhà Cung Cấp theo tên nhà cung cấp  "></param>
+         /// <returns></returns>
+        public  BusinessEntities.NhaCungCapBE getMaNhaCungCap(string tennhacungcap)
+        {
+            BusinessEntities.NhaCungCapBE ncc = new BusinessEntities.NhaCungCapBE();
+            DataAccessLayer.NhaCungCapDAL accessNCC = new DataAccessLayer.NhaCungCapDAL();
+
+            ncc = accessNCC.getMaNhaCungCapTuTen(tennhacungcap);
+
+            if (ncc == null)
+                return null;
+
+            return ncc;
+        }
     }
 }
