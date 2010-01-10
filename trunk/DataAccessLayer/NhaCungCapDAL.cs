@@ -92,7 +92,7 @@ namespace DataAccessLayer
                 //MessageBox.Show("okkkk");
 
                                
-                nhacungcap.tenncc = row["tenncc"].ToString();
+                nhacungcap.TENNCC = row["tenncc"].ToString();
 
                 listTenNhaCungCap.Add(nhacungcap);
             }
