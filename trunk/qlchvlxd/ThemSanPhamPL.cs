@@ -36,6 +36,9 @@ namespace qlchvlxd
 
         //lay danh sach ten cac loai đơn vị tính từ bang loai đơn vị tính
         List<BusinessEntities.LoaiDonViTinhBE> listTenLoaiDonViTinh = new List<BusinessEntities.LoaiDonViTinhBE>();
+
+        //lay danh sach ten cac loai nhà cung  cấp  tính từ nhà cung cấp
+        List<BusinessEntities.NhaCungCapBE> listTenNhaCungCap = new List<BusinessEntities.NhaCungCapBE>();
        
         
         public ThemSanPhamPL()
@@ -43,8 +46,7 @@ namespace qlchvlxd
             InitializeComponent();
             listTenLoaiDonViTinh = BusinessLogicLayer.LoaiDonViTinhBLL.getListTenLoaiDonViTinh();
             listTenLoaiSanPham = BusinessLogicLayer.LoaiSPBLL.getListTenLoaiSanPham();
-
-
+            listTenNhaCungCap = BusinessLogicLayer.NhaCungCapBLL.getListTenNhaCungCap();
         }
 
         // ham hien thi danh sach san pham trong listview 
@@ -138,6 +140,18 @@ namespace qlchvlxd
                     comboBox3.Items.Add(listTenLoaiSanPham[i].tenloaisp);
                 }
             }
+            // Lấy danh sách tên nhà cung cấp cho combobox
+            if (listTenNhaCungCap == null)
+                MessageBox.Show("Danh sách rỗng!");
+            else
+            {
+                for (int i = 0; i < listTenNhaCungCap.Count; i++)
+                {
+                    
+                    comboBox2.Items.Add(listTenNhaCungCap[i].tenncc);
+                }
+            }
+
 
             // hien thi danh sach san pham trong list vier
 
@@ -179,6 +193,69 @@ namespace qlchvlxd
             LoaiSanPhamPL f = new LoaiSanPhamPL();
                f.Show();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            // Kiem tra hop le cua du lieu nhap 
+            if (textBox4.Text.Length == 0)
+            {
+                MessageBox.Show("Tên sản phẩm không được bỏ trống!");
+                textBox4.Focus();
+            }
+            else
+            {
+                if (textBox5.Text.Length == 0 || textBox6.Text.Length == 0)
+                {
+                    MessageBox.Show("Giá Tiền không được bỏ trống");
+                    textBox5.Focus();
+                }
+                else
+                {
+                    if (Int32.Parse(textBox5.Text.ToString()) > Int32.Parse(textBox6.Text.ToString()))
+                    {
+                        MessageBox.Show("Giá bán phải lớn hơn hoặc bằng giá nhập!");
+                        textBox6.Focus();
+
+                    }
+                    else
+                    {
+                        if (textBox8.Text.Length == 0)
+                        {
+                            MessageBox.Show("Số lượng tối thiểu  không được bỏ trống");
+                            textBox5.Focus();
+
+                        }
+                        else
+                        {
+                            if (comboBox1.SelectedItem == null)
+                            {
+                                MessageBox.Show("Bạn chưa chọn đơn vị tính của sản phẩm !");
+                            }
+                            else
+                            { 
+
+                               // thêm sản phẩm 
+
+
+
+
+
+
+
+
+
+                            }
+                        }
+                       
+ 
+                    }
+
+
+                }
+                
+            }
         }
 
        
