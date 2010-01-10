@@ -99,10 +99,9 @@ namespace DataAccessLayer
             SQLHelp.executeNonQuery(myAddQuery);
         }
 
-        public void xoaListCTHoaDon()
+        public void suaChiTietHoaDon(int soLuong, String maCTHoaDon)
         {
-            String myAddQuery = "DELETE CTHOADON FROM CTHOADON";
-
+            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[cthoadon] SET [soluong] = " + soLuong + " WHERE macthd = '" + maCTHoaDon + "'";
             SQLHelp.executeNonQuery(myAddQuery);
         }
 
