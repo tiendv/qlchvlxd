@@ -40,7 +40,6 @@
             this.label_SoKm = new System.Windows.Forms.Label();
             this.textBox_DienThoai = new System.Windows.Forms.TextBox();
             this.textBox_DiaChi = new System.Windows.Forms.TextBox();
-            this.checkBox_KHTT = new System.Windows.Forms.CheckBox();
             this.textBox_TenKH = new System.Windows.Forms.TextBox();
             this.label_DienThoai = new System.Windows.Forms.Label();
             this.label_DiaChi = new System.Windows.Forms.Label();
@@ -62,12 +61,14 @@
             this.textBox_MaCTHD = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown_SoLuong = new System.Windows.Forms.NumericUpDown();
-            this.button_Them = new System.Windows.Forms.Button();
+            this.button_CapNhap = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox_TenSP = new System.Windows.Forms.ComboBox();
             this.label_TenSP = new System.Windows.Forms.Label();
             this.comboBox_LoaiSP = new System.Windows.Forms.ComboBox();
             this.label_LoaiSP = new System.Windows.Forms.Label();
+            this.button_TimHoaDon = new System.Windows.Forms.Button();
+            this.textBox_MaKHTT = new System.Windows.Forms.TextBox();
             this.groupBox_ThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox_SanPham.SuspendLayout();
@@ -121,13 +122,14 @@
             // 
             // groupBox_ThongTin
             // 
+            this.groupBox_ThongTin.Controls.Add(this.textBox_MaKHTT);
+            this.groupBox_ThongTin.Controls.Add(this.button_TimHoaDon);
             this.groupBox_ThongTin.Controls.Add(this.numericUpDown1);
             this.groupBox_ThongTin.Controls.Add(this.label8);
             this.groupBox_ThongTin.Controls.Add(this.textBox_SoKm);
             this.groupBox_ThongTin.Controls.Add(this.label_SoKm);
             this.groupBox_ThongTin.Controls.Add(this.textBox_DienThoai);
             this.groupBox_ThongTin.Controls.Add(this.textBox_DiaChi);
-            this.groupBox_ThongTin.Controls.Add(this.checkBox_KHTT);
             this.groupBox_ThongTin.Controls.Add(this.textBox_TenKH);
             this.groupBox_ThongTin.Controls.Add(this.label_DienThoai);
             this.groupBox_ThongTin.Controls.Add(this.label_DiaChi);
@@ -190,16 +192,6 @@
             this.textBox_DiaChi.Size = new System.Drawing.Size(159, 20);
             this.textBox_DiaChi.TabIndex = 38;
             // 
-            // checkBox_KHTT
-            // 
-            this.checkBox_KHTT.AutoSize = true;
-            this.checkBox_KHTT.Enabled = false;
-            this.checkBox_KHTT.Location = new System.Drawing.Point(402, 48);
-            this.checkBox_KHTT.Name = "checkBox_KHTT";
-            this.checkBox_KHTT.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_KHTT.TabIndex = 37;
-            this.checkBox_KHTT.UseVisualStyleBackColor = true;
-            // 
             // textBox_TenKH
             // 
             this.textBox_TenKH.Enabled = false;
@@ -231,9 +223,8 @@
             this.label_KHTT.AutoSize = true;
             this.label_KHTT.Location = new System.Drawing.Point(274, 53);
             this.label_KHTT.Name = "label_KHTT";
-            this.label_KHTT.Size = new System.Drawing.Size(115, 13);
+            this.label_KHTT.Size = new System.Drawing.Size(0, 13);
             this.label_KHTT.TabIndex = 33;
-            this.label_KHTT.Text = "Khách hàng thân thiết:";
             // 
             // labelTenKH
             // 
@@ -321,7 +312,7 @@
             this.groupBox_SanPham.Controls.Add(this.textBox_MaCTHD);
             this.groupBox_SanPham.Controls.Add(this.label5);
             this.groupBox_SanPham.Controls.Add(this.numericUpDown_SoLuong);
-            this.groupBox_SanPham.Controls.Add(this.button_Them);
+            this.groupBox_SanPham.Controls.Add(this.button_CapNhap);
             this.groupBox_SanPham.Controls.Add(this.label7);
             this.groupBox_SanPham.Controls.Add(this.comboBox_TenSP);
             this.groupBox_SanPham.Controls.Add(this.label_TenSP);
@@ -342,6 +333,7 @@
             this.button_Xoa.TabIndex = 35;
             this.button_Xoa.Text = "Xóa";
             this.button_Xoa.UseVisualStyleBackColor = true;
+            this.button_Xoa.Click += new System.EventHandler(this.button_Xoa_Click);
             // 
             // textBox_DonGia
             // 
@@ -350,6 +342,7 @@
             this.textBox_DonGia.Name = "textBox_DonGia";
             this.textBox_DonGia.Size = new System.Drawing.Size(159, 20);
             this.textBox_DonGia.TabIndex = 34;
+            this.textBox_DonGia.TextChanged += new System.EventHandler(this.textBox_DonGia_TextChanged);
             // 
             // label_DonGia
             // 
@@ -385,27 +378,38 @@
             0,
             0,
             0});
+            this.numericUpDown_SoLuong.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown_SoLuong.Name = "numericUpDown_SoLuong";
             this.numericUpDown_SoLuong.Size = new System.Drawing.Size(39, 20);
             this.numericUpDown_SoLuong.TabIndex = 30;
+            this.numericUpDown_SoLuong.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // button_Them
+            // button_CapNhap
             // 
-            this.button_Them.Location = new System.Drawing.Point(286, 11);
-            this.button_Them.Name = "button_Them";
-            this.button_Them.Size = new System.Drawing.Size(93, 23);
-            this.button_Them.TabIndex = 29;
-            this.button_Them.Text = "Thêm";
-            this.button_Them.UseVisualStyleBackColor = true;
+            this.button_CapNhap.Location = new System.Drawing.Point(286, 11);
+            this.button_CapNhap.Name = "button_CapNhap";
+            this.button_CapNhap.Size = new System.Drawing.Size(93, 23);
+            this.button_CapNhap.TabIndex = 29;
+            this.button_CapNhap.Text = "Cập nhật";
+            this.button_CapNhap.UseVisualStyleBackColor = true;
+            this.button_CapNhap.Click += new System.EventHandler(this.button_Them_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 72);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.Size = new System.Drawing.Size(78, 13);
             this.label7.TabIndex = 27;
-            this.label7.Text = "Số lượng:";
+            this.label7.Text = "Số lượng giao :";
             // 
             // comboBox_TenSP
             // 
@@ -414,6 +418,7 @@
             this.comboBox_TenSP.Name = "comboBox_TenSP";
             this.comboBox_TenSP.Size = new System.Drawing.Size(159, 21);
             this.comboBox_TenSP.TabIndex = 26;
+            this.comboBox_TenSP.SelectedIndexChanged += new System.EventHandler(this.comboBox_TenSP_SelectedIndexChanged);
             // 
             // label_TenSP
             // 
@@ -431,6 +436,7 @@
             this.comboBox_LoaiSP.Name = "comboBox_LoaiSP";
             this.comboBox_LoaiSP.Size = new System.Drawing.Size(159, 21);
             this.comboBox_LoaiSP.TabIndex = 24;
+            this.comboBox_LoaiSP.SelectedIndexChanged += new System.EventHandler(this.comboBox_LoaiSP_SelectedIndexChanged);
             // 
             // label_LoaiSP
             // 
@@ -440,6 +446,24 @@
             this.label_LoaiSP.Size = new System.Drawing.Size(79, 13);
             this.label_LoaiSP.TabIndex = 23;
             this.label_LoaiSP.Text = "Loại sản phẩm:";
+            // 
+            // button_TimHoaDon
+            // 
+            this.button_TimHoaDon.Location = new System.Drawing.Point(277, 17);
+            this.button_TimHoaDon.Name = "button_TimHoaDon";
+            this.button_TimHoaDon.Size = new System.Drawing.Size(100, 23);
+            this.button_TimHoaDon.TabIndex = 36;
+            this.button_TimHoaDon.Text = "Tìm hóa đơn";
+            this.button_TimHoaDon.UseVisualStyleBackColor = true;
+            this.button_TimHoaDon.Click += new System.EventHandler(this.button_TimHoaDon_Click);
+            // 
+            // textBox_MaKHTT
+            // 
+            this.textBox_MaKHTT.Enabled = false;
+            this.textBox_MaKHTT.Location = new System.Drawing.Point(452, 46);
+            this.textBox_MaKHTT.Name = "textBox_MaKHTT";
+            this.textBox_MaKHTT.Size = new System.Drawing.Size(109, 20);
+            this.textBox_MaKHTT.TabIndex = 44;
             // 
             // GiaoHangPL
             // 
@@ -456,6 +480,7 @@
             this.Controls.Add(this.label1);
             this.Name = "GiaoHangPL";
             this.Text = "Giao hàng";
+            this.Load += new System.EventHandler(this.GiaoHangPL_Load);
             this.groupBox_ThongTin.ResumeLayout(false);
             this.groupBox_ThongTin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -481,7 +506,6 @@
         private System.Windows.Forms.Label label_SoKm;
         private System.Windows.Forms.TextBox textBox_DienThoai;
         private System.Windows.Forms.TextBox textBox_DiaChi;
-        private System.Windows.Forms.CheckBox checkBox_KHTT;
         private System.Windows.Forms.TextBox textBox_TenKH;
         private System.Windows.Forms.Label label_DienThoai;
         private System.Windows.Forms.Label label_DiaChi;
@@ -503,11 +527,13 @@
         private System.Windows.Forms.TextBox textBox_MaCTHD;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDown_SoLuong;
-        private System.Windows.Forms.Button button_Them;
+        private System.Windows.Forms.Button button_CapNhap;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox_TenSP;
         private System.Windows.Forms.Label label_TenSP;
         private System.Windows.Forms.ComboBox comboBox_LoaiSP;
         private System.Windows.Forms.Label label_LoaiSP;
+        private System.Windows.Forms.Button button_TimHoaDon;
+        private System.Windows.Forms.TextBox textBox_MaKHTT;
     }
 }
