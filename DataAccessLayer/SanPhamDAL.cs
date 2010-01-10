@@ -177,7 +177,7 @@ namespace DataAccessLayer
         //  Lấy giá sản phẩm From Cường
         public BusinessEntities.SanPhamBE getGiaSanPham(String tenSanPham)
         {
-            DataTable dt = SQLHelp.executeQuery("SELECT GIABAN, SANPHAM.MSP, SANPHAM.MALOAISP FROM SANPHAM WHERE TENSP = '" + tenSanPham + "'");
+            DataTable dt = SQLHelp.executeQuery("SELECT GIABAN, SANPHAM.MSP, SANPHAM.MALOAISP FROM SANPHAM WHERE TENSP = N'" + tenSanPham + "'");
 
             BusinessEntities.SanPhamBE sanPham = null;
 
@@ -225,6 +225,7 @@ namespace DataAccessLayer
             System.Console.Out.WriteLine(query);
             SQLHelp.executeNonQuery(query);
         }
+
         // Lay ten san pham theo Ma san Pham from Cường
         public BusinessEntities.SanPhamBE getTenSanPham(int maSanPham)
         {
@@ -246,7 +247,7 @@ namespace DataAccessLayer
         {
             List<BusinessEntities.SanPhamBE> listsSanPham = new List<BusinessEntities.SanPhamBE>();
 
-            DataTable dt = SQLHelp.executeQuery("SELECT TENSP, SANPHAM.MALOAISP FROM SANPHAM, LOAISANPHAM WHERE SANPHAM.MALOAISP = LOAISANPHAM.MALOAISP and LOAISANPHAM.TENLOAISP = '" + tenLoaiSanPham + "'");
+            DataTable dt = SQLHelp.executeQuery("SELECT TENSP, SANPHAM.MALOAISP FROM SANPHAM, LOAISANPHAM WHERE SANPHAM.MALOAISP = LOAISANPHAM.MALOAISP and LOAISANPHAM.TENLOAISP = N'" + tenLoaiSanPham + "'");
 
             BusinessEntities.SanPhamBE sanPham;
 
