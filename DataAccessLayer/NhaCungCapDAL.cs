@@ -74,5 +74,31 @@ namespace DataAccessLayer
 
             return nhaCungCap;
         }
+        /*
+     * Lấy tên những tên sản phẩm từ bảng loại sản phẩm
+ 
+     */
+        public List<BusinessEntities.NhaCungCapBE> getTenNhaCungCap()
+        {
+            List<BusinessEntities.NhaCungCapBE> listTenNhaCungCap = new List<BusinessEntities.NhaCungCapBE>();
+
+            DataTable dt = SQLHelp.executeQuery("SELECT [tenncc]FROM [QLCHVLXD].[dbo].[nhacungcap]");
+
+            BusinessEntities.NhaCungCapBE nhacungcap;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                nhacungcap = new BusinessEntities.NhaCungCapBE();
+                //MessageBox.Show("okkkk");
+
+                               
+                nhacungcap.tenncc = row["tenncc"].ToString();
+
+                listTenNhaCungCap.Add(nhacungcap);
+            }
+
+
+            return listTenNhaCungCap;
+        }
     }
 }
