@@ -9,6 +9,23 @@ namespace BusinessLogicLayer
 {
      public class NhaCungCapBLL
     {
+         //lấy danh sách nhà cung cấp
+         public String getMaNCCMax()
+         {
+             List<BusinessEntities.NhaCungCapBE> listNhaCungCap = new List<BusinessEntities.NhaCungCapBE>();
+             DataAccessLayer.NhaCungCapDAL accessTenNhaCungCap = new DataAccessLayer.NhaCungCapDAL();
+
+             listNhaCungCap = accessTenNhaCungCap.getListNhaCungCap();
+             return listNhaCungCap[listNhaCungCap.Count - 1].MANCC;
+         }
+         //thêm nhà cung cấp
+         public int themTTNCC(BusinessEntities.NhaCungCapBE nhacungcap)
+         {
+             DataAccessLayer.NhaCungCapDAL access = new DataAccessLayer.NhaCungCapDAL();
+             
+             int kq = access.themNhaCungCap(nhacungcap);
+             return kq;
+         }
          // Sửa thông tin nhà cung cấp
         public int suaTTNCC(BusinessEntities.NhaCungCapBE nhacungcap)
         {
