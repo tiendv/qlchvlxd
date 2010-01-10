@@ -204,7 +204,7 @@
             0,
             0,
             0});
-            this.numericUpDown_SoLuong.ValueChanged += new System.EventHandler(this.numericUpDown_SoLuong_ValueChanged);
+            
             // 
             // button_Them
             // 
