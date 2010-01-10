@@ -25,18 +25,28 @@ namespace qlchvlxd
 
         private void button_DongY_Click(object sender, EventArgs e)
         {
-            nhacungcapBE.TENNCC=textBoxTen.Text;
-            nhacungcapBE.DIACHI = textBox_DiaChi.Text;
-            nhacungcapBE.DIENTHOAI = textBox_DienThoai.Text;
-            
-            BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
-            int kq=nhacungcapBLL.suaTTNCC(nhacungcapBE);
-            if (kq > 0)
+            String ten=textBoxTen.Text;
+            String diaChi=textBox_DiaChi.Text;
+            String dienThoai=textBox_DienThoai.Text;
+            if (ten == "" || diaChi == "" || dienThoai == "")
             {
-                MessageBox.Show("Đã cập nhật thành công.");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
             }
             else
-                MessageBox.Show("Chưa cập nhật thành công.");
+            {
+                nhacungcapBE.TENNCC = ten;
+                nhacungcapBE.DIACHI = diaChi;
+                nhacungcapBE.DIENTHOAI = dienThoai;
+
+                BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
+                int kq = nhacungcapBLL.suaTTNCC(nhacungcapBE);
+                if (kq > 0)
+                {
+                    MessageBox.Show("Đã cập nhật thành công.");
+                }
+                else
+                    MessageBox.Show("Chưa cập nhật thành công.");
+            }
         }
 
         private void SuaNCCPL_Load(object sender, EventArgs e)
