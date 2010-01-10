@@ -91,6 +91,16 @@ namespace BusinessLogicLayer
          }
 
 
+        // Thêm một  sản phẩm
+
+         public void themsanpham(BusinessEntities.SanPhamBE sp)
+         {
+             DataAccessLayer.SanPhamDAL access = new DataAccessLayer.SanPhamDAL();
+
+             access.insertASanPham(sp);
+         }
+
+
  
 
 

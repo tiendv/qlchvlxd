@@ -57,8 +57,25 @@ namespace BusinessLogicLayer
 
         }
 
-       
 
+        /// 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Lấy Mã Loại Sản Phẩmnh từ tên Loại Sản Phẩm   "></param>
+        /// <returns></returns>
+        public BusinessEntities.LoaiSPBE getMaloaisanphamtuten(string tenlsp)
+        {
+            BusinessEntities.LoaiSPBE lsp = new BusinessEntities.LoaiSPBE();
+            DataAccessLayer.LoaiSPDAL accessLSP = new DataAccessLayer.LoaiSPDAL();
+
+            lsp = accessLSP.getMaLoaiSanPhamTuTen(tenlsp);
+
+            if (lsp == null)
+                return null;
+
+            return lsp;
+        }
 
               
     }
