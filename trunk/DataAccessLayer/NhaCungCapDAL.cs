@@ -12,7 +12,7 @@ namespace DataAccessLayer
         public int themNhaCungCap(BusinessEntities.NhaCungCapBE nhaCungCap)
         {
             String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[nhacungcap]([mancc],[tenncc],[diachi],[dienthoai])"
-                                + "VALUES ('" + nhaCungCap.MANCC + "' , '" + nhaCungCap.TENNCC
+                                + "VALUES ('" + nhaCungCap.MANCC + "' , '" + nhaCungCap.TENNCC+"','"
                                  + nhaCungCap.DIACHI + "',' " + nhaCungCap.DIENTHOAI + "')";
 
             int kq=SQLHelp.executeNonQuery(myAddQuery);
