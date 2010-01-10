@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DataAccessLayer;
 
+
 namespace BusinessLogicLayer
 {
      public class NhaCungCapBLL
@@ -25,18 +26,25 @@ namespace BusinessLogicLayer
 
             if (listNhaCungCap == null)
                 return null;
+            if (tenNCC == "")
+            {
+                return listNhaCungCap;
+            }
             else
             {
-                for(int i=0; i<listNhaCungCap.Count;i++)
+                for (int i = 0; i < listNhaCungCap.Count; i++)
                 {
                     if (!listNhaCungCap[i].TENNCC.Equals(tenNCC))
                     {
                         listNhaCungCap.RemoveAt(i);
+                        i--;
                     }
                 }
+
             }
             return listNhaCungCap;
         }
+       
 
         // Lấy danh sách các tên  nhà cung cấp từ  bảng nhà cung cấp
 
