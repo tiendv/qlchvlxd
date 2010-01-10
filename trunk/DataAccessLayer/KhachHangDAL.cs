@@ -73,13 +73,13 @@ namespace DataAccessLayer
 
             return khachHang;
         }
-        public void themKhachHangThanThiet(BusinessEntities.KhachHangBE khachHang)
+        public int themKhachHangThanThiet(BusinessEntities.KhachHangBE khachHang)
         {
             String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[khachhang]([makh],[tenkh],[cmnd],[diachi],[sodienthoai],[gioitinh],[loaikhachhang])"
-                                + "VALUES ('" + khachHang.maKhachHang + "' , '" + khachHang.tenKhachHang 
-                                + "' , '" + khachHang.CMND+"' , '"+khachHang.diaChi + "',' " + khachHang.soDienThoai + "' , '"+khachHang.gioiTinh+"',1)";
-
-            SQLHelp.executeNonQuery(myAddQuery);
+                                + "VALUES ('" + khachHang.maKhachHang + "' , N'" + khachHang.tenKhachHang 
+                                + "' , '" + khachHang.CMND+"' , N'"+khachHang.diaChi + "',' " + khachHang.soDienThoai + "' , N'"+khachHang.gioiTinh+"',1)";
+            int kq;
+            return kq=SQLHelp.executeNonQuery(myAddQuery);
         }
 
         public List<BusinessEntities.KhachHangBE> getListKhachHangThanThiet()
