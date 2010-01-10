@@ -76,7 +76,9 @@ namespace DataAccessLayer
             return nhaCungCap;
         }
         /*
-     * Lấy tên những tên sản phẩm từ bảng loại sản phẩm
+     * Lấy tên những tên Nhà Cung cấp 
+         * 
+         * tiendv
  
      */
         public List<BusinessEntities.NhaCungCapBE> getTenNhaCungCap()
@@ -101,5 +103,23 @@ namespace DataAccessLayer
 
             return listTenNhaCungCap;
         }
+
+       // lấy mã nhà cung cấp từ tên nhà cung cấp 
+        public BusinessEntities.NhaCungCapBE getMaNhaCungCapTuTen(string maNCC)
+        {
+            DataTable dt = SQLHelp.executeQuery("SELECT MANCC FROM NHACUNGCAP WHERE TENNCC = N'" + maNCC+"'");
+
+            BusinessEntities.NhaCungCapBE NhaCC = null;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                NhaCC = new BusinessEntities.NhaCungCapBE();
+
+                NhaCC.MANCC = row["MANCC"].ToString();
+            }
+
+            return NhaCC;
+        }
+
     }
 }
