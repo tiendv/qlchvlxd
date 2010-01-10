@@ -38,17 +38,17 @@ namespace BusinessLogicLayer
             return list;
         }
 
-        public static BusinessEntities.KhachHangBE getKhachHang(String khachHang)
+        public static BusinessEntities.KhachHangBE getKhachHang(String maKhachHang)
         {
-            BusinessEntities.KhachHangBE _khachHang = new BusinessEntities.KhachHangBE();
+            BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
             DataAccessLayer.KhachHangDAL access = new DataAccessLayer.KhachHangDAL();
 
-            _khachHang = access.getKhachHang(khachHang);
+            khachHang = access.getKhachHang(maKhachHang);
 
-            if (_khachHang == null)
+            if (khachHang == null)
                 return null;
 
-            return _khachHang;
+            return khachHang;
         }
     }
 }
