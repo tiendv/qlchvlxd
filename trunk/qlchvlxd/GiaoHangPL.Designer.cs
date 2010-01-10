@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button_Huy = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox_ThongTin = new System.Windows.Forms.GroupBox();
             this.textBox_MaKHTT = new System.Windows.Forms.TextBox();
             this.button_TimHoaDon = new System.Windows.Forms.Button();
@@ -49,13 +45,6 @@
             this.labelTenKH = new System.Windows.Forms.Label();
             this.textBox_MaHD = new System.Windows.Forms.TextBox();
             this.label_MaHD = new System.Windows.Forms.Label();
-            this.listView_GiaoHang = new System.Windows.Forms.ListView();
-            this.column_STT = new System.Windows.Forms.ColumnHeader();
-            this.column_TenSP = new System.Windows.Forms.ColumnHeader();
-            this.column_TongSL = new System.Windows.Forms.ColumnHeader();
-            this.column_SLGiao = new System.Windows.Forms.ColumnHeader();
-            this.column_DonGia = new System.Windows.Forms.ColumnHeader();
-            this.column_ThanhTien = new System.Windows.Forms.ColumnHeader();
             this.groupBox_SanPham = new System.Windows.Forms.GroupBox();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.textBox_DonGia = new System.Windows.Forms.TextBox();
@@ -71,6 +60,17 @@
             this.label_LoaiSP = new System.Windows.Forms.Label();
             this.textBox_DiaChiGiaoHang = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button_Huy = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.column_STT = new System.Windows.Forms.ColumnHeader();
+            this.column_TenSP = new System.Windows.Forms.ColumnHeader();
+            this.column_TongSL = new System.Windows.Forms.ColumnHeader();
+            this.column_SLGiao = new System.Windows.Forms.ColumnHeader();
+            this.column_DonGia = new System.Windows.Forms.ColumnHeader();
+            this.column_ThanhTien = new System.Windows.Forms.ColumnHeader();
+            this.listView_GiaoHang = new System.Windows.Forms.ListView();
             this.groupBox_ThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox_SanPham.SuspendLayout();
@@ -86,43 +86,6 @@
             this.label1.Size = new System.Drawing.Size(155, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "HÓA ĐƠN GIAO HÀNG";
-            // 
-            // button_Huy
-            // 
-            this.button_Huy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button_Huy.Location = new System.Drawing.Point(518, 489);
-            this.button_Huy.Name = "button_Huy";
-            this.button_Huy.Size = new System.Drawing.Size(75, 23);
-            this.button_Huy.TabIndex = 27;
-            this.button_Huy.Text = "Hủy";
-            this.button_Huy.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(394, 489);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "In hóa đơn";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(280, 489);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Xem hóa đơn";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 489);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Tổng tiền:.......";
             // 
             // groupBox_ThongTin
             // 
@@ -275,60 +238,6 @@
             this.label_MaHD.TabIndex = 30;
             this.label_MaHD.Text = "Mã hóa đơn:";
             // 
-            // listView_GiaoHang
-            // 
-            this.listView_GiaoHang.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.column_STT,
-            this.column_TenSP,
-            this.column_TongSL,
-            this.column_SLGiao,
-            this.column_DonGia,
-            this.column_ThanhTien});
-            this.listView_GiaoHang.FullRowSelect = true;
-            this.listView_GiaoHang.GridLines = true;
-            this.listView_GiaoHang.Location = new System.Drawing.Point(28, 357);
-            this.listView_GiaoHang.Name = "listView_GiaoHang";
-            this.listView_GiaoHang.Size = new System.Drawing.Size(564, 116);
-            this.listView_GiaoHang.TabIndex = 31;
-            this.listView_GiaoHang.UseCompatibleStateImageBehavior = false;
-            this.listView_GiaoHang.View = System.Windows.Forms.View.Details;
-            this.listView_GiaoHang.SelectedIndexChanged += new System.EventHandler(this.listView_GiaoHang_SelectedIndexChanged);
-            // 
-            // column_STT
-            // 
-            this.column_STT.Text = "STT";
-            this.column_STT.Width = 36;
-            // 
-            // column_TenSP
-            // 
-            this.column_TenSP.Text = "Tên sản phẩm";
-            this.column_TenSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.column_TenSP.Width = 148;
-            // 
-            // column_TongSL
-            // 
-            this.column_TongSL.Text = "Tổng số lượng";
-            this.column_TongSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.column_TongSL.Width = 81;
-            // 
-            // column_SLGiao
-            // 
-            this.column_SLGiao.Text = "Số lượng giao";
-            this.column_SLGiao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.column_SLGiao.Width = 79;
-            // 
-            // column_DonGia
-            // 
-            this.column_DonGia.Text = "Đơn giá";
-            this.column_DonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.column_DonGia.Width = 102;
-            // 
-            // column_ThanhTien
-            // 
-            this.column_ThanhTien.Text = "Thành tiền";
-            this.column_ThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.column_ThanhTien.Width = 112;
-            // 
             // groupBox_SanPham
             // 
             this.groupBox_SanPham.Controls.Add(this.button_Xoa);
@@ -352,7 +261,7 @@
             // 
             // button_Xoa
             // 
-            this.button_Xoa.Location = new System.Drawing.Point(423, 10);
+            this.button_Xoa.Location = new System.Drawing.Point(430, 10);
             this.button_Xoa.Name = "button_Xoa";
             this.button_Xoa.Size = new System.Drawing.Size(100, 23);
             this.button_Xoa.TabIndex = 35;
@@ -419,7 +328,7 @@
             // 
             // button_CapNhap
             // 
-            this.button_CapNhap.Location = new System.Drawing.Point(286, 11);
+            this.button_CapNhap.Location = new System.Drawing.Point(284, 11);
             this.button_CapNhap.Name = "button_CapNhap";
             this.button_CapNhap.Size = new System.Drawing.Size(93, 23);
             this.button_CapNhap.TabIndex = 29;
@@ -489,6 +398,97 @@
             this.label2.TabIndex = 45;
             this.label2.Text = "Địa chỉ giao hàng:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(280, 489);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Xem hóa đơn";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(394, 489);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 23);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "In hóa đơn";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button_Huy
+            // 
+            this.button_Huy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button_Huy.Location = new System.Drawing.Point(518, 489);
+            this.button_Huy.Name = "button_Huy";
+            this.button_Huy.Size = new System.Drawing.Size(75, 23);
+            this.button_Huy.TabIndex = 27;
+            this.button_Huy.Text = "Hủy";
+            this.button_Huy.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(27, 489);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Tổng tiền:.......";
+            // 
+            // column_STT
+            // 
+            this.column_STT.Text = "STT";
+            this.column_STT.Width = 36;
+            // 
+            // column_TenSP
+            // 
+            this.column_TenSP.Text = "Tên sản phẩm";
+            this.column_TenSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_TenSP.Width = 148;
+            // 
+            // column_TongSL
+            // 
+            this.column_TongSL.Text = "Tổng số lượng";
+            this.column_TongSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_TongSL.Width = 81;
+            // 
+            // column_SLGiao
+            // 
+            this.column_SLGiao.Text = "Số lượng giao";
+            this.column_SLGiao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_SLGiao.Width = 79;
+            // 
+            // column_DonGia
+            // 
+            this.column_DonGia.Text = "Đơn giá";
+            this.column_DonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_DonGia.Width = 102;
+            // 
+            // column_ThanhTien
+            // 
+            this.column_ThanhTien.Text = "Thành tiền";
+            this.column_ThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_ThanhTien.Width = 112;
+            // 
+            // listView_GiaoHang
+            // 
+            this.listView_GiaoHang.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.column_STT,
+            this.column_TenSP,
+            this.column_TongSL,
+            this.column_SLGiao,
+            this.column_DonGia,
+            this.column_ThanhTien});
+            this.listView_GiaoHang.FullRowSelect = true;
+            this.listView_GiaoHang.GridLines = true;
+            this.listView_GiaoHang.Location = new System.Drawing.Point(28, 357);
+            this.listView_GiaoHang.Name = "listView_GiaoHang";
+            this.listView_GiaoHang.Size = new System.Drawing.Size(564, 116);
+            this.listView_GiaoHang.TabIndex = 31;
+            this.listView_GiaoHang.UseCompatibleStateImageBehavior = false;
+            this.listView_GiaoHang.View = System.Windows.Forms.View.Details;
+            this.listView_GiaoHang.SelectedIndexChanged += new System.EventHandler(this.listView_GiaoHang_SelectedIndexChanged);
+            // 
             // GiaoHangPL
             // 
             this.AcceptButton = this.button_TimHoaDon;
@@ -521,10 +521,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button_Huy;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox_ThongTin;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label8;
@@ -539,13 +535,6 @@
         private System.Windows.Forms.Label labelTenKH;
         private System.Windows.Forms.TextBox textBox_MaHD;
         private System.Windows.Forms.Label label_MaHD;
-        private System.Windows.Forms.ListView listView_GiaoHang;
-        private System.Windows.Forms.ColumnHeader column_STT;
-        private System.Windows.Forms.ColumnHeader column_TenSP;
-        private System.Windows.Forms.ColumnHeader column_TongSL;
-        private System.Windows.Forms.ColumnHeader column_SLGiao;
-        private System.Windows.Forms.ColumnHeader column_DonGia;
-        private System.Windows.Forms.ColumnHeader column_ThanhTien;
         private System.Windows.Forms.GroupBox groupBox_SanPham;
         private System.Windows.Forms.Button button_Xoa;
         private System.Windows.Forms.TextBox textBox_DonGia;
@@ -563,5 +552,16 @@
         private System.Windows.Forms.TextBox textBox_MaKHTT;
         private System.Windows.Forms.TextBox textBox_DiaChiGiaoHang;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_Huy;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ColumnHeader column_STT;
+        private System.Windows.Forms.ColumnHeader column_TenSP;
+        private System.Windows.Forms.ColumnHeader column_TongSL;
+        private System.Windows.Forms.ColumnHeader column_SLGiao;
+        private System.Windows.Forms.ColumnHeader column_DonGia;
+        private System.Windows.Forms.ColumnHeader column_ThanhTien;
+        private System.Windows.Forms.ListView listView_GiaoHang;
     }
 }

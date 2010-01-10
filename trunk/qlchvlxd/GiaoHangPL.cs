@@ -40,6 +40,11 @@ namespace qlchvlxd
         //lay  hoa don tu bang hoa don
         BusinessEntities.CTHoaDonBE hoaDon = new BusinessEntities.CTHoaDonBE();
 
+        //lay thong tin phieu giao hang
+        BusinessEntities.PhieuGiaoHangBE phieuGiaoHang = new BusinessEntities.PhieuGiaoHangBE();
+
+        //lay thong tin danh sach phieu giao hang
+        List<BusinessEntities.PhieuGiaoHangBE> listPhieuGiaoHang = new List<BusinessEntities.PhieuGiaoHangBE>();
 
         private String maGiaoHang = "";
         private float tongTien = 0;
@@ -53,7 +58,24 @@ namespace qlchvlxd
             listTenLoaiSanPham = BusinessLogicLayer.LoaiSPBLL.getDanhSachLoaiSP();
             //button_Tim.Enabled = false;
             button_CapNhap.Enabled = false;
-           // button_XemHD.Enabled = false;
+            // button_XemHD.Enabled = false;
+            
+            listPhieuGiaoHang = BusinessLogicLayer.PhieuGiaoHangBLL.getListPhieuGiaoHang();
+
+            phieuGiaoHang = BusinessLogicLayer.PhieuGiaoHangBLL.getPhieuGiaoHang();
+           
+            //if (listPhieuGiaoHang == null)
+            //{
+            //    phieuGiaoHang.maPhieuGiaoHang = "GH0001";                               
+            //}
+            //else
+            //{
+            //    MessageBox.Show(phieuGiaoHang.maPhieuGiaoHang);
+            //    phieuGiaoHang.maPhieuGiaoHang = TaoKhoaChinh.getIdLonNhat(listPhieuGiaoHang[listPhieuGiaoHang.Count - 1].maPhieuGiaoHang.ToString(), 2);
+            //}
+
+            //maGiaoHang = phieuGiaoHang.maPhieuGiaoHang;
+
         }
 
         public void hienThi()
@@ -75,6 +97,7 @@ namespace qlchvlxd
                     sanPham = BusinessLogicLayer.SanPhamBLL.getTenSanPham(listMaCTHD[i].maSP);
                     lvi.SubItems.Add(sanPham.tensp);
                     lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
+                    lvi.SubItems.Add(((int)numericUpDown_SoLuong.Value).ToString());
                     lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
                     lvi.SubItems.Add((listMaCTHD[i].soLuong * listMaCTHD[i].donGia).ToString());
                     lvi.SubItems.Add(listMaCTHD[i].maCTHD);
@@ -94,7 +117,7 @@ namespace qlchvlxd
             BusinessEntities.CTHoaDonBE myCTHoaDon = new BusinessEntities.CTHoaDonBE();
             myCTHoaDon.maCTHD = textBox_MaCTHD.Text;
             myCTHoaDon.maSP = sanPham.masp;
-            myCTHoaDon.maHD = "HD001";
+            myCTHoaDon.maHD = "HD0001";
             myCTHoaDon.soLuong = (int)numericUpDown_SoLuong.Value;
             myCTHoaDon.donGia = sanPham.giaban;
             myCTHoaDon.maLoaiSP = sanPham.maloaisp;
@@ -171,7 +194,7 @@ namespace qlchvlxd
 
         private void button_TimHoaDon_Click(object sender, EventArgs e)
         {
-            hoaDon = BusinessLogicLayer.GiaoHangBLL.getHoaDon(textBox_MaHD.Text);
+            hoaDon = BusinessLogicLayer.PhieuGiaoHangBLL.getHoaDon(textBox_MaHD.Text);
             if (hoaDon == null)
             {
                 MessageBox.Show("Không tìm thấy hóa đơn này ");
@@ -185,7 +208,7 @@ namespace qlchvlxd
             else
             {
                 textBox_TenKH.Text = hoaDon.tenKhachHang;
-                MessageBox.Show(hoaDon.loaiKhachHang.ToString());
+               
                 if (hoaDon.loaiKhachHang == 1)
                 {
                     label_KHTT.Text = "KHÁCH HÀNG THÂN THIẾT";
@@ -196,8 +219,6 @@ namespace qlchvlxd
                 textBox_MaKHTT.Text = hoaDon.maKhachHang;
                 textBox_DiaChi.Text = hoaDon.diaChi;
                 textBox_DienThoai.Text = hoaDon.soDienThoai;
-
-
             }
 
             listView_GiaoHang.Items.Clear();
