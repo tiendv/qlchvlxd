@@ -20,26 +20,31 @@ namespace qlchvlxd
 
         private void getTTNhaCungCap()
         {
-            nhacungcap.MANCC = listView_NCC.SelectedItems[0].SubItems[1].ToString();
-            nhacungcap.TENNCC = listView_NCC.SelectedItems[0].SubItems[2].ToString();
-            nhacungcap.DIACHI = listView_NCC.SelectedItems[0].SubItems[3].ToString();
-            nhacungcap.DIENTHOAI = listView_NCC.SelectedItems[0].SubItems[4].ToString();
+            nhacungcap.MANCC = listView_NCC.SelectedItems[0].SubItems[1].Text;
+            nhacungcap.TENNCC = listView_NCC.SelectedItems[0].SubItems[2].Text;
+            nhacungcap.DIACHI = listView_NCC.SelectedItems[0].SubItems[3].Text;
+            nhacungcap.DIENTHOAI = listView_NCC.SelectedItems[0].SubItems[4].Text;
         }
        
         private void button_SuaNCC_Click(object sender, EventArgs e)
         {
-            if (listView_NCC.SelectedItems[0]==null)
+            try
+            {
+                bool chk=listView_NCC.SelectedItems[0].Checked;
+  
+                SuaNCCPL f2 = new SuaNCCPL();
+                getTTNhaCungCap();
+                f2.nhacungcapBE = nhacungcap;
+                f2.MdiParent = this.MdiParent;
+                f2.Show();
+           
+            }
+            catch(Exception exp)
             {
                 MessageBox.Show("Vui lòng chọn nhà cung cấp muốn sửa thông tin.");
             }
-            else
-            {
-                SuaNCCPL f2 = new SuaNCCPL();
-                getTTNhaCungCap();
-                f2.maNCC = nhacungcap.MANCC;
-                f2.MdiParent = this.MdiParent;
-                f2.Show();
-            }
+            
+                
         }
 
         private void button_Xoa_Click(object sender, EventArgs e)
