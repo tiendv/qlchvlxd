@@ -115,5 +115,25 @@ namespace DataAccessLayer
         }
 
 
+        // Lấy mã đơn vị tính theo tên đơn vị tính 
+
+
+        public BusinessEntities.LoaiDonViTinhBE getMaDonViTinhTuTen(string tendvt)
+        {
+            DataTable dt = SQLHelp.executeQuery("SELECT [maloaidonvitinh]FROM [QLCHVLXD].[dbo].[loaidonvitinh] WHERE [tendonvitinh]  = N'" + tendvt + "'");
+
+            BusinessEntities.LoaiDonViTinhBE dvt = null;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                dvt = new BusinessEntities.LoaiDonViTinhBE();
+
+                dvt.MALOAIDONVITINH =int.Parse(row["MALOAIDONVITINH"].ToString());
+            }
+
+            return dvt;
+        }
+
+
     }
 }
