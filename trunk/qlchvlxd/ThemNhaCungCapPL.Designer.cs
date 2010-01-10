@@ -31,11 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textBox_Ten = new System.Windows.Forms.TextBox();
+            this.textBox_DiaChi = new System.Windows.Forms.TextBox();
+            this.textBox_DienThoai = new System.Windows.Forms.TextBox();
+            this.button_Them = new System.Windows.Forms.Button();
+            this.button_Huy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -65,59 +65,61 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Số điện thoại";
             // 
-            // textBox1
+            // textBox_Ten
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBox_Ten.Location = new System.Drawing.Point(130, 28);
+            this.textBox_Ten.Name = "textBox_Ten";
+            this.textBox_Ten.Size = new System.Drawing.Size(179, 20);
+            this.textBox_Ten.TabIndex = 3;
             // 
-            // textBox2
+            // textBox_DiaChi
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBox_DiaChi.Location = new System.Drawing.Point(130, 58);
+            this.textBox_DiaChi.Name = "textBox_DiaChi";
+            this.textBox_DiaChi.Size = new System.Drawing.Size(179, 20);
+            this.textBox_DiaChi.TabIndex = 4;
             // 
-            // textBox3
+            // textBox_DienThoai
             // 
-            this.textBox3.Location = new System.Drawing.Point(130, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 20);
-            this.textBox3.TabIndex = 5;
+            this.textBox_DienThoai.Location = new System.Drawing.Point(130, 85);
+            this.textBox_DienThoai.Name = "textBox_DienThoai";
+            this.textBox_DienThoai.Size = new System.Drawing.Size(179, 20);
+            this.textBox_DienThoai.TabIndex = 5;
             // 
-            // button1
+            // button_Them
             // 
-            this.button1.Location = new System.Drawing.Point(130, 161);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Them.Location = new System.Drawing.Point(130, 161);
+            this.button_Them.Name = "button_Them";
+            this.button_Them.Size = new System.Drawing.Size(75, 23);
+            this.button_Them.TabIndex = 6;
+            this.button_Them.Text = "Thêm";
+            this.button_Them.UseVisualStyleBackColor = true;
+            this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
             // 
-            // button2
+            // button_Huy
             // 
-            this.button2.Location = new System.Drawing.Point(234, 161);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_Huy.Location = new System.Drawing.Point(234, 161);
+            this.button_Huy.Name = "button_Huy";
+            this.button_Huy.Size = new System.Drawing.Size(75, 23);
+            this.button_Huy.TabIndex = 7;
+            this.button_Huy.Text = "Hủy";
+            this.button_Huy.UseVisualStyleBackColor = true;
+            this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
             // 
-            // themnhacungcap
+            // ThemNhaCungCapPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 233);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button_Huy);
+            this.Controls.Add(this.button_Them);
+            this.Controls.Add(this.textBox_DienThoai);
+            this.Controls.Add(this.textBox_DiaChi);
+            this.Controls.Add(this.textBox_Ten);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "themnhacungcap";
+            this.Name = "ThemNhaCungCapPL";
             this.Text = "Thêm nhà cung cấp";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,11 +131,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox_Ten;
+        private System.Windows.Forms.TextBox textBox_DiaChi;
+        private System.Windows.Forms.TextBox textBox_DienThoai;
+        private System.Windows.Forms.Button button_Them;
+        private System.Windows.Forms.Button button_Huy;
 
     }
 }
