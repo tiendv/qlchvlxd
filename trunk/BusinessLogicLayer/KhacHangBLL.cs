@@ -24,7 +24,19 @@ namespace BusinessLogicLayer
 
             access.themKhachHang(khachHang);
         }
-
+        public int themKhachHangThanThiet(BusinessEntities.KhachHangBE khachHang)
+        {
+            DataAccessLayer.KhachHangDAL access = new DataAccessLayer.KhachHangDAL();
+            int kq;
+            return kq=access.themKhachHangThanThiet(khachHang);
+        }
+        public  String getMaKHMax()
+        {
+            DataAccessLayer.KhachHangDAL access = new DataAccessLayer.KhachHangDAL();
+            
+            List<BusinessEntities.KhachHangBE> listKH = access.getListKhachHangThanThiet();
+            return listKH[listKH.Count - 1].MaKhachHang;
+        }
         public static List<BusinessEntities.KhachHangBE> getListKhachHang()
         {
             List<BusinessEntities.KhachHangBE> list = new List<BusinessEntities.KhachHangBE>();
