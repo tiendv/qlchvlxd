@@ -146,6 +146,7 @@
             this.button_Them.TabIndex = 12;
             this.button_Them.Text = "Thêm";
             this.button_Them.UseVisualStyleBackColor = true;
+            this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
             // 
             // button_Huy
             // 
@@ -155,6 +156,7 @@
             this.button_Huy.TabIndex = 13;
             this.button_Huy.Text = "Hủy";
             this.button_Huy.UseVisualStyleBackColor = true;
+            this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
             // 
             // ThemKhachHangPL
             // 
