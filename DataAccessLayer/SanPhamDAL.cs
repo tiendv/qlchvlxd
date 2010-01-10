@@ -193,10 +193,11 @@ namespace DataAccessLayer
         }
 
         // Thêm một sản phẩm
+        //'" + ldvt.MALOAIDONVITINH + "', N'" + ldvt.TENDONVITINH + "'
 
         public void insertASanPham(SanPhamBE sp)
         {
-            string query = "INSERT INTO SANPHAM VALUES ('" + sp.MASP + "', N'" + sp.TENSP + "','" + sp.GIANHAP + "','" + sp.GIABAN + "', '" + sp.SOLUONG + "', '" + sp.SOLUONGTOITHIEU + "','" + sp.MANCC + "', N'" + sp.THONGTIN + "', '" + sp.DONVITINH + "', '" + sp.MALOAISP + "') ";
+            string query = "INSERT INTO SANPHAM VALUES ('"  +sp.MASP+  "', N'" + sp.TENSP + "','" + sp.GIANHAP + "','" + sp.GIABAN + "', '" + sp.SOLUONG + "', '" + sp.SOLUONGTOITHIEU + "','" + sp.MANCC + "', N'" + sp.THONGTIN + "', '" + sp.DONVITINH + "', '" + sp.MALOAISP + "') ";
             SQLHelp.executeNonQuery(query);
         }
         // xóa sản phẩm có mã sản phẩm ......
