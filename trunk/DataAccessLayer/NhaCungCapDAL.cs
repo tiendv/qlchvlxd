@@ -27,7 +27,13 @@ namespace DataAccessLayer
             int kq=SQLHelp.executeNonQuery(myAddQuery);
             return kq;
         }
+        public int XoaTTNhaCungCap(BusinessEntities.NhaCungCapBE nhaCungCap)
+        {
+            String myAddQuery = "delete from [QLCHVLXD].[dbo].[nhacungcap] where mancc='"+nhaCungCap.MANCC+"'";
 
+            int kq = SQLHelp.executeNonQuery(myAddQuery);
+            return kq;
+        }
         public List<BusinessEntities.NhaCungCapBE> getListNhaCungCap()
         {
             List<BusinessEntities.NhaCungCapBE> listNCC = new List<BusinessEntities.NhaCungCapBE>();
