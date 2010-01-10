@@ -211,11 +211,11 @@ namespace qlchvlxd
                 for (int i = 0; i < listMaCTHD.Count; i++)
                 {
                     lvi = new ListViewItem((i + 1).ToString());
-                    sanPham = BusinessLogicLayer.SanPhamBLL.getTenSanPham(listCTHD[i].maSP);
+                    sanPham = BusinessLogicLayer.SanPhamBLL.getTenSanPham(listMaCTHD[i].maSP);
                     lvi.SubItems.Add(sanPham.tensp);
                     lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
                     lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
-                    lvi.SubItems.Add((listMaCTHD[i].soLuong * listCTHD[i].donGia).ToString());
+                    lvi.SubItems.Add((listMaCTHD[i].soLuong * listMaCTHD[i].donGia).ToString());
                     lvi.SubItems.Add(listMaCTHD[i].maCTHD);
                     listView_HoaDon.Items.Add(lvi);
                 }
