@@ -25,8 +25,21 @@ namespace qlchvlxd
 {
     public partial class TimKiemSanPhamPL : Form
     {
+
+
+        //Lay danh sach san pham .
+
         List<BusinessEntities.SanPhamBE> listSanPham = new List<BusinessEntities.SanPhamBE>();
         public BusinessLogicLayer.SanPhamBLL sanphamBLL = new SanPhamBLL();
+
+        // Lay san pham co ma nha cung cap
+
+        public BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new NhaCungCapBLL();
+
+        // Lay thong tin san pham
+
+        SanPhamBE ttsp = new SanPhamBE();
+
 
         public TimKiemSanPhamPL()
         {
@@ -124,7 +137,6 @@ namespace qlchvlxd
                     
                         if (radioButton2.Checked)
                         {
-                            
 
                             List<SanPhamBE> listSanPham = sanphamBLL.getListMaSanPham(int.Parse(textBox1.Text));
                             int stt = 1;
@@ -140,6 +152,7 @@ namespace qlchvlxd
                                 item.SubItems.Add(sp.SOLUONG.ToString());
                                 item.SubItems.Add(sp.GIABAN.ToString());
                                 listView1.Items.Add(item);
+                                
 
                             }
                         }
@@ -147,9 +160,31 @@ namespace qlchvlxd
                             if (radioButton3.Checked)
                             {
 
+                                NhaCungCapBE ncc = new NhaCungCapBE();
+                                ncc = nhacungcapBLL.getMaNhaCungCap(textBox1.Text.ToString());
+                               // SanPhamBE sp = new SanPhamBE();
+                              //  MessageBox.Show(textBox1.Text);
+                               // MessageBox.Show(ncc.TENNCC);
 
-                                // tim kiem theo mancc
-                                MessageBox.Show("Phan cua Linh chua dua vao ");
+                                List<SanPhamBE> listSanPham = sanphamBLL.getListSanPhamTheoMaNhaCungCap(ncc.MANCC);
+                                int stt = 1;
+                                listView1.Items.Clear();
+                                foreach (SanPhamBE sp in listSanPham)
+                                {
+                                    sp.MASP.ToString();
+                                    ListViewItem item = new ListViewItem(stt.ToString());
+                                    stt++;
+                                    item.SubItems.Add(sp.TENSP);
+                                    item.SubItems.Add(sp.MASP.ToString());
+                                    item.SubItems.Add(sp.MANCC);
+                                    item.SubItems.Add(sp.SOLUONG.ToString());
+                                    item.SubItems.Add(sp.GIABAN.ToString());
+                                    listView1.Items.Add(item);
+
+
+                                }
+
+                               
                             }
                     }
 
@@ -173,6 +208,12 @@ namespace qlchvlxd
         {
 
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+        }
+    
 
        
     }
