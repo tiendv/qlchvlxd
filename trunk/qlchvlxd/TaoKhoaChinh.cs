@@ -21,7 +21,7 @@ namespace qlchvlxd
 
             
             //add String "0"
-            for (int i = 0; i < 5 - (ketQua.Length + conlai.Length); i++)
+            for (int i = 0; i < 6 - (ketQua.Length + conlai.Length); i++)
             {
                 tenId += "0";
             }
