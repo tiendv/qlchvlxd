@@ -26,6 +26,8 @@ namespace qlchvlxd
         //lay danh sach cac chi tiet hoa don tu bang chi tiet hoa don
         List<BusinessEntities.CTHoaDonBE> listCTHD = new List<BusinessEntities.CTHoaDonBE>();
 
+        List<BusinessEntities.CTHoaDonBE> listMaCTHD = new List<BusinessEntities.CTHoaDonBE>();
+
         //lay danh sach ten cac san pham tu bang san pham
         List<BusinessEntities.SanPhamBE> listSanPham = new List<BusinessEntities.SanPhamBE>();
 
@@ -41,6 +43,9 @@ namespace qlchvlxd
 
         //lay danh sach hoa don
         List<BusinessEntities.CTHoaDonBE> listHoaDon = new List<BusinessEntities.CTHoaDonBE>();
+
+        BusinessEntities.CTHoaDonBE hoaDon = new BusinessEntities.CTHoaDonBE();
+        BusinessEntities.CTHoaDonBE myCTHoaDon = new BusinessEntities.CTHoaDonBE();
 
         private float tongTien = 0;
         private float tienTra = 0;
@@ -66,16 +71,23 @@ namespace qlchvlxd
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Nhập mã khách hàng thân thiết vào ô bên dưới!");
-            if (maKHTT.Enabled == false)
+            if (checkBox_KHTT.Checked == true)
             {
+                MessageBox.Show("Nhập mã khách hàng thân thiết vào ô bên dưới!");
+                
                 maKHTT.Enabled = true;
                 button_Tim.Enabled = true;
+
+               
             }
             else
             {
                 maKHTT.Enabled = false;
                 button_Tim.Enabled = false;
+                maKHTT.Text = "";
+                textBox_TenKH.Text = "";
+                textBox_DiaChi.Text = "";
+                textBox_DienThoai.Text = "";
             }
         }
 
@@ -91,25 +103,30 @@ namespace qlchvlxd
              * *******************************************************/
             if (maKHTT.Enabled == true && maKHTT.Text == "")
                 MessageBox.Show("Nhập mã khách hàng thân thiết");
-            //listView_HoaDon.Items.Clear();
-
+            
             listKhachHang = BusinessLogicLayer.KhacHangBLL.getListKhachHang();
 
-            BusinessLogicLayer.CTHoaDonBLL.xoaListHoaDon();
+            //BusinessLogicLayer.CTHoaDonBLL.xoaListHoaDon();
+
+            
             if (textBox_TenKH.Text != "" && textBox_DiaChi.Text != "" && textBox_DienThoai.Text != "")
             {
-                BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
-                if (listKhachHang == null)
-                    khachHang.maKhachHang = "KH001";
-                else
-                    khachHang.maKhachHang = TaoKhoaChinh.getIdLonNhat(listKhachHang[listKhachHang.Count - 1].maKhachHang.ToString(), 2);
-                khachHang.tenKhachHang = textBox_TenKH.Text;
-                khachHang.diaChi = textBox_DiaChi.Text;
-                khachHang.soDienThoai = textBox_DienThoai.Text;
+                if (maKHTT.Text == "")
+                {
+                    BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
+                    if (listKhachHang == null)
+                        khachHang.maKhachHang = "KH001";
+                    else
+                        khachHang.maKhachHang = TaoKhoaChinh.getIdLonNhat(listKhachHang[listKhachHang.Count - 1].maKhachHang.ToString(), 2);
 
-                //them 1 khach hang vao table KHACHHANG
-                BusinessLogicLayer.KhacHangBLL.themKhachHang(khachHang);
 
+                    khachHang.tenKhachHang = textBox_TenKH.Text;
+                    khachHang.diaChi = textBox_DiaChi.Text;
+                    khachHang.soDienThoai = textBox_DienThoai.Text;
+
+                    //them 1 khach hang vao table KHACHHANG
+                    BusinessLogicLayer.KhacHangBLL.themKhachHang(khachHang);
+                }
                 /*********************************************************
                  * 
                  * 
@@ -118,30 +135,25 @@ namespace qlchvlxd
                  * 
                  * 
                  * *******************************************************/
-                listHoaDon = BusinessLogicLayer.CTHoaDonBLL.getListHoaDon();
-                BusinessEntities.CTHoaDonBE hoaDon = new BusinessEntities.CTHoaDonBE();
-
-                if (listHoaDon == null)
-                    hoaDon.maHD = "DH001";
-                else
-                    hoaDon.maHD = TaoKhoaChinh.getIdLonNhat(listHoaDon[listHoaDon.Count - 1].maHD.ToString(), 2);
-
+                hoaDon.maHD = textBox_MaHD.Text;
                 hoaDon.maNhanVien = 1;
-                hoaDon.maKhachHang = khachHang.maKhachHang;
+                hoaDon.maKhachHang = maKHTT.Text;
                 hoaDon.tongTien = tongTien;
                 hoaDon.tienTra = tienTra;
                 hoaDon.tienNo = tienNo;
                 DateTime date = DateTime.Now;
                 hoaDon.ngayLapHoaDon = date.ToShortDateString();
-                hoaDon.chietKhau = 3;
-                hoaDon.giaoHang = 3;
+                hoaDon.chietKhau = 0;
+                hoaDon.giaoHang = 0;
 
-                BusinessLogicLayer.CTHoaDonBLL.themHoaDon(hoaDon);
+                BusinessLogicLayer.CTHoaDonBLL.suaHoaDon(hoaDon, hoaDon.maHD);
             }
             else 
             {
                 MessageBox.Show("NHẬP ĐẦY ĐỦ THÔNG TIN TRƯỚC KHI XEM HÓA ĐƠN!");
             }
+
+            MessageBox.Show("ĐÃ TẠO THÀNH CÔNG HÓA ĐƠN!");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -151,6 +163,19 @@ namespace qlchvlxd
 
         private void LapHoaDon_Load(object sender, EventArgs e)
         {
+
+            listHoaDon = BusinessLogicLayer.CTHoaDonBLL.getListHoaDon();
+            hoaDon = new BusinessEntities.CTHoaDonBE();
+
+            if (listHoaDon == null)
+                hoaDon.maHD = "HD001";
+            else
+                hoaDon.maHD = TaoKhoaChinh.getIdLonNhat(listHoaDon[listHoaDon.Count - 1].maHD.ToString(), 2);
+
+            hoaDon.maNhanVien = 1;
+            textBox_MaHD.Text = hoaDon.maHD;
+
+            BusinessLogicLayer.CTHoaDonBLL.themHoaDon(hoaDon);
 
             //currentListProduct = list;            
 
@@ -169,23 +194,24 @@ namespace qlchvlxd
         {
             listCTHD = BusinessLogicLayer.CTHoaDonBLL.getDanhSachCTHD();
 
+            listMaCTHD = BusinessLogicLayer.CTHoaDonBLL.getDanhSachCTHD(textBox_MaHD.Text);
             //listView_HoaDon.MultiSelect = false;
 
             ListViewItem lvi;
-            if (listCTHD == null)
+            if (listMaCTHD == null)
                 return;
             //   MessageBox.Show("Danh sách rỗng!");
             else
             {
-                for (int i = 0; i < listCTHD.Count; i++)
+                for (int i = 0; i < listMaCTHD.Count; i++)
                 {
                     lvi = new ListViewItem((i + 1).ToString());
                     sanPham = BusinessLogicLayer.SanPhamBLL.getTenSanPham(listCTHD[i].maSP);
                     lvi.SubItems.Add(sanPham.tensp);
-                    lvi.SubItems.Add(listCTHD[i].soLuong.ToString());
-                    lvi.SubItems.Add(listCTHD[i].donGia.ToString());
-                    lvi.SubItems.Add((listCTHD[i].soLuong * listCTHD[i].donGia).ToString());
-                    lvi.SubItems.Add(listCTHD[i].maCTHD);
+                    lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
+                    lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
+                    lvi.SubItems.Add((listMaCTHD[i].soLuong * listCTHD[i].donGia).ToString());
+                    lvi.SubItems.Add(listMaCTHD[i].maCTHD);
                     listView_HoaDon.Items.Add(lvi);
                 }
             }
@@ -194,15 +220,16 @@ namespace qlchvlxd
 
         private void button_Them_Click(object sender, EventArgs e)
         {
-            if (listCTHD == null)
-                textBox_MaCTHD.Text = "CT0001";
+            
+            if (listMaCTHD == null)
+                textBox_MaCTHD.Text = "CT001";
             else
-                textBox_MaCTHD.Text = TaoKhoaChinh.getIdLonNhat(listCTHD[listCTHD.Count - 1].maCTHD.ToString(),2);
+                textBox_MaCTHD.Text = TaoKhoaChinh.getIdLonNhat(listMaCTHD[listMaCTHD.Count - 1].maCTHD.ToString(),2);
 
-            BusinessEntities.CTHoaDonBE myCTHoaDon = new BusinessEntities.CTHoaDonBE();
+            myCTHoaDon = new BusinessEntities.CTHoaDonBE();
             myCTHoaDon.maCTHD = textBox_MaCTHD.Text;
             myCTHoaDon.maSP = sanPham.masp;
-            myCTHoaDon.maHD = "HD001";
+            myCTHoaDon.maHD = textBox_MaHD.Text;
             myCTHoaDon.soLuong = (int)numericUpDown_SoLuong.Value;
             myCTHoaDon.donGia = sanPham.giaban;
             myCTHoaDon.maLoaiSP = sanPham.maloaisp;
@@ -211,7 +238,7 @@ namespace qlchvlxd
 
             //cập nhật tổng tiền
             tongTien += myCTHoaDon.soLuong * myCTHoaDon.donGia;
-            label_GTTongTien.Text = tongTien.ToString(); 
+            label_GTTongTien.Text = tongTien.ToString();
 
             listView_HoaDon.Items.Clear();
             hienThiChiTietHoaDon();
@@ -221,8 +248,6 @@ namespace qlchvlxd
         {           
             textBox_DonGia.Clear();
             comboBox_TenSP.Items.Clear();
-
-            //int maLoaiSanPham = comboBox_LoaiSP.SelectedItem.ToString();
 
             listSanPham = BusinessLogicLayer.SanPhamBLL.getListTenSanPham(comboBox_LoaiSP.SelectedItem.ToString());
 
@@ -255,7 +280,7 @@ namespace qlchvlxd
             if (listView_HoaDon.SelectedItems.Count == 0)
                 return;
             textBox_MaCTHD.Text = listView_HoaDon.SelectedItems[0].SubItems[5].Text;
-            //textBoxMAHV.Text = listViewHV.SelectedItems[0].SubItems[0].Text;
+            
         }
 
         private void button_Xoa_Click(object sender, EventArgs e)
@@ -268,14 +293,7 @@ namespace qlchvlxd
             listView_HoaDon.Items.Clear();
             hienThiChiTietHoaDon();
         }
-
-        public float tinhTien()
-        {
-            textBox_SoTienTra.Text = tongTien.ToString();
- 
-            return tongTien;
-            //textBox_MaCTHD.Text = listView_HoaDon.SelectedItems[0].SubItems[4].Text;
-        }
+             
 
         private void textBox_SoTienTra_TextChanged(object sender, EventArgs e)
         {
@@ -289,11 +307,6 @@ namespace qlchvlxd
             label_GTTongTien.Text = tongTien.ToString();
             label_GTTienNo.Text = tienNo.ToString();
             
-        }
-
-        private void numericUpDown_SoLuong_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button_Tim_Click(object sender, EventArgs e)
