@@ -38,13 +38,12 @@
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.rb_TimTen = new System.Windows.Forms.RadioButton();
-            this.rb_TimDT = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_Tim
             // 
-            this.textBox_Tim.Location = new System.Drawing.Point(94, 12);
+            this.textBox_Tim.Location = new System.Drawing.Point(113, 12);
             this.textBox_Tim.Name = "textBox_Tim";
             this.textBox_Tim.Size = new System.Drawing.Size(199, 20);
             this.textBox_Tim.TabIndex = 1;
@@ -121,35 +120,21 @@
             this.columnHeader4.Text = "Điện thoại";
             this.columnHeader4.Width = 85;
             // 
-            // rb_TimTen
+            // label1
             // 
-            this.rb_TimTen.AutoSize = true;
-            this.rb_TimTen.Location = new System.Drawing.Point(57, 44);
-            this.rb_TimTen.Name = "rb_TimTen";
-            this.rb_TimTen.Size = new System.Drawing.Size(113, 17);
-            this.rb_TimTen.TabIndex = 7;
-            this.rb_TimTen.TabStop = true;
-            this.rb_TimTen.Text = "Tên nhà cung cấp";
-            this.rb_TimTen.UseVisualStyleBackColor = true;
-            // 
-            // rb_TimDT
-            // 
-            this.rb_TimDT.AutoSize = true;
-            this.rb_TimDT.Location = new System.Drawing.Point(228, 44);
-            this.rb_TimDT.Name = "rb_TimDT";
-            this.rb_TimDT.Size = new System.Drawing.Size(88, 17);
-            this.rb_TimDT.TabIndex = 8;
-            this.rb_TimDT.TabStop = true;
-            this.rb_TimDT.Text = "Số điện thoại";
-            this.rb_TimDT.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Tên nhà cung cấp";
             // 
             // TimKiemNCCPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 271);
-            this.Controls.Add(this.rb_TimDT);
-            this.Controls.Add(this.rb_TimTen);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listView_NCC);
             this.Controls.Add(this.button_SuaNCC);
             this.Controls.Add(this.button_Xoa);
@@ -157,7 +142,6 @@
             this.Controls.Add(this.textBox_Tim);
             this.Name = "TimKiemNCCPL";
             this.Text = "Tìm kiếm Nhà cung cấp";
-          
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +159,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.RadioButton rb_TimTen;
-        private System.Windows.Forms.RadioButton rb_TimDT;
+        private System.Windows.Forms.Label label1;
     }
 }
