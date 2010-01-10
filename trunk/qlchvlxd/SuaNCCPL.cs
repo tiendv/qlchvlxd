@@ -30,7 +30,13 @@ namespace qlchvlxd
             nhacungcapBE.DIENTHOAI = textBox_DienThoai.Text;
             
             BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
-            nhacungcapBLL.suaTTNCC(nhacungcapBE);
+            int kq=nhacungcapBLL.suaTTNCC(nhacungcapBE);
+            if (kq > 0)
+            {
+                MessageBox.Show("Đã cập nhật thành công.");
+            }
+            else
+                MessageBox.Show("Chưa cập nhật thành công.");
         }
 
         private void SuaNCCPL_Load(object sender, EventArgs e)
