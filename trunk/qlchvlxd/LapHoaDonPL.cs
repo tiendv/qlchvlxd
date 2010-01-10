@@ -60,7 +60,6 @@ namespace qlchvlxd
             button_Tim.Enabled = false;
             button_Them.Enabled = false;
             button_XemHD.Enabled = false;
-
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -77,8 +76,7 @@ namespace qlchvlxd
                 
                 maKHTT.Enabled = true;
                 button_Tim.Enabled = true;
-
-               
+   
             }
             else
             {
@@ -115,7 +113,7 @@ namespace qlchvlxd
                 if (maKHTT.Text == "")
                 {                    
                     if (listKhachHang == null)
-                        khachHang.maKhachHang = "KH001";
+                        khachHang.maKhachHang = "KH0001";
                     else
                         khachHang.maKhachHang = TaoKhoaChinh.getIdLonNhat(listKhachHang[listKhachHang.Count - 1].maKhachHang.ToString(), 2);
 
@@ -173,7 +171,7 @@ namespace qlchvlxd
             hoaDon = new BusinessEntities.CTHoaDonBE();
 
             if (listHoaDon == null)
-                hoaDon.maHD = "HD001";
+                hoaDon.maHD = "HD0001";
             else
                 hoaDon.maHD = TaoKhoaChinh.getIdLonNhat(listHoaDon[listHoaDon.Count - 1].maHD.ToString(), 2);
 
@@ -228,7 +226,7 @@ namespace qlchvlxd
             button_Them.Enabled = false;
 
             if (listMaCTHD == null)
-                textBox_MaCTHD.Text = "CT001";
+                textBox_MaCTHD.Text = "CT0001";
             else
                 textBox_MaCTHD.Text = TaoKhoaChinh.getIdLonNhat(listMaCTHD[listMaCTHD.Count - 1].maCTHD.ToString(),2);
 
@@ -341,6 +339,14 @@ namespace qlchvlxd
             button_Them.Enabled = true;
             if (textBox_DonGia.Text == "")
                 button_Them.Enabled = false;
+        }
+
+        private void button_CapNhat_Click(object sender, EventArgs e)
+        {
+            BusinessLogicLayer.CTHoaDonBLL.suaChiTietHoaDon((int)numericUpDown_SoLuong.Value, textBox_MaCTHD.Text);
+
+            listView_HoaDon.Items.Clear();
+            hienThiChiTietHoaDon();
         }
     }
 }

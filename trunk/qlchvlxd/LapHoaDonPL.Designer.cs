@@ -32,6 +32,7 @@
             this.button_XemHD = new System.Windows.Forms.Button();
             this.button_Thoat = new System.Windows.Forms.Button();
             this.groupBox_SanPham = new System.Windows.Forms.GroupBox();
+            this.button_CapNhat = new System.Windows.Forms.Button();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.textBox_DonGia = new System.Windows.Forms.TextBox();
             this.checkBox_GiaoHang = new System.Windows.Forms.CheckBox();
@@ -98,6 +99,7 @@
             // 
             // button_Thoat
             // 
+            this.button_Thoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_Thoat.Location = new System.Drawing.Point(511, 489);
             this.button_Thoat.Name = "button_Thoat";
             this.button_Thoat.Size = new System.Drawing.Size(75, 23);
@@ -108,6 +110,7 @@
             // 
             // groupBox_SanPham
             // 
+            this.groupBox_SanPham.Controls.Add(this.button_CapNhat);
             this.groupBox_SanPham.Controls.Add(this.button_Xoa);
             this.groupBox_SanPham.Controls.Add(this.textBox_DonGia);
             this.groupBox_SanPham.Controls.Add(this.checkBox_GiaoHang);
@@ -129,11 +132,21 @@
             this.groupBox_SanPham.TabStop = false;
             this.groupBox_SanPham.Text = "Sản phẩm";
             // 
+            // button_CapNhat
+            // 
+            this.button_CapNhat.Location = new System.Drawing.Point(499, 13);
+            this.button_CapNhat.Name = "button_CapNhat";
+            this.button_CapNhat.Size = new System.Drawing.Size(74, 23);
+            this.button_CapNhat.TabIndex = 36;
+            this.button_CapNhat.Text = "Cập nhật";
+            this.button_CapNhat.UseVisualStyleBackColor = true;
+            this.button_CapNhat.Click += new System.EventHandler(this.button_CapNhat_Click);
+            // 
             // button_Xoa
             // 
-            this.button_Xoa.Location = new System.Drawing.Point(435, 13);
+            this.button_Xoa.Location = new System.Drawing.Point(400, 13);
             this.button_Xoa.Name = "button_Xoa";
-            this.button_Xoa.Size = new System.Drawing.Size(100, 23);
+            this.button_Xoa.Size = new System.Drawing.Size(74, 23);
             this.button_Xoa.TabIndex = 35;
             this.button_Xoa.Text = "Xóa";
             this.button_Xoa.UseVisualStyleBackColor = true;
@@ -204,13 +217,12 @@
             0,
             0,
             0});
-            
             // 
             // button_Them
             // 
-            this.button_Them.Location = new System.Drawing.Point(298, 14);
+            this.button_Them.Location = new System.Drawing.Point(298, 13);
             this.button_Them.Name = "button_Them";
-            this.button_Them.Size = new System.Drawing.Size(93, 23);
+            this.button_Them.Size = new System.Drawing.Size(75, 23);
             this.button_Them.TabIndex = 29;
             this.button_Them.Text = "Thêm";
             this.button_Them.UseVisualStyleBackColor = true;
@@ -503,8 +515,10 @@
             // 
             // LapHoaDonPL
             // 
+            this.AcceptButton = this.button_Tim;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button_Thoat;
             this.ClientSize = new System.Drawing.Size(618, 524);
             this.Controls.Add(this.label_GTTienNo);
             this.Controls.Add(this.label_GTTongTien);
@@ -577,5 +591,6 @@
         private System.Windows.Forms.Label label_GTTienNo;
         private System.Windows.Forms.Label label_MaKHTT;
         private System.Windows.Forms.Button button_Tim;
+        private System.Windows.Forms.Button button_CapNhat;
     }
 }
