@@ -39,7 +39,28 @@ namespace qlchvlxd
 
         //lay danh sach ten cac loai nhà cung  cấp  tính từ nhà cung cấp
         List<BusinessEntities.NhaCungCapBE> listTenNhaCungCap = new List<BusinessEntities.NhaCungCapBE>();
-       
+
+        /// <summary>
+        ///  Lấy mã nhà cung cấp để thêm sản phẩm
+        /// </summary>
+
+        public BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new NhaCungCapBLL();
+        
+
+        /// <summary>
+        ///  Lấy mã đơn vị tính để  thêm sản phẩm
+        /// </summary>
+
+        public BusinessLogicLayer.LoaiDonViTinhBLL loaidonvitnhBLL = new LoaiDonViTinhBLL();
+
+
+        /// <summary>
+        ///  Lấy mã loại sản phẩm để  thêm sản phẩm
+        /// </summary>
+
+        public BusinessLogicLayer.LoaiSPBLL loaisanphamBLL = new LoaiSPBLL();
+
+
         
         public ThemSanPhamPL()
         {
@@ -234,17 +255,39 @@ namespace qlchvlxd
                                 MessageBox.Show("Bạn chưa chọn đơn vị tính của sản phẩm !");
                             }
                             else
-                            { 
+                            {
+                               // Lấy mã nhà cung cấp 
+                                NhaCungCapBE cc = new NhaCungCapBE();
+                                cc = nhacungcapBLL.getMaNhaCungCap(comboBox2.SelectedItem.ToString());
+                               
+                                
+                                ////// Lấy mã Loại đơn vị tính
+                               
+                               LoaiDonViTinhBE dvt = new LoaiDonViTinhBE();
+                               dvt = loaidonvitnhBLL.getMadonvitinhtuten(comboBox1.SelectedItem.ToString());
 
-                               // thêm sản phẩm 
+                                LoaiSPBE lsp = new LoaiSPBE();
+                               lsp = loaisanphamBLL.getMaloaisanphamtuten(comboBox3.SelectedItem.ToString());
 
 
+                          
+                           //   thêm một sản phẩm
+                               SanPhamBE sp = new SanPhamBE();
+                               sp.MASP = int.Parse(textBox9.Text.ToString());
+                               sp.TENSP = textBox4.Text.ToString();
+                               sp.GIANHAP = float.Parse(textBox5.Text.ToString());
+                               sp.GIABAN = float.Parse(textBox6.Text.ToString());
+                               sp.SOLUONG = int.Parse(textBox1.Text.ToString());
+                               sp.SOLUONGTOITHIEU = int.Parse(textBox8.Text.ToString());
+                               sp.MANCC = cc.MANCC;
+                               sp.THONGTIN = textBox7.Text.ToString();
+                               sp.DONVITINH = dvt.MALOAIDONVITINH;
+                               sp.MALOAISP = lsp.MALOAISP;
 
-
-
-
-
-
+                               //MessageBox.Show(textBox9.Text.ToString());
+                               sanphamBLL.themsanpham(sp);
+                               hienthi();
+                             
 
                             }
                         }
