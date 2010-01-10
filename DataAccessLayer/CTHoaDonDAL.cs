@@ -141,6 +141,8 @@ namespace DataAccessLayer
             return listHoaDon;
         }
 
+        
+
         public void themHoaDon(BusinessEntities.CTHoaDonBE hoaDon)
         {
             String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[hoadon]([mahd],[manv],[makh],[tongtien],[chietkhau],[tientra],[tienno] ,[ngaylaphd],[giaohang])"
