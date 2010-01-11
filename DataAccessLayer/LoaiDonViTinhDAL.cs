@@ -87,8 +87,15 @@ namespace DataAccessLayer
 
         public void insertLoaiDonViTinh( BusinessEntities.LoaiDonViTinhBE ldvt )
         {
-            string query = "INSERT INTO LOAIDONVITINH VALUES ('" + ldvt.MALOAIDONVITINH + "', N'" + ldvt.TENDONVITINH + "') ";
-            SQLHelp.executeNonQuery(query);
+            try
+            {
+                string query = "INSERT INTO LOAIDONVITINH VALUES ('" + ldvt.MALOAIDONVITINH + "', N'" + ldvt.TENDONVITINH + "') ";
+                SQLHelp.executeNonQuery(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
 

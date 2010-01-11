@@ -130,12 +130,16 @@ namespace DataAccessLayer
          */
         public void updateLoaiSP(LoaiSPBE loaisp)
         {
-            string query = "UPDATE LOAISANPHAM " +
-                                "SET MALOAISP =" + loaisp.MALOAISP + "'," +
-                                        "TENLOAIAP = N'" + loaisp.TENLOAISP + "'," +
-                                "WHERE MALOAISP = '" + loaisp.MALOAISP + "'";
-            
-            SQLHelp.executeNonQuery(query);
+            try
+            {
+                string query = "UPDATE LOAISANPHAM SET TENLOAISP = N'" + loaisp.TENLOAISP + "' WHERE MALOAISP = '" + loaisp.MALOAISP + "'";
+
+                SQLHelp.executeNonQuery(query);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         // Lấy mã loại sản phẩm  theo tên loại sản phẩm
