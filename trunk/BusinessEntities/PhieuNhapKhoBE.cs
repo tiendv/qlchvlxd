@@ -5,11 +5,11 @@ using System.Text;
 
 namespace BusinessEntities
 {
-    class PhieuNhapKhoBE
+    public class PhieuNhapKhoBE
     {
-        public string mank;
-        public string ngaynhap;
-        public float tongtien;
+        private string mank;
+        private string ngaynhap;
+        private float tongtien;
         
         public string MANK
         {
