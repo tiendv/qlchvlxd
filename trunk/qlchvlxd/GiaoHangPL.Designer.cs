@@ -46,6 +46,7 @@
             this.textBox_MaHD = new System.Windows.Forms.TextBox();
             this.label_MaHD = new System.Windows.Forms.Label();
             this.groupBox_SanPham = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.textBox_DonGia = new System.Windows.Forms.TextBox();
             this.label_DonGia = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.column_ThanhTien = new System.Windows.Forms.ColumnHeader();
             this.listView_GiaoHang = new System.Windows.Forms.ListView();
             this.label_GTTongTien = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox_ThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox_SanPham.SuspendLayout();
@@ -151,6 +151,7 @@
             this.textBox_SoKm.Name = "textBox_SoKm";
             this.textBox_SoKm.Size = new System.Drawing.Size(132, 20);
             this.textBox_SoKm.TabIndex = 41;
+            this.textBox_SoKm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_SoKm_KeyPress);
             // 
             // label_SoKm
             // 
@@ -258,6 +259,16 @@
             this.groupBox_SanPham.TabStop = false;
             this.groupBox_SanPham.Text = "Sản phẩm";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(535, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 20);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "%";
+            // 
             // button_Xoa
             // 
             this.button_Xoa.Location = new System.Drawing.Point(430, 10);
@@ -351,7 +362,7 @@
             this.comboBox_MucChietKhau.Name = "comboBox_MucChietKhau";
             this.comboBox_MucChietKhau.Size = new System.Drawing.Size(127, 21);
             this.comboBox_MucChietKhau.TabIndex = 24;
-            this.comboBox_MucChietKhau.Text = "10";
+            this.comboBox_MucChietKhau.Text = "0";
             this.comboBox_MucChietKhau.SelectedIndexChanged += new System.EventHandler(this.comboBox_LoaiSP_SelectedIndexChanged);
             // 
             // comboBox_TenSP
@@ -390,6 +401,7 @@
             this.button1.TabIndex = 25;
             this.button1.Text = "Xem hóa đơn";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -480,16 +492,6 @@
             this.label_GTTongTien.Name = "label_GTTongTien";
             this.label_GTTongTien.Size = new System.Drawing.Size(0, 13);
             this.label_GTTongTien.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(535, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 20);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "%";
             // 
             // GiaoHangPL
             // 
