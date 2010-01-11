@@ -68,9 +68,13 @@ namespace qlchvlxd
                         MessageBox.Show("Xóa không thành công.");
                 }
             }
-            catch (Exception exp)
+            catch (ArgumentOutOfRangeException exp)
             {
                 MessageBox.Show("Vui lòng chọn nhà cung cấp muốn xóa.");
+            }
+            catch (System.Data.SqlClient.SqlException sqlexp)
+            {
+                MessageBox.Show("Không được phép xóa.");
             }
         }
 
