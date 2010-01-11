@@ -56,10 +56,10 @@ namespace BusinessEntities
             set { this.quequanNV = value; }
             get { return this.quequanNV; }
         }
-        public string LoaiNV
+        public int MaLoaiNV
         {
-            set { this.loaiNV = value; }
-            get { return this.loaiNV; }
+            set { this.maLoaiNV = value; }
+            get { return this.maLoaiNV; }
         }
         private string maNV;
         private string hotenNV;
@@ -69,6 +69,6 @@ namespace BusinessEntities
         private string sdt;
         private string ngaydilamNV;
         private string quequanNV;
-        private string loaiNV;
+        private int maLoaiNV;
     }
 }
