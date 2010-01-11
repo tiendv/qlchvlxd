@@ -43,6 +43,10 @@ namespace qlchvlxd
                 if (kq > 0)
                 {
                     MessageBox.Show("Đã cập nhật thành công.");
+                    TimKiemNCCPL timncc = (TimKiemNCCPL)this.MdiParent.MdiChildren[this.MdiParent.MdiChildren.Length-2];
+                    
+                    timncc.loaddanhsach();
+                    this.Close();
                 }
                 else
                     MessageBox.Show("Chưa cập nhật thành công.");
