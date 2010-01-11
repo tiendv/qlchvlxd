@@ -39,6 +39,9 @@ namespace qlchvlxd
                 if (kq > 0)
                 {
                     MessageBox.Show("Đã cập nhật thành công.");
+                    TimKhachHangPL timkh = (TimKhachHangPL)this.MdiParent.MdiChildren[this.MdiParent.MdiChildren.Length - 2];
+                    timkh.loaddanhsach();
+                    this.Close();
                 }
                 else
                     MessageBox.Show("Chưa cập nhật thành công.");
