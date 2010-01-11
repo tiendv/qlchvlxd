@@ -53,7 +53,12 @@ namespace BusinessEntities
             set { this.tongluong = value; }
             get { return this.tongluong; }
         }
-
+        public int MaNV
+        {
+            set { this.maNV = value; }
+            get { return this.maNV; }
+        }
+        private int maNV;
         private string maBL;
         private string hotenNV;
         private int ngaydilam;
