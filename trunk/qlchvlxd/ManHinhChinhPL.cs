@@ -167,5 +167,11 @@ namespace qlchvlxd
             f2.MdiParent = this;
             f2.Show();
         }
+
+        private void tácGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TacGiaPL f = new TacGiaPL();
+            f.Show();
+        }
     }
 }
