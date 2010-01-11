@@ -47,7 +47,7 @@ namespace BusinessLogicLayer
                 nv.SDT = row["SODIENTHOAI"].ToString();
                 nv.NgayDiLam = row["NGAYBATDAU"].ToString();
                 nv.QueQuan = row["QUEQUAN"].ToString();
-                nv.LoaiNV = row["MALOAINV"].ToString();
+                nv.MaLoaiNV = (int)row["MALOAINV"];                
 
                 listNhanVien.Add(nv);
             }
@@ -82,11 +82,11 @@ namespace BusinessLogicLayer
          * 
          * 
          */
-        public List<NhanVienBE> viewAllEmployeeByKindOfEmployee(string kindOfEmployee)
+        public List<NhanVienBE> viewAllEmployeeByKindOfEmployee(int maLoaiNV)
         {
             List<NhanVienBE> listNhanVien = new List<NhanVienBE>();
             DataTable dt = new DataTable();
-            string myQuery = "SELECT * FROM NHANVIEN WHERE LOAINV = N'" + kindOfEmployee + "'";
+            string myQuery = "SELECT * FROM NHANVIEN WHERE MALOAINV = " + maLoaiNV;
 
             dt = SQLHelp.executeQuery(myQuery);
             //System.Console.Out.WriteLine(myQuery);
@@ -98,10 +98,10 @@ namespace BusinessLogicLayer
                 nv.MatKhau = row["MATKHAU"].ToString();
                 nv.GioiTinh = row["GIOITINH"].ToString();
                 nv.NgaySinh = row["NGAYSINH"].ToString();
-                nv.SDT = row["SDT"].ToString();
+                nv.SDT = row["SODIENTHOAI"].ToString();
                 nv.NgayDiLam = row["NGAYBATDAU"].ToString();
                 nv.QueQuan = row["QUEQUAN"].ToString();
-                nv.LoaiNV = row["LOAINV"].ToString();
+                nv.MaLoaiNV = (int)row["MALOAINV"];
 
                 listNhanVien.Add(nv);
             }
@@ -130,10 +130,10 @@ namespace BusinessLogicLayer
                 nv.MatKhau = row["MATKHAU"].ToString();
                 nv.GioiTinh = row["GIOITINH"].ToString();
                 nv.NgaySinh = row["NGAYSINH"].ToString();
-                nv.SDT = row["SDT"].ToString();
+                nv.SDT = row["SODIENTHOAI"].ToString();
                 nv.NgayDiLam = row["NGAYBATDAU"].ToString();
                 nv.QueQuan = row["QUEQUAN"].ToString();
-                nv.LoaiNV = row["LOAINV"].ToString();
+                nv.MaLoaiNV = (int)row["MALOAINV"];
 
                 listNhanVien.Add(nv);
             }
@@ -146,10 +146,13 @@ namespace BusinessLogicLayer
          * author : Huynh Minh Duc
          * Date : Jan 6 2010
          */
-        public void insertAEmployee(NhanVienBE nhanvien)
-        { 
-            string query = "INSERT INTO NHANVIEN VALUES ('"+ nhanvien.MaNV +"', N'"+ nhanvien.HoTenNV +"','"+ nhanvien.MatKhau +"',N'"+ nhanvien.GioiTinh+"', '"+ nhanvien.NgaySinh +"', '"+ nhanvien.SDT +"','"+ nhanvien.NgayDiLam +"', N'"+ nhanvien.QueQuan +"', N'"+ nhanvien.LoaiNV +"') ";
+        public void insertAEmployee(NhanVienBE nhanvien, float luongCB)
+        {
+            string query = "INSERT INTO NHANVIEN VALUES ('" + nhanvien.MaNV + "', N'" + nhanvien.HoTenNV + "','" + nhanvien.MatKhau + "', '" + nhanvien.NgaySinh + "', '" + nhanvien.SDT + "','" + nhanvien.NgayDiLam + "', N'" + nhanvien.QueQuan + "', " + nhanvien.MaLoaiNV.ToString() + ", N'" + nhanvien.GioiTinh + "')";
             SQLHelp.executeNonQuery(query);
+            string query2 = "insert into bangluong values (" + new DateTime().Month.ToString() + "2010, " + nhanvien.MaNV.ToString() + ", 26, " + new DateTime().Month.ToString() + ", "+ luongCB.ToString() +", 0, "+ luongCB.ToString() +")";
+            System.Console.Out.WriteLine(query2);
+            SQLHelp.executeNonQuery(query2);
         }
         /*
          * Xoa nhan vien
@@ -157,9 +160,9 @@ namespace BusinessLogicLayer
          * 
          * 
          */
-        public void deleteAEmployee(string manv)
+        public void deleteAEmployee(NhanVienBE nv)
         {
-            string query = "DELETE FROM NHANVIEN WHERE MANV = '"+ manv +"'";
+            string query = "DELETE FROM NHANVIEN WHERE MANV = '"+ nv.MaNV +"'";
             SQLHelp.executeNonQuery(query);
         }
         /*
@@ -172,13 +175,13 @@ namespace BusinessLogicLayer
             string query = "UPDATE NHANVIEN " +
                                 "SET HOTEN = N'"+ nhanvien.HoTenNV +"'," +
                                         "GIOITINH = N'" + nhanvien.GioiTinh + "'," +
-                                        "LOAINV = N'"+ nhanvien.LoaiNV +"'," +
+                                        "MALOAINV = "+ nhanvien.MaLoaiNV.ToString() +"," +
                                         "MATKHAU = N'"+ nhanvien.MatKhau +"'," +
                                         "NGAYSINH = '"+ nhanvien.NgaySinh +"'," +
                                         "NGAYBATDAU = '"+ nhanvien.NgayDiLam +"'," +
                                         "QUEQUAN = N'"+ nhanvien.QueQuan +"'," +
-                                        "SDT = '" + nhanvien.SDT + "'	" +
-                                "WHERE MANV = '"+ nhanvien.MaNV +"'";
+                                        "SODIENTHOAI = '" + nhanvien.SDT + "'	" +
+                                "WHERE MANV = "+ nhanvien.MaNV +"";
             System.Console.Out.WriteLine(query);
             SQLHelp.executeNonQuery(query);
         }
