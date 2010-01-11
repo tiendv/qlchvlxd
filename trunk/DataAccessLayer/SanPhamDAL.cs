@@ -305,7 +305,25 @@ namespace DataAccessLayer
                 throw e;
             }
         }
+        // cập nhật giá và số lượng sản phẩm từ nhập kho
+        public void updateNhapkho(BusinessEntities.SanPhamBE sp)
+        {
+            try
+            {
 
+                string query = " UPDATE [QLCHVLXD].[dbo].[sanpham] SET [gianhap] = " + sp.GIANHAP + "," + "[giaban] =" + sp.GIABAN + "," + "[soluong]= " + sp.SOLUONG + " WHERE [tensp]=N'" + sp.TENSP + "'";
+                //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] SET [tendonvitinh] = N'" + ldvt.TENDONVITINH + "' WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
+                //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] " +
+                //                    "SET TENDONVITINH = N'" + ldvt.TENDONVITINH + "'," +
+                //                    "WHERE [MALOAIDONVITINH] = '" + ldvt.MALOAIDONVITINH + "'";
+                //  System.Console.Out.WriteLine(query);
+                SQLHelp.executeNonQuery(query);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         // lấy san pham theo ten san pham
         public BusinessEntities.SanPhamBE getSanPhamTheoTen(String tenSanPham)
