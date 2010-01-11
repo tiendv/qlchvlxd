@@ -60,10 +60,21 @@ namespace BusinessLogicLayer
 
              return listMaSanPham;
          }
-        // Lấy giá sản phẩm from Cường
+       // Lấy danh sách sản phẩm theo mã nhà cung cấp 
+         public List<BusinessEntities.SanPhamBE> getListSanPhamTheoMaNhaCungCap(String mancc)
+         {
+             List<BusinessEntities.SanPhamBE> listTenSanPham = new List<BusinessEntities.SanPhamBE>();
+             DataAccessLayer.SanPhamDAL accessTenSanPham = new DataAccessLayer.SanPhamDAL();
 
+             listTenSanPham = accessTenSanPham.viewAllSanPhamByKindOfNCC(mancc);
 
+             if (listTenSanPham == null)
+                 return null;
 
+             return listTenSanPham;
+         }
+
+         // Lấy giá sản phẩm from Cường
          public static BusinessEntities.SanPhamBE getGiaSanPham(String tenSanPham)
          {
              BusinessEntities.SanPhamBE sanPham = new BusinessEntities.SanPhamBE();
