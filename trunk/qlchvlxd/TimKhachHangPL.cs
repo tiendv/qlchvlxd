@@ -15,7 +15,7 @@ namespace qlchvlxd
         public TimKhachHangPL()
         {
             khachhangBE = new BusinessEntities.KhachHangBE();
-            rb_Hoten.Checked = true;
+            //rb_Hoten.Checked = true;
             InitializeComponent();
         }
         private void getTTKH()
@@ -93,7 +93,7 @@ namespace qlchvlxd
             for (int i = 0; i < listKH.Count; i++)
             {
    
-                            string[] col = new string[5];
+                            string[] col = new string[7];
                             
                             col[0] = i+1+"";
                             col[1] = listKH[i].MaKhachHang;
