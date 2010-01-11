@@ -49,5 +49,11 @@ namespace qlchvlxd
         {
             this.Close();
         }
+
+        private void SuaKhachHangPL_Load(object sender, EventArgs e)
+        {
+            textBox_diaChi.Text = khachhangBE.DiaChi;
+            textBox_dienThoai.Text = khachhangBE.SoDienThoai;
+        }
     }
 }

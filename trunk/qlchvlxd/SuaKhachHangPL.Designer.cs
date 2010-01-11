@@ -102,6 +102,7 @@
             this.Controls.Add(this.label4);
             this.Name = "SuaKhachHangPL";
             this.Text = "Sửa thông tin khách hàng";
+            this.Load += new System.EventHandler(this.SuaKhachHangPL_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
