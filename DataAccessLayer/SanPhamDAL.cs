@@ -244,6 +244,8 @@ namespace DataAccessLayer
             return sanPham;
         }
 
+
+        // Lay danh sach ca san pham co ten san pham 
         public List<BusinessEntities.SanPhamBE> getListTenSanPham(String tenLoaiSanPham)
         {
             List<BusinessEntities.SanPhamBE> listsSanPham = new List<BusinessEntities.SanPhamBE>();
@@ -264,7 +266,34 @@ namespace DataAccessLayer
 
             return listsSanPham;
         }
-        
+
+        // lay danh sach san pham theo ma nha cung cap 
+        public List<SanPhamBE> viewAllSanPhamByKindOfNCC(string kindOfMaSP)
+        {
+            List<SanPhamBE> listSanPham = new List<SanPhamBE>();
+            DataTable dt = new DataTable();
+            string myQuery = "SELECT * FROM SANPHAM WHERE MANCC = N'" + kindOfMaSP + "'";
+
+            dt = SQLHelp.executeQuery(myQuery);
+            foreach (DataRow row in dt.Rows)
+            {
+                SanPhamBE sanpham = new SanPhamBE();
+                sanpham.masp = (int)row["msp"];
+                sanpham.tensp = row["tensp"].ToString();
+                sanpham.gianhap = float.Parse(row["gianhap"].ToString());
+                sanpham.giaban = float.Parse(row["giaban"].ToString());
+                sanpham.soluong = (int)row["soluong"];
+                sanpham.soluongtoithieu = (int)row["soluongtoithieu"];
+                sanpham.mancc = row["mancc"].ToString();
+                sanpham.thongtin = row["thongtin"].ToString();
+                sanpham.donvitinh = (int)row["donvitinh"];
+                sanpham.maloaisp = (int)row["maloaisp"];
+
+                listSanPham.Add(sanpham);
+            }
+
+            return listSanPham;
+        }
 
     }
 }
