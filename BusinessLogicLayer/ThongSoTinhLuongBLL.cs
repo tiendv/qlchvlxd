@@ -27,8 +27,8 @@ namespace BusinessLogicLayer
                 ThongSoTinhLuongBE thongso = new ThongSoTinhLuongBE();
 
                 thongso.MaLoaiNhanVien = (int)row["MALOAINV"];
-                thongso.TenLoaiNhanVien = row["MALOAINV"].ToString();
-                thongso.LuongCoBan = (float) row["MALOAINV"];
+                thongso.TenLoaiNhanVien = row["TENLOAINV"].ToString();
+                thongso.LuongCoBan = float.Parse(row["LUONGCOBAN"].ToString());
 
                 list.Add(thongso);
             }
