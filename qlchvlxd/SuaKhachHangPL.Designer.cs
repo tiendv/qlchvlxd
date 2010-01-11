@@ -28,45 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button_Huy = new System.Windows.Forms.Button();
+            this.button_DongY = new System.Windows.Forms.Button();
+            this.textBox_dienThoai = new System.Windows.Forms.TextBox();
+            this.textBox_diaChi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // button_Huy
             // 
-            this.button2.Location = new System.Drawing.Point(181, 107);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_Huy.Location = new System.Drawing.Point(181, 107);
+            this.button_Huy.Name = "button_Huy";
+            this.button_Huy.Size = new System.Drawing.Size(75, 23);
+            this.button_Huy.TabIndex = 19;
+            this.button_Huy.Text = "Hủy";
+            this.button_Huy.UseVisualStyleBackColor = true;
+            this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
             // 
-            // button1
+            // button_DongY
             // 
-            this.button1.Location = new System.Drawing.Point(79, 107);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Sửa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_DongY.Location = new System.Drawing.Point(79, 107);
+            this.button_DongY.Name = "button_DongY";
+            this.button_DongY.Size = new System.Drawing.Size(75, 23);
+            this.button_DongY.TabIndex = 18;
+            this.button_DongY.Text = "Đồng ý";
+            this.button_DongY.UseVisualStyleBackColor = true;
+            this.button_DongY.Click += new System.EventHandler(this.button_DongY_Click);
             // 
-            // textBox5
+            // textBox_dienThoai
             // 
-            this.textBox5.Location = new System.Drawing.Point(79, 49);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(177, 20);
-            this.textBox5.TabIndex = 17;
+            this.textBox_dienThoai.Location = new System.Drawing.Point(79, 49);
+            this.textBox_dienThoai.Name = "textBox_dienThoai";
+            this.textBox_dienThoai.ShortcutsEnabled = false;
+            this.textBox_dienThoai.Size = new System.Drawing.Size(177, 20);
+            this.textBox_dienThoai.TabIndex = 17;
             // 
-            // textBox4
+            // textBox_diaChi
             // 
-            this.textBox4.Location = new System.Drawing.Point(79, 22);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(177, 20);
-            this.textBox4.TabIndex = 16;
+            this.textBox_diaChi.Location = new System.Drawing.Point(79, 22);
+            this.textBox_diaChi.Name = "textBox_diaChi";
+            this.textBox_diaChi.Size = new System.Drawing.Size(177, 20);
+            this.textBox_diaChi.TabIndex = 16;
             // 
             // label5
             // 
@@ -86,18 +89,18 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Địa chỉ";
             // 
-            // suakhachhang
+            // SuaKhachHangPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 183);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.button_Huy);
+            this.Controls.Add(this.button_DongY);
+            this.Controls.Add(this.textBox_dienThoai);
+            this.Controls.Add(this.textBox_diaChi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Name = "suakhachhang";
+            this.Name = "SuaKhachHangPL";
             this.Text = "Sửa thông tin khách hàng";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -106,10 +109,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button_Huy;
+        private System.Windows.Forms.Button button_DongY;
+        private System.Windows.Forms.TextBox textBox_dienThoai;
+        private System.Windows.Forms.TextBox textBox_diaChi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
     }
