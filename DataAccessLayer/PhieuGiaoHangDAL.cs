@@ -89,6 +89,16 @@ namespace DataAccessLayer
 
             return listPhieuGiaoHang;
         }
+
+        public void themPhieuGiaoHang(BusinessEntities.PhieuGiaoHangBE phieuGiaoHang)
+        {
+            
+
+            String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[phieugiaohang]([magh],[mahd],[ngaygiao] ,[chiphi])" 
+                                + "VALUES('" + phieuGiaoHang.maPhieuGiaoHang + "','" + phieuGiaoHang.maHoaDon + "','" + phieuGiaoHang.ngayGiaoHang + "'," + phieuGiaoHang.chiPhi + ")";
+            SQLHelp.executeNonQuery(myAddQuery);
+         
+        }
     }
 
 }
