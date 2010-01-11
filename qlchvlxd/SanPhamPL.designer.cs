@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 42);
+            this.label2.Location = new System.Drawing.Point(37, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 1;
@@ -70,18 +70,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(37, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Mã Sản Phẩm";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(139, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = ".........................";
+            this.label3.Text = "Số Lượng";
             // 
             // label6
             // 
@@ -121,7 +112,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 206);
+            this.textBox1.Location = new System.Drawing.Point(152, 206);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(147, 58);
@@ -129,35 +120,35 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 42);
+            this.textBox2.Location = new System.Drawing.Point(152, 32);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(147, 20);
             this.textBox2.TabIndex = 4;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(142, 103);
+            this.textBox3.Location = new System.Drawing.Point(152, 107);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(147, 20);
             this.textBox3.TabIndex = 4;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(142, 140);
+            this.textBox4.Location = new System.Drawing.Point(152, 140);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(147, 20);
             this.textBox4.TabIndex = 4;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(142, 168);
+            this.textBox5.Location = new System.Drawing.Point(152, 168);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(147, 20);
             this.textBox5.TabIndex = 4;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(79, 283);
+            this.button2.Location = new System.Drawing.Point(75, 283);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 23);
             this.button2.TabIndex = 5;
@@ -166,14 +157,21 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(202, 283);
+            this.button3.Location = new System.Drawing.Point(238, 283);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "Cập Nhật Sản Phẩm";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // sanpham
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(152, 71);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(147, 20);
+            this.textBox6.TabIndex = 4;
+            // 
+            // SanPhamPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,10 +180,10 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -194,8 +192,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "sanpham";
+            this.Name = "SanPhamPL";
             this.Text = "Sản Phẩm";
+            this.Load += new System.EventHandler(this.SanPhamPL_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,7 +205,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
@@ -218,5 +216,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
