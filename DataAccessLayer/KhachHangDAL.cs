@@ -97,7 +97,7 @@ namespace DataAccessLayer
         // xóa khách hàng thân thiết
         public int XoaTTKHThanThiet(BusinessEntities.KhachHangBE khachHang)
         {
-            String myAddQuery = "delete from [QLCHVLXD].[dbo].[khachhang] where mankh='" + khachHang.MaKhachHang + "'";
+            String myAddQuery = "delete from [QLCHVLXD].[dbo].[khachhang] where makh='" + khachHang.MaKhachHang + "'";
 
             int kq = SQLHelp.executeNonQuery(myAddQuery);
             return kq;
