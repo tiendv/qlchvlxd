@@ -72,6 +72,22 @@ namespace BusinessLogicLayer
 
 
         }
+        public void capnhatloaisanpham(BusinessEntities.LoaiSPBE lsp)
+        {
+            try
+            {
+
+                DataAccessLayer.LoaiSPDAL access = new DataAccessLayer.LoaiSPDAL();
+
+                access.updateLoaiSP(lsp);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+
+        }
 
 
         /// 
