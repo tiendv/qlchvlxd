@@ -14,13 +14,37 @@ namespace qlchvlxd
     public partial class QuanlyNV : Form
     {
         private BusinessLogicLayer.NhanVienBLL nhanvienBLL = new NhanVienBLL();
+
         public int maNV;
+
+        private List<ThongSoTinhLuongBE> listLoaiNhanVien;
+
         public QuanlyNV()
         {
             InitializeComponent();
+
+            /*
+             * Thao tac voi comboBox
+             */
+            listLoaiNhanVien = new List<ThongSoTinhLuongBE>();
+            ThongSoTinhLuongBLL thsnv = new ThongSoTinhLuongBLL();
+            listLoaiNhanVien = thsnv.viewAll();
+
+            foreach (ThongSoTinhLuongBE loaiNhanVien in listLoaiNhanVien)
+            {
+                comboBox1.Items.Add(loaiNhanVien.TenLoaiNhanVien.ToUpper());
+                comboBox3.Items.Add(loaiNhanVien.TenLoaiNhanVien.ToUpper());
+            }
+
+            comboBox1.Items.Add("TẤT CẢ");
+
         }
         public void hienthi()
         {
+            
+            /*
+             * 
+             */
             List<NhanVienBE> listNhanVien = new List<NhanVienBE>();
             listNhanVien = nhanvienBLL.viewAllEmployee();
 
@@ -38,17 +62,13 @@ namespace qlchvlxd
                 item.SubItems.Add(nv.SDT);
                 item.SubItems.Add(nv.NgayDiLam);
                 item.SubItems.Add(nv.QueQuan);
-                item.SubItems.Add(nv.LoaiNV);
-
+                item.SubItems.Add(listLoaiNhanVien[nv.MaLoaiNV - 1].TenLoaiNhanVien);
                 listView1.Items.Add(item);
             }
 
             maNV = Int32.Parse(listView1.Items[stt - 2].SubItems[1].Text);
             textBox2.Text = (maNV + 1).ToString();
-
             
-
-
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -70,7 +90,7 @@ namespace qlchvlxd
                 item.SubItems.Add(nv.SDT);
                 item.SubItems.Add(nv.NgayDiLam);
                 item.SubItems.Add(nv.QueQuan);
-                item.SubItems.Add(nv.LoaiNV);
+                item.SubItems.Add(nv.MaLoaiNV.ToString());
 
                 listView1.Items.Add(item);
             }
@@ -87,8 +107,9 @@ namespace qlchvlxd
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            List<NhanVienBE> listNhanVien = nhanvienBLL.viewAllEmployeeByKindOfEmployee(this.comboBox1.SelectedItem.ToString());
+        {          
+
+            List<NhanVienBE> listNhanVien = nhanvienBLL.viewAllEmployeeByKindOfEmployee(comboBox1.SelectedIndex);
 
             int stt = 1;
 
@@ -106,7 +127,7 @@ namespace qlchvlxd
                 item.SubItems.Add(nv.SDT);
                 item.SubItems.Add(nv.NgayDiLam);
                 item.SubItems.Add(nv.QueQuan);
-                item.SubItems.Add(nv.LoaiNV);
+                item.SubItems.Add(nv.MaLoaiNV.ToString());
 
                 listView1.Items.Add(item);
 
@@ -149,8 +170,7 @@ namespace qlchvlxd
             comboBox3.Text = "ĐIỀN THÔNG TIN";
 
             this.button4.Enabled = false;
-            this.button5.Enabled = false;
-            this.button6.Enabled = false;
+            this.button5.Enabled = false;            
             this.button1.Enabled = false;
             this.button6.Enabled = true;
         }
@@ -180,9 +200,9 @@ namespace qlchvlxd
                 nhanvien.SDT = textBox8.Text.ToUpper();
                 nhanvien.NgayDiLam = maskedTextBox2.Text.ToUpper();
                 nhanvien.QueQuan = textBox11.Text.ToUpper();
-                nhanvien.LoaiNV = comboBox3.Text.ToUpper();
+                nhanvien.MaLoaiNV = comboBox3.SelectedIndex + 1;
 
-                nhanvienBLL.insertAEmployee(nhanvien);
+                nhanvienBLL.insertAEmployee(nhanvien, listLoaiNhanVien[nhanvien.MaLoaiNV - 1].LuongCoBan);
 
                 hienthi();
 
@@ -194,10 +214,11 @@ namespace qlchvlxd
                 maskedTextBox2.Clear();
                 textBox11.Clear();
 
+
+
                 this.button6.Enabled = false;
                 this.button4.Enabled = true;
-                this.button5.Enabled = true;
-                this.button6.Enabled = true;
+                this.button5.Enabled = true;                
                 this.button1.Enabled = true;
             }
         }
@@ -206,7 +227,12 @@ namespace qlchvlxd
         {
             if (MessageBox.Show("BẠN CÓ CHẮC CHẮN MUỐN XÓA NHÂN VIÊN " + textBox2.Text + " HAY KHÔNG?", "THÔNG BÁO", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                nhanvienBLL.deleteAEmployee(textBox2.Text);
+                NhanVienBE nv = new NhanVienBE();
+                nv.MaNV = textBox2.Text;
+
+                nhanvienBLL.deleteAEmployee(nv);
+                new BangLuongNhanVienBLL().delectBangLuong(nv);
+
                 MessageBox.Show("NHÂN VIÊN ĐÃ ĐƯỢC XÓA");
                 hienthi();
                 textBox2.Clear();
@@ -296,7 +322,7 @@ namespace qlchvlxd
             nhanvien.SDT = textBox8.Text.ToUpper();
             nhanvien.NgayDiLam = maskedTextBox2.Text.ToUpper();
             nhanvien.QueQuan = textBox11.Text.ToUpper();
-            nhanvien.LoaiNV = comboBox3.Text.ToUpper();
+            nhanvien.MaLoaiNV = comboBox3.SelectedIndex + 1;
 
             nhanvienBLL.updateEmployee(nhanvien);
             hienthi();
