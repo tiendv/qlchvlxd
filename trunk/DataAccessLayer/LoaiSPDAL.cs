@@ -93,8 +93,15 @@ namespace DataAccessLayer
 
         public void insertLoaiSP(LoaiSPBE lsp)
         {
-            string query = "INSERT INTO LOAISANPHAM VALUES ('" +lsp.MALOAISP + "', N'" + lsp.TENLOAISP+ "') ";
-            SQLHelp.executeNonQuery(query);
+            try
+            {
+                string query = "INSERT INTO LOAISANPHAM VALUES ('" + lsp.MALOAISP + "', N'" + lsp.TENLOAISP + "') ";
+                SQLHelp.executeNonQuery(query);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
        
         // Xóa Loại Sản Phẩm
@@ -105,8 +112,16 @@ namespace DataAccessLayer
 
         public void deleteLoaiSanPham(BusinessEntities.LoaiSPBE lsp)
         {
-            string query = "DELETE FROM LOAISANPHAM WHERE MALOAISP = '" + lsp.MALOAISP + "'";
-            SQLHelp.executeNonQuery(query);
+            try
+            {
+                string query = "DELETE FROM LOAISANPHAM WHERE MALOAISP = '" + lsp.MALOAISP + "'";
+                SQLHelp.executeNonQuery(query);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            
+            }
         }
         /*
          * Sửa Thông tin Loại Sản Phẩm

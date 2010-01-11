@@ -294,6 +294,44 @@ namespace DataAccessLayer
 
             return listSanPham;
         }
+        // update thong tin san pham theo ten san pham
+        public void updatesanphamtheotensanpham(BusinessEntities.SanPhamBE sp)
+        {
+            try
+            {
+
+                string query = " UPDATE [QLCHVLXD].[dbo].[sanpham] SET [tensp] = N'" + sp.TENSP + "'," + "[gianhap] = " + sp.GIANHAP + "," + "[giaban] =" + sp.GIABAN + "," + "[soluongtoithieu]= " + sp.SOLUONGTOITHIEU + "," + "[thongtin] = N'" + sp.THONGTIN + "'WHERE [tensp]=N'" + sp.TENSP + "'";
+                //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] SET [tendonvitinh] = N'" + ldvt.TENDONVITINH + "' WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
+                //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] " +
+                //                    "SET TENDONVITINH = N'" + ldvt.TENDONVITINH + "'," +
+                //                    "WHERE [MALOAIDONVITINH] = '" + ldvt.MALOAIDONVITINH + "'";
+              //  System.Console.Out.WriteLine(query);
+                SQLHelp.executeNonQuery(query);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+        // lấy san pham theo ten san pham
+        public BusinessEntities.SanPhamBE getSanPhamTheoTen(String tenSanPham)
+        {
+            DataTable dt = SQLHelp.executeQuery("SELECT GIABAN, SANPHAM.MSP, SANPHAM.MALOAISP FROM SANPHAM WHERE TENSP = N'" + tenSanPham + "'");
+
+            BusinessEntities.SanPhamBE sanPham = null;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                sanPham = new BusinessEntities.SanPhamBE();
+                sanPham.masp = (int)row["MSP"];
+                sanPham.giaban = float.Parse(row["GIABAN"].ToString());
+                sanPham.maloaisp = (int)row["MALOAISP"];
+            }
+
+            return sanPham;
+        }
 
     }
 }

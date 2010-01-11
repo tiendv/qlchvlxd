@@ -16,15 +16,22 @@ namespace DataAccessLayer
     {
         private static string connectionString = "Data Source=" + DataResources.NAME_SERVER + "; database=" + DataResources.NAME_DATEBASE + ";Integrated Security=True";
         //executeNonQuery tra ve so int de kiem tra thuc hien insert update delete thanh cong hay ko
-        public static int executeNonQuery(string query)
+        public static int executeNonQuery(string query) 
         {
             SqlConnection connection = new SqlConnection(connectionString);
             
             connection.Open();
             SqlCommand command = new SqlCommand(query, connection);
-            int kq=command.ExecuteNonQuery();
-            connection.Close();
-            return kq;
+            try
+            {
+                int kq = command.ExecuteNonQuery();
+                connection.Close();
+                return kq;
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
         }
 
         public static DataTable executeQuery(string query)

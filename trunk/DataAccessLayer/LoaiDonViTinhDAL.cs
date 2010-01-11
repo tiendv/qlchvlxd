@@ -20,7 +20,7 @@ namespace DataAccessLayer
 {
     public class LoaiDonViTinhDAL
     {
-        public List<BusinessEntities.LoaiDonViTinhBE> getLoaiDonViTinh()
+        public List<BusinessEntities.LoaiDonViTinhBE> getLoaiDonViTinh() 
         {
             DataTable dt = SQLHelp.executeQuery("select * from loaidonvitinh");
             List<BusinessEntities.LoaiDonViTinhBE> danhsachLoaiDonViTinh = new List<BusinessEntities.LoaiDonViTinhBE>();
@@ -96,8 +96,16 @@ namespace DataAccessLayer
 
         public void deleteLoaiDonViTinh(BusinessEntities.LoaiDonViTinhBE ldvt)
         {
-            string query = "DELETE FROM LOAIDONVITINH WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
-            SQLHelp.executeNonQuery(query);
+            try
+            {
+                string query = "DELETE FROM LOAIDONVITINH WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
+                SQLHelp.executeNonQuery(query);
+            }
+            catch (Exception e)
+            {
+                throw e;
+                //throw new Exception("Loi trong qua trinh xoa Loai Don Vi Tinh:" + e.Message.ToString());
+            }
         }
         /*
          * Sửa Thông tin loại đơn vị tính
@@ -107,10 +115,7 @@ namespace DataAccessLayer
         public void updateLoaiDonViTinh(BusinessEntities.LoaiDonViTinhBE ldvt)
         {
             string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] SET [tendonvitinh] = N'" + ldvt.TENDONVITINH + "' WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
-            //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] " +
-            //                    "SET TENDONVITINH = N'" + ldvt.TENDONVITINH + "'," +
-            //                    "WHERE [MALOAIDONVITINH] = '" + ldvt.MALOAIDONVITINH + "'";
-            //System.Console.Out.WriteLine(query);
+      
             SQLHelp.executeNonQuery(query);
         }
 
