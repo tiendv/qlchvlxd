@@ -131,11 +131,6 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "THỦ KHO",
-            "GIAO HÀNG",
-            "BÁN HÀNG",
-            "TẤT CẢ"});
             this.comboBox1.Location = new System.Drawing.Point(73, 16);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(122, 21);
@@ -279,10 +274,6 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "THỦ KHO",
-            "BÁN HÀNG",
-            "GIAO HÀNG"});
             this.comboBox3.Location = new System.Drawing.Point(527, 70);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(117, 21);
