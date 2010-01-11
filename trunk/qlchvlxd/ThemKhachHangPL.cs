@@ -13,7 +13,7 @@ namespace qlchvlxd
     {
         public ThemKhachHangPL()
         {
-            rb_Nam.Checked = true;
+            //rb_Nam.Checked = true;
             InitializeComponent();
         }
 
