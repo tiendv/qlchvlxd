@@ -43,6 +43,9 @@ namespace qlchvlxd
                 if (kq > 0)
                 {
                     MessageBox.Show("Đã thêm thành công.");
+                    textBox_DiaChi.Text = "";
+                    textBox_DienThoai.Text = "";
+                    textBox_Ten.Text= "";
                 }
                 else
                     MessageBox.Show("Có lỗi! Thông tin chưa được thêm vào.");
