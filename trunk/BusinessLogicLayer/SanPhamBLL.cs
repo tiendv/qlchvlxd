@@ -111,6 +111,37 @@ namespace BusinessLogicLayer
              access.insertASanPham(sp);
          }
 
+        //// sửa thông tin một sản phẩm
+         public void suadthongtinsanphamtheotensanpham(BusinessEntities.SanPhamBE sanpham)
+         {
+             try
+             {
+                 DataAccessLayer.SanPhamDAL access = new DataAccessLayer.SanPhamDAL();
+
+                 access.updatesanphamtheotensanpham(sanpham);
+             }
+             catch (Exception e)
+             {
+                 throw e;
+             }
+
+
+         }
+
+         // Lấy sản phẩm từ tên của sản phẩm
+         public  BusinessEntities.SanPhamBE getSanPhamTuTenSP(String tenSanPham)
+         {
+             BusinessEntities.SanPhamBE sanPham = new BusinessEntities.SanPhamBE();
+             DataAccessLayer.SanPhamDAL accessSanPham = new DataAccessLayer.SanPhamDAL();
+
+             sanPham = accessSanPham.getSanPhamTheoTen(tenSanPham);
+
+             if (sanPham == null)
+                 return null;
+
+             return sanPham;
+         }
+
 
  
 
