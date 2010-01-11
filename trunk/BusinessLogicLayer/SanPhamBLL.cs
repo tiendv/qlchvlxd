@@ -127,7 +127,21 @@ namespace BusinessLogicLayer
 
 
          }
+         public void xoasanpham(BusinessEntities.SanPhamBE sanpham)
+         {
+             try
+             {
+                 DataAccessLayer.SanPhamDAL access = new DataAccessLayer.SanPhamDAL();
 
+                 access.deleteASanPham(sanpham);
+             }
+             catch (Exception e)
+             {
+                 throw e;
+             }
+
+
+         }
          // Lấy sản phẩm từ tên của sản phẩm
          public  BusinessEntities.SanPhamBE getSanPhamTuTenSP(String tenSanPham)
          {
