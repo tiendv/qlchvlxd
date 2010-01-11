@@ -101,40 +101,42 @@ namespace qlchvlxd
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (textBox1.Text.Length == 0)
+            try
             {
-                MessageBox.Show("Bạn chưa lập nội dung tìm kiếm !");
-
-            }
-            else
-            {
-                // tim kiem theo ten san pham 
-                if (radioButton1.Checked)
+                if (textBox1.Text.Length == 0)
                 {
-                    List<SanPhamBE> listSanPham = BusinessLogicLayer.SanPhamBLL.getListTenSanPham(textBox1.Text);
-                    int stt = 1;
-                    listView1.Items.Clear();
-                    foreach (SanPhamBE sp in listSanPham)
-                    {
-                        sp.MASP.ToString();
-                        ListViewItem item = new ListViewItem(stt.ToString());
-                        stt++;
-                        item.SubItems.Add(sp.TENSP);
-                        item.SubItems.Add(sp.MASP.ToString());
-                        item.SubItems.Add(sp.MANCC);
-                        item.SubItems.Add(sp.SOLUONG.ToString());
-                        item.SubItems.Add(sp.GIABAN.ToString());
-                        listView1.Items.Add(item);
-                    }
-
-
+                    MessageBox.Show("Bạn chưa lập nội dung tìm kiếm !");
 
                 }
                 else
                 {
-                    // tim kiem theo ma san pham
-                    
-                    
+                    // tim kiem theo ten san pham 
+                    if (radioButton1.Checked)
+                    {
+                        List<SanPhamBE> listSanPham = BusinessLogicLayer.SanPhamBLL.getListTenSanPham(textBox1.Text);
+                        int stt = 1;
+                        listView1.Items.Clear();
+                        foreach (SanPhamBE sp in listSanPham)
+                        {
+                            sp.MASP.ToString();
+                            ListViewItem item = new ListViewItem(stt.ToString());
+                            stt++;
+                            item.SubItems.Add(sp.TENSP);
+                            item.SubItems.Add(sp.MASP.ToString());
+                            item.SubItems.Add(sp.MANCC);
+                            item.SubItems.Add(sp.SOLUONG.ToString());
+                            item.SubItems.Add(sp.GIABAN.ToString());
+                            listView1.Items.Add(item);
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        // tim kiem theo ma san pham
+
+
                         if (radioButton2.Checked)
                         {
 
@@ -152,7 +154,7 @@ namespace qlchvlxd
                                 item.SubItems.Add(sp.SOLUONG.ToString());
                                 item.SubItems.Add(sp.GIABAN.ToString());
                                 listView1.Items.Add(item);
-                                
+
 
                             }
                         }
@@ -162,9 +164,9 @@ namespace qlchvlxd
 
                                 NhaCungCapBE ncc = new NhaCungCapBE();
                                 ncc = nhacungcapBLL.getMaNhaCungCap(textBox1.Text.ToString());
-                               // SanPhamBE sp = new SanPhamBE();
-                              //  MessageBox.Show(textBox1.Text);
-                               // MessageBox.Show(ncc.TENNCC);
+                                // SanPhamBE sp = new SanPhamBE();
+                                //  MessageBox.Show(textBox1.Text);
+                                // MessageBox.Show(ncc.TENNCC);
 
                                 List<SanPhamBE> listSanPham = sanphamBLL.getListSanPhamTheoMaNhaCungCap(ncc.MANCC);
                                 int stt = 1;
@@ -184,11 +186,19 @@ namespace qlchvlxd
 
                                 }
 
-                               
-                            }
-                    }
 
-                
+                            }
+
+                    }
+                }
+            }
+
+
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi trong câu và lựa chọn tìm kiếm !");
             }
 
 

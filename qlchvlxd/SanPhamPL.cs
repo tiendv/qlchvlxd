@@ -14,7 +14,7 @@ namespace qlchvlxd
     public partial class SanPhamPL : Form
     {
         public SanPhamBE sanpham;
-        public SanPhamBLL sanphamBLL;
+       
        
 
         public SanPhamPL()
@@ -40,13 +40,55 @@ namespace qlchvlxd
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //SanPhamBE sanphamtest = new SanPhamBE();
-            //sanphamtest = sanphamBLL.getSanPhamTuTenSP(textBox2.Text.ToString());
-            //MessageBox.Show(sanphamtest.TENSP);
-            sanphamBLL.suadthongtinsanphamtheotensanpham(sanpham);
-            MessageBox.Show("Đơn Vị Tính Đã Được cập nhật !");
+            BusinessLogicLayer.SanPhamBLL sanphamBLL = new BusinessLogicLayer.SanPhamBLL();
+
+            sanpham.TENSP = textBox2.Text;
+            sanpham.SOLUONG = int.Parse(textBox6.Text.ToString());
+            sanpham.GIANHAP = float.Parse(textBox3.Text.ToString());
+            sanpham.GIABAN = float.Parse(textBox4.Text.ToString());
+            //sanpham.SOLUONGtextBox5.Text = .ToString();
+            sanpham.THONGTIN = textBox1.Text;
+
+            try
+            {
+                MessageBox.Show(sanpham.MASP.ToString());
+                sanphamBLL.suadthongtinsanphamtheotensanpham(sanpham);
+                MessageBox.Show("Sản Phẩm đã được cập nhật !");
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi trong quá trình cập nhật thông tin sản phẩm !");
+
+            }
+            
                    
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+         
+
+
+            MessageBox.Show(sanpham.THONGTIN);
+
+            BusinessLogicLayer.SanPhamBLL sanphamBLL = new BusinessLogicLayer.SanPhamBLL();
+
+            try
+            {
+                MessageBox.Show(sanpham.MASP.ToString());
+                sanphamBLL.xoasanpham(sanpham);
+                
+               // MessageBox.Show(sanpham.THONGTIN);
+                MessageBox.Show("Sản Phẩm đã được xóa khỏi dữ liệu !");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sản Phẩm đang tồn tại trong dữ liệu khác !");
+
+            }
         }
     }
 }

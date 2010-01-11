@@ -238,94 +238,102 @@ namespace qlchvlxd
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            // Kiem tra hop le cua du lieu nhap 
-            if (textBox4.Text.Length == 0)
+            try
             {
-                MessageBox.Show("Tên sản phẩm không được bỏ trống!");
-                textBox4.Focus();
-            }
-            else
-            {
-                if (textBox5.Text.Length == 0 || textBox6.Text.Length == 0)
+
+                // Kiem tra hop le cua du lieu nhap 
+                if (textBox4.Text.Length == 0)
                 {
-                    MessageBox.Show("Giá Tiền không được bỏ trống");
-                    textBox5.Focus();
+                    MessageBox.Show("Tên sản phẩm không được bỏ trống!");
+                    textBox4.Focus();
                 }
                 else
                 {
-                    if (Int32.Parse(textBox5.Text.ToString()) > Int32.Parse(textBox6.Text.ToString()))
+                    if (textBox5.Text.Length == 0 || textBox6.Text.Length == 0)
                     {
-                        MessageBox.Show("Giá bán phải lớn hơn hoặc bằng giá nhập!");
-                        textBox6.Focus();
-
+                        MessageBox.Show("Giá Tiền không được bỏ trống");
+                        textBox5.Focus();
                     }
                     else
                     {
-                        if (textBox8.Text.Length == 0)
+                        if (Int32.Parse(textBox5.Text.ToString()) > Int32.Parse(textBox6.Text.ToString()))
                         {
-                            MessageBox.Show("Số lượng tối thiểu  không được bỏ trống");
-                            textBox5.Focus();
+                            MessageBox.Show("Giá bán phải lớn hơn hoặc bằng giá nhập!");
+                            textBox6.Focus();
 
                         }
                         else
                         {
-                            if (comboBox1.SelectedItem == null)
+                            if (textBox8.Text.Length == 0)
                             {
-                                MessageBox.Show("Bạn chưa chọn đơn vị tính của sản phẩm !");
+                                MessageBox.Show("Số lượng tối thiểu  không được bỏ trống");
+                                textBox5.Focus();
+
                             }
                             else
                             {
-                                try
+                                if (comboBox1.SelectedItem == null)
                                 {
-                                    // Lấy mã nhà cung cấp 
-                                    NhaCungCapBE cc = new NhaCungCapBE();
-                                    cc = nhacungcapBLL.getMaNhaCungCap(comboBox2.SelectedItem.ToString());
-
-
-                                    ////// Lấy mã Loại đơn vị tính
-
-                                    LoaiDonViTinhBE dvt = new LoaiDonViTinhBE();
-                                    dvt = loaidonvitnhBLL.getMadonvitinhtuten(comboBox1.SelectedItem.ToString());
-
-                                    LoaiSPBE lsp = new LoaiSPBE();
-                                    lsp = loaisanphamBLL.getMaloaisanphamtuten(comboBox3.SelectedItem.ToString());
-
-
-
-                                    //   thêm một sản phẩm
-                                    SanPhamBE sp = new SanPhamBE();
-                                    sp.MASP = int.Parse(textBox9.Text.ToString());
-                                    sp.TENSP = textBox4.Text.ToString();
-                                    sp.GIANHAP = float.Parse(textBox5.Text.ToString());
-                                    sp.GIABAN = float.Parse(textBox6.Text.ToString());
-                                    sp.SOLUONG = int.Parse(textBox1.Text.ToString());
-                                    sp.SOLUONGTOITHIEU = int.Parse(textBox8.Text.ToString());
-                                    sp.MANCC = cc.MANCC;
-                                    sp.THONGTIN = textBox7.Text.ToString();
-                                    sp.DONVITINH = dvt.MALOAIDONVITINH;
-                                    sp.MALOAISP = lsp.MALOAISP;
-                                    sanphamBLL.themsanpham(sp);
-                                    MessageBox.Show("Thêm sản phẩm thành công !");
+                                    MessageBox.Show("Bạn chưa chọn đơn vị tính của sản phẩm !");
                                 }
-                                catch (Exception ec)
+                                else
                                 {
-                                    MessageBox.Show("Lỗi trong quá trình thêm sản phẩm !");
- 
-                                }
-                               hienthi();
-                             
+                                    try
+                                    {
+                                        // Lấy mã nhà cung cấp 
+                                        NhaCungCapBE cc = new NhaCungCapBE();
+                                        cc = nhacungcapBLL.getMaNhaCungCap(comboBox2.SelectedItem.ToString());
 
+
+                                        ////// Lấy mã Loại đơn vị tính
+
+                                        LoaiDonViTinhBE dvt = new LoaiDonViTinhBE();
+                                        dvt = loaidonvitnhBLL.getMadonvitinhtuten(comboBox1.SelectedItem.ToString());
+
+                                        LoaiSPBE lsp = new LoaiSPBE();
+                                        lsp = loaisanphamBLL.getMaloaisanphamtuten(comboBox3.SelectedItem.ToString());
+
+
+
+                                        //   thêm một sản phẩm
+                                        SanPhamBE sp = new SanPhamBE();
+                                        sp.MASP = int.Parse(textBox9.Text.ToString());
+                                        sp.TENSP = textBox4.Text.ToString();
+                                        sp.GIANHAP = float.Parse(textBox5.Text.ToString());
+                                        sp.GIABAN = float.Parse(textBox6.Text.ToString());
+                                        sp.SOLUONG = int.Parse(textBox1.Text.ToString());
+                                        sp.SOLUONGTOITHIEU = int.Parse(textBox8.Text.ToString());
+                                        sp.MANCC = cc.MANCC;
+                                        sp.THONGTIN = textBox7.Text.ToString();
+                                        sp.DONVITINH = dvt.MALOAIDONVITINH;
+                                        sp.MALOAISP = lsp.MALOAISP;
+                                        sanphamBLL.themsanpham(sp);
+                                        MessageBox.Show("Thêm sản phẩm thành công !");
+                                    }
+                                    catch (Exception ec)
+                                    {
+                                        MessageBox.Show("Lỗi trong quá trình thêm sản phẩm !");
+
+                                    }
+                                    hienthi();
+
+
+                                }
                             }
+
+
                         }
-                       
- 
+
+
                     }
 
-
                 }
-                
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi nhập thông tin sản phẩm !");
+            }
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -344,7 +352,7 @@ namespace qlchvlxd
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Vui lòng chọn sản phẩm muốn sửa thông tin ." + exp.Message);
+                MessageBox.Show("Vui lòng chọn sản phẩm muốn sửa thông tin !" ;
             }
         }
 
