@@ -119,6 +119,7 @@
             // rb_Nam
             // 
             this.rb_Nam.AutoSize = true;
+            this.rb_Nam.Checked = true;
             this.rb_Nam.Location = new System.Drawing.Point(88, 79);
             this.rb_Nam.Name = "rb_Nam";
             this.rb_Nam.Size = new System.Drawing.Size(47, 17);
@@ -134,7 +135,6 @@
             this.rb_Nu.Name = "rb_Nu";
             this.rb_Nu.Size = new System.Drawing.Size(39, 17);
             this.rb_Nu.TabIndex = 11;
-            this.rb_Nu.TabStop = true;
             this.rb_Nu.Text = "Nữ";
             this.rb_Nu.UseVisualStyleBackColor = true;
             // 
