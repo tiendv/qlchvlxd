@@ -34,9 +34,6 @@ namespace BusinessEntities
             get { return this.maloaidonvitinh; }
             set
             {
-
-                if (value == 0)
-                    throw new Exception("Mã loại đơn vị tính rỗng!");
                 this.maloaidonvitinh = value;
             }
         }
@@ -45,9 +42,6 @@ namespace BusinessEntities
             get { return this.tendonvitinh; }
             set
             {
-
-                if (value == "")
-                    throw new Exception("Tên  đơn vị tính rỗng!");
                 this.tendonvitinh = value;
             }
         }
