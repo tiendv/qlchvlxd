@@ -60,7 +60,13 @@ namespace qlchvlxd
 
         public BusinessLogicLayer.LoaiSPBLL loaisanphamBLL = new LoaiSPBLL();
 
+        // <summary>
+        /// Lấy thông tin sản phẩm 
+        /// </summary>// <summary>
+        ///  
+        /// </summary>
 
+        public SanPhamBE ttsp = new SanPhamBE();
         
         public ThemSanPhamPL()
         {
@@ -215,6 +221,20 @@ namespace qlchvlxd
                f.Show();
 
         }
+        private void getTTSanPham()
+        {
+            ttsp.MALOAISP = int.Parse(listView1.SelectedItems[0].SubItems[2].Text);
+            ttsp.TENSP = listView1.SelectedItems[0].SubItems[1].Text;
+            ttsp.GIANHAP = float.Parse(listView1.SelectedItems[0].SubItems[3].Text);
+            ttsp.GIABAN = float.Parse(listView1.SelectedItems[0].SubItems[4].Text);
+            ttsp.SOLUONG = int.Parse(listView1.SelectedItems[0].SubItems[6].Text);
+            ttsp.SOLUONGTOITHIEU = int.Parse(listView1.SelectedItems[0].SubItems[7].Text);
+            ttsp.MANCC = listView1.SelectedItems[0].SubItems[5].Text;
+            ttsp.THONGTIN = listView1.SelectedItems[0].SubItems[10].Text;
+            ttsp.DONVITINH = int.Parse(listView1.SelectedItems[0].SubItems[9].Text);
+            ttsp.MALOAISP = int.Parse(listView1.SelectedItems[0].SubItems[8].Text);
+        }
+      
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -283,8 +303,6 @@ namespace qlchvlxd
                                sp.THONGTIN = textBox7.Text.ToString();
                                sp.DONVITINH = dvt.MALOAIDONVITINH;
                                sp.MALOAISP = lsp.MALOAISP;
-
-                               //MessageBox.Show(textBox9.Text.ToString());
                                sanphamBLL.themsanpham(sp);
                                hienthi();
                              
@@ -299,6 +317,37 @@ namespace qlchvlxd
                 }
                 
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool chk = listView1.SelectedItems[0].Checked;
+
+                SanPhamPL fom = new SanPhamPL();
+                getTTSanPham();
+                
+                fom.sanpham = ttsp;
+               fom.MdiParent = this.MdiParent;
+                fom.Show();
+
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm muốn sửa thông tin ." + exp.Message);
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+
         }
 
        
