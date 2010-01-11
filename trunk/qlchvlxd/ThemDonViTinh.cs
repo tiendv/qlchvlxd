@@ -79,18 +79,31 @@ namespace qlchvlxd
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length == 0)
-                MessageBox.Show("Tên đơn vị tính không được bỏ trống");
-            else
+            try
             {
-                LoaiDonViTinhBE ldvt = new LoaiDonViTinhBE();
-                ldvt.MALOAIDONVITINH = int.Parse(textBox1.Text);
-                ldvt.TENDONVITINH = textBox2.Text.ToUpper();
-                loaidonvitinhBLL.themdonvitinh(ldvt);
-                hienthi();
-                textBox2.Clear();
-            
+                if (textBox2.Text.Length == 0)
+                    MessageBox.Show("Tên đơn vị tính không được bỏ trống");
+                else
+                {
+                    LoaiDonViTinhBE ldvt = new LoaiDonViTinhBE();
+                    ldvt.MALOAIDONVITINH = int.Parse(textBox1.Text);
+                    ldvt.TENDONVITINH = textBox2.Text.ToUpper();
+                    loaidonvitinhBLL.themdonvitinh(ldvt);
+                    MessageBox.Show("Thêm đơn vị tính thành công !");
+
+                    hienthi();
+                    textBox2.Clear();
+                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi trong quá trình nhập ! Yêu cầu nhập lại! ");
+                textBox2.Clear();
+            }
+
+          
+                
         }
 
         private void listView1_Click(object sender, EventArgs e)

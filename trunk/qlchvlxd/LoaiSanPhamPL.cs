@@ -76,18 +76,25 @@ namespace qlchvlxd
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length == 0)
-                MessageBox.Show("Tên của loại sản phẩm Không được rỗng !");
-            else
+            try
             {
-                LoaiSPBE lsp = new LoaiSPBE();
-                lsp.MALOAISP = int.Parse(textBox1.Text);
-                lsp.TENLOAISP = textBox2.Text.ToUpper();
-               // loaidonvitinhBLL.themdonvitinh(ldvt);
-                loaispBLL.themdloaisanpham(lsp);
-                hienthi();
-                textBox2.Clear();
-                
+                if (textBox2.Text.Length == 0)
+                    MessageBox.Show("Tên của loại sản phẩm Không được rỗng !");
+                else
+                {
+                    LoaiSPBE lsp = new LoaiSPBE();
+                    lsp.MALOAISP = int.Parse(textBox1.Text);
+                    lsp.TENLOAISP = textBox2.Text.ToUpper();
+                    // loaidonvitinhBLL.themdonvitinh(ldvt);
+                    loaispBLL.themdloaisanpham(lsp);
+                    hienthi();
+                    textBox2.Clear();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi trong quá trình thêm loại sản phẩm !");
             }
         }
 
@@ -121,6 +128,29 @@ namespace qlchvlxd
                 textBox2.Clear();
 
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                LoaiSPBE lsp = new LoaiSPBE();
+                lsp.MALOAISP = int.Parse(textBox1.Text);
+                lsp.TENLOAISP = textBox2.Text;
+                loaispBLL.capnhatloaisanpham(lsp);
+                MessageBox.Show("Loại Sản Phẩm cập nhật !");
+
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Lỗi trong quá trình cập nhật  !"+exp.ToString());
+
+            }
+            hienthi();
+            // textBox1.Clear();
+            textBox2.Clear();
+
         }
         
     }

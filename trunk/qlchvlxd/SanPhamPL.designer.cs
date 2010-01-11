@@ -154,6 +154,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Xóa Sản Phẩm";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -169,6 +170,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(152, 71);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(147, 20);
             this.textBox6.TabIndex = 4;
             // 
