@@ -29,9 +29,16 @@ namespace BusinessLogicLayer
 
         public void themdloaisanpham(BusinessEntities.LoaiSPBE lsp)
         {
-            DataAccessLayer.LoaiSPDAL access = new DataAccessLayer.LoaiSPDAL();
+            try
+            {
+                DataAccessLayer.LoaiSPDAL access = new DataAccessLayer.LoaiSPDAL();
 
-            access.insertLoaiSP(lsp);
+                access.insertLoaiSP(lsp);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         // Lấy danh sách các tên loại sản phẩm từ bảng loại sản phẩm
 
@@ -51,9 +58,18 @@ namespace BusinessLogicLayer
         // Xóa một loại sản phẩm 
         public void xoaloaisptheomaloai(BusinessEntities.LoaiSPBE lsp)
         {
-            DataAccessLayer.LoaiSPDAL access = new DataAccessLayer.LoaiSPDAL();
+            try
+            {
 
-            access.deleteLoaiSanPham(lsp);
+                DataAccessLayer.LoaiSPDAL access = new DataAccessLayer.LoaiSPDAL();
+
+                access.deleteLoaiSanPham(lsp);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
 
         }
 

@@ -60,9 +60,16 @@ namespace BusinessLogicLayer
         }
         public void xoadonvitinhtheoten(BusinessEntities.LoaiDonViTinhBE mydvt)
         {
-            DataAccessLayer.LoaiDonViTinhDAL access = new DataAccessLayer.LoaiDonViTinhDAL();
+            try
+            {
+                DataAccessLayer.LoaiDonViTinhDAL access = new DataAccessLayer.LoaiDonViTinhDAL();
 
-            access.deleteLoaiDonViTinh(mydvt);
+                access.deleteLoaiDonViTinh(mydvt);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
  
         }
         public void suadonvitinh(BusinessEntities.LoaiDonViTinhBE mydvt)
