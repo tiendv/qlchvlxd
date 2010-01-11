@@ -61,6 +61,7 @@ namespace qlchvlxd
                     if (kq > 0)
                     {
                         MessageBox.Show("Đã xóa thành công.");
+                        loaddanhsach();
                     }
                     else
                         MessageBox.Show("Xóa không thành công.");
@@ -74,27 +75,31 @@ namespace qlchvlxd
 
         private void button_Tim_Click(object sender, EventArgs e)
         {
-            listView_NCC.Items.Clear();
-            
-            BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
-            List<BusinessEntities.NhaCungCapBE> listNhaCungCap= nhacungcapBLL.getListNCCtheoTen(textBox_Tim.Text);
-            for (int i = 0; i < listNhaCungCap.Count; i++)
-            {
-   
-                            string[] col = new string[5];
-                            
-                            col[0] = i+1+"";
-                            col[1] = listNhaCungCap[i].MANCC;
-                            col[2] = listNhaCungCap[i].TENNCC;
-                            col[3] = listNhaCungCap[i].DIACHI;
-                            col[4] = listNhaCungCap[i].DIENTHOAI;
-                            ListViewItem lvItem = new ListViewItem(col);
-                            listView_NCC.Items.Add(lvItem);
-            }
+            loaddanhsach();   
             textBox_Tim.Text = "";
             }
-        }
+        public void loaddanhsach()
+        {
+            listView_NCC.Items.Clear();
 
+            BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
+            List<BusinessEntities.NhaCungCapBE> listNhaCungCap = nhacungcapBLL.getListNCCtheoTen(textBox_Tim.Text);
+            for (int i = 0; i < listNhaCungCap.Count; i++)
+            {
+
+                string[] col = new string[5];
+
+                col[0] = i + 1 + "";
+                col[1] = listNhaCungCap[i].MANCC;
+                col[2] = listNhaCungCap[i].TENNCC;
+                col[3] = listNhaCungCap[i].DIACHI;
+                col[4] = listNhaCungCap[i].DIENTHOAI;
+                ListViewItem lvItem = new ListViewItem(col);
+                listView_NCC.Items.Add(lvItem);
+            }
+        }
+   
+}
         
        
     }
