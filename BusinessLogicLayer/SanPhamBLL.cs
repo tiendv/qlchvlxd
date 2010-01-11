@@ -124,9 +124,22 @@ namespace BusinessLogicLayer
              {
                  throw e;
              }
-
-
          }
+        // cập nhật giá bán  giá mua và số lượng sản phẩm sau khi nhập kho
+        public void updateNhapkho(BusinessEntities.SanPhamBE sanpham)
+         {
+             try
+             {
+                 DataAccessLayer.SanPhamDAL access = new DataAccessLayer.SanPhamDAL();
+
+                 access.updateNhapkho(sanpham);
+             }
+             catch (Exception e)
+             {
+                 throw e;
+             }
+         }
+
          public void xoasanpham(BusinessEntities.SanPhamBE sanpham)
          {
              try
