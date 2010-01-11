@@ -136,6 +136,7 @@
             // rb_Hoten
             // 
             this.rb_Hoten.AutoSize = true;
+            this.rb_Hoten.Checked = true;
             this.rb_Hoten.Location = new System.Drawing.Point(32, 60);
             this.rb_Hoten.Name = "rb_Hoten";
             this.rb_Hoten.Size = new System.Drawing.Size(61, 17);
@@ -151,7 +152,6 @@
             this.rb_CMND.Name = "rb_CMND";
             this.rb_CMND.Size = new System.Drawing.Size(57, 17);
             this.rb_CMND.TabIndex = 11;
-            this.rb_CMND.TabStop = true;
             this.rb_CMND.Text = "CMND";
             this.rb_CMND.UseVisualStyleBackColor = true;
             // 
@@ -162,7 +162,6 @@
             this.rb_Dienthoai.Name = "rb_Dienthoai";
             this.rb_Dienthoai.Size = new System.Drawing.Size(77, 17);
             this.rb_Dienthoai.TabIndex = 12;
-            this.rb_Dienthoai.TabStop = true;
             this.rb_Dienthoai.Text = "Điện Thoại";
             this.rb_Dienthoai.UseVisualStyleBackColor = true;
             // 
