@@ -200,33 +200,25 @@ namespace DataAccessLayer
             string query = "INSERT INTO SANPHAM VALUES ('"  +sp.MASP+  "', N'" + sp.TENSP + "','" + sp.GIANHAP + "','" + sp.GIABAN + "', '" + sp.SOLUONG + "', '" + sp.SOLUONGTOITHIEU + "','" + sp.MANCC + "', N'" + sp.THONGTIN + "', '" + sp.DONVITINH + "', '" + sp.MALOAISP + "') ";
             SQLHelp.executeNonQuery(query);
         }
-        // xóa sản phẩm có mã sản phẩm ......
-        public void deleteASanPham(int msp)
+    // xóa sản phẩm theo thông tin 
+        public void deleteASanPham(SanPhamBE sp)
         {
-            string query = "DELETE FROM SANPHAM WHERE MSP = '" + msp + "'";
-            SQLHelp.executeNonQuery(query);
+            try
+            {
+                string query = "DELETE FROM [QLCHVLXD].[dbo].[sanpham]WHERE THONGTIN= N'"+sp.THONGTIN+"'";
+                SQLHelp.executeNonQuery(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
+
+
 
          //  Sửa thông tin sản phẩm.
         
-        public void updateEmployee(SanPhamBE sp)
-        {
-            string query = "UPDATE SANPHAM " +
-                                "SET MSP = "+ sp.MASP +"'," +
-                                        "TENSP = N'" + sp.TENSP + "'," +
-                                        "GIANHAP = '"+ sp.GIANHAP +"'," +
-                                        "GIABAN = '"+ sp.GIABAN +"'," +
-                                        "SOLUONG = '"+ sp.SOLUONG +"'," +
-                                        "SOLUONGTOITHIEU = '"+ sp.SOLUONGTOITHIEU +"'," +
-                                        "MANCC = "+ sp.MANCC +"'," +
-                                        "THONGTIN = N'" + sp.THONGTIN + "'," +
-                                        "DONVITINH = "+ sp.DONVITINH +"'," +
-                                        "MALOAISP = "+ sp.MANCC +"'," +
-                                "WHERE MSP = '"+ sp.MASP +"'";
-            System.Console.Out.WriteLine(query);
-            SQLHelp.executeNonQuery(query);
-        }
-
         // Lay ten san pham theo Ma san Pham from Cường
         public BusinessEntities.SanPhamBE getTenSanPham(int maSanPham)
         {
