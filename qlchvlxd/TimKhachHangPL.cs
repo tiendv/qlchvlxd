@@ -62,6 +62,7 @@ namespace qlchvlxd
                     if (kq > 0)
                     {
                         MessageBox.Show("Đã xóa thành công.");
+                        loaddanhsach();
                     }
                     else
                         MessageBox.Show("Xóa không thành công.");
@@ -75,38 +76,42 @@ namespace qlchvlxd
 
         private void button_Tim_Click(object sender, EventArgs e)
         {
+            loaddanhsach();
+            textBox_Tim.Text = "";
+            }
+        public void loaddanhsach()
+        {
             listView_KH.Items.Clear();
-            
+
             BusinessLogicLayer.KhacHangBLL khachhangBLL = new BusinessLogicLayer.KhacHangBLL();
             List<BusinessEntities.KhachHangBE> listKH;
-            if(rb_Hoten.Checked==true)
+            if (rb_Hoten.Checked == true)
             {
-                listKH= khachhangBLL.getListKHTTtheoTen(textBox_Tim.Text);
+                listKH = khachhangBLL.getListKHTTtheoTen(textBox_Tim.Text);
             }
             else
             {
-                if(rb_Dienthoai.Checked==true)
-                    listKH= khachhangBLL.getListKHTTtheoDienThoai(textBox_Tim.Text);
+                if (rb_Dienthoai.Checked == true)
+                    listKH = khachhangBLL.getListKHTTtheoDienThoai(textBox_Tim.Text);
                 else
-                listKH= khachhangBLL.getListKHTTtheoCMND(textBox_Tim.Text);
+                    listKH = khachhangBLL.getListKHTTtheoCMND(textBox_Tim.Text);
             }
             for (int i = 0; i < listKH.Count; i++)
             {
-   
-                            string[] col = new string[7];
-                            
-                            col[0] = i+1+"";
-                            col[1] = listKH[i].MaKhachHang;
-                            col[2] = listKH[i].TenKhachHang;
-                            col[3] = listKH[i].SCMND;
-                            col[4] = listKH[i].GioiTinh;
-                            col[5] = listKH[i].DiaChi;
-                            col[6] = listKH[i].SoDienThoai;
-                            ListViewItem lvItem = new ListViewItem(col);
-                            listView_KH.Items.Add(lvItem);
+
+                string[] col = new string[7];
+
+                col[0] = i + 1 + "";
+                col[1] = listKH[i].MaKhachHang;
+                col[2] = listKH[i].TenKhachHang;
+                col[3] = listKH[i].SCMND;
+                col[4] = listKH[i].GioiTinh;
+                col[5] = listKH[i].DiaChi;
+                col[6] = listKH[i].SoDienThoai;
+                ListViewItem lvItem = new ListViewItem(col);
+                listView_KH.Items.Add(lvItem);
             }
-            textBox_Tim.Text = "";
-            }
+        }
         }
 
         
