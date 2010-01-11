@@ -25,8 +25,8 @@ namespace qlchvlxd
         //lay danh sach cac chi tiet hoa don tu bang chi tiet hoa don
         List<BusinessEntities.CTHoaDonBE> listCTHD = new List<BusinessEntities.CTHoaDonBE>();
 
-
         List<BusinessEntities.CTHoaDonBE> listMaCTHD = new List<BusinessEntities.CTHoaDonBE>();
+
 
         //lay danh sach ten cac san pham tu bang san pham
         List<BusinessEntities.SanPhamBE> listSanPham = new List<BusinessEntities.SanPhamBE>();
@@ -46,10 +46,14 @@ namespace qlchvlxd
         //lay thong tin danh sach phieu giao hang
         List<BusinessEntities.PhieuGiaoHangBE> listPhieuGiaoHang = new List<BusinessEntities.PhieuGiaoHangBE>();
 
+        //chon muc chiet khau
+        List<BusinessEntities.ChietKhauBE> listMucChietKhau = new List<BusinessEntities.ChietKhauBE>();
+
         private String maGiaoHang = "";
         private float tongTien = 0;
         private float tienTra = 0;
         private float tienNo = 0;
+        private bool capNhat = false;
 
         public GiaoHangPL()
         {
@@ -80,11 +84,11 @@ namespace qlchvlxd
 
         public void hienThi()
         {
+            tongTien = 0;
             listCTHD = BusinessLogicLayer.CTHoaDonBLL.getDanhSachCTHD();
 
             listMaCTHD = BusinessLogicLayer.CTHoaDonBLL.getDanhSachCTHD(textBox_MaHD.Text);
-            //listView_HoaDon.MultiSelect = false;
-
+            
             ListViewItem lvi;
             if (listMaCTHD == null)
                 return;
@@ -93,41 +97,63 @@ namespace qlchvlxd
             {
                 for (int i = 0; i < listMaCTHD.Count; i++)
                 {
-                    lvi = new ListViewItem((i + 1).ToString());
                     sanPham = BusinessLogicLayer.SanPhamBLL.getTenSanPham(listMaCTHD[i].maSP);
+
+                    lvi = new ListViewItem((i + 1).ToString());                    
                     lvi.SubItems.Add(sanPham.tensp);
                     lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
-                    lvi.SubItems.Add(((int)numericUpDown_SoLuong.Value).ToString());
-                    lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
-                    lvi.SubItems.Add((listMaCTHD[i].soLuong * listMaCTHD[i].donGia).ToString());
+                    if (listMaCTHD[i].maCTHD == textBox_MaCTHD.Text && capNhat == true)
+                    {
+                        lvi.SubItems.Add(numericUpDown_SoLuong.Value.ToString());
+                        lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
+                        lvi.SubItems.Add(((int)numericUpDown_SoLuong.Value * listMaCTHD[i].donGia).ToString());
+                        //tinh tien
+                        tongTien += (int)numericUpDown_SoLuong.Value * listMaCTHD[i].donGia * float.Parse(comboBox_MucChietKhau.Text)/100;
+                    }
+                    else
+                    {
+                        lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
+                        lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
+                        lvi.SubItems.Add((listMaCTHD[i].soLuong * listMaCTHD[i].donGia).ToString());
+                        //tinh tien
+                        
+                        tongTien += (listMaCTHD[i].soLuong * listMaCTHD[i].donGia) * float.Parse(comboBox_MucChietKhau.Text)/100;
+                    }
                     lvi.SubItems.Add(listMaCTHD[i].maCTHD);
+                                       
+
                     listView_GiaoHang.Items.Add(lvi);
+
+                    label_GTTongTien.Text = "";
+                    label_GTTongTien.Text = tongTien.ToString();
                 }
             }
+            capNhat = false;
 
         }
 
         private void button_Them_Click(object sender, EventArgs e)
         {
-            if (listCTHD == null)
-                textBox_MaCTHD.Text = "CT0001";
-            else
-                textBox_MaCTHD.Text = TaoKhoaChinh.getIdLonNhat(listCTHD[listCTHD.Count - 1].maCTHD.ToString(), 2);
+            //if (listCTHD == null)
+            //    textBox_MaCTHD.Text = "CT0001";
+            //else
+            //    textBox_MaCTHD.Text = TaoKhoaChinh.getIdLonNhat(listCTHD[listCTHD.Count - 1].maCTHD.ToString(), 2);
 
-            BusinessEntities.CTHoaDonBE myCTHoaDon = new BusinessEntities.CTHoaDonBE();
-            myCTHoaDon.maCTHD = textBox_MaCTHD.Text;
-            myCTHoaDon.maSP = sanPham.masp;
-            myCTHoaDon.maHD = "HD0001";
-            myCTHoaDon.soLuong = (int)numericUpDown_SoLuong.Value;
-            myCTHoaDon.donGia = sanPham.giaban;
-            myCTHoaDon.maLoaiSP = sanPham.maloaisp;
+            //BusinessEntities.CTHoaDonBE myCTHoaDon = new BusinessEntities.CTHoaDonBE();
+            //myCTHoaDon.maCTHD = textBox_MaCTHD.Text;
+            //myCTHoaDon.maSP = sanPham.masp;
+            //myCTHoaDon.maHD = "HD0001";
+            //myCTHoaDon.soLuong = (int)numericUpDown_SoLuong.Value;
+            //myCTHoaDon.donGia = sanPham.giaban;
+            //myCTHoaDon.maLoaiSP = sanPham.maloaisp;
 
-            BusinessLogicLayer.CTHoaDonBLL.themChiTietHoaDon(myCTHoaDon);
+            //BusinessLogicLayer.CTHoaDonBLL.suaChiTietHoaDon(myCTHoaDon.soLuong, myCTHoaDon.maCTHD);
 
-            //cập nhật tổng tiền
-            tongTien += myCTHoaDon.soLuong * myCTHoaDon.donGia;
-            //label_GTTongTien.Text = tongTien.ToString();
+            ////cập nhật tổng tiền
+            //tongTien += myCTHoaDon.soLuong * myCTHoaDon.donGia;
+            ////label_GTTongTien.Text = tongTien.ToString();
 
+            capNhat = true;
             listView_GiaoHang.Items.Clear();
             hienThi();
         }
@@ -139,22 +165,8 @@ namespace qlchvlxd
 
         private void comboBox_LoaiSP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBox_DonGia.Clear();
-            comboBox_TenSP.Items.Clear();
-
-            //int maLoaiSanPham = comboBox_LoaiSP.SelectedItem.ToString();
-
-            listSanPham = BusinessLogicLayer.SanPhamBLL.getListTenSanPham(comboBox_LoaiSP.SelectedItem.ToString());
-
-            if (listSanPham == null)
-                MessageBox.Show("Danh sách rỗng!");
-            else
-            {
-                for (int i = 0; i < listSanPham.Count; i++)
-                {
-                    comboBox_TenSP.Items.Add(listSanPham[i].tensp);
-                }
-            }
+            listView_GiaoHang.Items.Clear();
+            hienThi();
         }
 
         private void comboBox_TenSP_SelectedIndexChanged(object sender, EventArgs e)
@@ -172,16 +184,11 @@ namespace qlchvlxd
 
         private void GiaoHangPL_Load(object sender, EventArgs e)
         {
-            
-
-            if (listTenLoaiSanPham == null)
-                MessageBox.Show("Danh sách rỗng!");
-            else
+            comboBox_MucChietKhau.Items.Clear();
+            listMucChietKhau = BusinessLogicLayer.ChietKhauBLL.getListChietKhau();
+            for (int i = 0; i < listMucChietKhau.Count; i++)
             {
-                for (int i = 0; i < listTenLoaiSanPham.Count; i++)
-                {
-                    comboBox_LoaiSP.Items.Add(listTenLoaiSanPham[i].tenloaisp);
-                }
+                comboBox_MucChietKhau.Items.Add(listMucChietKhau[i].tiLeChietKhau);
             }
         }
 
@@ -226,13 +233,20 @@ namespace qlchvlxd
         }
 
         private void listView_GiaoHang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            comboBox_LoaiSP.Text = "";
+        {          
+            comboBox_TenSP.Text = "";           
+
             if (listView_GiaoHang.SelectedItems.Count == 0)
                 return;
-            textBox_MaCTHD.Text = listView_GiaoHang.SelectedItems[0].SubItems[5].Text;
+            comboBox_TenSP.SelectedText = listView_GiaoHang.SelectedItems[0].SubItems[1].Text;
+            textBox_MaCTHD.Text = listView_GiaoHang.SelectedItems[0].SubItems[6].Text;
 
-            comboBox_LoaiSP.SelectedText = listView_GiaoHang.SelectedItems[0].SubItems[3].Text;
-        }
+            
+            sanPham = BusinessLogicLayer.SanPhamBLL.getGiaSanPham(comboBox_TenSP.Text);
+            //MessageBox.Show(te
+            textBox_DonGia.Text = sanPham.giaban.ToString();
+
+            //comboBox_MucChietKhau.SelectedText = listView_GiaoHang.SelectedItems[0].SubItems[3].Text;
+        }      
     }
 }
