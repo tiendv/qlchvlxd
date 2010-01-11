@@ -352,7 +352,7 @@ namespace qlchvlxd
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Vui lòng chọn sản phẩm muốn sửa thông tin !" ;
+                MessageBox.Show("Vui lòng chọn sản phẩm muốn sửa thông tin !") ;
             }
         }
 
