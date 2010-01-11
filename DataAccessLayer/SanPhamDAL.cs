@@ -311,12 +311,8 @@ namespace DataAccessLayer
             try
             {
 
-                string query = " UPDATE [QLCHVLXD].[dbo].[sanpham] SET [gianhap] = " + sp.GIANHAP + "," + "[giaban] =" + sp.GIABAN + "," + "[soluong]= " + sp.SOLUONG + " WHERE [tensp]=N'" + sp.TENSP + "'";
-                //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] SET [tendonvitinh] = N'" + ldvt.TENDONVITINH + "' WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
-                //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] " +
-                //                    "SET TENDONVITINH = N'" + ldvt.TENDONVITINH + "'," +
-                //                    "WHERE [MALOAIDONVITINH] = '" + ldvt.MALOAIDONVITINH + "'";
-                //  System.Console.Out.WriteLine(query);
+                string query = " UPDATE [QLCHVLXD].[dbo].[sanpham] SET [gianhap] = " + sp.GIANHAP + "," + "[giaban] =" + sp.GIABAN + "," + "[soluong]= soluong + " + sp.SOLUONG + " WHERE [tensp]=N'" + sp.TENSP + "'";
+             
                 SQLHelp.executeNonQuery(query);
             }
             catch (Exception e)
@@ -328,15 +324,22 @@ namespace DataAccessLayer
         // lấy san pham theo ten san pham
         public BusinessEntities.SanPhamBE getSanPhamTheoTen(String tenSanPham)
         {
-            DataTable dt = SQLHelp.executeQuery("SELECT GIABAN, SANPHAM.MSP, SANPHAM.MALOAISP FROM SANPHAM WHERE TENSP = N'" + tenSanPham + "'");
+            DataTable dt = SQLHelp.executeQuery("SELECT * FROM SANPHAM WHERE TENSP = N'" + tenSanPham + "'");
 
             BusinessEntities.SanPhamBE sanPham = null;
 
             foreach (DataRow row in dt.Rows)
             {
                 sanPham = new BusinessEntities.SanPhamBE();
-                sanPham.masp = (int)row["MSP"];
-                sanPham.giaban = float.Parse(row["GIABAN"].ToString());
+                sanPham.MASP = (int)row["MSP"];
+                sanPham.TENSP = row["TENSP"].ToString();
+                sanPham.GIANHAP = float.Parse(row["GIANHAP"].ToString());
+                sanPham.GIABAN = float.Parse(row["GIABAN"].ToString());
+                sanPham.SOLUONG = (int)row["SOLUONG"];
+                sanPham.SOLUONGTOITHIEU = (int)row["SOLUONGTOITHIEU"];
+                sanPham.MANCC=row["MANCC"].ToString();
+                sanPham.THONGTIN = row["THONGTIN"].ToString();
+                sanPham.DONVITINH = (int)row["DONVITINH"];
                 sanPham.maloaisp = (int)row["MALOAISP"];
             }
 
