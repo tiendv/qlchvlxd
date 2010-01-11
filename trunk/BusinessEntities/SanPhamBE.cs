@@ -44,6 +44,24 @@ namespace BusinessEntities
        
         }
        */
+        // public SanPhamBE(SanPhamBE Pre )
+        //{
+        //    masp = Pre.masp;
+        //    tensp = Pre.tensp;
+        //    gianhap = Pre.gianhap;
+        //    giaban = Pre.giaban;
+        //    soluong = Pre.soluong;
+        //    soluongtoithieu = Pre.soluongtoithieu;
+        //    mancc = Pre.mancc;
+        //    thongtin = Pre.thongtin;
+        //    donvitinh = Pre.donvitinh;
+        //    maloaisp = Pre.maloaisp;
+       
+        //}
+        // public SanPhamBE()
+        // {
+
+        // }
         public int MASP
         {
             get { return this.masp; }
