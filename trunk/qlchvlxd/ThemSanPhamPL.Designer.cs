@@ -74,6 +74,7 @@
             this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -407,6 +408,7 @@
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11});
+            this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(9, 19);
             this.listView1.MultiSelect = false;
@@ -415,6 +417,8 @@
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -470,11 +474,22 @@
             // 
             this.columnHeader11.Text = "Thông Tin";
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(39, 558);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Sửa ";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // ThemSanPhamPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 593);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button3);
@@ -541,6 +556,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button6;
       
     }
 }
