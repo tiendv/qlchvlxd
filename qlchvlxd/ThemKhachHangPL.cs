@@ -43,6 +43,10 @@ namespace qlchvlxd
                 if (kq > 0)
                 {
                     MessageBox.Show("Đã thêm thông tin khách hàng thành công.");
+                    textBox_CMND.Text = "";
+                    textBox_DiaChi.Text = "";
+                    textBox_DienThoai.Text = "";
+                    textBox_Ten.Text = "";
                 }
                 else
                     MessageBox.Show("Có lỗi! Thông tin chưa được thêm vào.");
