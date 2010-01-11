@@ -69,18 +69,18 @@ namespace qlchvlxd
 
             phieuGiaoHang = BusinessLogicLayer.PhieuGiaoHangBLL.getPhieuGiaoHang();
 
-            if (listPhieuGiaoHang == null)
-            {
-                phieuGiaoHang.maPhieuGiaoHang = "GH0002";
-            }
-            else
-            {
-                MessageBox.Show(phieuGiaoHang.maPhieuGiaoHang);
-                phieuGiaoHang.maPhieuGiaoHang = TaoKhoaChinh.getIdLonNhat(listPhieuGiaoHang[listPhieuGiaoHang.Count - 1].maPhieuGiaoHang.ToString(), 2);
-            }
+            //if (listPhieuGiaoHang == null)
+            //{
+            //    phieuGiaoHang.maPhieuGiaoHang = "GH0002";
+            //}
+            //else
+            //{
+            //    //MessageBox.Show(phieuGiaoHang.maPhieuGiaoHang);
+            //    phieuGiaoHang.maPhieuGiaoHang = TaoKhoaChinh.getIdLonNhat(listPhieuGiaoHang[listPhieuGiaoHang.Count - 1].maPhieuGiaoHang.ToString(), 2);
+            //}
 
-            maGiaoHang = phieuGiaoHang.maPhieuGiaoHang;
-            MessageBox.Show(phieuGiaoHang.maPhieuGiaoHang);
+            //maGiaoHang = phieuGiaoHang.maPhieuGiaoHang;
+            ////MessageBox.Show(phieuGiaoHang.maPhieuGiaoHang);
 
         }
 
@@ -206,6 +206,7 @@ namespace qlchvlxd
 
         private void GiaoHangPL_Load(object sender, EventArgs e)
         {
+           
             comboBox_MucChietKhau.Items.Clear();
             listMucChietKhau = BusinessLogicLayer.ChietKhauBLL.getListChietKhau();
             for (int i = 0; i < listMucChietKhau.Count; i++)
@@ -289,6 +290,12 @@ namespace qlchvlxd
 
             BusinessLogicLayer.PhieuGiaoHangBLL.themPhieuGiao(phieuGiaoHang);
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LapHoaDonRPForm f = new LapHoaDonRPForm();
+            f.Show();
         }      
     }
 }
