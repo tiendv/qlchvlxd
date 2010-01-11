@@ -5,14 +5,14 @@ using System.Text;
 
 namespace BusinessEntities
 {
-    class CTNhapKhoBE
+    public class CTNhapKhoBE
     {
-        public string mactnk;
-        public string mank;
-        public string masp;
-        public int soluong;
-        public float giaban;
-        public float giamua;
+        private string mactnk;
+        private string mank;
+        private int masp;
+        private int soluong;
+        private float giaban;
+        private float giamua;
 
         public string MACTNK
         {
@@ -23,6 +23,11 @@ namespace BusinessEntities
         {
             get { return this.mank; }
             set { this.mank = value; }
+        }
+        public int MASP
+        {
+            get { return this.masp; }
+            set { this.masp = value; }
         }
         public int SOLUONG
         {
