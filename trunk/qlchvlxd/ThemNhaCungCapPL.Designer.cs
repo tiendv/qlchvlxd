@@ -102,7 +102,7 @@
             this.button_Huy.Name = "button_Huy";
             this.button_Huy.Size = new System.Drawing.Size(75, 23);
             this.button_Huy.TabIndex = 7;
-            this.button_Huy.Text = "Hủy";
+            this.button_Huy.Text = "Đóng";
             this.button_Huy.UseVisualStyleBackColor = true;
             this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
             // 
