@@ -129,8 +129,6 @@ namespace BusinessEntities
             get { return this.thongtin; }
             set
             {
-                if (value == "")
-                    throw new Exception("Thông tin rỗng");
                 this.thongtin = value;
             }
         }
@@ -157,24 +155,7 @@ namespace BusinessEntities
         }
 
 
-        /*
-
-        public override string ToString()
-        {
-            return this.masp+ "; " + this.tensp+ "; " + this.gianhap + "; " + this.giaban + "; " + this.mucnhapvao+ "; " + this.nhacungcap + "; " + this.ghichu + "; ";
-        }
-        public override bool Equals(Object obj)
-        {
-            tbsanpham me = (tbsanpham)obj;
-            bool ret = this.MASP.Equals(me.MASP);
-            return ret;
-        }
-        public override int GetHashCode()
-        {
-            return this.MASP.GetHashCode();
-        }
-         */
-
+      
 
 
         
