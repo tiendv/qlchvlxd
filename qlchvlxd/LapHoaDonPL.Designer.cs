@@ -73,6 +73,7 @@
             this.textBox_SoTienTra = new System.Windows.Forms.TextBox();
             this.label_GTTongTien = new System.Windows.Forms.Label();
             this.label_GTTienNo = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox_SanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SoLuong)).BeginInit();
             this.groupBoxTTKH.SuspendLayout();
@@ -514,6 +515,16 @@
             this.label_GTTienNo.Size = new System.Drawing.Size(0, 13);
             this.label_GTTienNo.TabIndex = 36;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(412, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 44);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Test Report";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // LapHoaDonPL
             // 
             this.AcceptButton = this.button_Tim;
@@ -521,6 +532,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button_Thoat;
             this.ClientSize = new System.Drawing.Size(618, 524);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label_GTTienNo);
             this.Controls.Add(this.label_GTTongTien);
             this.Controls.Add(this.textBox_SoTienTra);
@@ -593,5 +605,6 @@
         private System.Windows.Forms.Label label_MaKHTT;
         private System.Windows.Forms.Button button_Tim;
         private System.Windows.Forms.Button button_CapNhat;
+        private System.Windows.Forms.Button button1;
     }
 }

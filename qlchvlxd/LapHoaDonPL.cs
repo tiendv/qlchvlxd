@@ -91,7 +91,7 @@ namespace qlchvlxd
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
             /*********************************************************
              * 
              * 
@@ -156,6 +156,8 @@ namespace qlchvlxd
                     BusinessLogicLayer.CTHoaDonBLL.suaHoaDon(hoaDon, hoaDon.maHD);
 
                     MessageBox.Show("ĐÃ TẠO THÀNH CÔNG HÓA ĐƠN!");
+
+                   
                 }
                 else
                 {
@@ -365,6 +367,13 @@ namespace qlchvlxd
                 MessageBox.Show("Tiền trả kiểu số ! ");
                 
             }            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            LapHoaDonRPForm f2 = new LapHoaDonRPForm();
+            f2.Show();
+
         }
     }
 }
