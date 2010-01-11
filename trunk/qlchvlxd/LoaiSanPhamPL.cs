@@ -102,12 +102,22 @@ namespace qlchvlxd
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa loại sản phẩm " + textBox2.Text + " hay không?", "Thông Báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                LoaiSPBE lsp = new LoaiSPBE();
-                lsp.MALOAISP = int.Parse(textBox1.Text);
-                loaispBLL.xoaloaisptheomaloai(lsp);
-                MessageBox.Show("Loại Sản Phẩm Được Xóa");
+                try
+                {
+
+                    LoaiSPBE lsp = new LoaiSPBE();
+                    lsp.MALOAISP = int.Parse(textBox1.Text);
+                    loaispBLL.xoaloaisptheomaloai(lsp);
+                    MessageBox.Show("Loại Sản Phẩm Được Xóa");
+
+                }
+                catch(Exception exp)
+                {
+                    MessageBox.Show("Loại sản phẩm đang được sử dụng không thể xóa !");
+ 
+                }
                 hienthi();
-                textBox1.Clear();
+               // textBox1.Clear();
                 textBox2.Clear();
 
             }

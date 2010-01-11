@@ -238,7 +238,7 @@ namespace qlchvlxd
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            
             // Kiem tra hop le cua du lieu nhap 
             if (textBox4.Text.Length == 0)
             {
@@ -276,34 +276,43 @@ namespace qlchvlxd
                             }
                             else
                             {
-                               // Lấy mã nhà cung cấp 
-                                NhaCungCapBE cc = new NhaCungCapBE();
-                                cc = nhacungcapBLL.getMaNhaCungCap(comboBox2.SelectedItem.ToString());
-                               
-                                
-                                ////// Lấy mã Loại đơn vị tính
-                               
-                               LoaiDonViTinhBE dvt = new LoaiDonViTinhBE();
-                               dvt = loaidonvitnhBLL.getMadonvitinhtuten(comboBox1.SelectedItem.ToString());
-
-                                LoaiSPBE lsp = new LoaiSPBE();
-                               lsp = loaisanphamBLL.getMaloaisanphamtuten(comboBox3.SelectedItem.ToString());
+                                try
+                                {
+                                    // Lấy mã nhà cung cấp 
+                                    NhaCungCapBE cc = new NhaCungCapBE();
+                                    cc = nhacungcapBLL.getMaNhaCungCap(comboBox2.SelectedItem.ToString());
 
 
-                          
-                           //   thêm một sản phẩm
-                               SanPhamBE sp = new SanPhamBE();
-                               sp.MASP = int.Parse(textBox9.Text.ToString());
-                               sp.TENSP = textBox4.Text.ToString();
-                               sp.GIANHAP = float.Parse(textBox5.Text.ToString());
-                               sp.GIABAN = float.Parse(textBox6.Text.ToString());
-                               sp.SOLUONG = int.Parse(textBox1.Text.ToString());
-                               sp.SOLUONGTOITHIEU = int.Parse(textBox8.Text.ToString());
-                               sp.MANCC = cc.MANCC;
-                               sp.THONGTIN = textBox7.Text.ToString();
-                               sp.DONVITINH = dvt.MALOAIDONVITINH;
-                               sp.MALOAISP = lsp.MALOAISP;
-                               sanphamBLL.themsanpham(sp);
+                                    ////// Lấy mã Loại đơn vị tính
+
+                                    LoaiDonViTinhBE dvt = new LoaiDonViTinhBE();
+                                    dvt = loaidonvitnhBLL.getMadonvitinhtuten(comboBox1.SelectedItem.ToString());
+
+                                    LoaiSPBE lsp = new LoaiSPBE();
+                                    lsp = loaisanphamBLL.getMaloaisanphamtuten(comboBox3.SelectedItem.ToString());
+
+
+
+                                    //   thêm một sản phẩm
+                                    SanPhamBE sp = new SanPhamBE();
+                                    sp.MASP = int.Parse(textBox9.Text.ToString());
+                                    sp.TENSP = textBox4.Text.ToString();
+                                    sp.GIANHAP = float.Parse(textBox5.Text.ToString());
+                                    sp.GIABAN = float.Parse(textBox6.Text.ToString());
+                                    sp.SOLUONG = int.Parse(textBox1.Text.ToString());
+                                    sp.SOLUONGTOITHIEU = int.Parse(textBox8.Text.ToString());
+                                    sp.MANCC = cc.MANCC;
+                                    sp.THONGTIN = textBox7.Text.ToString();
+                                    sp.DONVITINH = dvt.MALOAIDONVITINH;
+                                    sp.MALOAISP = lsp.MALOAISP;
+                                    sanphamBLL.themsanpham(sp);
+                                    MessageBox.Show("Thêm sản phẩm thành công !");
+                                }
+                                catch (Exception ec)
+                                {
+                                    MessageBox.Show("Lỗi trong quá trình thêm sản phẩm !");
+ 
+                                }
                                hienthi();
                              
 

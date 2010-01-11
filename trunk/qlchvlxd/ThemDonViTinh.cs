@@ -107,10 +107,17 @@ namespace qlchvlxd
             {
                 LoaiDonViTinhBE ldvt = new LoaiDonViTinhBE();
                 ldvt.MALOAIDONVITINH = int.Parse(textBox1.Text);
-                loaidonvitinhBLL.xoadonvitinhtheoten(ldvt);
-                MessageBox.Show("Đơn Vị Tính Đã Được Xóa");
+                try
+                {
+                    loaidonvitinhBLL.xoadonvitinhtheoten(ldvt);
+                    MessageBox.Show("Đơn Vị Tính Đã Được Xóa");
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show("Lỗi Không xóa được do đơn vị tính này đang được sử dụng!");
+                }       
                 hienthi();
-               textBox1.Clear();
+                textBox1.Clear();
                 textBox2.Clear();
    
             }
@@ -120,6 +127,8 @@ namespace qlchvlxd
         {
             LoaiDonViTinhBE ldvt = new LoaiDonViTinhBE();
             ldvt.MALOAIDONVITINH = int.Parse(textBox1.Text);
+            ldvt.TENDONVITINH = textBox2.Text.ToString();
+           // MessageBox.Show(ldvt.MALOAIDONVITINH.ToString());
             loaidonvitinhBLL.suadonvitinh(ldvt);
             MessageBox.Show("Đơn Vị Tính Đã Được cập nhật !");
             hienthi();
