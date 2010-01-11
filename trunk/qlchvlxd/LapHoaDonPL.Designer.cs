@@ -496,6 +496,7 @@
             this.textBox_SoTienTra.Size = new System.Drawing.Size(116, 20);
             this.textBox_SoTienTra.TabIndex = 32;
             this.textBox_SoTienTra.TextChanged += new System.EventHandler(this.textBox_SoTienTra_TextChanged);
+            this.textBox_SoTienTra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_SoTienTra_KeyPress);
             // 
             // label_GTTongTien
             // 

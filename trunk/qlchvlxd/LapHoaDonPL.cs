@@ -91,6 +91,7 @@ namespace qlchvlxd
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             /*********************************************************
              * 
              * 
@@ -101,62 +102,68 @@ namespace qlchvlxd
              * *******************************************************/
             if (maKHTT.Enabled == true && maKHTT.Text == "")
                 MessageBox.Show("Nhập mã khách hàng thân thiết");
-            
-            listKhachHang = BusinessLogicLayer.KhacHangBLL.getListKhachHang();
-
-            //BusinessLogicLayer.CTHoaDonBLL.xoaListHoaDon();
-
-            
-            if (textBox_TenKH.Text != "" && textBox_DiaChi.Text != "" && textBox_DienThoai.Text != "")
+            if (float.Parse(label_GTTongTien.Text) < float.Parse(textBox_SoTienTra.Text))
+                MessageBox.Show("^_^");
+            else
             {
-                BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
-                if (maKHTT.Text == "")
-                {                    
-                    if (listKhachHang == null)
-                        khachHang.maKhachHang = "KH0001";
+                listKhachHang = BusinessLogicLayer.KhacHangBLL.getListKhachHang();
+
+                //BusinessLogicLayer.CTHoaDonBLL.xoaListHoaDon();
+
+
+                if (textBox_TenKH.Text != "" && textBox_DiaChi.Text != "" && textBox_DienThoai.Text != "")
+                {
+                    BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
+                    if (maKHTT.Text == "")
+                    {
+                        if (listKhachHang == null)
+                            khachHang.maKhachHang = "KH0001";
+                        else
+                            khachHang.maKhachHang = TaoKhoaChinh.getIdLonNhat(listKhachHang[listKhachHang.Count - 1].maKhachHang.ToString(), 2);
+
+
+                        khachHang.tenKhachHang = textBox_TenKH.Text;
+                        khachHang.diaChi = textBox_DiaChi.Text;
+                        khachHang.soDienThoai = textBox_DienThoai.Text;
+
+                        //them 1 khach hang vao table KHACHHANG
+                        BusinessLogicLayer.KhacHangBLL.themKhachHang(khachHang);
+                    }
                     else
-                        khachHang.maKhachHang = TaoKhoaChinh.getIdLonNhat(listKhachHang[listKhachHang.Count - 1].maKhachHang.ToString(), 2);
+                    {
+                        khachHang = BusinessLogicLayer.KhacHangBLL.getKhachHang(maKHTT.Text);
 
+                    }
+                    /*********************************************************
+                     * 
+                     * 
+                     * 
+                     * Tao HoaDon va luu vao database
+                     * 
+                     * 
+                     * *******************************************************/
+                    hoaDon.maHD = textBox_MaHD.Text;
+                    hoaDon.maNhanVien = 1;
+                    hoaDon.maKhachHang = khachHang.maKhachHang;
+                    hoaDon.tongTien = tongTien;
+                    hoaDon.tienTra = tienTra;
+                    hoaDon.tienNo = tienNo;
+                    DateTime date = DateTime.Now;
+                    hoaDon.ngayLapHoaDon = date.ToShortDateString();
+                    hoaDon.chietKhau = 0;
+                    hoaDon.giaoHang = 0;
 
-                    khachHang.tenKhachHang = textBox_TenKH.Text;
-                    khachHang.diaChi = textBox_DiaChi.Text;
-                    khachHang.soDienThoai = textBox_DienThoai.Text;
+                    BusinessLogicLayer.CTHoaDonBLL.suaHoaDon(hoaDon, hoaDon.maHD);
 
-                    //them 1 khach hang vao table KHACHHANG
-                    BusinessLogicLayer.KhacHangBLL.themKhachHang(khachHang);
+                    MessageBox.Show("ĐÃ TẠO THÀNH CÔNG HÓA ĐƠN!");
                 }
                 else
                 {
-                    khachHang = BusinessLogicLayer.KhacHangBLL.getKhachHang(maKHTT.Text);
-
+                    MessageBox.Show("NHẬP ĐẦY ĐỦ THÔNG TIN TRƯỚC KHI XEM HÓA ĐƠN!");
                 }
-                /*********************************************************
-                 * 
-                 * 
-                 * 
-                 * Tao HoaDon va luu vao database
-                 * 
-                 * 
-                 * *******************************************************/
-                hoaDon.maHD = textBox_MaHD.Text;
-                hoaDon.maNhanVien = 1;
-                hoaDon.maKhachHang = khachHang.maKhachHang;
-                hoaDon.tongTien = tongTien;
-                hoaDon.tienTra = tienTra;
-                hoaDon.tienNo = tienNo;
-                DateTime date = DateTime.Now;
-                hoaDon.ngayLapHoaDon = date.ToShortDateString();
-                hoaDon.chietKhau = 0;
-                hoaDon.giaoHang = 0;
 
-                BusinessLogicLayer.CTHoaDonBLL.suaHoaDon(hoaDon, hoaDon.maHD);
+                
             }
-            else 
-            {
-                MessageBox.Show("NHẬP ĐẦY ĐỦ THÔNG TIN TRƯỚC KHI XEM HÓA ĐƠN!");
-            }
-
-            MessageBox.Show("ĐÃ TẠO THÀNH CÔNG HÓA ĐƠN!");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -166,6 +173,7 @@ namespace qlchvlxd
 
         private void LapHoaDon_Load(object sender, EventArgs e)
         {
+            tongTien = 0;
 
             listHoaDon = BusinessLogicLayer.CTHoaDonBLL.getListHoaDon();
             hoaDon = new BusinessEntities.CTHoaDonBE();
@@ -224,7 +232,7 @@ namespace qlchvlxd
         private void button_Them_Click(object sender, EventArgs e)
         {
             button_Them.Enabled = false;
-
+            
             if (listMaCTHD == null)
                 textBox_MaCTHD.Text = "CT0001";
             else
@@ -241,7 +249,7 @@ namespace qlchvlxd
             BusinessLogicLayer.CTHoaDonBLL.themChiTietHoaDon(myCTHoaDon);
 
             //cập nhật tổng tiền
-            tongTien += myCTHoaDon.soLuong * myCTHoaDon.donGia;
+            tongTien += float.Parse(myCTHoaDon.soLuong.ToString()) * myCTHoaDon.donGia;
             label_GTTongTien.Text = tongTien.ToString();
 
             listView_HoaDon.Items.Clear();
@@ -347,6 +355,16 @@ namespace qlchvlxd
 
             listView_HoaDon.Items.Clear();
             hienThiChiTietHoaDon();
+        }
+
+        private void textBox_SoTienTra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                textBox_SoTienTra.Text = "";
+                MessageBox.Show("Tiền trả kiểu số ! ");
+                
+            }            
         }
     }
 }
