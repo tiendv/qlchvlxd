@@ -81,7 +81,27 @@ namespace DataAccessLayer
             int kq;
             return kq=SQLHelp.executeNonQuery(myAddQuery);
         }
+        /// <summary>
+        /// sửa thông tin khách hàng thân thiết
+        /// </summary>
+        /// <param name="khachHang"></param>
+        public int suaTTKHThanThiet(BusinessEntities.KhachHangBE khachHang)
+        {
+            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[khachhang] SET diachi= N'"
+                                +  khachHang.diaChi + "',sodienthoai= N' " + khachHang.soDienThoai 
+                                + "' where makh= '"+ khachHang.MaKhachHang+"'";
 
+            int kq = SQLHelp.executeNonQuery(myAddQuery);
+            return kq;
+        }
+        // xóa khách hàng thân thiết
+        public int XoaTTKHThanThiet(BusinessEntities.KhachHangBE khachHang)
+        {
+            String myAddQuery = "delete from [QLCHVLXD].[dbo].[khachhang] where mankh='" + khachHang.MaKhachHang + "'";
+
+            int kq = SQLHelp.executeNonQuery(myAddQuery);
+            return kq;
+        }
         public List<BusinessEntities.KhachHangBE> getListKhachHangThanThiet()
         {
             List<BusinessEntities.KhachHangBE> listKhachHang = new List<BusinessEntities.KhachHangBE>();
