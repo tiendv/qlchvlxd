@@ -50,8 +50,7 @@ namespace qlchvlxd
         BusinessEntities.CTHoaDonBE myCTHoaDon = new BusinessEntities.CTHoaDonBE();
 
         private float tongTien = 0;
-        private float tienTra = 0;
-        private float tienNo = 0;
+     
         private bool createable = true;
 
         public LapHoaDonPL()
@@ -105,10 +104,7 @@ namespace qlchvlxd
              * *******************************************************/
             if (maKHTT.Enabled == true && maKHTT.Text == "")
                 MessageBox.Show("Nhập mã khách hàng thân thiết");
-            if (float.Parse(label_GTTongTien.Text) < float.Parse(textBox_SoTienTra.Text))
-                MessageBox.Show("Số tiền trả phải nhỏ hơn hoặc bằng tổng tiên");
-            else
-            {
+          
                 listKhachHang = BusinessLogicLayer.KhacHangBLL.getListKhachHang();
 
                 //BusinessLogicLayer.CTHoaDonBLL.xoaListHoaDon();
@@ -149,8 +145,8 @@ namespace qlchvlxd
                     hoaDon.maNhanVien = 1;
                     hoaDon.maKhachHang = khachHang.maKhachHang;
                     hoaDon.tongTien = tongTien;
-                    hoaDon.tienTra = tienTra;
-                    hoaDon.tienNo = tienNo;
+                    hoaDon.tienTra = tongTien;
+                    hoaDon.tienNo = 0;
                     DateTime date = DateTime.Now;
                     hoaDon.ngayLapHoaDon = date.ToShortDateString();
                     hoaDon.chietKhau = 0;
@@ -172,7 +168,7 @@ namespace qlchvlxd
                 }
 
                 
-            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -252,7 +248,8 @@ namespace qlchvlxd
         private void button_Them_Click(object sender, EventArgs e)
         {
             button_Them.Enabled = false;
-            
+            button_XemHD.Enabled = true;
+   
             if (listMaCTHD == null)
                 textBox_MaCTHD.Text = "CT0001";
             else
@@ -271,7 +268,9 @@ namespace qlchvlxd
 
             //cập nhật tổng tiền
             tongTien += float.Parse(myCTHoaDon.soLuong.ToString()) * myCTHoaDon.donGia;
-            label_GTTongTien.Text = tongTien.ToString();
+            
+
+            label_GTTongTien.Text = double.Parse(tongTien.ToString()).ToString() + " VND";
 
             listView_HoaDon.Items.Clear();
             hienThiChiTietHoaDon();
@@ -326,22 +325,7 @@ namespace qlchvlxd
 
             listView_HoaDon.Items.Clear();
             hienThiChiTietHoaDon();
-        }
-             
-
-        private void textBox_SoTienTra_TextChanged(object sender, EventArgs e)
-        {
-            button_XemHD.Enabled = true;
-
-            if (textBox_SoTienTra.Text != "")
-            {
-                tienTra = float.Parse(textBox_SoTienTra.Text);
-                tienNo = tongTien - tienTra;
-            }
-            label_GTTongTien.Text = tongTien.ToString();
-            label_GTTienNo.Text = tienNo.ToString();
-            
-        }
+        }          
 
         private void button_Tim_Click(object sender, EventArgs e)
         {
@@ -352,9 +336,12 @@ namespace qlchvlxd
             BusinessEntities.KhachHangBE khachHang = new BusinessEntities.KhachHangBE();
 
             khachHang = BusinessLogicLayer.KhacHangBLL.getKhachHang(maKHTT.Text);
-            
+
             if (khachHang == null)
+            {
+                checkBox_KHTT.Checked = false;
                 MessageBox.Show("Không tồn tại mã khách hàng.");
+            }
             else
             {
                 textBox_TenKH.Text = khachHang.tenKhachHang;
@@ -378,17 +365,7 @@ namespace qlchvlxd
             listView_HoaDon.Items.Clear();
             hienThiChiTietHoaDon();
         }
-
-        private void textBox_SoTienTra_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                textBox_SoTienTra.Text = "";
-                MessageBox.Show("Tiền trả kiểu số ! ");
-                
-            }            
-        }
-
+     
         private void button1_Click_1(object sender, EventArgs e)
         {
             LapHoaDonRPForm f2 = new LapHoaDonRPForm();
@@ -414,5 +391,6 @@ namespace qlchvlxd
                 }
             }
         }
+
     }
 }

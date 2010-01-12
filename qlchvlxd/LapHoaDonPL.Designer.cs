@@ -35,14 +35,12 @@
             this.button_CapNhat = new System.Windows.Forms.Button();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.textBox_DonGia = new System.Windows.Forms.TextBox();
-            this.checkBox_GiaoHang = new System.Windows.Forms.CheckBox();
             this.label_DonGia = new System.Windows.Forms.Label();
             this.textBox_MaCTHD = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown_SoLuong = new System.Windows.Forms.NumericUpDown();
             this.button_Them = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label_GiaoHang = new System.Windows.Forms.Label();
             this.comboBox_TenSP = new System.Windows.Forms.ComboBox();
             this.label_TenSP = new System.Windows.Forms.Label();
             this.comboBox_LoaiSP = new System.Windows.Forms.ComboBox();
@@ -68,11 +66,7 @@
             this.column_DonGia = new System.Windows.Forms.ColumnHeader();
             this.column_ThanhTien = new System.Windows.Forms.ColumnHeader();
             this.label_TongTien = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label_SoTienNo = new System.Windows.Forms.Label();
-            this.textBox_SoTienTra = new System.Windows.Forms.TextBox();
             this.label_GTTongTien = new System.Windows.Forms.Label();
-            this.label_GTTienNo = new System.Windows.Forms.Label();
             this.groupBox_SanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SoLuong)).BeginInit();
             this.groupBoxTTKH.SuspendLayout();
@@ -113,14 +107,12 @@
             this.groupBox_SanPham.Controls.Add(this.button_CapNhat);
             this.groupBox_SanPham.Controls.Add(this.button_Xoa);
             this.groupBox_SanPham.Controls.Add(this.textBox_DonGia);
-            this.groupBox_SanPham.Controls.Add(this.checkBox_GiaoHang);
             this.groupBox_SanPham.Controls.Add(this.label_DonGia);
             this.groupBox_SanPham.Controls.Add(this.textBox_MaCTHD);
             this.groupBox_SanPham.Controls.Add(this.label5);
             this.groupBox_SanPham.Controls.Add(this.numericUpDown_SoLuong);
             this.groupBox_SanPham.Controls.Add(this.button_Them);
             this.groupBox_SanPham.Controls.Add(this.label7);
-            this.groupBox_SanPham.Controls.Add(this.label_GiaoHang);
             this.groupBox_SanPham.Controls.Add(this.comboBox_TenSP);
             this.groupBox_SanPham.Controls.Add(this.label_TenSP);
             this.groupBox_SanPham.Controls.Add(this.comboBox_LoaiSP);
@@ -160,15 +152,6 @@
             this.textBox_DonGia.Size = new System.Drawing.Size(159, 20);
             this.textBox_DonGia.TabIndex = 34;
             this.textBox_DonGia.TextChanged += new System.EventHandler(this.textBox_DonGia_TextChanged);
-            // 
-            // checkBox_GiaoHang
-            // 
-            this.checkBox_GiaoHang.AutoSize = true;
-            this.checkBox_GiaoHang.Location = new System.Drawing.Point(255, 75);
-            this.checkBox_GiaoHang.Name = "checkBox_GiaoHang";
-            this.checkBox_GiaoHang.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_GiaoHang.TabIndex = 29;
-            this.checkBox_GiaoHang.UseVisualStyleBackColor = true;
             // 
             // label_DonGia
             // 
@@ -236,15 +219,6 @@
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 27;
             this.label7.Text = "Số lượng:";
-            // 
-            // label_GiaoHang
-            // 
-            this.label_GiaoHang.AutoSize = true;
-            this.label_GiaoHang.Location = new System.Drawing.Point(170, 76);
-            this.label_GiaoHang.Name = "label_GiaoHang";
-            this.label_GiaoHang.Size = new System.Drawing.Size(59, 13);
-            this.label_GiaoHang.TabIndex = 20;
-            this.label_GiaoHang.Text = "Giao hàng:";
             // 
             // comboBox_TenSP
             // 
@@ -465,55 +439,21 @@
             // label_TongTien
             // 
             this.label_TongTien.AutoSize = true;
-            this.label_TongTien.Location = new System.Drawing.Point(9, 447);
+            this.label_TongTien.ForeColor = System.Drawing.Color.Red;
+            this.label_TongTien.Location = new System.Drawing.Point(388, 451);
             this.label_TongTien.Name = "label_TongTien";
             this.label_TongTien.Size = new System.Drawing.Size(58, 13);
             this.label_TongTien.TabIndex = 32;
             this.label_TongTien.Text = "Tổng tiền :";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(186, 447);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "Số tiền trả";
-         
-            // 
-            // label_SoTienNo
-            // 
-            this.label_SoTienNo.AutoSize = true;
-            this.label_SoTienNo.Location = new System.Drawing.Point(387, 447);
-            this.label_SoTienNo.Name = "label_SoTienNo";
-            this.label_SoTienNo.Size = new System.Drawing.Size(90, 13);
-            this.label_SoTienNo.TabIndex = 34;
-            this.label_SoTienNo.Text = "Số tiền còn thiếu:";
-            // 
-            // textBox_SoTienTra
-            // 
-            this.textBox_SoTienTra.Location = new System.Drawing.Point(254, 444);
-            this.textBox_SoTienTra.Name = "textBox_SoTienTra";
-            this.textBox_SoTienTra.Size = new System.Drawing.Size(116, 20);
-            this.textBox_SoTienTra.TabIndex = 32;
-            this.textBox_SoTienTra.TextChanged += new System.EventHandler(this.textBox_SoTienTra_TextChanged);
-            this.textBox_SoTienTra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_SoTienTra_KeyPress);
-            // 
             // label_GTTongTien
             // 
             this.label_GTTongTien.AutoSize = true;
-            this.label_GTTongTien.Location = new System.Drawing.Point(68, 447);
+            this.label_GTTongTien.ForeColor = System.Drawing.Color.Red;
+            this.label_GTTongTien.Location = new System.Drawing.Point(447, 451);
             this.label_GTTongTien.Name = "label_GTTongTien";
             this.label_GTTongTien.Size = new System.Drawing.Size(0, 13);
             this.label_GTTongTien.TabIndex = 35;
-            // 
-            // label_GTTienNo
-            // 
-            this.label_GTTienNo.AutoSize = true;
-            this.label_GTTienNo.Location = new System.Drawing.Point(472, 447);
-            this.label_GTTienNo.Name = "label_GTTienNo";
-            this.label_GTTienNo.Size = new System.Drawing.Size(0, 13);
-            this.label_GTTienNo.TabIndex = 36;
             // 
             // LapHoaDonPL
             // 
@@ -522,11 +462,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button_Thoat;
             this.ClientSize = new System.Drawing.Size(618, 524);
-            this.Controls.Add(this.label_GTTienNo);
             this.Controls.Add(this.label_GTTongTien);
-            this.Controls.Add(this.textBox_SoTienTra);
-            this.Controls.Add(this.label_SoTienNo);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label_TongTien);
             this.Controls.Add(this.listView_HoaDon);
             this.Controls.Add(this.groupBoxTTKH);
@@ -564,13 +500,11 @@
         private System.Windows.Forms.TextBox textBox_DiaChi;
         private System.Windows.Forms.CheckBox checkBox_KHTT;
         private System.Windows.Forms.TextBox textBox_TenKH;
-        private System.Windows.Forms.Label label_GiaoHang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_TenKH;
         private System.Windows.Forms.TextBox maKHTT;
-        private System.Windows.Forms.CheckBox checkBox_GiaoHang;
         private System.Windows.Forms.NumericUpDown numericUpDown_SoLuong;
         private System.Windows.Forms.ListView listView_HoaDon;
         private System.Windows.Forms.ColumnHeader column_STT;
@@ -586,11 +520,7 @@
         private System.Windows.Forms.Label label_DonGia;
         private System.Windows.Forms.Button button_Xoa;
         private System.Windows.Forms.Label label_TongTien;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label_SoTienNo;
-        private System.Windows.Forms.TextBox textBox_SoTienTra;
         private System.Windows.Forms.Label label_GTTongTien;
-        private System.Windows.Forms.Label label_GTTienNo;
         private System.Windows.Forms.Label label_MaKHTT;
         private System.Windows.Forms.Button button_Tim;
         private System.Windows.Forms.Button button_CapNhat;
