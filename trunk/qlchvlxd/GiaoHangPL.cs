@@ -54,7 +54,8 @@ namespace qlchvlxd
         private float tienTra = 0;
         private float tienNo = 0;
         private bool capNhat = false;
-        private float soKm = 0;
+        private float soKm = 1;
+        public bool isclose = false;
 
         public GiaoHangPL()
         {
@@ -63,24 +64,8 @@ namespace qlchvlxd
             listTenLoaiSanPham = BusinessLogicLayer.LoaiSPBLL.getDanhSachLoaiSP();
             //button_Tim.Enabled = false;
             button_CapNhap.Enabled = false;
-            // button_XemHD.Enabled = false;
-            
-            listPhieuGiaoHang = BusinessLogicLayer.PhieuGiaoHangBLL.getListPhieuGiaoHang();
-
-            phieuGiaoHang = BusinessLogicLayer.PhieuGiaoHangBLL.getPhieuGiaoHang();
-
-            //if (listPhieuGiaoHang == null)
-            //{
-            //    phieuGiaoHang.maPhieuGiaoHang = "GH0002";
-            //}
-            //else
-            //{
-            //    //MessageBox.Show(phieuGiaoHang.maPhieuGiaoHang);
-            //    phieuGiaoHang.maPhieuGiaoHang = TaoKhoaChinh.getIdLonNhat(listPhieuGiaoHang[listPhieuGiaoHang.Count - 1].maPhieuGiaoHang.ToString(), 2);
-            //}
-
-            //maGiaoHang = phieuGiaoHang.maPhieuGiaoHang;
-            ////MessageBox.Show(phieuGiaoHang.maPhieuGiaoHang);
+            // button_XemHD.Enabled = false; 
+            textBox_SoKm.Enabled = false;           
 
         }
 
@@ -109,9 +94,9 @@ namespace qlchvlxd
                     //    MessageBox.Show("T_T 1");
                         lvi.SubItems.Add(numericUpDown_SoLuong.Value.ToString());
                         lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
-                        lvi.SubItems.Add(((int)numericUpDown_SoLuong.Value * listMaCTHD[i].donGia).ToString());
+                        lvi.SubItems.Add((float.Parse(numericUpDown_SoLuong.Value.ToString()) * listMaCTHD[i].donGia).ToString());
                         //tinh tien
-                        tongTien += (int)numericUpDown_SoLuong.Value * listMaCTHD[i].donGia * float.Parse(comboBox_MucChietKhau.Text)/100;
+                        tongTien += float.Parse(numericUpDown_SoLuong.Value.ToString()) * listMaCTHD[i].donGia * float.Parse(comboBox_MucChietKhau.Text)/100;
                     }
                     else
                     {
@@ -129,7 +114,9 @@ namespace qlchvlxd
                         if (float.Parse(comboBox_MucChietKhau.Text) != 0)
                         {
                             //MessageBox.Show(((float)100 / (float.Parse(comboBox_MucChietKhau.Text))).ToString());
-                            tongTien += (float)(float.Parse(listMaCTHD[i].soLuong.ToString()) * listMaCTHD[i].donGia) / (float)((float)100 / (float.Parse(comboBox_MucChietKhau.Text)));
+                            tongTien += ((float.Parse(listMaCTHD[i].soLuong.ToString()) * listMaCTHD[i].donGia) 
+                                        - ((float.Parse(listMaCTHD[i].soLuong.ToString()) * listMaCTHD[i].donGia) * (float.Parse(comboBox_MucChietKhau.Text)) /(float)100)) 
+                                        + (float.Parse(textBox_SoKm.Text) * 1000);// / (float.Parse(comboBox_MucChietKhau.Text)));
                         }
                         else
 
@@ -206,7 +193,33 @@ namespace qlchvlxd
 
         private void GiaoHangPL_Load(object sender, EventArgs e)
         {
-           
+
+            listPhieuGiaoHang = BusinessLogicLayer.PhieuGiaoHangBLL.getListPhieuGiaoHang();
+
+            phieuGiaoHang = new BusinessEntities.PhieuGiaoHangBE();
+
+            if (listPhieuGiaoHang == null)
+            {
+                phieuGiaoHang.maPhieuGiaoHang = "GH0001";
+            }
+            else
+            {                
+                phieuGiaoHang.maPhieuGiaoHang = TaoKhoaChinh.getIdLonNhat(listPhieuGiaoHang[listPhieuGiaoHang.Count - 1].maPhieuGiaoHang.ToString(), 2);
+            }
+
+            maGiaoHang = phieuGiaoHang.maPhieuGiaoHang;
+            try
+            {
+                phieuGiaoHang.maHoaDon = "HD0001";
+                BusinessLogicLayer.PhieuGiaoHangBLL.themPhieuGiao(phieuGiaoHang);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể giao hàng. Vì chưa có hóa đơn nào trong dữ liệu!");
+                MessageBox.Show("Vui lòng tạo hóa đơn trước khi thực hiện chức năng giao hàng.");
+                isclose = true;
+            }
+            
             comboBox_MucChietKhau.Items.Clear();
             listMucChietKhau = BusinessLogicLayer.ChietKhauBLL.getListChietKhau();
             for (int i = 0; i < listMucChietKhau.Count; i++)
@@ -288,7 +301,7 @@ namespace qlchvlxd
             phieuGiaoHang.ngayGiaoHang = date.ToShortDateString();
             phieuGiaoHang.chiPhi = tongTien;
 
-            BusinessLogicLayer.PhieuGiaoHangBLL.themPhieuGiao(phieuGiaoHang);
+            BusinessLogicLayer.PhieuGiaoHangBLL.suaPhieuGiao(phieuGiaoHang, maGiaoHang);
             
         }
 
@@ -296,6 +309,25 @@ namespace qlchvlxd
         {
             LapHoaDonRPForm f = new LapHoaDonRPForm();
             f.Show();
+        }
+
+        private void button_Huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                textBox_SoKm.Enabled = true;
+            }
+            else
+            {
+                textBox_SoKm.Text = "0";
+                textBox_SoKm.Enabled = false;
+            }
+            
         }      
     }
 }

@@ -32,7 +32,6 @@
             this.groupBox_ThongTin = new System.Windows.Forms.GroupBox();
             this.textBox_MaKHTT = new System.Windows.Forms.TextBox();
             this.button_TimHoaDon = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_SoKm = new System.Windows.Forms.TextBox();
             this.label_SoKm = new System.Windows.Forms.Label();
@@ -71,8 +70,8 @@
             this.column_ThanhTien = new System.Windows.Forms.ColumnHeader();
             this.listView_GiaoHang = new System.Windows.Forms.ListView();
             this.label_GTTongTien = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox_ThongTin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox_SanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SoLuong)).BeginInit();
             this.SuspendLayout();
@@ -89,9 +88,9 @@
             // 
             // groupBox_ThongTin
             // 
+            this.groupBox_ThongTin.Controls.Add(this.checkBox1);
             this.groupBox_ThongTin.Controls.Add(this.textBox_MaKHTT);
             this.groupBox_ThongTin.Controls.Add(this.button_TimHoaDon);
-            this.groupBox_ThongTin.Controls.Add(this.numericUpDown1);
             this.groupBox_ThongTin.Controls.Add(this.label8);
             this.groupBox_ThongTin.Controls.Add(this.textBox_SoKm);
             this.groupBox_ThongTin.Controls.Add(this.label_SoKm);
@@ -129,21 +128,14 @@
             this.button_TimHoaDon.UseVisualStyleBackColor = true;
             this.button_TimHoaDon.Click += new System.EventHandler(this.button_TimHoaDon_Click);
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(99, 100);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown1.TabIndex = 43;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 107);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 13);
+            this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 42;
-            this.label8.Text = "Lần giao hàng thứ:";
+            this.label8.Text = "Giao hàng:";
             // 
             // textBox_SoKm
             // 
@@ -151,6 +143,7 @@
             this.textBox_SoKm.Name = "textBox_SoKm";
             this.textBox_SoKm.Size = new System.Drawing.Size(132, 20);
             this.textBox_SoKm.TabIndex = 41;
+            this.textBox_SoKm.Text = "0";
             this.textBox_SoKm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_SoKm_KeyPress);
             // 
             // label_SoKm
@@ -421,6 +414,7 @@
             this.button_Huy.TabIndex = 27;
             this.button_Huy.Text = "Hủy";
             this.button_Huy.UseVisualStyleBackColor = true;
+            this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
             // 
             // label9
             // 
@@ -493,6 +487,16 @@
             this.label_GTTongTien.Size = new System.Drawing.Size(0, 13);
             this.label_GTTongTien.TabIndex = 33;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(99, 102);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 45;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // GiaoHangPL
             // 
             this.AcceptButton = this.button_TimHoaDon;
@@ -514,7 +518,6 @@
             this.Load += new System.EventHandler(this.GiaoHangPL_Load);
             this.groupBox_ThongTin.ResumeLayout(false);
             this.groupBox_ThongTin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox_SanPham.ResumeLayout(false);
             this.groupBox_SanPham.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SoLuong)).EndInit();
@@ -527,7 +530,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox_ThongTin;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_SoKm;
         private System.Windows.Forms.Label label_SoKm;
@@ -568,5 +570,6 @@
         private System.Windows.Forms.ListView listView_GiaoHang;
         private System.Windows.Forms.Label label_GTTongTien;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
