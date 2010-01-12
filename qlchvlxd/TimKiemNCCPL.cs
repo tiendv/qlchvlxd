@@ -88,7 +88,7 @@ namespace qlchvlxd
             listView_NCC.Items.Clear();
 
             BusinessLogicLayer.NhaCungCapBLL nhacungcapBLL = new BusinessLogicLayer.NhaCungCapBLL();
-            List<BusinessEntities.NhaCungCapBE> listNhaCungCap = nhacungcapBLL.getListNCCtheoTen(textBox_Tim.Text);
+            List<BusinessEntities.NhaCungCapBE> listNhaCungCap = nhacungcapBLL.getListNCCTuTen(textBox_Tim.Text);
             for (int i = 0; i < listNhaCungCap.Count; i++)
             {
 
