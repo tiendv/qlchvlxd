@@ -273,29 +273,37 @@ namespace DataAccessLayer
         // lay danh sach san pham theo ma nha cung cap 
         public List<SanPhamBE> viewAllSanPhamByKindOfNCC(string kindOfMaSP)
         {
-            List<SanPhamBE> listSanPham = new List<SanPhamBE>();
-            DataTable dt = new DataTable();
-            string myQuery = "SELECT * FROM SANPHAM WHERE MANCC = N'" + kindOfMaSP + "'";
-
-            dt = SQLHelp.executeQuery(myQuery);
-            foreach (DataRow row in dt.Rows)
+            try
             {
-                SanPhamBE sanpham = new SanPhamBE();
-                sanpham.masp = (int)row["msp"];
-                sanpham.tensp = row["tensp"].ToString();
-                sanpham.gianhap = float.Parse(row["gianhap"].ToString());
-                sanpham.giaban = float.Parse(row["giaban"].ToString());
-                sanpham.soluong = (int)row["soluong"];
-                sanpham.soluongtoithieu = (int)row["soluongtoithieu"];
-                sanpham.mancc = row["mancc"].ToString();
-                sanpham.thongtin = row["thongtin"].ToString();
-                sanpham.donvitinh = (int)row["donvitinh"];
-                sanpham.maloaisp = (int)row["maloaisp"];
+                List<SanPhamBE> listSanPham = new List<SanPhamBE>();
+                DataTable dt = new DataTable();
+                string myQuery = "SELECT * FROM SANPHAM WHERE  MANCC = N'" + kindOfMaSP + "'";
 
-                listSanPham.Add(sanpham);
+                dt = SQLHelp.executeQuery(myQuery);
+                foreach (DataRow row in dt.Rows)
+                {
+                    SanPhamBE sanPham = new SanPhamBE();
+                    sanPham = new BusinessEntities.SanPhamBE();
+                    sanPham.MASP = (int)row["MSP"];
+                    sanPham.TENSP = row["TENSP"].ToString();
+                    sanPham.GIANHAP = float.Parse(row["GIANHAP"].ToString());
+                    sanPham.GIABAN = float.Parse(row["GIABAN"].ToString());
+                    sanPham.SOLUONG = (int)row["SOLUONG"];
+                    sanPham.SOLUONGTOITHIEU = (int)row["SOLUONGTOITHIEU"];
+                    sanPham.MANCC = row["MANCC"].ToString();
+                    sanPham.THONGTIN = row["THONGTIN"].ToString();
+                    sanPham.DONVITINH = (int)row["DONVITINH"];
+                    sanPham.maloaisp = (int)row["MALOAISP"];
+
+                    listSanPham.Add(sanPham);
+                }
+
+                return listSanPham;
             }
-
-            return listSanPham;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         // update thong tin san pham theo ten san pham
         public void updatesanphamtheotensanpham(BusinessEntities.SanPhamBE sp)
@@ -335,26 +343,69 @@ namespace DataAccessLayer
         // lấy san pham theo ten san pham
         public BusinessEntities.SanPhamBE getSanPhamTheoTen(String tenSanPham)
         {
-            DataTable dt = SQLHelp.executeQuery("SELECT * FROM SANPHAM WHERE TENSP = N'" + tenSanPham + "'");
-
-            BusinessEntities.SanPhamBE sanPham = null;
-
-            foreach (DataRow row in dt.Rows)
+            try
             {
-                sanPham = new BusinessEntities.SanPhamBE();
-                sanPham.MASP = (int)row["MSP"];
-                sanPham.TENSP = row["TENSP"].ToString();
-                sanPham.GIANHAP = float.Parse(row["GIANHAP"].ToString());
-                sanPham.GIABAN = float.Parse(row["GIABAN"].ToString());
-                sanPham.SOLUONG = (int)row["SOLUONG"];
-                sanPham.SOLUONGTOITHIEU = (int)row["SOLUONGTOITHIEU"];
-                sanPham.MANCC = row["MANCC"].ToString();
-                sanPham.THONGTIN = row["THONGTIN"].ToString();
-                sanPham.DONVITINH = (int)row["DONVITINH"];
-                sanPham.maloaisp = (int)row["MALOAISP"];
-            }
+                DataTable dt = SQLHelp.executeQuery("SELECT * FROM SANPHAM WHERE TENSP = N'%" + tenSanPham + "'%");
 
-            return sanPham;
+                BusinessEntities.SanPhamBE sanPham = null;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    sanPham = new BusinessEntities.SanPhamBE();
+                    sanPham.MASP = (int)row["MSP"];
+                    sanPham.TENSP = row["TENSP"].ToString();
+                    sanPham.GIANHAP = float.Parse(row["GIANHAP"].ToString());
+                    sanPham.GIABAN = float.Parse(row["GIABAN"].ToString());
+                    sanPham.SOLUONG = (int)row["SOLUONG"];
+                    sanPham.SOLUONGTOITHIEU = (int)row["SOLUONGTOITHIEU"];
+                    sanPham.MANCC = row["MANCC"].ToString();
+                    sanPham.THONGTIN = row["THONGTIN"].ToString();
+                    sanPham.DONVITINH = (int)row["DONVITINH"];
+                    sanPham.maloaisp = (int)row["MALOAISP"];
+                }
+
+                return sanPham;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+ 
+            }
+        }
+
+        public List<SanPhamBE> viewAllSanPhamByKindOfTenSanPham(string tensp)
+        {
+            try
+            {
+                List<SanPhamBE> listSanPham = new List<SanPhamBE>();
+                DataTable dt = new DataTable();
+                string myQuery = "SELECT * FROM [QLCHVLXD].[dbo].[sanpham] WHERE TENSP like N'" + tensp + "'"; 
+
+                dt = SQLHelp.executeQuery(myQuery);
+                foreach (DataRow row in dt.Rows)
+                {
+                    SanPhamBE sanPham = new SanPhamBE();
+                    sanPham = new BusinessEntities.SanPhamBE();
+                    sanPham.MASP = (int)row["MSP"];
+                    sanPham.TENSP = row["TENSP"].ToString();
+                    sanPham.GIANHAP = float.Parse(row["GIANHAP"].ToString());
+                    sanPham.GIABAN = float.Parse(row["GIABAN"].ToString());
+                    sanPham.SOLUONG = (int)row["SOLUONG"];
+                    sanPham.SOLUONGTOITHIEU = (int)row["SOLUONGTOITHIEU"];
+                    sanPham.MANCC = row["MANCC"].ToString();
+                    sanPham.THONGTIN = row["THONGTIN"].ToString();
+                    sanPham.DONVITINH = (int)row["DONVITINH"];
+                    sanPham.maloaisp = (int)row["MALOAISP"];
+
+                    listSanPham.Add(sanPham);
+                }
+
+                return listSanPham;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         /*******************************************
          * 
