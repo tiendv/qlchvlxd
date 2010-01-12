@@ -68,6 +68,7 @@ namespace BusinessLogicLayer
             }
             return listNhaCungCap;
         }
+
        
 
         // Lấy danh sách các tên  nhà cung cấp từ  bảng nhà cung cấp
@@ -102,5 +103,25 @@ namespace BusinessLogicLayer
 
             return ncc;
         }
+
+        /************************************
+     * 
+     * tìm kiếm nhà cung cấp theo tên
+     * 13/01/2010
+     * 
+     * *********************************/
+        public List<BusinessEntities.NhaCungCapBE> getListNCCTuTen(String tenNCC)
+        {
+            List<BusinessEntities.NhaCungCapBE> listNhaCungCap = new List<BusinessEntities.NhaCungCapBE>();
+            DataAccessLayer.NhaCungCapDAL accessTenNhaCungCap = new DataAccessLayer.NhaCungCapDAL();
+
+            listNhaCungCap = accessTenNhaCungCap.getListNhaCungCapTuTen(tenNCC);
+
+            if (listNhaCungCap == null)
+                return null;
+
+            return listNhaCungCap;
+        }
+       
     }
 }
