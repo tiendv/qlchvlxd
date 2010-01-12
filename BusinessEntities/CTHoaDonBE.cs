@@ -31,6 +31,7 @@ namespace BusinessEntities
         public float chietKhau;
         public float tienTra;
         public float tienNo;
+        public float thanhTien;
         public String ngayLapHoaDon = "";
         public int giaoHang;
         public String tenKhachHang = "";
@@ -175,6 +176,12 @@ namespace BusinessEntities
         {
             get { return this.loaiKhachHang; }
             set { this.loaiKhachHang = value; }
+        }
+
+        public float ThanhTien
+        {
+            get { return this.thanhTien; }
+            set { this.thanhTien = value; }
         }
 
     }
