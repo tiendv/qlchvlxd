@@ -33,6 +33,8 @@ namespace qlchvlxd
 
         BusinessEntities.SanPhamBE sanPham = new BusinessEntities.SanPhamBE();
 
+        BusinessEntities.SanPhamBE soLuongSanPham = new BusinessEntities.SanPhamBE();
+
         //lay danh sach ten cac loai san pham tu bang loai san pham
       
         List<BusinessEntities.LoaiSPBE> listTenLoaiSanPham = new List<BusinessEntities.LoaiSPBE>();
@@ -50,6 +52,7 @@ namespace qlchvlxd
         private float tongTien = 0;
         private float tienTra = 0;
         private float tienNo = 0;
+        private bool createable = true;
 
         public LapHoaDonPL()
         {
@@ -157,6 +160,8 @@ namespace qlchvlxd
 
                     MessageBox.Show("ĐÃ TẠO THÀNH CÔNG HÓA ĐƠN!");
 
+                    capNhatSoLuongSanPham();
+
                     LapHoaDonRPForm f2 = new LapHoaDonRPForm();
                     f2.Show();
                    
@@ -223,6 +228,17 @@ namespace qlchvlxd
                     lvi = new ListViewItem((i + 1).ToString());
                     sanPham = BusinessLogicLayer.SanPhamBLL.getTenSanPham(listMaCTHD[i].maSP);
                     lvi.SubItems.Add(sanPham.tensp);
+
+                    soLuongSanPham = BusinessLogicLayer.SanPhamBLL.getGiaSanPham(sanPham.tensp);
+
+                    if (listMaCTHD[i].soLuong > soLuongSanPham.soluong)
+                    {
+                        MessageBox.Show("Số lượng trong kho không đủ.");
+                        MessageBox.Show("Mặc hàng này trong kho còn " + soLuongSanPham.soluong.ToString() + " " + soLuongSanPham.tendonvitinh);
+                        lvi.ForeColor = Color.Red;
+                        createable = false;
+                    }
+
                     lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
                     lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
                     lvi.SubItems.Add(((float)listMaCTHD[i].soLuong * listMaCTHD[i].donGia).ToString());
@@ -378,6 +394,25 @@ namespace qlchvlxd
             LapHoaDonRPForm f2 = new LapHoaDonRPForm();
             f2.Show();
 
+        }
+
+        private void capNhatSoLuongSanPham()
+        {
+            listCTHD = BusinessLogicLayer.CTHoaDonBLL.getDanhSachCTHD();
+            
+            ListViewItem lvi;
+            if (listMaCTHD == null)
+                return;
+            //   MessageBox.Show("Danh sách rỗng!");
+            else
+            {
+                for (int i = 0; i < listMaCTHD.Count; i++)
+                {
+                    int soluongcon = soLuongSanPham.soluong - listMaCTHD[i].soLuong;
+
+                    BusinessLogicLayer.SanPhamBLL.suadSoLuongSanPham(soluongcon,  listCTHD[i].maSP);
+                }
+            }
         }
     }
 }
