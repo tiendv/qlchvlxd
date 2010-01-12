@@ -36,15 +36,23 @@ namespace BusinessLogicLayer
 
         public static List<BusinessEntities.SanPhamBE> getListTenSanPham(String tenSanPham)
         {
-            List<BusinessEntities.SanPhamBE> listTenSanPham = new List<BusinessEntities.SanPhamBE>();
-            DataAccessLayer.SanPhamDAL accessTenSanPham = new DataAccessLayer.SanPhamDAL();
+            try
+            {
+                List<BusinessEntities.SanPhamBE> listTenSanPham = new List<BusinessEntities.SanPhamBE>();
+                DataAccessLayer.SanPhamDAL accessTenSanPham = new DataAccessLayer.SanPhamDAL();
 
-            listTenSanPham = accessTenSanPham.getListTenSanPham(tenSanPham);
+                listTenSanPham = accessTenSanPham.viewAllSanPhamByKindOfTenSanPham(tenSanPham);
 
-            if (listTenSanPham == null)
-                return null;
+                if (listTenSanPham == null)
+                    return null;
 
-            return listTenSanPham;
+                return listTenSanPham;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         // Lay danh sach san pham theo mã sản phẩm 
 
@@ -63,15 +71,22 @@ namespace BusinessLogicLayer
         // Lấy danh sách sản phẩm theo mã nhà cung cấp 
         public List<BusinessEntities.SanPhamBE> getListSanPhamTheoMaNhaCungCap(String mancc)
         {
-            List<BusinessEntities.SanPhamBE> listTenSanPham = new List<BusinessEntities.SanPhamBE>();
-            DataAccessLayer.SanPhamDAL accessTenSanPham = new DataAccessLayer.SanPhamDAL();
+            try
+            {
+                List<BusinessEntities.SanPhamBE> listTenSanPham = new List<BusinessEntities.SanPhamBE>();
+                DataAccessLayer.SanPhamDAL accessTenSanPham = new DataAccessLayer.SanPhamDAL();
 
-            listTenSanPham = accessTenSanPham.viewAllSanPhamByKindOfNCC(mancc);
+                listTenSanPham = accessTenSanPham.viewAllSanPhamByKindOfNCC(mancc);
 
-            if (listTenSanPham == null)
-                return null;
+                if (listTenSanPham == null)
+                    return null;
 
-            return listTenSanPham;
+                return listTenSanPham;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // Lấy giá sản phẩm from Cường
