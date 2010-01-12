@@ -173,5 +173,17 @@ namespace qlchvlxd
             TacGiaPL f = new TacGiaPL();
             f.Show();
         }
+
+        private void lienheToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void inBảngGiáToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BanggiasanphamPL f = new BanggiasanphamPL();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
