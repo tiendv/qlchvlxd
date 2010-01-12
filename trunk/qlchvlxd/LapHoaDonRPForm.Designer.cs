@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.LapHoaDonRP3 = new qlchvlxd.LapHoaDonRP();
-            this.LapHoaDonRP1 = new qlchvlxd.LapHoaDonRP();
-            this.LapHoaDonRP2 = new qlchvlxd.LapHoaDonRP();
+            this.LapHoaDonCRP1 = new qlchvlxd.LapHoaDonCRP();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -41,7 +39,7 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.LapHoaDonRP3;
+            this.crystalReportViewer1.ReportSource = this.LapHoaDonCRP1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(1280, 778);
             this.crystalReportViewer1.TabIndex = 0;
             // 
@@ -52,7 +50,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 778);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "LapHoaDonRPForm";
-            this.Text = "Report demmo";
+            this.Text = "LapHoaDonRPForm";
             this.ResumeLayout(false);
 
         }
@@ -60,9 +58,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private LapHoaDonRP LapHoaDonRP3;
-        private LapHoaDonRP LapHoaDonRP1;
-        private LapHoaDonRP LapHoaDonRP2;
+        private LapHoaDonCRP LapHoaDonCRP1;
 
     }
 }
