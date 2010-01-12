@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.LapHoaDonRP3 = new qlchvlxd.LapHoaDonRP();
             this.LapHoaDonRP1 = new qlchvlxd.LapHoaDonRP();
             this.LapHoaDonRP2 = new qlchvlxd.LapHoaDonRP();
-            this.LapHoaDonRP3 = new qlchvlxd.LapHoaDonRP();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -52,7 +52,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 778);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "LapHoaDonRPForm";
-            this.Text = "LapHoaDonRPForm";
+            this.Text = "Report demmo";
             this.ResumeLayout(false);
 
         }
