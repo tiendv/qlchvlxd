@@ -182,13 +182,13 @@ namespace qlchvlxd
                                 try
                                 {
 
-                                    NhaCungCapBE ncc = new NhaCungCapBE();
-                                    ncc = nhacungcapBLL.getMaNhaCungCap(textBox1.Text.ToString());
+                                  //  NhaCungCapBE ncc = new NhaCungCapBE();
+                                 //   ncc = nhacungcapBLL.getMaNhaCungCap(textBox1.Text.ToString());
                                     // SanPhamBE sp = new SanPhamBE();
                                     //  MessageBox.Show(textBox1.Text);
                                     // MessageBox.Show(ncc.TENNCC);
 
-                                    List<SanPhamBE> listSanPham = sanphamBLL.getListSanPhamTheoMaNhaCungCap(ncc.MANCC);
+                                    List<SanPhamBE> listSanPham = sanphamBLL.getListSanPhamTheoMaNhaCungCap(textBox1.Text.ToString());
                                     int stt = 1;
                                     listView1.Items.Clear();
                                     foreach (SanPhamBE sp in listSanPham)
@@ -208,7 +208,7 @@ namespace qlchvlxd
                                 }
                                 catch (Exception ex)
                                 {
-                                    MessageBox.Show("Lỗi trong quá trình nhập từ khóa tìm kiếm !");
+                                    MessageBox.Show("Lỗi trong quá trình nhập từ khóa tìm kiếm !"+ex.ToString());
                                 }
 
 
@@ -247,6 +247,11 @@ namespace qlchvlxd
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
          
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     
 
