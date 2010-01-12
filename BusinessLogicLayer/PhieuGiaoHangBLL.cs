@@ -52,5 +52,12 @@ namespace BusinessLogicLayer
 
             access.themPhieuGiaoHang(phieuGiaoHang);
         }
+
+        public static void suaPhieuGiao(BusinessEntities.PhieuGiaoHangBE phieuGiaoHang, String maGiaoHang)
+        {
+            DataAccessLayer.PhieuGiaoHangDAL access = new DataAccessLayer.PhieuGiaoHangDAL();
+
+            access.suaPhieuGiaoHang(phieuGiaoHang, maGiaoHang);
+        }
     }
 }
