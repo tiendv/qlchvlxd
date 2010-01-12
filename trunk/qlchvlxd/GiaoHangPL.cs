@@ -51,10 +51,9 @@ namespace qlchvlxd
 
         private String maGiaoHang = "";
         private float tongTien = 0;
-        private float tienTra = 0;
-        private float tienNo = 0;
+       
         private bool capNhat = false;
-        private float soKm = 1;
+       
         public bool isclose = false;
 
         public GiaoHangPL()
@@ -90,24 +89,22 @@ namespace qlchvlxd
                     lvi = new ListViewItem((i + 1).ToString());                    
                     lvi.SubItems.Add(sanPham.tensp);
                     lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
+
                     if (listMaCTHD[i].maCTHD == textBox_MaCTHD.Text && capNhat == true)
-                    {
-                    //    MessageBox.Show("T_T 1");
+                    {                   
                         lvi.SubItems.Add(numericUpDown_SoLuong.Value.ToString());
                         lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
+                        listMaCTHD[i].soLuong = (int)numericUpDown_SoLuong.Value;
+                        BusinessLogicLayer.CTHoaDonBLL.suaChiTietHoaDon(listMaCTHD[i].soLuong, (float)listMaCTHD[i].soLuong * listMaCTHD[i].donGia, listMaCTHD[i].maCTHD);
                         lvi.SubItems.Add((float.Parse(numericUpDown_SoLuong.Value.ToString()) * listMaCTHD[i].donGia).ToString());
                         //tinh tien
                         tongTien += float.Parse(numericUpDown_SoLuong.Value.ToString()) * listMaCTHD[i].donGia * float.Parse(comboBox_MucChietKhau.Text)/100;
                     }
                     else
                     {
-                      //  MessageBox.Show("T_T 2");
+                     
                         lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
-                        //if ((float)listMaCTHD[i].soLuong == float.Parse(lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString()).Text.ToString()))
-                        {
-                         //   MessageBox.Show("T_T 3");
-                        //    lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
-                        }
+                      
                         lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
                         lvi.SubItems.Add((listMaCTHD[i].soLuong * listMaCTHD[i].donGia).ToString());
                         //tinh tien
@@ -129,7 +126,7 @@ namespace qlchvlxd
 
                     label_GTTongTien.Text = "";
                     
-                    label_GTTongTien.Text = double.Parse(tongTien.ToString()).ToString();
+                    label_GTTongTien.Text = double.Parse(tongTien.ToString()).ToString() + " VND";
                 }
             }
             capNhat = false;
@@ -137,26 +134,7 @@ namespace qlchvlxd
         }
 
         private void button_Them_Click(object sender, EventArgs e)
-        {
-            //if (listCTHD == null)
-            //    textBox_MaCTHD.Text = "CT0001";
-            //else
-            //    textBox_MaCTHD.Text = TaoKhoaChinh.getIdLonNhat(listCTHD[listCTHD.Count - 1].maCTHD.ToString(), 2);
-
-            //BusinessEntities.CTHoaDonBE myCTHoaDon = new BusinessEntities.CTHoaDonBE();
-            //myCTHoaDon.maCTHD = textBox_MaCTHD.Text;
-            //myCTHoaDon.maSP = sanPham.masp;
-            //myCTHoaDon.maHD = "HD0001";
-            //myCTHoaDon.soLuong = (int)numericUpDown_SoLuong.Value;
-            //myCTHoaDon.donGia = sanPham.giaban;
-            //myCTHoaDon.maLoaiSP = sanPham.maloaisp;
-
-            //BusinessLogicLayer.CTHoaDonBLL.suaChiTietHoaDon(myCTHoaDon.soLuong, myCTHoaDon.maCTHD);
-
-            ////cập nhật tổng tiền
-            //tongTien += myCTHoaDon.soLuong * myCTHoaDon.donGia;
-            ////label_GTTongTien.Text = tongTien.ToString();
-
+        {            
             capNhat = true;
             listView_GiaoHang.Items.Clear();
             hienThi();
