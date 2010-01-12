@@ -306,9 +306,7 @@ namespace DataAccessLayer
                 string query = " UPDATE [QLCHVLXD].[dbo].[sanpham] SET [tensp] = N'" + sp.TENSP + "'," + "[gianhap] = " + sp.GIANHAP + "," + "[giaban] =" + sp.GIABAN + "," + "[soluongtoithieu]= " + sp.SOLUONGTOITHIEU + "," + "[thongtin] = N'" + sp.THONGTIN + "'WHERE [tensp]=N'" + sp.TENSP + "'";
                 //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] SET [tendonvitinh] = N'" + ldvt.TENDONVITINH + "' WHERE MALOAIDONVITINH = '" + ldvt.MALOAIDONVITINH + "'";
                 //string query = "UPDATE [QLCHVLXD].[dbo].[loaidonvitinh] " +
-                //                    "SET TENDONVITINH = N'" + ldvt.TENDONVITINH + "'," +
-                //                    "WHERE [MALOAIDONVITINH] = '" + ldvt.MALOAIDONVITINH + "'";
-                //  System.Console.Out.WriteLine(query);
+                
                 SQLHelp.executeNonQuery(query);
             }
             catch (Exception e)
