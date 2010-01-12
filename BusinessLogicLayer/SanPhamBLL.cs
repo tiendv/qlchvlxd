@@ -41,7 +41,7 @@ namespace BusinessLogicLayer
                 List<BusinessEntities.SanPhamBE> listTenSanPham = new List<BusinessEntities.SanPhamBE>();
                 DataAccessLayer.SanPhamDAL accessTenSanPham = new DataAccessLayer.SanPhamDAL();
 
-                listTenSanPham = accessTenSanPham.viewAllSanPhamByKindOfTenSanPham(tenSanPham);
+                listTenSanPham = accessTenSanPham.viewAllSanPhamByKindOfTenSP(tenSanPham);
 
                 if (listTenSanPham == null)
                     return null;
