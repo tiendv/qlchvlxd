@@ -103,7 +103,7 @@ namespace qlchvlxd
             if (maKHTT.Enabled == true && maKHTT.Text == "")
                 MessageBox.Show("Nhập mã khách hàng thân thiết");
             if (float.Parse(label_GTTongTien.Text) < float.Parse(textBox_SoTienTra.Text))
-                MessageBox.Show("^_^");
+                MessageBox.Show("Số tiền trả phải nhỏ hơn hoặc bằng tổng tiên");
             else
             {
                 listKhachHang = BusinessLogicLayer.KhacHangBLL.getListKhachHang();
@@ -157,6 +157,8 @@ namespace qlchvlxd
 
                     MessageBox.Show("ĐÃ TẠO THÀNH CÔNG HÓA ĐƠN!");
 
+                    LapHoaDonRPForm f2 = new LapHoaDonRPForm();
+                    f2.Show();
                    
                 }
                 else
@@ -223,7 +225,7 @@ namespace qlchvlxd
                     lvi.SubItems.Add(sanPham.tensp);
                     lvi.SubItems.Add(listMaCTHD[i].soLuong.ToString());
                     lvi.SubItems.Add(listMaCTHD[i].donGia.ToString());
-                    lvi.SubItems.Add((listMaCTHD[i].soLuong * listMaCTHD[i].donGia).ToString());
+                    lvi.SubItems.Add(((float)listMaCTHD[i].soLuong * listMaCTHD[i].donGia).ToString());
                     lvi.SubItems.Add(listMaCTHD[i].maCTHD);
                     listView_HoaDon.Items.Add(lvi);
                 }
@@ -247,6 +249,7 @@ namespace qlchvlxd
             myCTHoaDon.soLuong = (int)numericUpDown_SoLuong.Value;
             myCTHoaDon.donGia = sanPham.giaban;
             myCTHoaDon.maLoaiSP = sanPham.maloaisp;
+            myCTHoaDon.thanhTien = (float)myCTHoaDon.soLuong * myCTHoaDon.donGia;
 
             BusinessLogicLayer.CTHoaDonBLL.themChiTietHoaDon(myCTHoaDon);
 
@@ -353,7 +356,8 @@ namespace qlchvlxd
 
         private void button_CapNhat_Click(object sender, EventArgs e)
         {
-            BusinessLogicLayer.CTHoaDonBLL.suaChiTietHoaDon((int)numericUpDown_SoLuong.Value, textBox_MaCTHD.Text);
+            float thanhTien = float.Parse(numericUpDown_SoLuong.Value.ToString()) * float.Parse(textBox_DonGia.Text); 
+            BusinessLogicLayer.CTHoaDonBLL.suaChiTietHoaDon((int)numericUpDown_SoLuong.Value, thanhTien, textBox_MaCTHD.Text);
 
             listView_HoaDon.Items.Clear();
             hienThiChiTietHoaDon();
