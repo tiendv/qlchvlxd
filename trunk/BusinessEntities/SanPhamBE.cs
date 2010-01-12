@@ -27,6 +27,7 @@ namespace BusinessEntities
         public string thongtin;
         public int donvitinh;
         public int maloaisp ;
+        public string tendonvitinh = "";
 
         /* / constructor
         public tbsanpham(int masp, string tensp, float gianhap, float giaban,int soluong,int soluongtoithieu, string mancc, string thongtin,string donvitinh, int maloaisp)
@@ -172,6 +173,15 @@ namespace BusinessEntities
             }
         }
 
+
+        public String TenDonViTinh
+        {
+            get { return this.tendonvitinh; }
+            set
+            {
+                this.tendonvitinh = value;
+            }
+        }
 
       
 
