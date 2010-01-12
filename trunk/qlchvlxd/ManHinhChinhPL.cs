@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace qlchvlxd
 {
@@ -175,18 +176,31 @@ namespace qlchvlxd
         private void tácGiảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TacGiaPL f = new TacGiaPL();
+            f.MdiParent = this;
             f.Show();
         }
 
 
         private void lienheToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            LienlacPL f = new LienlacPL();
+            f.MdiParent = this;         
+            f.Show();
+            System.Threading.Thread.Sleep(2000);
+            f.Close();
+         
+
         }
 
         private void inBảngGiáToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BanggiasanphamPL f = new BanggiasanphamPL();
             f.Show();
+        }
+
+        private void HDSDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("D:\\qlchvlxd\\qlchvlxd\\Documents\\Huongdansudung.chm");
         }
 
     }
