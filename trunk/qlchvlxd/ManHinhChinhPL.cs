@@ -112,6 +112,10 @@ namespace qlchvlxd
             GiaoHangPL f2 = new GiaoHangPL();
             f2.MdiParent = this;
             f2.Show();
+            if (f2.isclose == true)
+            {
+                f2.Close();
+            }
         }
 
         private void tragopToolStripMenuItem_Click(object sender, EventArgs e)
@@ -174,6 +178,12 @@ namespace qlchvlxd
             f.Show();
         }
 
+
+        private void lienheToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+
         private void lienheToolStripMenuItem_Click(object sender, EventArgs e)
         {
          
@@ -181,9 +191,8 @@ namespace qlchvlxd
 
         private void inBảngGiáToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BanggiasanphamPL f = new BanggiasanphamPL();
-            f.MdiParent = this;
-            f.Show();
+            
         }
+
     }
 }
