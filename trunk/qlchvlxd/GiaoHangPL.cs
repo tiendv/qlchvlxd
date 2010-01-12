@@ -65,7 +65,8 @@ namespace qlchvlxd
             //button_Tim.Enabled = false;
             button_CapNhap.Enabled = false;
             // button_XemHD.Enabled = false; 
-            textBox_SoKm.Enabled = false;           
+            textBox_SoKm.Enabled = false;
+            button1.Enabled = false;
 
         }
 
@@ -237,6 +238,7 @@ namespace qlchvlxd
 
         private void button_TimHoaDon_Click(object sender, EventArgs e)
         {
+            button1.Enabled = true;
             hoaDon = BusinessLogicLayer.PhieuGiaoHangBLL.getHoaDon(textBox_MaHD.Text);
             if (hoaDon == null)
             {
@@ -296,13 +298,22 @@ namespace qlchvlxd
 
         private void button1_Click(object sender, EventArgs e)
         {
-            phieuGiaoHang.maHoaDon = textBox_MaHD.Text;
-            DateTime date = DateTime.Now;
-            phieuGiaoHang.ngayGiaoHang = date.ToShortDateString();
-            phieuGiaoHang.chiPhi = tongTien;
+            if (textBox_MaHD.Text != "")
+            {
+                phieuGiaoHang.maHoaDon = textBox_MaHD.Text;
+                DateTime date = DateTime.Now;
+                phieuGiaoHang.ngayGiaoHang = date.ToShortDateString();
+                phieuGiaoHang.chiPhi = tongTien;
 
-            BusinessLogicLayer.PhieuGiaoHangBLL.suaPhieuGiao(phieuGiaoHang, maGiaoHang);
-            
+                BusinessLogicLayer.PhieuGiaoHangBLL.suaPhieuGiao(phieuGiaoHang, maGiaoHang);
+
+                GiaoHangRPForm f2 = new GiaoHangRPForm();
+                f2.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin phiếu giao hàng.");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
