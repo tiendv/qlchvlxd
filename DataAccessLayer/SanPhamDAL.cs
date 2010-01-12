@@ -95,7 +95,7 @@ namespace DataAccessLayer
         {
             List<SanPhamBE> listSanPham = new List<SanPhamBE>();
             DataTable dt = new DataTable();
-            string myQuery = "SELECT * FROM SANPHAM WHERE TENSP = N'" + kindOfTenSP + "'";
+            string myQuery = "SELECT * FROM SANPHAM WHERE TENSP  LIKE N'%" + kindOfTenSP + "%'";
 
             dt = SQLHelp.executeQuery(myQuery);
             foreach (DataRow row in dt.Rows)
