@@ -12,7 +12,7 @@ namespace DataAccessLayer
         public int themNhaCungCap(BusinessEntities.NhaCungCapBE nhaCungCap)
         {
             String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[nhacungcap]([mancc],[tenncc],[diachi],[dienthoai])"
-                                + "VALUES ('" + nhaCungCap.MANCC + "' , '" + nhaCungCap.TENNCC+"','"
+                                + "VALUES ('" + nhaCungCap.MANCC + "' , N'" + nhaCungCap.TENNCC+"',N'"
                                  + nhaCungCap.DIACHI + "',' " + nhaCungCap.DIENTHOAI + "')";
 
             int kq=SQLHelp.executeNonQuery(myAddQuery);
@@ -20,8 +20,8 @@ namespace DataAccessLayer
         }
         public int SuaTTNhaCungCap(BusinessEntities.NhaCungCapBE nhaCungCap)
         {
-            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[nhacungcap] SET tenncc= '" + nhaCungCap.TENNCC
-                                 + "', diachi = '"+nhaCungCap.DIACHI + "', dienthoai= '" 
+            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[nhacungcap] SET tenncc= N'" + nhaCungCap.TENNCC
+                                 + "', diachi = N'"+nhaCungCap.DIACHI + "', dienthoai= '" 
                                  + nhaCungCap.DIENTHOAI + "' where mancc= '"+nhaCungCap.MANCC+"'";
 
             int kq=SQLHelp.executeNonQuery(myAddQuery);
