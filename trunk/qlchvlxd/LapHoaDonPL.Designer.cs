@@ -75,9 +75,11 @@
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(251, 26);
+            this.labelTitle.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelTitle.ForeColor = System.Drawing.Color.Blue;
+            this.labelTitle.Location = new System.Drawing.Point(149, 19);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(139, 13);
+            this.labelTitle.Size = new System.Drawing.Size(311, 26);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "LẬP HÓA ĐƠN BÁN HÀNG";
             // 
