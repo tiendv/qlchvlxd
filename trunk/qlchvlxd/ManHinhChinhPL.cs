@@ -183,12 +183,6 @@ namespace qlchvlxd
         {
         }
 
-
-        private void lienheToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-         
-        }
-
         private void inBảngGiáToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
