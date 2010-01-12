@@ -46,7 +46,8 @@ namespace DataAccessLayer
                 cthd.maSP = (int)row["masp"];
                 cthd.soLuong = (int)row["soluong"];
                 cthd.donGia = float.Parse(row["dongia"].ToString());
-             
+                cthd.thanhTien = float.Parse(row["thanhtien"].ToString());
+
                 danhSachCTHD.Add(cthd);
             }
 
@@ -77,6 +78,7 @@ namespace DataAccessLayer
                 cthd.maSP = (int)row["masp"];
                 cthd.soLuong = (int)row["soluong"];
                 cthd.donGia = float.Parse(row["dongia"].ToString());
+                cthd.thanhTien = float.Parse(row["thanhtien"].ToString());
 
                 danhSachCTHD.Add(cthd);
             }
@@ -86,8 +88,8 @@ namespace DataAccessLayer
 
         public void themCTHoaDon(BusinessEntities.CTHoaDonBE myCTHD)
         {
-            String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[cthoadon]([macthd],[mahd],[masp],[soluong],[dongia],[maloaisp])"
-            + " VALUES ( '" + myCTHD.maCTHD + "','" + myCTHD.maHD + "', '" + myCTHD.maSP + "', " + myCTHD.soLuong + "," + myCTHD.donGia + "," + myCTHD.maLoaiSP + ")";
+            String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[cthoadon]([macthd],[mahd],[masp],[soluong],[dongia],[maloaisp],[thanhtien])"
+            + " VALUES ( '" + myCTHD.maCTHD + "','" + myCTHD.maHD + "', '" + myCTHD.maSP + "', " + myCTHD.soLuong + "," + myCTHD.donGia + "," + myCTHD.maLoaiSP + "," + myCTHD.thanhTien +")";
 
             SQLHelp.executeNonQuery(myAddQuery);
         }
@@ -99,9 +101,9 @@ namespace DataAccessLayer
             SQLHelp.executeNonQuery(myAddQuery);
         }
 
-        public void suaChiTietHoaDon(int soLuong, String maCTHoaDon)
+        public void suaChiTietHoaDon(int soLuong, float thanhTien, String maCTHoaDon)
         {
-            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[cthoadon] SET [soluong] = " + soLuong + " WHERE macthd = '" + maCTHoaDon + "'";
+            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[cthoadon] SET [soluong] = " + soLuong + ", [thanhtien] =" + thanhTien + " WHERE macthd = '" + maCTHoaDon + "'";
             SQLHelp.executeNonQuery(myAddQuery);
         }
 
