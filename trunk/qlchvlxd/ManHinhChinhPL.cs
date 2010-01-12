@@ -185,7 +185,8 @@ namespace qlchvlxd
 
         private void inBảngGiáToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            BanggiasanphamPL f = new BanggiasanphamPL();
+            f.Show();
         }
 
     }
