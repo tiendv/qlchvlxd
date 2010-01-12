@@ -12,7 +12,7 @@ namespace DataAccessLayer
         public int themNhaCungCap(BusinessEntities.NhaCungCapBE nhaCungCap)
         {
             String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[nhacungcap]([mancc],[tenncc],[diachi],[dienthoai])"
-                                + "VALUES ('" + nhaCungCap.MANCC + "' , N'" + nhaCungCap.TENNCC+"',N'"
+                                + "VALUES ('" + nhaCungCap.MANCC + "' , '" + nhaCungCap.TENNCC+"','"
                                  + nhaCungCap.DIACHI + "',' " + nhaCungCap.DIENTHOAI + "')";
 
             int kq=SQLHelp.executeNonQuery(myAddQuery);
@@ -20,8 +20,8 @@ namespace DataAccessLayer
         }
         public int SuaTTNhaCungCap(BusinessEntities.NhaCungCapBE nhaCungCap)
         {
-            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[nhacungcap] SET tenncc= N'" + nhaCungCap.TENNCC
-                                 + "', diachi = N'"+nhaCungCap.DIACHI + "', dienthoai= '" 
+            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[nhacungcap] SET tenncc= '" + nhaCungCap.TENNCC
+                                 + "', diachi = '"+nhaCungCap.DIACHI + "', dienthoai= '" 
                                  + nhaCungCap.DIENTHOAI + "' where mancc= '"+nhaCungCap.MANCC+"'";
 
             int kq=SQLHelp.executeNonQuery(myAddQuery);
@@ -34,6 +34,7 @@ namespace DataAccessLayer
             int kq = SQLHelp.executeNonQuery(myAddQuery);
             return kq;
         }
+
         public List<BusinessEntities.NhaCungCapBE> getListNhaCungCap()
         {
             List<BusinessEntities.NhaCungCapBE> listNCC = new List<BusinessEntities.NhaCungCapBE>();
@@ -127,5 +128,40 @@ namespace DataAccessLayer
             return NhaCC;
         }
 
+       
+        /************************************
+         * 
+         * tìm kiếm nhà cung cấp theo tên
+         * 13/01/2010
+         * 
+         * *********************************/
+        public List<BusinessEntities.NhaCungCapBE> getListNhaCungCapTuTen(String tenNCC)
+        {
+            List<BusinessEntities.NhaCungCapBE> listNCC = new List<BusinessEntities.NhaCungCapBE>();
+
+            DataTable dataTable = SQLHelp.executeQuery("SELECT * FROM NHACUNGCAP WHERE TENNCC LIKE '%" + tenNCC + "%'");
+
+            BusinessEntities.NhaCungCapBE nhaCungCap;
+
+            if (dataTable.Rows.Count == 0)
+            {
+                return null;
+
+            }
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                nhaCungCap = new BusinessEntities.NhaCungCapBE();
+
+                nhaCungCap.MANCC = row["MANCC"].ToString();
+                nhaCungCap.TENNCC = row["TENNCC"].ToString();
+                nhaCungCap.DIACHI = row["DIACHI"].ToString();
+                nhaCungCap.DIENTHOAI = row["DIENTHOAI"].ToString();
+                
+                listNCC.Add(nhaCungCap);
+            }
+
+            return listNCC;
+        }
     }
 }
