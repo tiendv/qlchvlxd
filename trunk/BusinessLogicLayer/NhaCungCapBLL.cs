@@ -93,15 +93,23 @@ namespace BusinessLogicLayer
          /// <returns></returns>
         public  BusinessEntities.NhaCungCapBE getMaNhaCungCap(string tennhacungcap)
         {
-            BusinessEntities.NhaCungCapBE ncc = new BusinessEntities.NhaCungCapBE();
-            DataAccessLayer.NhaCungCapDAL accessNCC = new DataAccessLayer.NhaCungCapDAL();
+            try
+            {
+                BusinessEntities.NhaCungCapBE ncc = new BusinessEntities.NhaCungCapBE();
+                DataAccessLayer.NhaCungCapDAL accessNCC = new DataAccessLayer.NhaCungCapDAL();
 
-            ncc = accessNCC.getMaNhaCungCapTuTen(tennhacungcap);
+                ncc = accessNCC.getMaNhaCungCapTuTen(tennhacungcap);
 
-            if (ncc == null)
-                return null;
+                if (ncc == null)
+                    return null;
 
-            return ncc;
+                return ncc;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+ 
+            }
         }
 
         /************************************
