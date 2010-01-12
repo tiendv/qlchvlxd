@@ -92,12 +92,30 @@ namespace DataAccessLayer
 
         public void themPhieuGiaoHang(BusinessEntities.PhieuGiaoHangBE phieuGiaoHang)
         {
-            
 
-            String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[phieugiaohang]([magh],[mahd],[ngaygiao] ,[chiphi])" 
-                                + "VALUES('" + phieuGiaoHang.maPhieuGiaoHang + "','" + phieuGiaoHang.maHoaDon + "','" + phieuGiaoHang.ngayGiaoHang + "'," + phieuGiaoHang.chiPhi + ")";
-            SQLHelp.executeNonQuery(myAddQuery);
+            try
+            {
+                String myAddQuery = "INSERT INTO [QLCHVLXD].[dbo].[phieugiaohang]([magh],[mahd],[ngaygiao] ,[chiphi])"
+                                    + "VALUES('" + phieuGiaoHang.maPhieuGiaoHang + "','" + phieuGiaoHang.maHoaDon + "','" + phieuGiaoHang.ngayGiaoHang + "'," + phieuGiaoHang.chiPhi + ")";
+
+                SQLHelp.executeNonQuery(myAddQuery);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
          
+        }
+
+        public void suaPhieuGiaoHang(BusinessEntities.PhieuGiaoHangBE phieuGiaoHang, String maGiaoHang)
+        {
+
+
+            String myAddQuery = "UPDATE [QLCHVLXD].[dbo].[phieugiaohang]"
+                                + "SET [mahd] = '" + phieuGiaoHang.maHoaDon + "',[ngaygiao] = ' " + phieuGiaoHang.ngayGiaoHang 
+                                + " ',[chiphi] = " + phieuGiaoHang.chiPhi + "  WHERE magh = '" + maGiaoHang + "'";
+            SQLHelp.executeNonQuery(myAddQuery);
+
         }
     }
 
