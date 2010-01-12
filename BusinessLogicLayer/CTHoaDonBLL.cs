@@ -58,11 +58,11 @@ namespace BusinessLogicLayer
             access.xoaCTHoaDon(maCTHD);
         }
 
-        public static void suaChiTietHoaDon(int soLuong, String maCTHoaDon)
+        public static void suaChiTietHoaDon(int soLuong, float thanhTien, String maCTHoaDon)
         {
             DataAccessLayer.CTHoaDonDAL access = new DataAccessLayer.CTHoaDonDAL();
 
-            access.suaChiTietHoaDon(soLuong, maCTHoaDon);
+            access.suaChiTietHoaDon(soLuong, thanhTien, maCTHoaDon);
         }
 
 
