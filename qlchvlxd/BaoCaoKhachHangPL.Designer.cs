@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_TenKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.button_Tim = new System.Windows.Forms.Button();
+            this.listView_bcKH = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
@@ -50,12 +50,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ tên khách hàng:";
             // 
-            // textBox1
+            // textBox_TenKH
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox_TenKH.Location = new System.Drawing.Point(133, 10);
+            this.textBox_TenKH.Name = "textBox_TenKH";
+            this.textBox_TenKH.Size = new System.Drawing.Size(175, 20);
+            this.textBox_TenKH.TabIndex = 1;
             // 
             // label2
             // 
@@ -66,30 +66,30 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Báo cáo doanh số khách hàng";
             // 
-            // button1
+            // button_Tim
             // 
-            this.button1.Location = new System.Drawing.Point(351, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Tim.Location = new System.Drawing.Point(351, 10);
+            this.button_Tim.Name = "button_Tim";
+            this.button_Tim.Size = new System.Drawing.Size(75, 23);
+            this.button_Tim.TabIndex = 3;
+            this.button_Tim.Text = "Tìm";
+            this.button_Tim.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // listView_bcKH
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView_bcKH.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            this.listView1.Location = new System.Drawing.Point(19, 89);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(468, 160);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView_bcKH.Location = new System.Drawing.Point(19, 89);
+            this.listView_bcKH.Name = "listView_bcKH";
+            this.listView_bcKH.Size = new System.Drawing.Size(468, 160);
+            this.listView_bcKH.TabIndex = 4;
+            this.listView_bcKH.UseCompatibleStateImageBehavior = false;
+            this.listView_bcKH.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -118,17 +118,17 @@
             // 
             this.columnHeader6.Text = "Tổng nợ";
             // 
-            // baocaokhachhang
+            // BaoCaoKhachHangPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 301);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listView_bcKH);
+            this.Controls.Add(this.button_Tim);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_TenKH);
             this.Controls.Add(this.label1);
-            this.Name = "baocaokhachhang";
+            this.Name = "BaoCaoKhachHangPL";
             this.Text = "Báo cáo khách hàng";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,10 +138,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_TenKH;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button button_Tim;
+        private System.Windows.Forms.ListView listView_bcKH;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
