@@ -50,7 +50,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 778);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "LapHoaDonRPForm";
-            this.Text = "LapHoaDonRPForm";
+            this.Text = "Lập hóa đơn";
             this.ResumeLayout(false);
 
         }
