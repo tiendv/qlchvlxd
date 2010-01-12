@@ -51,7 +51,7 @@ namespace qlchvlxd
 
             try
             {
-                MessageBox.Show(sanpham.MASP.ToString());
+              
                 sanphamBLL.suadthongtinsanphamtheotensanpham(sanpham);
                 MessageBox.Show("Sản Phẩm đã được cập nhật !");
 
@@ -71,13 +71,12 @@ namespace qlchvlxd
          
 
 
-            MessageBox.Show(sanpham.THONGTIN);
 
             BusinessLogicLayer.SanPhamBLL sanphamBLL = new BusinessLogicLayer.SanPhamBLL();
 
             try
             {
-                MessageBox.Show(sanpham.MASP.ToString());
+               
                 sanphamBLL.xoasanpham(sanpham);
                 
                // MessageBox.Show(sanpham.THONGTIN);
