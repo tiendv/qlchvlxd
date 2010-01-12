@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox_ThongTin = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox_MaKHTT = new System.Windows.Forms.TextBox();
             this.button_TimHoaDon = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.column_ThanhTien = new System.Windows.Forms.ColumnHeader();
             this.listView_GiaoHang = new System.Windows.Forms.ListView();
             this.label_GTTongTien = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox_ThongTin.SuspendLayout();
             this.groupBox_SanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SoLuong)).BeginInit();
@@ -79,10 +79,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(224, 29);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(164, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 17);
+            this.label1.Size = new System.Drawing.Size(271, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "HÓA ĐƠN GIAO HÀNG";
             // 
@@ -109,6 +110,16 @@
             this.groupBox_ThongTin.TabIndex = 29;
             this.groupBox_ThongTin.TabStop = false;
             this.groupBox_ThongTin.Text = "Thông tin";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(99, 102);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 45;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // textBox_MaKHTT
             // 
@@ -419,6 +430,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(27, 435);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
@@ -482,20 +494,11 @@
             // label_GTTongTien
             // 
             this.label_GTTongTien.AutoSize = true;
+            this.label_GTTongTien.ForeColor = System.Drawing.Color.Red;
             this.label_GTTongTien.Location = new System.Drawing.Point(91, 435);
             this.label_GTTongTien.Name = "label_GTTongTien";
             this.label_GTTongTien.Size = new System.Drawing.Size(0, 13);
             this.label_GTTongTien.TabIndex = 33;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(99, 102);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 45;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // GiaoHangPL
             // 
