@@ -42,15 +42,20 @@ namespace qlchvlxd
         {
             BusinessLogicLayer.SanPhamBLL sanphamBLL = new BusinessLogicLayer.SanPhamBLL();
 
-            sanpham.TENSP = textBox2.Text;
-            sanpham.SOLUONG = int.Parse(textBox6.Text.ToString());
-            sanpham.GIANHAP = float.Parse(textBox3.Text.ToString());
-            sanpham.GIABAN = float.Parse(textBox4.Text.ToString());
-            //sanpham.SOLUONGtextBox5.Text = .ToString();
-            sanpham.THONGTIN = textBox1.Text;
+           
 
             try
             {
+               
+
+                sanpham.TENSP = textBox2.Text;
+                sanpham.SOLUONG = int.Parse(textBox6.Text.ToString());
+                sanpham.GIANHAP = float.Parse(textBox3.Text.ToString());
+                sanpham.GIABAN = float.Parse(textBox4.Text.ToString());
+                sanpham.SOLUONGTOITHIEU = int.Parse(textBox5.Text.ToString());
+             
+                //sanpham.SOLUONGtextBox5.Text = .ToString();
+                sanpham.THONGTIN = textBox1.Text;
               
                 sanphamBLL.suadthongtinsanphamtheotensanpham(sanpham);
                 MessageBox.Show("Sản Phẩm đã được cập nhật !");
@@ -88,6 +93,27 @@ namespace qlchvlxd
                 MessageBox.Show("Sản Phẩm đang tồn tại trong dữ liệu khác !");
 
             }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                MessageBox.Show("Số lượng có  kiểu số ! ");
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                MessageBox.Show("Số lượng có  kiểu số ! ");
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                MessageBox.Show("Số lượng có  kiểu số ! ");
         }
     }
 }

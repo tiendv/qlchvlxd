@@ -113,34 +113,9 @@ namespace qlchvlxd
                     // tim kiem theo ten san pham 
                     if (radioButton1.Checked)
                     {
-                        List<SanPhamBE> listSanPham = BusinessLogicLayer.SanPhamBLL.getListTenSanPham(textBox1.Text);
-                        int stt = 1;
-                        listView1.Items.Clear();
-                        foreach (SanPhamBE sp in listSanPham)
+                        try
                         {
-                            sp.MASP.ToString();
-                            ListViewItem item = new ListViewItem(stt.ToString());
-                            stt++;
-                            item.SubItems.Add(sp.TENSP);
-                            item.SubItems.Add(sp.MASP.ToString());
-                            item.SubItems.Add(sp.MANCC);
-                            item.SubItems.Add(sp.SOLUONG.ToString());
-                            item.SubItems.Add(sp.GIABAN.ToString());
-                            listView1.Items.Add(item);
-                        }
-
-
-
-                    }
-                    else
-                    {
-                        // tim kiem theo ma san pham
-
-
-                        if (radioButton2.Checked)
-                        {
-
-                            List<SanPhamBE> listSanPham = sanphamBLL.getListMaSanPham(int.Parse(textBox1.Text));
+                            List<SanPhamBE> listSanPham = BusinessLogicLayer.SanPhamBLL.getListTenSanPham(textBox1.Text);
                             int stt = 1;
                             listView1.Items.Clear();
                             foreach (SanPhamBE sp in listSanPham)
@@ -154,21 +129,28 @@ namespace qlchvlxd
                                 item.SubItems.Add(sp.SOLUONG.ToString());
                                 item.SubItems.Add(sp.GIABAN.ToString());
                                 listView1.Items.Add(item);
-
-
                             }
                         }
-                        else
-                            if (radioButton3.Checked)
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show("Lỗi trong quá trình điền thông tin tìm kiếm!");
+
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        // tim kiem theo ma san pham
+
+
+                        if (radioButton2.Checked)
+                        {
+                            try
                             {
 
-                                NhaCungCapBE ncc = new NhaCungCapBE();
-                                ncc = nhacungcapBLL.getMaNhaCungCap(textBox1.Text.ToString());
-                                // SanPhamBE sp = new SanPhamBE();
-                                //  MessageBox.Show(textBox1.Text);
-                                // MessageBox.Show(ncc.TENNCC);
-
-                                List<SanPhamBE> listSanPham = sanphamBLL.getListSanPhamTheoMaNhaCungCap(ncc.MANCC);
+                                List<SanPhamBE> listSanPham = sanphamBLL.getListMaSanPham(int.Parse(textBox1.Text));
                                 int stt = 1;
                                 listView1.Items.Clear();
                                 foreach (SanPhamBE sp in listSanPham)
@@ -182,8 +164,51 @@ namespace qlchvlxd
                                     item.SubItems.Add(sp.SOLUONG.ToString());
                                     item.SubItems.Add(sp.GIABAN.ToString());
                                     listView1.Items.Add(item);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Lỗi trong quá trình điền thông tin tìm kiếm!");
+
+                            }
 
 
+
+                            
+                        }
+                        else
+                            if (radioButton3.Checked)
+                            {
+                                try
+                                {
+
+                                    NhaCungCapBE ncc = new NhaCungCapBE();
+                                    ncc = nhacungcapBLL.getMaNhaCungCap(textBox1.Text.ToString());
+                                    // SanPhamBE sp = new SanPhamBE();
+                                    //  MessageBox.Show(textBox1.Text);
+                                    // MessageBox.Show(ncc.TENNCC);
+
+                                    List<SanPhamBE> listSanPham = sanphamBLL.getListSanPhamTheoMaNhaCungCap(ncc.MANCC);
+                                    int stt = 1;
+                                    listView1.Items.Clear();
+                                    foreach (SanPhamBE sp in listSanPham)
+                                    {
+                                        sp.MASP.ToString();
+                                        ListViewItem item = new ListViewItem(stt.ToString());
+                                        stt++;
+                                        item.SubItems.Add(sp.TENSP);
+                                        item.SubItems.Add(sp.MASP.ToString());
+                                        item.SubItems.Add(sp.MANCC);
+                                        item.SubItems.Add(sp.SOLUONG.ToString());
+                                        item.SubItems.Add(sp.GIABAN.ToString());
+                                        listView1.Items.Add(item);
+
+
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Lỗi trong quá trình nhập từ khóa tìm kiếm !");
                                 }
 
 
