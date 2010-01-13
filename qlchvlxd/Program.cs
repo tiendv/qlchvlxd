@@ -11,11 +11,12 @@ namespace qlchvlxd
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+        //public ManHinhChinhPL mainForm = new ManHinhChinhPL();
         static void Main()
-        {
+        {           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManHinhChinhPL());
+            Application.Run(new DangNhap());
         }
     }
 }
