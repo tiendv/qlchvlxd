@@ -128,7 +128,9 @@ namespace qlchvlxd
 
         private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+            DangNhap f = new DangNhap();
+            f.Show();
         }
 
         private void tinhluongToolStripMenuItem_Click(object sender, EventArgs e)
